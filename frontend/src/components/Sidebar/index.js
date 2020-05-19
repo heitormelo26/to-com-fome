@@ -1,18 +1,22 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import { Container, Row, Col } from "reactstrap";
+import { Description, Title } from './styles';
 
 export default function Sidebar(props) {
   return (
-    <Container fluid>
+    <Container className="align-self-center text-center">
       <Row>
-        <img src={props.imagem} />
-      </Row>
-      <Row>
-        <h2>Tá com fome?</h2>
-      </Row>
-      <Row>
-        <p>{props.descricao}</p>
+        <Col md="12" fluid={true}>
+          <img src={props.imagem} />
+        </Col>
+        <Col md="12">
+          <Title class="display-4">
+            Tá com fome?
+          </Title>
+        </Col>
+        <Col md="12" className="text-center">
+          <Description className="d-inline-block">{props.descricao}</Description>
+        </Col>
       </Row>
     </Container>
   );
