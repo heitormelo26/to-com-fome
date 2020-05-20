@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
 import Imagem from "./assets/images/ilustracao.png";
+import FooterAccount from "./components/FooterAccount";
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,17 @@ function App() {
         ]}
         imagem={Imagem}
         descricaoImagem={"Café da manhã"}
+      />
+      <FooterAccount
+        descricao1={
+          "Cadastrar com o Google"
+        }
+        descricao2={
+          "Novo por aqui?Crie sua conta"
+        }
+        descricao3={
+          "2020 TÔ COM FOME"
+        }
       />
     </div>
   );
