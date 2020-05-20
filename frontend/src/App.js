@@ -28,7 +28,7 @@ function App() {
           "Cadastrar com o Google"
         }
         descricao2={
-          "Novo por aqui?Crie sua conta"
+          "Novo por aqui? Crie sua conta"
         }
         descricao3={
           "2020 TÔ COM FOME"
