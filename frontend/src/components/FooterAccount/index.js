@@ -8,7 +8,7 @@ export default function FooterAccount(props) {
     <Container className="d-flex text-center align-items-center align-content-center flex-wrap">
       <div className="my-3 w-100 d-flex flex-row justify-content-center">
         <Google>
-          <Icon path={mdiGoogle} title="Google" size={0.7} color="#8d99ae" />
+          <Icon path={mdiGoogle} title="Google" size={0.7} color="#ef233c" />
         </Google>
         <Text className="mb-0">{props.google}</Text>
       </div>

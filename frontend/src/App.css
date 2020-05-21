@@ -3,12 +3,26 @@
 }
 
 .link-account {
-  color: #2b2d42;
+  color: #ef233c;
   font-weight: 600 !important;
 }
 
 .link-account:hover {
-  color: #2b2d42;
+  color: #ef233c;
   text-decoration: none;
   font-weight: 600 !important;
+}
+
+h1.toComFomeLogin {
+  color: #ef233c;
+}
+
+h2.tituloLogin {
+}
+
+button.botaoEntrar {
+  background-color: #ef233c;
+  border: none !important;
+  width: 220px;
+  border-radius: 40px;
 }
