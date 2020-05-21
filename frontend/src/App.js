@@ -24,15 +24,13 @@ function App() {
         descricaoImagem={"Café da manhã"}
       />
       <FooterAccount
-        descricao1={
-          "Cadastrar com o Google"
-        }
-        descricao2={
-          "Novo por aqui? Crie sua conta"
-        }
-        descricao3={
-          "2020 TÔ COM FOME"
-        }
+        google={"Entrar com o Google"}
+        texto={[
+          "Novo por aqui? ",
+          <a className="link-account" href="#">
+            Crie a sua conta!
+          </a>,
+        ]}
       />
     </div>
   );

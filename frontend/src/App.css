@@ -1,3 +1,14 @@
 * {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
+
+.link-account {
+  color: #2b2d42;
+  font-weight: 600 !important;
+}
+
+.link-account:hover {
+  color: #2b2d42;
+  text-decoration: none;
+  font-weight: 600 !important;
+}
