@@ -6,6 +6,15 @@ export const Text = styled.p`
   text-align: center;
   font-weight: 600;
   font-size: 16px;
+  a {
+    color: #ef233c;
+    font-weight: 600 !important;
+    :hover {
+      color: #ef233c;
+      text-decoration: none;
+      font-weight: 600 !important;
+    }
+  }
 `;
 
 export const Google = styled.div`

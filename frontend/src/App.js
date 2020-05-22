@@ -1,10 +1,13 @@
 import React from "react";
+
 import Sidebar from "./components/Sidebar";
-import "./App.css";
-import Imagem from "./assets/images/ilustracao.png";
 import FooterAccount from "./components/FooterAccount";
 import Input from "./components/Input";
-import { Container } from "./components/Input/styles";
+
+import "./App.css";
+import { Title, Subtitle, Container, Button, Link } from "./styles";
+
+import Imagem from "./assets/images/ilustracao.png";
 import { mdiLock, mdiEmail } from "@mdi/js";
 
 function App() {
@@ -27,9 +30,10 @@ function App() {
         imagem={Imagem}
         descricaoImagem={"Café da manhã"}
       />
+
       <Container className="d-flex text-center align-items-center align-content-center flex-wrap">
-        <h1 className="w-100 d-block toComFomeLogin">To com Fome</h1>
-        <h2 className="w-100 d-block tituloLogin"> Entrar </h2>
+        <Title className="mb-5 w-100 d-block">Tô Com Fome</Title>
+        <Subtitle className="mb-5 w-100 d-block">Entrar</Subtitle>
         <Input
           className="w-100 d-block"
           tipo={"mail"}
@@ -42,25 +46,19 @@ function App() {
           icone={mdiLock}
           label={"senha"}
         />
-        <a className="linkEsqueceuSenha w-100 d-block text-right" href="#">
+        <Link className="w-100 d-block text-right" href="/">
           Esqueceu a senha?
-        </a>
-        <div className="w-100 d-block my-3">
-          <button type="button" class="btn btn-danger botaoEntrar">
+        </Link>
+        <div className="w-100 d-block my-4">
+          <Button type="button" class="btn btn-danger">
             Entrar
-          </button>
+          </Button>
         </div>
       </Container>
 
       <FooterAccount
         google={"Entrar com o Google"}
-        texto={[
-          "Novo por aqui? ",
-          // eslint-disable-next-line jsx-a11y/anchor-is-valid
-          <a className="link-account" href="#">
-            Crie a sua conta!
-          </a>,
-        ]}
+        texto={["Novo por aqui? ", <a href="/">Crie a sua conta!</a>]}
       />
     </div>
   );
