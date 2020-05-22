@@ -1,3 +1,28 @@
 * {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
+
+.custom-control-input:active ~ .custom-control-label::before {
+  background-color: #ffffff !important;
+  border: 2px solid #ef233c !important;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: none !important;
+  border: 2px solid #ef233c !important;
+}
+
+.custom-control-label {
+  font-size: 14px;
+  color: #2b2d42;
+}
+
+.custom-control-label:before {
+  background-color: #ffffff;
+  border: 2px solid #ef233c;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #ef233c;
+  border: 2px solid #ef233c;
+}

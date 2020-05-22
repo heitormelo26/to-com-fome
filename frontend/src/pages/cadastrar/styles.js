@@ -57,15 +57,17 @@ export const LinkAccount = styled.a`
   }
 `;
 
-export const CheckboxLabel = styled.label`
+export const LinkContainer = styled.span`
   font-size: 14px;
-  color: #2b2d42;
-`;
-
-export const Checkbox = styled.input.attrs({
-  type: "checkbox",
-})`
-  background-color: #ffffff !important;
-  box-shadow: none !important;
-  border: 2px solid #ef233c !important;
+  color: #ef233c;
+  text-decoration: none;
+  a {
+    font-size: 14px;
+    color: #ef233c;
+    text-decoration: none;
+    :hover {
+      color: #ef233c;
+      text-decoration: none;
+    }
+  }
 `;

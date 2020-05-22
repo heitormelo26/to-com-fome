@@ -6,14 +6,7 @@ import Input from "../../components/Input";
 
 import { Link } from "react-router-dom";
 
-import {
-  Title,
-  Subtitle,
-  Container,
-  Button,
-  CheckboxLabel,
-  Checkbox,
-} from "./styles";
+import { Title, Subtitle, Container, Button, LinkContainer } from "./styles";
 import "../../App.css";
 
 import Imagem from "../../assets/images/ilustracao.png";
@@ -62,12 +55,19 @@ function Cadastrar() {
           label={"senha"}
         />
         <div className="my-2 w-100 d-block text-left">
-          <div className="form-check">
-            <Checkbox className="form-check-input" type="checkbox" />
-            <CheckboxLabel className="form-check-label">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="ingredient5"
+            />
+            <label class="custom-control-label" for="ingredient5">
               Ao criar a sua conta, você concorda com os nossos{" "}
-              <Link to="/">termos de privacidade</Link>.
-            </CheckboxLabel>
+              <LinkContainer>
+                <Link to="/">termos de privacidade</Link>
+              </LinkContainer>
+              .
+            </label>
           </div>
         </div>
 
@@ -79,7 +79,7 @@ function Cadastrar() {
       </Container>
 
       <FooterAccount
-        google={"Entrar com o Google"}
+        google={"Cadastrar com o Google"}
         texto={["Já possui uma conta? ", <Link to={"/"}>Entre agora!</Link>]}
       />
     </div>
