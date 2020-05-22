@@ -9,7 +9,7 @@ export const Container = styled.div`
   right: 0;
   height: 80%;
   z-index: 999;
-  padding: 88px;
+  padding: 104px;
 `;
 
 export const Title = styled.h1`
