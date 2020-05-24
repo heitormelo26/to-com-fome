@@ -16,12 +16,7 @@ export const Title = styled.h1`
 
 export const Container = styled.div`
   background-color: #2b2d42;
-  width: 40%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: 999;
+  height: 100vh !important;
 `;
 
 export const Image = styled.div`

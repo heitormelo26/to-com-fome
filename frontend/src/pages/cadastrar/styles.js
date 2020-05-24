@@ -3,13 +3,6 @@ import "../../assets/fonts/fonts.css";
 
 export const Container = styled.div`
   background-color: #ffffff;
-  width: 60%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 80%;
-  z-index: 999;
-  padding: 104px;
 `;
 
 export const Title = styled.h1`

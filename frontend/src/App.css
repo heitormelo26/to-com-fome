@@ -2,6 +2,11 @@
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+  height: 100% !important;
+}
+
 .custom-control-input:active ~ .custom-control-label::before {
   background-color: #ffffff !important;
   border: 2px solid #ef233c !important;

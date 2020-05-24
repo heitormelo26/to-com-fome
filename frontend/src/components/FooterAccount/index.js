@@ -5,7 +5,7 @@ import { mdiGoogle } from "@mdi/js";
 
 export default function FooterAccount(props) {
   return (
-    <Container className="d-flex text-center align-items-center align-content-center flex-wrap">
+    <Container className="container-fluid d-flex text-center align-items-center align-content-center flex-wrap">
       <div className="my-3 w-100 d-flex flex-row justify-content-center">
         <Google>
           <Icon path={mdiGoogle} title="Google" size={0.7} color="#8D99AE" />

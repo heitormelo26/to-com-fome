@@ -29,14 +29,6 @@ export const Google = styled.div`
 
 export const Container = styled.div`
   background-color: rgba(237, 242, 244, 0.7);
-  width: 60%;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  height: 20%;
-  z-index: 999;
-  padding-top: 48px;
-  padding-bottom: 48px;
   border-top: 1px solid rgba(141, 153, 174, 0.5);
 `;
 
