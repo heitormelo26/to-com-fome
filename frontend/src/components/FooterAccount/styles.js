@@ -28,8 +28,10 @@ export const Google = styled.div`
 `;
 
 export const Container = styled.div`
-  background-color: rgba(237, 242, 244, 0.7);
+  background-color: #f2f6f7;
   border-top: 1px solid rgba(141, 153, 174, 0.5);
+  height: 100% !important;
+  min-height: 25vh;
 `;
 
 export const Copyright = styled.p`

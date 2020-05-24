@@ -4,7 +4,7 @@ import { InputText, Label, IconGroup } from "./styles";
 
 export default function Input(props) {
   return (
-    <div className="input-group mb-3">
+    <div className="input-group mb-4">
       <Label className="w-100 mb-3 d-block">{props.label}</Label>
       <div className="input-group-prepend">
         <IconGroup className="input-group-text">

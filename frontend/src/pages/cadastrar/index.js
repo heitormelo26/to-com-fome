@@ -15,8 +15,8 @@ import { mdiLock, mdiEmail, mdiAccount } from "@mdi/js";
 function Cadastrar() {
   return (
     <div className="container-fluid p-0 h-100">
-      <div className="row m-0 h-100 row-eq-height">
-        <div className="col-md-4 p-0 h-100">
+      <div className="row m-0 h-100">
+        <div className="col-md-4 p-0 h-100 sticky-top">
           <Sidebar
             descricao={[
               "Então o ",
@@ -35,10 +35,10 @@ function Cadastrar() {
             descricaoImagem={"Café da manhã"}
           />
         </div>
-        <div className="col-md-8 p-0 h-100">
-          <div className="col-md-12 p-0">
+        <div className="col-md-8 p-0 h-100 overflow-hidden">
+          <div className="col-md-12 p-2 h-100">
             <Container className="p-5 d-flex text-center align-items-center align-content-center flex-wrap">
-              <Title className="mb-5 w-100 d-block">Tô Com Fome</Title>
+              <Title className="my-5 w-100 d-block">Tô Com Fome</Title>
               <Subtitle className="mb-5 w-100 d-block">Cadastrar</Subtitle>
               <Input
                 className="w-100 d-block"
@@ -81,9 +81,10 @@ function Cadastrar() {
               </div>
             </Container>
           </div>
+
           <div className="col-md-12 p-0 h-100">
             <FooterAccount
-              className="h-100"
+              className="h-100 mh-100"
               google={"Cadastrar com o Google"}
               texto={[
                 "Já possui uma conta? ",

@@ -3,6 +3,7 @@ import "../../assets/fonts/fonts.css";
 
 export const Container = styled.div`
   background-color: #ffffff;
+  height: 100% !important;
 `;
 
 export const Title = styled.h1`
