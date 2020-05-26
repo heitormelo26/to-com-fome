@@ -29,9 +29,7 @@ export const Google = styled.div`
 
 export const Container = styled.div`
   background-color: #f2f6f7;
-  border-top: 1px solid rgba(141, 153, 174, 0.5);
-  height: 100% !important;
-  min-height: 25vh;
+  border-top: 1px solid #c6ccd6;
 `;
 
 export const Copyright = styled.p`

@@ -35,8 +35,8 @@ function Cadastrar() {
             descricaoImagem={"Café da manhã"}
           />
         </div>
-        <div className="col-md-8 p-0 h-100 overflow-hidden">
-          <div className="col-md-12 p-2 h-100">
+        <div className="col-md-8 p-0 h-100 align-self-end">
+          <div className="col-md-12 p-2">
             <Container className="p-5 d-flex text-center align-items-center align-content-center flex-wrap">
               <Title className="my-5 w-100 d-block">Tô Com Fome</Title>
               <Subtitle className="mb-5 w-100 d-block">Cadastrar</Subtitle>
@@ -74,7 +74,7 @@ function Cadastrar() {
                   </label>
                 </div>
               </div>
-              <div className="w-100 d-block my-4">
+              <div className="w-100 d-block my-3">
                 <Button type="button" class="btn btn-danger">
                   Cadastrar
                 </Button>
@@ -82,7 +82,7 @@ function Cadastrar() {
             </Container>
           </div>
 
-          <div className="col-md-12 p-0 h-100">
+          <div className="col-md-12 p-0">
             <FooterAccount
               className="h-100 mh-100"
               google={"Cadastrar com o Google"}
