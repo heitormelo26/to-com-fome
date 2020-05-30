@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import "../../assets/fonts/fonts.css";
+
 export const Title = styled.h1`
   font-family: "Nunito";
   font-size: 30px;

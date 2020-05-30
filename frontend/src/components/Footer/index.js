@@ -5,7 +5,7 @@ export default function Footer(props) {
   return (
     <Container
       cor={props.cor}
-      className="container-fluid text-center py-5 fixed-bottom w-100 m-0"
+      className="container-fluid text-center py-5 w-100 m-0"
     >
       <div className="row w-100">
         <div className="col-md-12">
