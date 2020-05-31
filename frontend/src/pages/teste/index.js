@@ -1,12 +1,10 @@
 import React from "react";
-import Contato from "../../components/Contato";
-import Footer from "../../components/Footer";
+import Botao from "../../components/Botao";
 
 function Teste() {
   return (
-    <div className="fixed-bottom">
-      <Contato estaLogado={false} />
-      <Footer cor="branco" />
+    <div>
+      <Botao cor="azul" texto="Sei la" />
     </div>
   );
 }
