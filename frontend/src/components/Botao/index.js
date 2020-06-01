@@ -1,9 +1,20 @@
 import React from "react";
-import { ButtonComponent } from "./styles";
+import { Button, StyledLink } from "./styles";
+import { createRipples } from "react-ripples";
+
+const Effect = createRipples({
+  color: "rgba(255, 255, 255, .3)",
+  during: 800,
+});
+
 export default function Botao(props) {
   return (
-    <ButtonComponent cor={props.cor} type="button" className="btn btn-primary">
-      {props.texto}
-    </ButtonComponent>
+    <StyledLink cor={props.cor} to={props.link}>
+      <Effect>
+        <Button cor={props.cor} type="button" className="btn btn-primary">
+          <span>{props.texto}</span>
+        </Button>
+      </Effect>
+    </StyledLink>
   );
 }
