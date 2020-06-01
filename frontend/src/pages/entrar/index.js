@@ -3,6 +3,7 @@ import React from "react";
 import Sidebar from "../../components/Sidebar";
 import FooterAccount from "../../components/FooterAccount";
 import Input from "../../components/Input";
+import Botao from "../../components/Botao";
 
 import { Link } from "react-router-dom";
 
@@ -56,9 +57,7 @@ function Entrar() {
                 Esqueceu a senha?
               </LinkAccount>
               <div className="w-100 d-block my-4">
-                <Button type="button" class="btn btn-danger">
-                  Entrar
-                </Button>
+                <Botao cor="vermelho" texto="Entrar" link="/" />
               </div>
             </Container>
           </div>

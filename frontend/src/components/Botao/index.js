@@ -4,7 +4,7 @@ import { createRipples } from "react-ripples";
 
 const Effect = createRipples({
   color: "rgba(255, 255, 255, .3)",
-  during: 800,
+  during: 1000,
 });
 
 export default function Botao(props) {

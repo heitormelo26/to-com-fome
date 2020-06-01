@@ -3,6 +3,7 @@ import React from "react";
 import Sidebar from "../../components/Sidebar";
 import FooterAccount from "../../components/FooterAccount";
 import Input from "../../components/Input";
+import Botao from "../../components/Botao";
 
 import { Link } from "react-router-dom";
 
@@ -75,9 +76,7 @@ function Cadastrar() {
                 </div>
               </div>
               <div className="w-100 d-block my-3">
-                <Button type="button" class="btn btn-danger">
-                  Cadastrar
-                </Button>
+                <Botao cor="vermelho" texto="Cadastrar" link="/" />
               </div>
             </Container>
           </div>
