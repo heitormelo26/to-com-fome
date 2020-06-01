@@ -16,7 +16,7 @@ function Cadastrar() {
   return (
     <div className="container-fluid p-0 h-100">
       <div className="row m-0 h-100">
-        <div className="col-md-4 p-0 h-100 sticky-top">
+        <div className="col-md-4 p-0 h-100 sticky-top d-none d-sm-none d-md-block">
           <Sidebar
             descricao={[
               "Então o ",
@@ -48,7 +48,7 @@ function Cadastrar() {
               />
               <Input
                 className="w-100 d-block"
-                tipo={"mail"}
+                tipo={"email"}
                 icone={mdiEmail}
                 label={"email"}
               />
