@@ -4,7 +4,7 @@ import Pagination from "../../components/Pagination";
 function Teste() {
   return (
     <div className="container py-5 text-center">
-      <Pagination totalReceitas={16} receitasPorPagina={4} paginaAtual={2} />
+      <Pagination totalReceitas={16} receitasPorPagina={4} paginaAtual={3} />
     </div>
   );
 }
