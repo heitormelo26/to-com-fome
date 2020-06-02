@@ -22,25 +22,6 @@ export const Subtitle = styled.h2`
   font-weight: 700;
 `;
 
-export const Button = styled.button`
-  font-size: 18px;
-  font-family: "Nunito";
-  color: #ffffff;
-  background-color: #ef233c;
-  font-weight: 600;
-  display: inline-block;
-  text-align: center;
-  border: 0 !important;
-  padding: 10px 0 !important;
-  line-height: 1.5;
-  border-radius: 40px;
-  width: 220px;
-  :focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-`;
-
 export const LinkAccount = styled.a`
   font-size: 14px;
   color: #2b2d42;

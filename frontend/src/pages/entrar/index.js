@@ -7,7 +7,7 @@ import Botao from "../../components/Botao";
 
 import { Link } from "react-router-dom";
 
-import { Title, Subtitle, Container, Button, LinkAccount } from "./styles";
+import { Title, Subtitle, Container, LinkAccount } from "./styles";
 import "../../App.css";
 
 import Imagem from "../../assets/images/ilustracao.png";
