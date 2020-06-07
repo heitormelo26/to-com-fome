@@ -1,39 +1,36 @@
 import React from "react";
 import Button from "../Botao";
-import { Link } from "react-router-dom";
+import { NavbarLink, NavbarTitle, NavLinks } from "./styles";
 
 export default function Navbar(props) {
   function estaLogado() {
     if (props.estaLogado) {
       return (
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item mr-5 py-3 ">
-            <Link className="nav-link" to="/">
+        <ul className="navbar-nav ml-auto d-flex align-items-center">
+          <li className="nav-item mr-5">
+            <NavbarLink className="nav-link" to="/">
               Sair
-            </Link>
+            </NavbarLink>
           </li>
-          <li className="nav-item mr-5 py-3">
-            <Link className="nav-link" to="/perfil">
+          <li className="nav-item mr-5">
+            <NavbarLink className="nav-link" to="/perfil">
               Perfil
-            </Link>
+            </NavbarLink>
           </li>
-          <li
-            className="nav-item mr-5 py-3
-          "
-          >
+          <li className="nav-item d-flex align-items-center">
             <Button cor="vermelho" texto="Enviar receita" link="/enviar" />
           </li>
         </ul>
       );
     } else {
       return (
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item mr-5 py-3">
-            <Link className="nav-link" to="/">
+        <ul className="navbar-nav ml-auto d-flex align-items-center">
+          <li className="nav-item mr-5">
+            <NavbarLink className="nav-link" to="/">
               Faça login
-            </Link>
+            </NavbarLink>
           </li>
-          <li className="nav-item mr-5 py-3">
+          <li className="nav-item d-flex align-items-center">
             <Button cor="vermelho" texto="Inscreva-se" link="/cadastrar" />
           </li>
         </ul>
@@ -42,11 +39,13 @@ export default function Navbar(props) {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="#">
+    <nav className="mb-5 navbar navbar-expand-lg navbar-light bg-white px-5 py-3 d-flex align-items-center">
+      <NavbarTitle className="navbar-brand" to="#">
         Tô Com Fome
-      </Link>
-      <div className="collapse navbar-collapse">{estaLogado()}</div>
+      </NavbarTitle>
+      <NavLinks className="d-none d-sm-none collapse navbar-collapse d-flex align-items-center">
+        {estaLogado()}
+      </NavLinks>
     </nav>
   );
 }

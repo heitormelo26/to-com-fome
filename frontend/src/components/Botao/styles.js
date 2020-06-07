@@ -18,7 +18,6 @@ const botao = (cor) => {
 export const StyledLink = styled(Link)`
   text-decoration: none;
   border-radius: 40px;
-  margin-right: 24px;
   width: 220px !important;
   display: inline-block !important;
   overflow: hidden !important;
