@@ -1,17 +1,51 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import "../../assets/fonts/fonts.css";
 
-export const IconText = styled.span`
-  font-size: 16px;
-  color: #8d99ae;
-  font-weight: 600;
+export const Container = styled.div`
+  background-color: #2b2d42 !important;
+  border-radius: 0 !important;
+`;
+
+export const InputText = styled.input`
+  background-color: #edf2f4 !important;
+  font-size: 18px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  color: #8d99ae !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  :focus {
+    box-shadow: none !important;
+  }
+  ::placeholder {
+    color: #8d99ae !important;
+    font-size: 18px !important;
+    font-family: "Nunito";
+  }
+  :-ms-input-placeholder {
+    color: #8d99ae !important;
+    font-size: 18px !important;
+    font-family: "Nunito";
+  }
+  ::-ms-input-placeholder {
+    color: #8d99ae !important;
+    font-size: 18px !important;
+    font-family: "Nunito";
+  }
+`;
+
+export const IconGroup = styled.div`
+  background-color: #edf2f4 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
 `;
 
 export const Button = styled.button`
   overflow: hidden !important;
-  color: #ffffff;
-  background-color: #2b2b42;
+  color: #edf2f4;
+  background-color: #8d99ae;
   font-size: 18px;
   font-family: "Nunito";
   display: inline-block;
@@ -30,7 +64,7 @@ export const Button = styled.button`
     font-size: 18px;
     font-family: "Nunito";
     font-weight: 600;
-    color: #ffffff;
+    color: #edf2f4;
     border: none !important;
     :active {
       outline: none !important;
@@ -43,21 +77,21 @@ export const Button = styled.button`
       box-shadow: none !important;
     }
     :hover {
-      color: #ffffff !important;
-      background-color: #2b2b42 !important;
+      color: #edf2f4 !important;
+      background-color: #8d99ae !important;
       outline: none !important;
       box-shadow: none !important;
     }
   }
   :focus {
-    color: #ffffff !important;
-    background-color: #2b2b42 !important;
+    color: #edf2f4 !important;
+    background-color: #8d99ae !important;
     outline: none !important;
     box-shadow: none !important;
   }
   :hover {
-    color: #ffffff !important;
-    background-color: #2b2b42 !important;
+    color: #edf2f4 !important;
+    background-color: #8d99ae !important;
     outline: none !important;
     box-shadow: none !important;
   }
