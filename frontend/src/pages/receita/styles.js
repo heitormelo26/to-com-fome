@@ -5,13 +5,14 @@ import "../../assets/fonts/fonts.css";
 export const Image = styled.img`
   border-radius: 40px;
   width: 540px;
+  height: auto;
+  max-height: 360px !important;
 `;
 
 export const Tag = styled(Link)`
   color: #ef233c;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-family: "Nunito";
   :hover {
     color: #ef233c;
@@ -41,7 +42,7 @@ export const IconText = styled.span`
   font-weight: 600;
 `;
 
-export const description = styled.p`
+export const Description = styled.p`
   font-family: "Nunito";
   font-size: 18px;
   color: #2b2b42;
@@ -53,7 +54,6 @@ export const Button = styled.button`
   background-color: #2b2b42;
   font-size: 18px;
   font-family: "Nunito";
-  font-weight: 700;
   display: inline-block;
   width: 220px;
   text-align: center;
@@ -64,15 +64,40 @@ export const Button = styled.button`
   overflow: hidden !important;
   border: none !important;
   text-align: center;
-  :focus {
+  span {
+    line-height: 20px;
+    overflow: hidden !important;
+    font-size: 18px;
+    font-family: "Nunito";
+    font-weight: 600;
     color: #ffffff;
-    background-color: #2b2b42;
+    border: none !important;
+    :active {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    :focus {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    :hover {
+      color: #ffffff !important;
+      background-color: #2b2b42 !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  :focus {
+    color: #ffffff !important;
+    background-color: #2b2b42 !important;
     outline: none !important;
     box-shadow: none !important;
   }
   :hover {
-    color: #ffffff;
-    background-color: #2b2b42;
+    color: #ffffff !important;
+    background-color: #2b2b42 !important;
     outline: none !important;
     box-shadow: none !important;
   }
@@ -88,17 +113,53 @@ export const SecondTitle = styled.h2`
 `;
 
 export const IngredientText = styled.li`
-  font-size: 20px;
+  font-size: 18px;
   color: #2b2b42;
-  ::before {
+  display: flex;
+  margin-bottom: 8px;
+  :before {
+    content: "●";
+    text-align: center;
+    color: #8d99ae;
+    font-family: "Open Sans" !important;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: start !important;
+    margin-right: 12px;
   }
 `;
 
-export const List = styled.ul`
+export const ListUL = styled.ul`
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px !important;
   list-style: none;
 `;
 
+export const ListOL = styled.ol`
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px !important;
+  list-style: none;
+  counter-reset: item;
+`;
+
 export const PrepareText = styled.li`
-  font-size: 20px;
+  font-size: 18px;
   color: #2b2b42;
+  display: flex;
+  margin-bottom: 8px;
+  :before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    text-align: center;
+    color: #8d99ae;
+    font-family: "Nunito" !important;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: start !important;
+    margin-right: 12px;
+  }
 `;

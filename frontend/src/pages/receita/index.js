@@ -19,8 +19,10 @@ import {
   Button,
   SecondTitle,
   IngredientText,
-  List,
+  ListUL,
+  ListOL,
   PrepareText,
+  Description,
 } from "./styles";
 
 function Receita(props) {
@@ -38,7 +40,7 @@ function Receita(props) {
               className="w-100"
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 mt-5">
             <div className="row mb-4">
               <div className="col-md-12">
                 {tags.map(function (tag) {
@@ -50,7 +52,7 @@ function Receita(props) {
                 })}
               </div>
             </div>
-            <div className="row mb-4">
+            <div className="row mb-3">
               <div className="col-md-12">
                 <Title>Macarrão Roxo de Beterraba Assada</Title>
               </div>
@@ -89,12 +91,12 @@ function Receita(props) {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <p className="text-justify">
+                <Description className="text-justify">
                   Parece prato de restaurante, de tão bonito que fica. Mas não
                   poderia ser mais fácil de preparar. A beterraba, assada e
                   batida com um pouco da água do cozimento, vira o molho que
                   tinge a massa. A ricota e o endro completam o sabor do prato.
-                </p>
+                </Description>
               </div>
             </div>
           </div>
@@ -111,7 +113,7 @@ function Receita(props) {
               color="#ffffff"
               className="mr-2"
             />
-            Curtir
+            <span>Curtir</span>
           </Button>
           <Button
             type="Button"
@@ -124,7 +126,7 @@ function Receita(props) {
               color="#ffffff"
               className="mr-2"
             />
-            Salvar
+            <span>Salvar</span>
           </Button>
           <Button
             type="Button"
@@ -137,7 +139,7 @@ function Receita(props) {
               color="#ffffff"
               className="mr-2"
             />
-            Compartilhar
+            <span>Compartilhar</span>
           </Button>
         </div>
         <div className="row mb-5">
@@ -146,7 +148,7 @@ function Receita(props) {
               <SecondTitle className="mb-4">Ingredientes</SecondTitle>
             </div>
             <div className="col-md-12">
-              <ul>
+              <ListUL>
                 <IngredientText>2 beterrabas</IngredientText>
                 <IngredientText>250 g de macarrão bavette</IngredientText>
                 <IngredientText>1 dente de alho descascado</IngredientText>
@@ -160,7 +162,7 @@ function Receita(props) {
                 <IngredientText>
                   folhas de endro (dill) a gosto para servir
                 </IngredientText>
-              </ul>
+              </ListUL>
             </div>
           </div>
           <div className="col-md-6 mb-5">
@@ -168,7 +170,7 @@ function Receita(props) {
               <SecondTitle className="mb-4">Modo de preparo</SecondTitle>
             </div>
             <div className="col-md-12">
-              <ol>
+              <ListOL>
                 <PrepareText>
                   Preaqueça o forno a 200°C. Descasque e corte a beterraba em
                   quartos.{" "}
@@ -204,7 +206,7 @@ function Receita(props) {
                   esfarelada, folhas de endro, azeite e pimenta-do-reino moída
                   na hora a gosto.
                 </PrepareText>
-              </ol>
+              </ListOL>
             </div>
           </div>
         </div>
