@@ -30,3 +30,19 @@ body {
   background-color: #ef233c;
   border: 2px solid #ef233c;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c6ccd6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c6ccd6;
+}
