@@ -5,9 +5,10 @@ import Footer from "../../components/Footer";
 import Pagination from "../../components/Pagination";
 import Receita from "../../components/Receita";
 import Botao from "../../components/Botao";
-import { Button, InputText, IconGroup, Container } from "./styles";
+import { Link } from "react-router-dom";
+import { Button, InputText, IconGroup, Container, Menu } from "./styles";
 import Icon from "@mdi/react";
-import { mdiChevronDown, mdiMagnify } from "@mdi/js";
+import { mdiMagnify } from "@mdi/js";
 
 export default function Buscar() {
   return (
@@ -33,49 +34,70 @@ export default function Buscar() {
         <div className="row">
           <div className="col-md-9 d-flex align-items-center">
             <div className="mr-3 d-flex align-items-center">
-              <Button
-                type="Button"
-                className="btn d-flex align-items-center justify-content-center"
-              >
-                <span>Categoria</span>
-                <Icon
-                  path={mdiChevronDown}
-                  title="Categoria"
-                  size={0.8}
-                  color="#ffffff"
-                  className="ml-2"
-                />
-              </Button>
+              <div className="dropdown">
+                <Button
+                  className="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  <span className="pr-2">Categoria</span>
+                </Button>
+                <Menu className="dropdown-menu">
+                  <Link className="dropdown-item" to="/buscar/acompanhamentos">
+                    Acompanhamentos
+                  </Link>
+                  <Link className="dropdown-item" to="/buscar/massas">
+                    Massas
+                  </Link>
+                  <Link className="dropdown-item" to="/buscar/frutos-do-mar">
+                    Frutos do mar
+                  </Link>
+                </Menu>
+              </div>
             </div>
             <div className="mr-3 d-flex align-items-center">
-              <Button
-                type="Button"
-                className="btn d-flex align-items-center justify-content-center"
-              >
-                <span>Tipo de refeição</span>
-                <Icon
-                  path={mdiChevronDown}
-                  title="Tipo de refeição"
-                  size={0.8}
-                  color="#ffffff"
-                  className="ml-2"
-                />
-              </Button>
+              <div className="dropdown">
+                <Button
+                  className="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  <span className="pr-2">Tipo de refeição</span>
+                </Button>
+                <Menu className="dropdown-menu">
+                  <Link className="dropdown-item" to="/buscar/almoço">
+                    Almoço
+                  </Link>
+                  <Link className="dropdown-item" to="/buscar/jantar">
+                    Jantar
+                  </Link>
+                  <Link className="dropdown-item" to="/buscar/sobremesa">
+                    Sobremesa
+                  </Link>
+                </Menu>
+              </div>
             </div>
             <div className="mr-3 d-flex align-items-center">
-              <Button
-                type="Button"
-                className="btn d-flex align-items-center justify-content-center"
-              >
-                <span>Nacionalidade</span>
-                <Icon
-                  path={mdiChevronDown}
-                  title="Nacionalidade"
-                  size={0.8}
-                  color="#ffffff"
-                  className="ml-2"
-                />
-              </Button>
+              <div className="dropdown">
+                <Button
+                  className="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  <span className="pr-2">Nacionalidade</span>
+                </Button>
+                <Menu className="dropdown-menu">
+                  <Link className="dropdown-item" to="/buscar/brasileira">
+                    Brasileira
+                  </Link>
+                  <Link className="dropdown-item" to="/buscar/italiana">
+                    Italiana
+                  </Link>
+                  <Link className="dropdown-item" to="/buscar/grega">
+                    Grega
+                  </Link>
+                </Menu>
+              </div>
             </div>
           </div>
           <div className="col-md-3 d-flex align-items-center justify-content-end">

@@ -83,7 +83,8 @@ export const Button = styled.button`
       box-shadow: none !important;
     }
   }
-  :focus {
+  :focus,
+  :active {
     color: #edf2f4 !important;
     background-color: #8d99ae !important;
     outline: none !important;
@@ -94,5 +95,47 @@ export const Button = styled.button`
     background-color: #8d99ae !important;
     outline: none !important;
     box-shadow: none !important;
+  }
+`;
+
+export const Menu = styled.div`
+  margin-top: 16px;
+  background-color: #edf2f4 !important;
+  border: none !important;
+  width: 220px;
+  box-shadow: none !important;
+  color: #8d99ae !important;
+  border-radius: 6px !important;
+  :focus,
+  :active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  :before {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #edf2f4;
+  }
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    font-size: 18px !important;
+    font-family: "Nunito" !important;
+    font-weight: 600 !important;
+    color: #8d99ae !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #edf2f4;
+    margin: 8px 0;
   }
 `;
