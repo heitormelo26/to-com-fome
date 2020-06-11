@@ -17,9 +17,8 @@ export const Tag = styled(Link)`
   :hover {
     color: #ef233c;
     text-decoration: none;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-family: "Nunito";
   }
   :focus {
