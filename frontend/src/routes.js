@@ -5,6 +5,7 @@ import Cadastrar from "./pages/cadastrar";
 import Teste from "./pages/teste";
 import Receita from "./pages/receita";
 import Buscar from "./pages/buscar";
+import Perfil from "./pages/perfil";
 
 const Routes = () => (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const Routes = () => (
       <Route exact path="/teste" component={Teste} />
       <Route exact path="/receita" component={Receita} />
       <Route exact path="/buscar" component={Buscar} />
+      <Route exact path="/perfil" component={Perfil} />
     </Switch>
   </BrowserRouter>
 );
