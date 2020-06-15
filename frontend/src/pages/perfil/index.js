@@ -4,41 +4,54 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Receita from "../../components/Receita";
 import Icon from "@mdi/react";
-import { mdiMagnify } from "@mdi/js";
-import { InputText, IconGroup, Container } from "./styles";
+import { mdiMagnify, mdiPencil } from "@mdi/js";
+import {
+  InputText,
+  IconGroup,
+  Container,
+  Name,
+  User,
+  Number,
+  Button,
+  Category,
+  CategorySelected,
+} from "./styles";
 
 function Perfil(props) {
   return (
     <div>
       <Navbar estaLogado={false} />
       <div className="container-fluid mb-4">
-        <Container className="row d-flex justify-content-center mx-1 p-4 mb-5">
+        <Container className="row d-flex justify-content-end  mx-1 p-4 mb-5">
+          <Button type="button" className=" float-right h-auto btn btn-primary">
+            <Icon path={mdiPencil} size={0.8} color="#edf2f4" />
+          </Button>
           <div className="col-md-12 d-flex justify-content-center">
             <img
+              className="mb-3"
               width="100"
               src="https://image.flaticon.com/icons/svg/306/306005.svg"
               alt="Foto de perfil"
             />
-            <button> Editar </button>
           </div>
           <div className="col-md-12 text-center">
-            <p>Paulinha</p>
-            <p>@monkeystoks</p>
+            <Name className="mb-1">Paulinha</Name>
+            <User>@monkeystoks</User>
           </div>
-          <div className="col-md-12 d-flex justify-content-center">
-            <div className="row">
-              <div className="col-md-6">
-                <p>Receitas salvas</p>
-                <p>127</p>
+          <div className="col-md-12 d-flex justify-content-center flex-fill">
+            <div className="row w-100">
+              <div className="col-md-6 text-center">
+                <Number>Receitas salvas</Number>
+                <Number>127</Number>
               </div>
-              <div className="col-md-6">
-                <p>Recitas enviadas</p>
-                <p>13</p>
+              <div className="col-md-6 text-center">
+                <Number>Receitas enviadas</Number>
+                <Number>13</Number>
               </div>
             </div>
           </div>
         </Container>
-        <div className="row mx-1 mb-5">
+        <div className="row mx-1 mb-3">
           <div className="col-md-12">
             <div className="input-group mb-2">
               <div className="input-group-prepend">
@@ -54,11 +67,18 @@ function Perfil(props) {
             </div>
           </div>
         </div>
-        <div className="row mx-1 mb-5 ">
+        <div className="row mx-1 mb-4 ">
           <div className="col-md-12 d-flex justify-content-center">
-            <button className="mr-3">Receitas Salvas</button>
-            <button className="mr-3">Receitas Enviadas</button>
-            <button>Receitas Privadas</button>
+            <CategorySelected className="mr-3 btn ">
+              {" "}
+              <span>Receitas Salvas</span>
+            </CategorySelected>
+            <Category className="mr-3 btn">
+              <span> Receitas Enviadas </span>
+            </Category>
+            <Category className="btn">
+              <span>Receitas Privadas</span>
+            </Category>
           </div>
         </div>
         <div className="row d-flex justify-content-start">
