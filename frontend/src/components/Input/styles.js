@@ -14,6 +14,18 @@ export const InputText = styled.input`
   }
 `;
 
+export const InputTextNoIcon = styled.input`
+  background-color: #edf2f4 !important;
+  font-size: 16px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  color: #8d99ae !important;
+  border-radius: 6px !important;
+  :focus {
+    box-shadow: none !important;
+  }
+`;
+
 export const Label = styled.label`
   font-size: 16px;
   font-weight: 700;

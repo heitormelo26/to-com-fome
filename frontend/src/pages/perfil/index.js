@@ -20,7 +20,7 @@ import {
 function Perfil(props) {
   return (
     <div>
-      <Navbar estaLogado={false} />
+      <Navbar estaLogado={true} />
       <div className="container-fluid mb-4">
         <Container className="row d-flex justify-content-end  mx-1 p-4 mb-5">
           <Button type="button" className=" float-right h-auto btn btn-primary">
@@ -51,9 +51,9 @@ function Perfil(props) {
             </div>
           </div>
         </Container>
-        <div className="row mx-1 mb-3">
+        <div className="row mx-1 mb-4">
           <div className="col-md-12">
-            <div className="input-group mb-2">
+            <div className="input-group mb-4">
               <div className="input-group-prepend">
                 <IconGroup className="input-group-text">
                   <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
@@ -69,14 +69,14 @@ function Perfil(props) {
         </div>
         <div className="row mx-1 mb-4 ">
           <div className="col-md-12 d-flex justify-content-center">
-            <CategorySelected className="mr-3 btn ">
+            <CategorySelected className="mr-3 mb-4 btn ">
               {" "}
               <span>Receitas Salvas</span>
             </CategorySelected>
-            <Category className="mr-3 btn">
+            <Category className="mr-3 mb-4 btn">
               <span> Receitas Enviadas </span>
             </Category>
-            <Category className="btn">
+            <Category className="btn mb-4">
               <span>Receitas Privadas</span>
             </Category>
           </div>
