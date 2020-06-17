@@ -13,7 +13,7 @@ import {
 } from "./styles";
 import Input from "../../components/Input";
 import Icon from "@mdi/react";
-import { mdiMagnify, mdiClose } from "@mdi/js";
+import { mdiMagnify, mdiClose, mdiTrashCan } from "@mdi/js";
 import "../../App.css";
 
 function CriarReceita() {
@@ -26,6 +26,14 @@ function CriarReceita() {
         data-target="#modalPaginaUm"
       >
         Criar receita
+      </button>
+      <button
+        type="button"
+        className="m-5 btn btn-primary"
+        data-toggle="modal"
+        data-target="#modalPaginaDois"
+      >
+        Criar receita pag 2
       </button>
       <div
         className="modal fade"
@@ -113,8 +121,145 @@ function CriarReceita() {
                 </button>
               </StyledLinkSecondary>
               <StyledLink to="/criar" className="d-flex align-items-center">
-                <button type="button" className="btn btn-primary">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  data-toggle="modal"
+                  data-dismiss="modal"
+                  data-target="#modalPaginaDois"
+                >
                   <span>Próximo</span>
+                </button>
+              </StyledLink>
+            </div>
+          </Modal>
+        </div>
+      </div>
+      {/* SEGUNDA PÁGINA DO POP-UP */}
+      <div
+        className="modal fade"
+        id="modalPaginaDois"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered modal-lg">
+          <Modal className="modal-content">
+            <div className="modal-header d-flex flex-column">
+              <Title className="d-block w-100 modal-title">
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                Compartilhe suas habilidades!
+              </Title>
+              <Subtitle className="d-block w-100 modal-title">
+                Escolha seus ingredientes e descreva o modo de preparo
+              </Subtitle>
+            </div>
+            <div className="modal-body">
+              <form>
+                <div className="form-group">
+                  <div className="input-group">
+                    <Label className="w-100 mb-3 d-block">Ingredientes</Label>
+                    <div className="input-group-prepend">
+                      <IconGroup className="input-group-text">
+                        <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
+                      </IconGroup>
+                    </div>
+                    <InputText
+                      type="text"
+                      placeholder="Buscar..."
+                      className="py-3 form-control d-inline-block"
+                    />
+                    <button className="d-inline-block ml-2 px-4">+</button>
+                  </div>
+                  <div className="container">
+                    <div className="mt-3 row d-flex align-itens-center justify-content-center border-bottom">
+                      <div className="col-md-3 d-flex align-itens-center justify-content-start mb-2">
+                        <p> Arroz </p>
+                      </div>
+                      <div className="col-md-3 d-flex align-itens-center justify-content-center mb-2">
+                        <InputText
+                          type="number"
+                          min="1"
+                          step="0.1"
+                          placeholder="Quantidade"
+                          className="py-3 form-control d-inline-block"
+                        />
+                      </div>
+                      <div className="col-md-3 d-flex align-itens-center justify-content-center mb-2">
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            Unidade de medida
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton"
+                          >
+                            <a class="dropdown-item" href="#">
+                              Action
+                            </a>
+                            <a class="dropdown-item" href="#">
+                              Another action
+                            </a>
+                            <a class="dropdown-item" href="#">
+                              Something else here
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-3 d-flex align-itens-center justify-content-end mb-2">
+                        <button>
+                          <Icon path={mdiTrashCan} size={0.8} color="#8D99AE" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <Label className="w-100 mb-3 d-block">Modo de preparo</Label>
+                  <TextArea maxlength="100" class="form-control"></TextArea>
+                </div>
+                <div class="input-group mb-3">
+                  <Label className="w-100 mb-3 d-block">Imagem</Label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" />
+                    <label class="custom-file-label">
+                      Selecionar arquivo...
+                    </label>
+                  </div>
+                </div>
+                <img />
+              </form>
+            </div>
+            <div className="modal-footer">
+              <StyledLinkSecondary
+                to="/criar"
+                className="d-flex align-items-center"
+              >
+                <button
+                  data-dismiss="modal"
+                  type="button"
+                  className="btn btn-primary"
+                >
+                  <span>Anterior</span>
+                </button>
+              </StyledLinkSecondary>
+              <StyledLink to="/criar" className="d-flex align-items-center">
+                <button type="button" className="btn btn-primary">
+                  <span>Enviar</span>
                 </button>
               </StyledLink>
             </div>
