@@ -246,7 +246,7 @@ function CriarReceita() {
                     </label>
                   </div>
                 </div>
-                <img />
+                <img alt="algo" />
               </form>
             </div>
             <div className="modal-footer">
