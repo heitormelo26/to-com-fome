@@ -33,6 +33,14 @@ export const InputText = styled.input`
   color: #8d99ae !important;
   border-top-right-radius: 6px !important;
   border-bottom-right-radius: 6px !important;
+  .custom-file-input {
+    background-color: #edf2f4 !important;
+    font-size: 18px !important;
+    border: 0 !important;
+    outline: 0 !important;
+    color: #8d99ae !important;
+    border-radius: 6px !important;
+  }
   :focus {
     box-shadow: none !important;
   }
@@ -308,4 +316,164 @@ export const Subtitle = styled.h5`
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
+`;
+
+export const Plus = styled.button`
+  overflow: hidden !important;
+  color: #ffffff !important;
+  background: #ef233c !important;
+  border: none !important;
+  :active {
+    border: 0px transparent solid !important;
+  }
+  font-size: 18px;
+  font-family: "Nunito";
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 6px;
+  text-decoration: none !important;
+  span {
+    overflow: hidden !important;
+    font-size: 18px;
+    font-family: "Nunito";
+    font-weight: 700;
+    color: #ffffff !important;
+    background: #ef233c !important;
+    border: none !important;
+    :active {
+      border: 0px transparent solid !important;
+    }
+    border: none !important;
+    :active {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    :focus {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+`;
+
+export const TrashCan = styled.button`
+  overflow: hidden !important;
+  color: #8d99ae !important;
+  background: transparent !important;
+  border: none !important;
+  :active {
+    border: 0px transparent solid !important;
+  }
+  font-size: 18px;
+  font-family: "Nunito";
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 6px;
+  text-decoration: none !important;
+`;
+
+export const Ingredient = styled.p`
+  font-size: 18px;
+  font-family: "Nunito";
+  color: #8d99ae !important;
+`;
+
+export const Menu = styled.div`
+  margin-top: 16px;
+  background-color: #edf2f4 !important;
+  border: none !important;
+  width: 220px;
+  box-shadow: none !important;
+  color: #8d99ae !important;
+  border-radius: 6px !important;
+  :focus,
+  :active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  :before {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #edf2f4;
+  }
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    font-size: 18px !important;
+    font-family: "Nunito" !important;
+    font-weight: 600 !important;
+    color: #8d99ae !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #edf2f4;
+    margin: 8px 0;
+  }
+`;
+
+export const Button = styled.button`
+  overflow: hidden !important;
+  color: #8d99ae;
+  background-color: #edf2f4;
+  font-size: 18px;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 6px;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  border: none !important;
+  text-align: center;
+  padding: 6px 12px;
+  span {
+    line-height: 20px;
+    overflow: hidden !important;
+    font-family: "Nunito";
+    font-size: 18px;
+    color: #8d99ae;
+    border: none !important;
+    :active {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    :focus {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    :hover {
+      color: #8d99ae !important;
+      background-color: #edf2f4 !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  :focus,
+  :active {
+    color: #8d99ae !important;
+    background-color: #edf2f4 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  :hover {
+    color: #8d99ae !important;
+    background-color: #edf2f4 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
 `;
