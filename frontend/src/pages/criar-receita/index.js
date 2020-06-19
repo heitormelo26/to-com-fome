@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   TextArea,
@@ -59,12 +59,7 @@ function CriarReceita() {
           <Modal className="modal-content">
             <div className="modal-header d-flex flex-column">
               <Title className="d-block w-100 modal-title">
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
+                <button type="button" className="close" data-dismiss="modal">
                   <span aria-hidden="true">&times;</span>
                 </button>
                 Compartilhe suas habilidades!
@@ -160,12 +155,7 @@ function CriarReceita() {
           <Modal className="modal-content">
             <div className="modal-header d-flex flex-column">
               <Title className="d-block w-100 modal-title">
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
+                <button type="button" className="close" data-dismiss="modal">
                   <span aria-hidden="true">&times;</span>
                 </button>
                 Compartilhe suas habilidades!
