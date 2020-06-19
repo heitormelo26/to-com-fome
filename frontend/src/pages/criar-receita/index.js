@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   TextArea,
@@ -16,6 +16,7 @@ import {
   Ingredient,
   Button,
   Menu,
+  Placeholder,
 } from "./styles";
 import Input from "../../components/Input";
 import Icon from "@mdi/react";
@@ -23,6 +24,12 @@ import { mdiMagnify, mdiClose, mdiTrashCan } from "@mdi/js";
 import "../../App.css";
 
 function CriarReceita() {
+  const [nomeArquivo, setNomeArquivo] = useState(
+    "Nenhum arquivo selecionado..."
+  );
+
+  const [arquivo, setArquivo] = useState();
+
   return (
     <div class="container">
       <button
@@ -239,14 +246,28 @@ function CriarReceita() {
                 </div>
                 <div className="input-group mb-3">
                   <Label className="w-100 mb-3 d-block">Imagem</Label>
-                  <div className="custom-file">
-                    <InputText type="file" className="custom-file-input" />
-                    <label className="custom-file-label">
-                      Selecionar arquivo...
-                    </label>
+                  <div className="custom-file d-flex align-items-center">
+                    <input
+                      accept="image/*"
+                      type="file"
+                      className="custom-file-input d-flex align-items-center"
+                      onChange={(event) => {
+                        setNomeArquivo(event.target.files[0].name);
+                        setArquivo(URL.createObjectURL(event.target.files[0]));
+                      }}
+                    />
+                    <Placeholder className="custom-file-label d-flex align-items-center">
+                      {nomeArquivo}
+                    </Placeholder>
                   </div>
                 </div>
-                <img alt="algo" />
+                <div className="d-flex justify-content-center mt-2">
+                  <img
+                    src={arquivo}
+                    alt=""
+                    className="img-fluid img-thumbnail"
+                  />
+                </div>
               </form>
             </div>
             <div className="modal-footer">
@@ -254,16 +275,16 @@ function CriarReceita() {
                 to="/criar"
                 className="d-flex align-items-center"
               >
-                <button
-                  data-dismiss="modal"
-                  type="button"
-                  className="btn btn-primary"
-                >
+                <button type="button" className="btn btn-primary">
                   <span>Anterior</span>
                 </button>
               </StyledLinkSecondary>
               <StyledLink to="/criar" className="d-flex align-items-center">
-                <button type="button" className="btn btn-primary">
+                <button
+                  type="button"
+                  data-dismiss="modal"
+                  className="btn btn-primary"
+                >
                   <span>Enviar</span>
                 </button>
               </StyledLink>

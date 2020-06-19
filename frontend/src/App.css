@@ -46,3 +46,33 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #c6ccd6;
 }
+
+.custom-file-label::after {
+  font-size: 18px !important;
+  color: #8d99ae !important;
+  font-family: "Nunito" !important;
+  content: "Selecionar" !important;
+  font-weight: 700;
+  background-color: #edf2f4 !important;
+  border-radius: 0 6px 6px 0 !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: calc(1.5em + 0.75rem + 2px) !important;
+}
+
+.input-group > .custom-file:not(:first-child) .custom-file-label {
+  background-color: #edf2f4 !important;
+  border-radius: 6px !important;
+  border: none !important;
+}
+
+.input-group > .form-control:focus,
+.input-group > .custom-select:focus,
+.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label,
+.input-group > .custom-file .custom-file-input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

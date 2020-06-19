@@ -25,6 +25,12 @@ export const Label = styled.label`
   color: #2b2d42;
 `;
 
+export const Placeholder = styled.label`
+  font-size: 18px;
+  color: #8d99ae !important;
+  font-family: "Nunito" !important;
+`;
+
 export const InputText = styled.input`
   background-color: #edf2f4 !important;
   font-size: 18px !important;
@@ -33,14 +39,6 @@ export const InputText = styled.input`
   color: #8d99ae !important;
   border-top-right-radius: 6px !important;
   border-bottom-right-radius: 6px !important;
-  .custom-file-input {
-    background-color: #edf2f4 !important;
-    font-size: 18px !important;
-    border: 0 !important;
-    outline: 0 !important;
-    color: #8d99ae !important;
-    border-radius: 6px !important;
-  }
   :focus {
     box-shadow: none !important;
   }
@@ -364,8 +362,11 @@ export const TrashCan = styled.button`
   color: #8d99ae !important;
   background: transparent !important;
   border: none !important;
+  :focus,
   :active {
-    border: 0px transparent solid !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
   }
   font-size: 18px;
   font-family: "Nunito";
@@ -384,10 +385,10 @@ export const Ingredient = styled.p`
 `;
 
 export const Menu = styled.div`
-  margin-top: 16px;
+  margin-top: 24px;
   background-color: #edf2f4 !important;
   border: none !important;
-  width: 220px;
+  width: auto;
   box-shadow: none !important;
   color: #8d99ae !important;
   border-radius: 6px !important;
