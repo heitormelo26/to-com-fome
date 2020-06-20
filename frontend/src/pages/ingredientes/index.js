@@ -10,11 +10,13 @@ import {
   Subtitle,
   Plus,
   Card,
+  Menu,
   Button,
 } from "./styles";
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiClose } from "@mdi/js";
 import "../../App.css";
+import { Link } from "react-router-dom";
 
 export default function Ingredientes() {
   return (
@@ -67,9 +69,29 @@ export default function Ingredientes() {
                           placeholder="Buscar..."
                           className="py-3 form-control d-inline-block"
                         />
-                        <Plus className="d-inline-block ml-2 px-4 btn">
-                          <span>Filtros</span>
-                        </Plus>
+                        <div className="dropdown">
+                          <Plus
+                            className=" ml-2 btn btn-secondary dropdown-toggle"
+                            type="button"
+                            data-toggle="dropdown"
+                          >
+                            <span>Filtros</span>
+                          </Plus>
+                          <Menu className="dropdown-menu">
+                            <Link className="dropdown-item" to="/buscar/almoço">
+                              Almoço
+                            </Link>
+                            <Link className="dropdown-item" to="/buscar/jantar">
+                              Jantar
+                            </Link>
+                            <Link
+                              className="dropdown-item"
+                              to="/buscar/sobremesa"
+                            >
+                              Sobremesa
+                            </Link>
+                          </Menu>
+                        </div>
                       </div>
                       <div className="mt-3">
                         <Category className="btn mb-2 mr-2">

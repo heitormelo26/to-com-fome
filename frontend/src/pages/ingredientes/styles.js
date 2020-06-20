@@ -318,31 +318,24 @@ export const Subtitle = styled.h5`
 
 export const Plus = styled.button`
   overflow: hidden !important;
-  color: #ffffff !important;
-  background: #ef233c !important;
-  border: none !important;
-  :active {
-    border: 0px transparent solid !important;
-  }
+  color: #ffffff;
+  background-color: #ef233c;
   font-size: 18px;
-  font-family: "Nunito";
-  font-weight: 700;
   display: inline-block;
   text-align: center;
   line-height: 1.5;
   border-radius: 6px;
   text-decoration: none !important;
+  overflow: hidden !important;
+  border: none !important;
+  text-align: center;
+  padding: 6px 12px;
   span {
+    line-height: 20px;
     overflow: hidden !important;
-    font-size: 18px;
     font-family: "Nunito";
-    font-weight: 700;
-    color: #ffffff !important;
-    background: #ef233c !important;
-    border: none !important;
-    :active {
-      border: 0px transparent solid !important;
-    }
+    font-size: 18px;
+    color: #ffffff;
     border: none !important;
     :active {
       outline: none !important;
@@ -354,6 +347,25 @@ export const Plus = styled.button`
       border: none !important;
       box-shadow: none !important;
     }
+    :hover {
+      color: #ffffff !important;
+      background-color: #ef233c !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  :focus,
+  :active {
+    color: #ffffff !important;
+    background-color: #ef233c !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  :hover {
+    color: #ffffff !important;
+    background-color: #ef233c !important;
+    outline: none !important;
+    box-shadow: none !important;
   }
 `;
 
@@ -386,6 +398,8 @@ export const Ingredient = styled.p`
 
 export const Menu = styled.div`
   margin-top: 24px;
+  position: relative !important;
+  z-index: 999 !important;
   background-color: #edf2f4 !important;
   border: none !important;
   width: auto;
