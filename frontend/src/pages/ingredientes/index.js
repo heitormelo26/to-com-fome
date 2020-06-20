@@ -23,13 +23,13 @@ export default function Ingredientes() {
         type="button"
         className="m-5 btn btn-primary"
         data-toggle="modal"
-        data-target="#modalPaginaUm"
+        data-target="#modal"
       >
         Ingredientes
       </button>
       <div
         className="modal fade"
-        id="modalPaginaUm"
+        id="modal"
         tabindex="-1"
         role="dialog"
         aria-hidden="true"
@@ -100,14 +100,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox1" />
+                          <label className="m-0" for="checkbox1"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Arroz Branco</h5>
                     </div>
@@ -123,14 +121,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox2" />
+                          <label className="m-0" for="checkbox2"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Limão</h5>
                     </div>
@@ -146,14 +142,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox3" />
+                          <label className="m-0" for="checkbox3"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Milho Verde</h5>
                     </div>
@@ -169,14 +163,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox4" />
+                          <label className="m-0" for="checkbox4"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Pimentão Vermelho</h5>
                     </div>
@@ -192,14 +184,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox5" />
+                          <label className="m-0" for="checkbox5"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Cenoura</h5>
                     </div>
@@ -215,14 +205,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox6" />
+                          <label className="m-0" for="checkbox6"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Brócolis</h5>
                     </div>
@@ -238,14 +226,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox7" />
+                          <label className="m-0" for="checkbox7"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Morango</h5>
                     </div>
@@ -261,14 +247,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox8" />
+                          <label className="m-0" for="checkbox8"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Uva</h5>
                     </div>
@@ -284,14 +268,12 @@ export default function Ingredientes() {
                     <div class="card-img-overlay">
                       <Button
                         type="button"
-                        className="p-4 icongroup custom-control custom-checkbox btn btn-primary"
+                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                       >
-                        <input
-                          class="form-check-input m-0"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck1"
-                        />
+                        <div className="round">
+                          <input type="checkbox" id="checkbox9" />
+                          <label className="m-0" for="checkbox9"></label>
+                        </div>
                       </Button>
                       <h5 class="card-title">Mirtilo</h5>
                     </div>
@@ -318,9 +300,8 @@ export default function Ingredientes() {
                   className="btn btn-primary"
                   data-toggle="modal"
                   data-dismiss="modal"
-                  data-target="#modalPaginaDois"
                 >
-                  <span>Próximo</span>
+                  <span>Tô com fome!</span>
                 </button>
               </StyledLink>
             </div>
