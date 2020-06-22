@@ -8,6 +8,7 @@ import Buscar from "./pages/buscar";
 import Perfil from "./pages/perfil";
 import CriarReceita from "./pages/criar-receita";
 import Ingredientes from "./pages/ingredientes";
+import EditarPerfil from "./pages/editar-perfil";
 
 const Routes = () => (
   <BrowserRouter>
@@ -20,6 +21,7 @@ const Routes = () => (
       <Route exact path="/perfil" component={Perfil} />
       <Route exact path="/criar" component={CriarReceita} />
       <Route exact path="/ingredientes" component={Ingredientes} />
+      <Route exact path="/editar-perfil" component={EditarPerfil} />
     </Switch>
   </BrowserRouter>
 );
