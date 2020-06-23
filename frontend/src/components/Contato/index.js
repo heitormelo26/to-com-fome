@@ -18,10 +18,10 @@ export default function Contato(props) {
             <Subtitle>Crie sua conta agora!</Subtitle>
           </div>
           <div className="col-md-6">
-            <ButtonPrimary type="button" class="btn btn-danger">
+            <ButtonPrimary type="button" className="btn btn-danger">
               Cadastrar
             </ButtonPrimary>
-            <ButtonSecondary type="button" class="btn btn-danger">
+            <ButtonSecondary type="button" className="btn btn-danger">
               Entrar
             </ButtonSecondary>
           </div>

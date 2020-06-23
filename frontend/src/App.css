@@ -2,6 +2,10 @@
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
+*:focus {
+  outline: none !important;
+}
+
 body {
   height: 100vh !important;
 }
@@ -131,4 +135,19 @@ body {
 
 .round input[type="checkbox"]:checked + label:after {
   opacity: 1;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select .dropdown-toggle:focus,
+.bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  outline-offset: 0px !important;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }

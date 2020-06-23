@@ -119,7 +119,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -129,7 +129,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox1"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Arroz Branco</h5>
+                      <h5 className="card-title">Arroz Branco</h5>
                     </div>
                   </Card>
                 </div>
@@ -140,7 +140,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -150,7 +150,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox2"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Limão</h5>
+                      <h5 className="card-title">Limão</h5>
                     </div>
                   </Card>
                 </div>
@@ -161,7 +161,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -171,7 +171,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox3"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Milho Verde</h5>
+                      <h5 className="card-title">Milho Verde</h5>
                     </div>
                   </Card>
                 </div>
@@ -182,7 +182,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -192,7 +192,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox4"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Pimentão Vermelho</h5>
+                      <h5 className="card-title">Pimentão Vermelho</h5>
                     </div>
                   </Card>
                 </div>
@@ -203,7 +203,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -213,7 +213,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox5"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Cenoura</h5>
+                      <h5 className="card-title">Cenoura</h5>
                     </div>
                   </Card>
                 </div>
@@ -224,7 +224,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -234,7 +234,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox6"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Brócolis</h5>
+                      <h5 className="card-title">Brócolis</h5>
                     </div>
                   </Card>
                 </div>
@@ -245,7 +245,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -255,7 +255,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox7"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Morango</h5>
+                      <h5 className="card-title">Morango</h5>
                     </div>
                   </Card>
                 </div>
@@ -266,7 +266,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -276,7 +276,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox8"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Uva</h5>
+                      <h5 className="card-title">Uva</h5>
                     </div>
                   </Card>
                 </div>
@@ -287,7 +287,7 @@ export default function Ingredientes() {
                       className="card-img-top"
                       alt=""
                     />
-                    <div class="card-img-overlay">
+                    <div className="card-img-overlay">
                       <Button
                         type="button"
                         className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
@@ -297,7 +297,7 @@ export default function Ingredientes() {
                           <label className="m-0" for="checkbox9"></label>
                         </div>
                       </Button>
-                      <h5 class="card-title">Mirtilo</h5>
+                      <h5 className="card-title">Mirtilo</h5>
                     </div>
                   </Card>
                 </div>

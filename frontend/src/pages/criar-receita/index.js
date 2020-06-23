@@ -31,7 +31,7 @@ function CriarReceita() {
   const [arquivo, setArquivo] = useState();
 
   return (
-    <div class="container">
+    <div className="container">
       <button
         type="button"
         className="m-5 btn btn-primary"
@@ -86,7 +86,7 @@ function CriarReceita() {
                 </div>
                 <div className="form-group">
                   <Label className="w-100 mb-3 d-block">Descrição</Label>
-                  <TextArea maxlength="100" class="form-control"></TextArea>
+                  <TextArea maxlength="100" className="form-control"></TextArea>
                 </div>
                 <div className="form-group">
                   <div className="input-group">
@@ -198,9 +198,9 @@ function CriarReceita() {
                         />
                       </div>
                       <div className="col-md-4 d-flex align-items-center justify-content-center mb-2">
-                        <div class="dropdown">
+                        <div className="dropdown">
                           <Button
-                            class="btn btn-secondary dropdown-toggle"
+                            className="btn btn-secondary dropdown-toggle"
                             type="button"
                             data-toggle="dropdown"
                           >
@@ -232,7 +232,7 @@ function CriarReceita() {
                 </div>
                 <div className="form-group">
                   <Label className="w-100 mb-3 d-block">Modo de preparo</Label>
-                  <TextArea maxlength="100" class="form-control"></TextArea>
+                  <TextArea maxlength="100" className="form-control"></TextArea>
                 </div>
                 <div className="input-group mb-3">
                   <Label className="w-100 mb-3 d-block">Imagem</Label>

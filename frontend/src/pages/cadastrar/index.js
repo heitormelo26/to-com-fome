@@ -60,13 +60,13 @@ function Cadastrar() {
                 label={"senha"}
               />
               <div className="my-2 w-100 d-block text-left">
-                <div class="custom-control custom-checkbox">
+                <div className="custom-control custom-checkbox">
                   <input
                     type="checkbox"
-                    class="custom-control-input"
+                    className="custom-control-input"
                     id="ingredient5"
                   />
-                  <label class="custom-control-label" for="ingredient5">
+                  <label className="custom-control-label" for="ingredient5">
                     Ao criar a sua conta, você concorda com os nossos{" "}
                     <LinkContainer>
                       <Link to="/">termos de privacidade</Link>

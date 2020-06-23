@@ -1,24 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../../components/Input";
-import { Link } from "react-router-dom";
 import {
-  TextArea,
   Label,
   IconGroup,
-  InputText,
   Modal,
-  Category,
   StyledLink,
   StyledLinkSecondary,
   Title,
-  Subtitle,
-  Plus,
-  TrashCan,
-  Ingredient,
-  Button,
-  Menu,
-  Placeholder,
   Select,
+  InputText,
+  IconGroupRight,
 } from "./styles";
 import Icon from "@mdi/react";
 import {
@@ -30,8 +21,19 @@ import {
   mdiEye,
   mdiCalendar,
 } from "@mdi/js";
+import "../../App.css";
 
 function EditarPerfil() {
+  const [tipo, setTipo] = useState("password");
+
+  function mostrarSenha(event) {
+    if (tipo === "password") {
+      setTipo("text");
+    } else {
+      setTipo("password");
+    }
+  }
+
   return (
     <div className="container">
       <button
@@ -72,24 +74,45 @@ function EditarPerfil() {
                 </div>
                 <div className="form-group">
                   <Label className="w-100 mb-3 d-block">País</Label>
-                  <div class="input-group mb-3 d-flex flex-wrap justify-content-center align-items-center">
-                    <div class="input-group-prepend">
-                      <IconGroup className="input-group-text h-auto ">
+                  <div className="w-100 d-flex">
+                    <div className="input-group-prepend">
+                      <IconGroup className="input-group-text">
                         <Icon path={mdiMapMarker} size={0.7} color="#8D99AE" />
                       </IconGroup>
                     </div>
                     <Select
-                      className="custom-select custom-select-sm w-auto "
-                      id="inputGroupSelect01"
+                      data-width="auto"
+                      title="País"
+                      data-size="5"
+                      className="selectpicker show-tick w-100 form-control"
                     >
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option>Argentina</option>
+                      <option>Brasil</option>
+                      <option>Chile</option>
+                      <option>Argentina</option>
+                      <option>Brasil</option>
+                      <option>Chile</option>
+                      <option>Argentina</option>
+                      <option>Brasil</option>
+                      <option>Chile</option>
                     </Select>
                   </div>
                 </div>
                 <div className="form-group">
-                  <Input label="Senha" icone={mdiLock} tipo="password" />
+                  <Label className="w-100 mb-3 d-block">Senha</Label>
+                  <div className="w-100 d-flex">
+                    <div className="input-group-prepend">
+                      <IconGroup className="input-group-text">
+                        <Icon path={mdiLock} size={0.7} color="#8D99AE" />
+                      </IconGroup>
+                    </div>
+                    <InputText type={tipo} className="py-3 form-control" />
+                    <div className="input-group-append" onClick={mostrarSenha}>
+                      <IconGroupRight className="input-group-text">
+                        <Icon path={mdiEye} size={0.7} color="#8D99AE" />
+                      </IconGroupRight>
+                    </div>
+                  </div>
                 </div>
                 <div className="form-group">
                   <Input

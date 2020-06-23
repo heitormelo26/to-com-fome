@@ -9,6 +9,8 @@ export const InputText = styled.input`
   color: #8d99ae !important;
   border-top-right-radius: 6px !important;
   border-bottom-right-radius: 6px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-left-radius: 0px !important;
   :focus {
     box-shadow: none !important;
   }
@@ -41,6 +43,8 @@ export const IconGroup = styled.div`
   outline: 0 !important;
   border-top-left-radius: 6px !important;
   border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 `;
 
 export const Container = styled.div`
