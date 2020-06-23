@@ -19,18 +19,22 @@ import {
   mdiAccount,
   mdiAt,
   mdiEye,
+  mdiEyeOff,
   mdiCalendar,
 } from "@mdi/js";
 import "../../App.css";
 
 function EditarPerfil() {
   const [tipo, setTipo] = useState("password");
+  const [icone, setIcone] = useState(mdiEye);
 
   function mostrarSenha(event) {
     if (tipo === "password") {
       setTipo("text");
+      setIcone(mdiEyeOff);
     } else {
       setTipo("password");
+      setIcone(mdiEye);
     }
   }
 
@@ -109,7 +113,7 @@ function EditarPerfil() {
                     <InputText type={tipo} className="py-3 form-control" />
                     <div className="input-group-append" onClick={mostrarSenha}>
                       <IconGroupRight className="input-group-text">
-                        <Icon path={mdiEye} size={0.7} color="#8D99AE" />
+                        <Icon path={icone} size={0.7} color="#8D99AE" />
                       </IconGroupRight>
                     </div>
                   </div>
