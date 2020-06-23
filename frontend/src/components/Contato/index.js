@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  Container,
-  Title,
-  Subtitle,
-  ButtonPrimary,
-  ButtonSecondary,
-} from "./styles";
+import { Container, Title, Subtitle } from "./styles";
+import Botao from "../../components/Botao";
 
 export default function Contato(props) {
   const estaLogado = props.estaLogado;
@@ -17,16 +12,15 @@ export default function Contato(props) {
             <Title className="mb-3">Quer salvar suas receitas favoritas?</Title>
             <Subtitle>Crie sua conta agora!</Subtitle>
           </div>
-          <div className="col-md-6">
-            <ButtonPrimary type="button" className="btn btn-danger">
-              Cadastrar
-            </ButtonPrimary>
-            <ButtonSecondary type="button" className="btn btn-danger">
-              Entrar
-            </ButtonSecondary>
+          <div className="col-md-6 d-flex justify-content-center align-items-center">
+            <Botao cor="branco" link="/cadastrar" texto="Cadastrar" />
+            <div className="mr-4"></div>
+            <Botao cor="transparente" link="/" texto="Entrar" />
           </div>
         </div>
       </Container>
     );
+  } else {
+    return <br />;
   }
 }

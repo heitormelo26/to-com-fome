@@ -137,13 +137,20 @@ body {
   opacity: 1;
 }
 
+.bootstrap-select .dropdown-toggle:focus {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
 .bootstrap-select .dropdown-toggle:focus,
 .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
   border: 0 !important;
-  outline: 0 !important;
+  outline: none !important;
   box-shadow: none !important;
-  outline-offset: 0px !important;
+  outline: none !important;
 }
 
 input[type="date"]::-webkit-inner-spin-button,

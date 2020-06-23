@@ -18,7 +18,7 @@ export default function Navbar(props) {
             </NavbarLink>
           </li>
           <li className="nav-item d-flex align-items-center">
-            <Button cor="vermelho" texto="Enviar receita" link="/enviar" />
+            <Button cor="vermelho" texto="Enviar receita" link="/criar" />
           </li>
         </ul>
       );
@@ -39,7 +39,7 @@ export default function Navbar(props) {
   }
 
   return (
-    <nav className="mb-5 d-flex justify-content-center navbar navbar-expand-lg navbar-light bg-white px-5 py-3 d-flex align-items-center">
+    <nav className="mb-4 d-flex justify-content-center navbar navbar-expand-lg navbar-light bg-white px-5 py-3 d-flex align-items-center">
       <NavbarTitle className="navbar-brand m-0" to="#">
         Tô Com Fome
       </NavbarTitle>

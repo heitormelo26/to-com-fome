@@ -4,87 +4,44 @@ import "../../assets/fonts/fonts.css";
 export const Container = styled.div`
   background-color: #2b2d42 !important;
   border-radius: 40px !important;
+  padding: 32px;
 `;
 
-export const Number = styled.p`
+export const Title = styled.h1`
   font-family: "Nunito";
-  font-weight: 600;
+  font-size: 48px;
+  font-weight: bold;
   color: #edf2f4;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 `;
 
-export const User = styled.p`
-  font-family: "Nunito";
-  font-weight: 600;
-  color: #edf2f4;
-  font-size: 20px;
+export const Subtitle = styled.p`
+  font-size: 18px;
+  font-weight: normal;
+  color: rgba(237, 242, 244, 0.75);
 `;
 
-export const Name = styled.p`
-  font-family: "Nunito";
-  font-weight: 700;
-  color: #edf2f4;
-  font-size: 24px;
-`;
-
-export const InputText = styled.input`
-  background-color: #edf2f4 !important;
-  font-size: 18px !important;
-  border: 0 !important;
-  outline: 0 !important;
-  color: #8d99ae !important;
-  border-top-right-radius: 6px !important;
-  border-bottom-right-radius: 6px !important;
-  :focus {
-    box-shadow: none !important;
-  }
-  ::placeholder {
-    color: #8d99ae !important;
-    font-size: 18px !important;
-    font-family: "Nunito";
-  }
-  :-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 18px !important;
-    font-family: "Nunito";
-  }
-  ::-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 18px !important;
-    font-family: "Nunito";
-  }
-`;
-
-export const IconGroup = styled.div`
-  background-color: #edf2f4 !important;
-  border: 0 !important;
-  outline: 0 !important;
-  border-top-left-radius: 6px !important;
-  border-bottom-left-radius: 6px !important;
-`;
-
-export const Button = styled.button`
+export const Fridge = styled.button`
   overflow: hidden !important;
-  color: #edf2f4;
-  background-color: transparent;
-  display: inline-block;
-  text-align: center;
-  padding: 10px 0 !important;
+  color: #ffffff;
+  background-color: #ef233c;
+  font-size: 18px;
+  font-family: "Nunito";
+  border-radius: 40px;
   text-decoration: none !important;
-  overflow: hidden !important;
   border: none !important;
   text-align: center;
-  :focus {
-    color: #edf2f4 !important;
-    background-color: transparent !important;
+  font-weight: 600;
+  padding: 5px 30px !important;
+  :focus,
+  :active {
+    color: #ffffff !important;
+    background-color: #ef233c !important;
     outline: none !important;
     box-shadow: none !important;
   }
   :hover {
-    color: #edf2f4 !important;
-    background-color: transparent !important;
+    color: #ffffff !important;
+    background-color: #ef233c !important;
     outline: none !important;
     box-shadow: none !important;
   }
@@ -97,11 +54,10 @@ export const CategorySelected = styled.button`
   font-size: 16px;
   font-family: "Nunito";
   display: inline-block;
-  width: 170px;
   text-align: center;
   line-height: 1.5;
   border-radius: 40px;
-  padding: 2px 0 !important;
+  padding: 2px 14px !important;
   text-decoration: none !important;
   overflow: hidden !important;
   border: none !important;
@@ -111,7 +67,7 @@ export const CategorySelected = styled.button`
     overflow: hidden !important;
     font-size: 16px;
     font-family: "Nunito";
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     border: none !important;
     :active {
@@ -152,11 +108,10 @@ export const Category = styled.button`
   font-size: 16px;
   font-family: "Nunito";
   display: inline-block;
-  width: 170px;
   text-align: center;
   line-height: 1.5;
   border-radius: 40px;
-  padding: 2px 0 !important;
+  padding: 2px 14px !important;
   text-decoration: none !important;
   overflow: hidden !important;
   border: none !important;
@@ -166,7 +121,7 @@ export const Category = styled.button`
     overflow: hidden !important;
     font-size: 16px;
     font-family: "Nunito";
-    font-weight: 700;
+    font-weight: 600;
     color: #8d99ae;
     border: none !important;
     :active {
@@ -198,4 +153,40 @@ export const Category = styled.button`
     outline: none !important;
     box-shadow: none !important;
   }
+`;
+
+export const InputText = styled.input`
+  background-color: #edf2f4 !important;
+  font-size: 16px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  color: #8d99ae !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  :focus {
+    box-shadow: none !important;
+  }
+  ::placeholder {
+    color: #8d99ae !important;
+    font-size: 16px !important;
+    font-family: "Nunito";
+  }
+  :-ms-input-placeholder {
+    color: #8d99ae !important;
+    font-size: 16px !important;
+    font-family: "Nunito";
+  }
+  ::-ms-input-placeholder {
+    color: #8d99ae !important;
+    font-size: 16px !important;
+    font-family: "Nunito";
+  }
+`;
+
+export const IconGroup = styled.div`
+  background-color: #edf2f4 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
 `;

@@ -535,8 +535,7 @@ export const Select = styled.select`
       border: 0 !important;
       outline: none !important;
       box-shadow: none !important;
-      outline: 0px solid transparent !important;
-      outline-offset: 0px !important;
+      outline: none !important;
     }
   }
   .dropdown-menu {

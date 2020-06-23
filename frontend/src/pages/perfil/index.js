@@ -70,7 +70,6 @@ function Perfil(props) {
         <div className="row mx-1 mb-4 ">
           <div className="col-md-12 d-flex justify-content-center">
             <CategorySelected className="mr-3 mb-4 btn ">
-              {" "}
               <span>Receitas Salvas</span>
             </CategorySelected>
             <Category className="mr-3 mb-4 btn">
