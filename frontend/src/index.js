@@ -7,6 +7,7 @@ import "../node_modules/jquery/dist/jquery.min.js";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import "../node_modules/bootstrap-select/dist/css/bootstrap-select.css";
 import "../node_modules/bootstrap-select/dist/js/bootstrap-select.js";
+import "../node_modules/popper.js/dist/popper.js";
 
 ReactDOM.render(
   <React.StrictMode>
