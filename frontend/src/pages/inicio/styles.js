@@ -190,3 +190,12 @@ export const IconGroup = styled.div`
   border-top-left-radius: 6px !important;
   border-bottom-left-radius: 6px !important;
 `;
+
+export const Flag = styled.h3`
+  color: #2b2d42 !important;
+  font-size: 18px !important;
+  font-family: "Nunito";
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+`;

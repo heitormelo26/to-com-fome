@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar";
 import Receita from "../../components/Receita";
 import Contato from "../../components/Contato";
 import Footer from "../../components/Footer";
-import $ from "jquery";
 import {
   Container,
   Title,
@@ -14,35 +13,22 @@ import {
   CategorySelected,
   IconGroup,
   InputText,
+  Flag,
 } from "./styles";
 import ilustracao from "../../assets/images/ilustracao.png";
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Alemanha from "../../assets/images/alemanha.png";
+import Brasil from "../../assets/images/brasil.png";
+import China from "../../assets/images/china.png";
+import EUA from "../../assets/images/estados-unidos.png";
+import França from "../../assets/images/franca.png";
+import Japao from "../../assets/images/japao.png";
+import UK from "../../assets/images/reino-unido.png";
 
 function Inicio() {
-  $("#recipeCarousel").carousel({
-    interval: 10000,
-  });
-
-  $(".carousel .carousel-item").each(function () {
-    var next = $(this).next();
-    if (!next.length) {
-      next = $(this).siblings(":first");
-    }
-    next.children(":first-child").clone().appendTo($(this));
-
-    for (var i = 0; i < 2; i++) {
-      next = next.next();
-      if (!next.length) {
-        next = $(this).siblings(":first");
-      }
-
-      next.children(":first-child").clone().appendTo($(this));
-    }
-  });
-
   return (
     <div>
       <Navbar estaLogado={false} />
@@ -195,6 +181,12 @@ function Inicio() {
         </div>
         {/* Slide */}
         <Carousel
+          beforeChange={function (nextSlide, _ref2) {
+            var currentSlide = _ref2.currentSlide;
+            return alert(
+              "previous slide is " + currentSlide + " nextSlide is " + nextSlide
+            );
+          }}
           additionalTransfrom={0}
           arrows
           autoPlaySpeed={3000}
@@ -216,7 +208,7 @@ function Inicio() {
                 max: 3000,
                 min: 1024,
               },
-              items: 3,
+              items: 7,
               partialVisibilityGutter: 40,
             },
             mobile: {
@@ -241,11 +233,52 @@ function Inicio() {
           slidesToSlide={1}
           swipeable
         >
-          <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          <img src="https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
-          <img src="https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          <img src="https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          <img src="https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+          <div className="text-center">
+            <img
+              alt=""
+              width="100"
+              height="100"
+              className="mb-4"
+              src={Alemanha}
+            />
+            <Flag className="text-center">Alemanha</Flag>
+          </div>
+          <div className="text-center">
+            <img
+              alt=""
+              width="100"
+              height="100"
+              className="mb-4"
+              src={Brasil}
+            />
+            <Flag className="text-center">Brasil</Flag>
+          </div>
+          <div className="text-center">
+            <img alt="" width="100" height="100" className="mb-4" src={China} />
+            <Flag className="text-center">China</Flag>
+          </div>
+          <div className="text-center">
+            <img alt="" width="100" height="100" className="mb-4" src={EUA} />
+            <Flag className="text-center">Estados Unidos</Flag>
+          </div>
+          <div className="text-center">
+            <img
+              alt=""
+              width="100"
+              height="100"
+              className="mb-4"
+              src={França}
+            />
+            <Flag className="text-center">França</Flag>
+          </div>
+          <div className="text-center">
+            <img alt="" width="100" height="100" className="mb-4" src={Japao} />
+            <Flag className="text-center">Japão</Flag>
+          </div>
+          <div className="text-center">
+            <img alt="" width="100" height="100" className="mb-4" src={UK} />
+            <Flag className="text-center">Reino Unido</Flag>
+          </div>
         </Carousel>
         {/* Slide */}
       </div>
