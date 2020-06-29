@@ -2,9 +2,10 @@ import styled from "styled-components";
 import "../../assets/fonts/fonts.css";
 
 export const Image = styled.img`
-  height: 170px;
+  max-height: 170px;
   width: 270px;
   border-radius: 20px;
+  object-fit: cover;
 `;
 
 export const Title = styled.h2`

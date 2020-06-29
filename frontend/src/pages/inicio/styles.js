@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import "../../assets/fonts/fonts.css";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   background-color: #2b2d42 !important;
@@ -198,4 +199,17 @@ export const Flag = styled.h3`
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: bold;
+`;
+
+export const More = styled(Link)`
+  color: #ef233c !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Nunito";
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
