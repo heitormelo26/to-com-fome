@@ -19,7 +19,6 @@ import {
 import ilustracao from "../../assets/images/ilustracao.png";
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiArrowRight } from "@mdi/js";
-import "react-multi-carousel/lib/styles.css";
 import Alemanha from "../../assets/images/alemanha.png";
 import Brasil from "../../assets/images/brasil.png";
 import China from "../../assets/images/china.png";
