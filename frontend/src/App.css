@@ -175,3 +175,36 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .carousel-inner .carousel-item-left {
   transform: translateX(0);
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(0, 0, 0) !important;
+}
+
+.slick-center > div > div > h3 {
+  display: block !important;
+  color: #2b2d42 !important;
+  font-size: 16px !important;
+  font-family: "Nunito" !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  font-weight: bold !important;
+  transition: all 1000ms ease;
+}
+
+.slick-slide {
+  transition: all 1000ms ease;
+}
+
+.slick-slide:not(.slick-center) > div > div > div {
+  height: 150px !important;
+  transition: all 1000ms ease;
+  opacity: 80%;
+}
+
+.slick-center > div > div > div > img {
+  width: 100px !important;
+  height: 100px !important;
+  margin-bottom: 24px;
+  transition: all 1000ms ease;
+}

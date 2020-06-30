@@ -14,13 +14,11 @@ import {
   CategorySelected,
   IconGroup,
   InputText,
-  Flags,
   More,
 } from "./styles";
 import ilustracao from "../../assets/images/ilustracao.png";
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiArrowRight } from "@mdi/js";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Alemanha from "../../assets/images/alemanha.png";
 import Brasil from "../../assets/images/brasil.png";
@@ -29,9 +27,49 @@ import EUA from "../../assets/images/estados-unidos.png";
 import França from "../../assets/images/franca.png";
 import Japao from "../../assets/images/japao.png";
 import UK from "../../assets/images/reino-unido.png";
-import $ from "jquery";
+import Slider from "react-slick";
 
 function Inicio() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplaySpeed: 5000,
+    centerMode: true,
+    centerPadding: "10px",
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+    ],
+  };
   return (
     <div>
       <Navbar estaLogado={true} />
@@ -205,189 +243,75 @@ function Inicio() {
         </div>
         {/* Slide */}
         <div className="row my-5">
-          <div className="col-md-12 ">
-            <Carousel
-              beforeChange={function (nextSlide, current) {
-                var total = current.totalItems;
-                var next = nextSlide + 3;
-                var prev = current.currentSlide + 3;
-                var item = ".react-multi-carousel-item";
-                var attr = "data-index";
-                var flags = document.getElementsByClassName("flag");
-                for (let i = 0; i < total; i++) {
-                  if ($(item)[i].getAttribute(attr) === next.toString()) {
-                    flags[next].className = "flag text-center bg-warning ";
-                    var titles = document.getElementsByClassName("flag-title");
-                    titles[next].className = "flag-title text-center d-block";
-                  } else if (
-                    $(item)[i].getAttribute(attr) === prev.toString()
-                  ) {
-                    flags[prev].className = "flag text-center bg-danger";
-                    var titles2 = document.getElementsByClassName("flag-title");
-                    titles2[prev].className = "flag-title text-center d-none";
-                  }
-                }
-              }}
-              infinite={false}
-              additionalTransfrom={0}
-              arrows
-              autoPlaySpeed={3000}
-              centerMode={false}
-              className="text-center"
-              containerClass="container"
-              dotListClass=""
-              draggable
-              focusOnSelect={false}
-              itemClass=""
-              keyBoardControl
-              minimumTouchDrag={50}
-              removeArrowOnDeviceType={["tablet", "mobile"]}
-              renderButtonGroupOutside={false}
-              renderDotsOutside={false}
-              responsive={{
-                desktop: {
-                  breakpoint: {
-                    max: 3000,
-                    min: 1024,
-                  },
-                  items: 7,
-                  partialVisibilityGutter: 60,
-                },
-                tablet: {
-                  breakpoint: {
-                    max: 1024,
-                    min: 464,
-                  },
-                  items: 3,
-                  partialVisibilityGutter: 50,
-                },
-                mobile: {
-                  breakpoint: {
-                    max: 464,
-                    min: 0,
-                  },
-                  items: 1,
-                  partialVisibilityGutter: 30,
-                },
-              }}
-              showDots={false}
-              sliderClass=""
-              slidesToSlide={1}
-              swipeable
-            >
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={Alemanha}
-                />
+          <div className="col-md-12">
+            <Slider {...settings}>
+              <div key={0} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={Alemanha} />
+                </div>
                 <h3 className="d-none text-center flag-title">Alemanha</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={Brasil}
-                />
+              </div>
+              <div key={1} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={Brasil} />
+                </div>
                 <h3 className="d-none text-center flag-title">Brasil</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={China}
-                />
+              </div>
+              <div key={2} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={China} />
+                </div>
                 <h3 className="d-none text-center flag-title">China</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={EUA}
-                />
-                <h3 className="text-center flag-title">Estados Unidos</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={França}
-                />
+              </div>
+              <div key={3} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={EUA} />
+                </div>
+                <h3 className="d-none text-center flag-title">EUA</h3>
+              </div>
+              <div key={4} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={França} />
+                </div>
                 <h3 className="d-none text-center flag-title">França</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={Japao}
-                />
+              </div>
+              <div key={5} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={Japao} />
+                </div>
                 <h3 className="d-none text-center flag-title">Japão</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={UK}
-                />
-                <h3 className="d-none text-center flag-title">Reino Unido</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={Alemanha}
-                />
-                <h3 className="d-none text-center flag-title">Alemanha</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={Brasil}
-                />
-                <h3 className="d-none text-center flag-title">Brasil</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={China}
-                />
-                <h3 className="d-none text-center flag-title">China</h3>
-              </Flags>
-              <Flags className="flag text-center">
-                <img
-                  alt=""
-                  width="100"
-                  height="100"
-                  className="mb-4"
-                  src={EUA}
-                />
-                <h3 className="d-none text-center flag-title">
-                  Estados Unidos
-                </h3>
-              </Flags>
-            </Carousel>
+              </div>
+              <div key={6} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={UK} />
+                </div>
+                <h3 className="d-none text-center flag-title">UK</h3>
+              </div>
+              <div key={7} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={Alemanha} />
+                </div>
+                <h3 className="d-none text-center flag-title">Alemanha 2</h3>
+              </div>
+              <div key={8} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={Brasil} />
+                </div>
+                <h3 className="d-none text-center flag-title">Brasil 2</h3>
+              </div>
+              <div key={9} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={China} />
+                </div>
+                <h3 className="d-none text-center flag-title">China 2</h3>
+              </div>
+              <div key={10} className="flag text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <img alt="" width="75" height="75" src={EUA} />
+                </div>
+                <h3 className="d-none text-center flag-title">EUA 2</h3>
+              </div>
+            </Slider>
           </div>
         </div>
         {/* Slide */}
