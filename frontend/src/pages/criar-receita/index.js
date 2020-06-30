@@ -24,33 +24,15 @@ import { mdiMagnify, mdiClose, mdiTrashCan } from "@mdi/js";
 import "../../App.css";
 
 function CriarReceita() {
-  const [nomeArquivo, setNomeArquivo] = useState(
-    "Nenhum arquivo selecionado..."
-  );
+  const [nomeArquivo, setNomeArquivo] = useState("Selecionar...");
 
   const [arquivo, setArquivo] = useState();
 
   return (
-    <div className="container">
-      <button
-        type="button"
-        className="m-5 btn btn-primary"
-        data-toggle="modal"
-        data-target="#modalPaginaUm"
-      >
-        Criar receita
-      </button>
-      <button
-        type="button"
-        className="m-5 btn btn-primary"
-        data-toggle="modal"
-        data-target="#modalPaginaDois"
-      >
-        Criar receita pag 2
-      </button>
+    <div>
       <div
         className="modal fade"
-        id="modalPaginaUm"
+        id="criarReceita1"
         tabindex="-1"
         role="dialog"
         aria-hidden="true"
@@ -134,7 +116,7 @@ function CriarReceita() {
                   className="btn btn-primary"
                   data-toggle="modal"
                   data-dismiss="modal"
-                  data-target="#modalPaginaDois"
+                  data-target="#criarReceita2"
                 >
                   <span>Próximo</span>
                 </button>
@@ -146,7 +128,7 @@ function CriarReceita() {
       {/* SEGUNDA PÁGINA DO POP-UP */}
       <div
         className="modal fade"
-        id="modalPaginaDois"
+        id="criarReceita2"
         tabindex="-1"
         role="dialog"
         aria-hidden="true"

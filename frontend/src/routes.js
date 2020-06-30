@@ -14,7 +14,7 @@ import Inicio from "./pages/inicio";
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Entrar} />
+      <Route exact path="/entrar" component={Entrar} />
       <Route exact path="/cadastrar" component={Cadastrar} />
       <Route exact path="/teste" component={Teste} />
       <Route exact path="/receita" component={Receita} />
@@ -23,7 +23,7 @@ const Routes = () => (
       <Route exact path="/criar" component={CriarReceita} />
       <Route exact path="/ingredientes" component={Ingredientes} />
       <Route exact path="/editar-perfil" component={EditarPerfil} />
-      <Route exact path="/inicio" component={Inicio} />
+      <Route exact path="/" component={Inicio} />
     </Switch>
   </BrowserRouter>
 );

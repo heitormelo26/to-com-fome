@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Receita from "../../components/Receita";
 import Contato from "../../components/Contato";
 import Footer from "../../components/Footer";
+import Ingredientes from "../ingredientes";
 import {
   Container,
   Title,
@@ -13,7 +14,7 @@ import {
   CategorySelected,
   IconGroup,
   InputText,
-  Flag,
+  Flags,
   More,
 } from "./styles";
 import ilustracao from "../../assets/images/ilustracao.png";
@@ -33,7 +34,7 @@ import $ from "jquery";
 function Inicio() {
   return (
     <div>
-      <Navbar estaLogado={false} />
+      <Navbar estaLogado={true} />
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -48,9 +49,15 @@ function Inicio() {
                       <br /> gente te indica quais receitas podem ser
                       <br /> feitas com eles.
                     </Subtitle>
-                    <Fridge type="button" class="btn">
+                    <Fridge
+                      type="button"
+                      class="btn"
+                      modal={true}
+                      target="criarReceita1"
+                    >
                       O que tem na sua geladeira?
                     </Fridge>
+                    <Ingredientes />
                   </div>
                   <div className="col-md-6 d-flex justify-content-center align-items-center">
                     <img className="w-75 p-3" src={ilustracao} alt="" />
@@ -62,30 +69,30 @@ function Inicio() {
         </div>
         <div className="row mb-4">
           <div className="col-md-12 mb-4 d-flex justify-content-center align-items-center">
-            <CategorySelected className="mr-3 btn">
+            <CategorySelected className="mr-3 text-center text-truncate btn">
               <span>Todas</span>
             </CategorySelected>
-            <Category className="mr-3 btn">
+            <Category className="mr-3 text-center text-truncate btn">
               <span>Café da manhã</span>
             </Category>
-            <Category className="mr-3 btn">
+            <Category className="mr-3 text-center text-truncate btn">
               <span>Brunch</span>
             </Category>
-            <Category className="mr-3 btn">
+            <Category className="mr-3 text-center text-truncate btn">
               <span>Almoço</span>
             </Category>
-            <Category className="mr-3 btn">
+            <Category className="mr-3 text-center text-truncate btn">
               <span>Lanche</span>
             </Category>
-            <Category className="mr-3 btn">
+            <Category className="mr-3 text-center text-truncate btn">
               <span>Jantar</span>
             </Category>
-            <Category className="btn">
+            <Category className="text-center text-truncate btn">
               <span>Sobremesa</span>
             </Category>
           </div>
-          <div className="col-md-12 d-flex justify-content-center align-items-center">
-            <div className="input-group mb-2">
+          <div className="col-md-12 mb-4 d-flex justify-content-center align-items-center">
+            <div className="input-group">
               <div className="input-group-prepend">
                 <IconGroup className="input-group-text">
                   <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
@@ -100,84 +107,84 @@ function Inicio() {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               titulo="Receita 1"
               usuario="TotozinDelas"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
               titulo="Receita 2"
               usuario="Zezezinho"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
               titulo="Receita 3"
               usuario="Fitipaldi"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
               titulo="Receita 4"
               usuario="Ana Carolina Carol"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               titulo="Receita 1"
               usuario="TotozinDelas"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
               titulo="Receita 2"
               usuario="Zezezinho"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
               titulo="Receita 3"
               usuario="Fitipaldi"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
               titulo="Receita 4"
               usuario="Ana Carolina Carol"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               titulo="Receita 1"
               usuario="TotozinDelas"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
               titulo="Receita 2"
               usuario="Zezezinho"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
               titulo="Receita 3"
               usuario="Fitipaldi"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
               titulo="Receita 4"
@@ -209,26 +216,32 @@ function Inicio() {
                 var flags = document.getElementsByClassName("flag");
                 for (let i = 0; i < total; i++) {
                   if ($(item)[i].getAttribute(attr) === next.toString()) {
-                    flags[next].className = "flag text-center bg-warning";
+                    flags[next].className = "flag text-center bg-warning ";
+                    var titles = document.getElementsByClassName("flag-title");
+                    titles[next].className = "flag-title text-center d-block";
                   } else if (
                     $(item)[i].getAttribute(attr) === prev.toString()
                   ) {
                     flags[prev].className = "flag text-center bg-danger";
+                    var titles = document.getElementsByClassName("flag-title");
+                    titles[prev].className = "flag-title text-center d-none";
                   }
                 }
               }}
+              infinite={false}
               additionalTransfrom={0}
               arrows
               autoPlaySpeed={3000}
               centerMode={false}
-              className=""
+              className="text-center"
               containerClass="container"
               dotListClass=""
               draggable
               focusOnSelect={false}
               itemClass=""
               keyBoardControl
-              minimumTouchDrag={80}
+              minimumTouchDrag={50}
+              removeArrowOnDeviceType={["tablet", "mobile"]}
               renderButtonGroupOutside={false}
               renderDotsOutside={false}
               responsive={{
@@ -238,7 +251,15 @@ function Inicio() {
                     min: 1024,
                   },
                   items: 7,
-                  partialVisibilityGutter: 40,
+                  partialVisibilityGutter: 60,
+                },
+                tablet: {
+                  breakpoint: {
+                    max: 1024,
+                    min: 464,
+                  },
+                  items: 3,
+                  partialVisibilityGutter: 50,
                 },
                 mobile: {
                   breakpoint: {
@@ -248,21 +269,13 @@ function Inicio() {
                   items: 1,
                   partialVisibilityGutter: 30,
                 },
-                tablet: {
-                  breakpoint: {
-                    max: 1024,
-                    min: 464,
-                  },
-                  items: 2,
-                  partialVisibilityGutter: 30,
-                },
               }}
               showDots={false}
               sliderClass=""
               slidesToSlide={1}
               swipeable
             >
-              <div className="flag text-center">
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -270,9 +283,9 @@ function Inicio() {
                   className="mb-4"
                   src={Alemanha}
                 />
-                <Flag className="text-center">Alemanha</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">Alemanha</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -280,9 +293,9 @@ function Inicio() {
                   className="mb-4"
                   src={Brasil}
                 />
-                <Flag className="text-center">Brasil</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">Brasil</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -290,9 +303,9 @@ function Inicio() {
                   className="mb-4"
                   src={China}
                 />
-                <Flag className="text-center">China</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">China</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -300,9 +313,9 @@ function Inicio() {
                   className="mb-4"
                   src={EUA}
                 />
-                <Flag className="text-center">Estados Unidos</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="text-center flag-title">Estados Unidos</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -310,9 +323,9 @@ function Inicio() {
                   className="mb-4"
                   src={França}
                 />
-                <Flag className="text-center">França</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">França</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -320,9 +333,9 @@ function Inicio() {
                   className="mb-4"
                   src={Japao}
                 />
-                <Flag className="text-center">Japão</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">Japão</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -330,9 +343,9 @@ function Inicio() {
                   className="mb-4"
                   src={UK}
                 />
-                <Flag className="text-center">Reino Unido</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">Reino Unido</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -340,9 +353,9 @@ function Inicio() {
                   className="mb-4"
                   src={Alemanha}
                 />
-                <Flag className="text-center">Alemanha</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">Alemanha</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -350,9 +363,9 @@ function Inicio() {
                   className="mb-4"
                   src={Brasil}
                 />
-                <Flag className="text-center">Brasil</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">Brasil</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -360,9 +373,9 @@ function Inicio() {
                   className="mb-4"
                   src={China}
                 />
-                <Flag className="text-center">China</Flag>
-              </div>
-              <div className="flag text-center">
+                <h3 className="d-none text-center flag-title">China</h3>
+              </Flags>
+              <Flags className="flag text-center">
                 <img
                   alt=""
                   width="100"
@@ -370,8 +383,10 @@ function Inicio() {
                   className="mb-4"
                   src={EUA}
                 />
-                <Flag className="text-center">Estados Unidos</Flag>
-              </div>
+                <h3 className="d-none text-center flag-title">
+                  Estados Unidos
+                </h3>
+              </Flags>
             </Carousel>
           </div>
         </div>

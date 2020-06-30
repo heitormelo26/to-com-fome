@@ -213,3 +213,5 @@ export const More = styled(Link)`
   align-items: center;
   justify-content: center;
 `;
+
+export const Flags = styled.div``;

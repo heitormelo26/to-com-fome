@@ -12,12 +12,14 @@ export const Title = styled.h2`
   font-size: 22px;
   color: #2b2d42;
   font-weight: 600;
+  max-width: 150px;
   font-family: "Nunito";
 `;
 
 export const Subtitle = styled.p`
   font-size: 14px;
   color: #8d99ae;
+  max-width: 150px;
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Nunito";
