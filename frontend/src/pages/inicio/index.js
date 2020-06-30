@@ -52,8 +52,8 @@ function Inicio() {
                     <Fridge
                       type="button"
                       class="btn"
-                      modal={true}
-                      target="criarReceita1"
+                      data-toggle="modal"
+                      data-target="#ingredientes"
                     >
                       O que tem na sua geladeira?
                     </Fridge>
@@ -223,8 +223,8 @@ function Inicio() {
                     $(item)[i].getAttribute(attr) === prev.toString()
                   ) {
                     flags[prev].className = "flag text-center bg-danger";
-                    var titles = document.getElementsByClassName("flag-title");
-                    titles[prev].className = "flag-title text-center d-none";
+                    var titles2 = document.getElementsByClassName("flag-title");
+                    titles2[prev].className = "flag-title text-center d-none";
                   }
                 }
               }}
