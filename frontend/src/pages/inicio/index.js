@@ -18,7 +18,12 @@ import {
 } from "./styles";
 import ilustracao from "../../assets/images/ilustracao.png";
 import Icon from "@mdi/react";
-import { mdiMagnify, mdiArrowRight } from "@mdi/js";
+import {
+  mdiMagnify,
+  mdiArrowRight,
+  mdiArrowRightCircle,
+  mdiArrowLeftCircle,
+} from "@mdi/js";
 import Alemanha from "../../assets/images/alemanha.png";
 import Brasil from "../../assets/images/brasil.png";
 import China from "../../assets/images/china.png";
@@ -27,23 +32,54 @@ import França from "../../assets/images/franca.png";
 import Japao from "../../assets/images/japao.png";
 import UK from "../../assets/images/reino-unido.png";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 function Inicio() {
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <Icon
+        path={mdiArrowRightCircle}
+        className={className}
+        color="#8d99ae"
+        size={1}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <Icon
+        path={mdiArrowLeftCircle}
+        className={className}
+        color="#8d99ae"
+        size={1}
+        onClick={onClick}
+      />
+    );
+  }
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 7,
     slidesToScroll: 1,
+    swipeToSlide: true,
     arrows: true,
     autoplaySpeed: 5000,
     centerMode: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     centerPadding: "10px",
     responsive: [
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 7,
+          swipeToSlide: true,
           slidesToScroll: 1,
         },
       },
@@ -52,6 +88,7 @@ function Inicio() {
         settings: {
           slidesToShow: 5,
           slidesToScroll: 1,
+          swipeToSlide: true,
           arrows: false,
           centerMode: true,
           centerPadding: "0px",
@@ -62,6 +99,7 @@ function Inicio() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          swipeToSlide: true,
           arrows: false,
           centerMode: true,
           centerPadding: "0px",
@@ -96,7 +134,7 @@ function Inicio() {
                     </Fridge>
                     <Ingredientes />
                   </div>
-                  <div className="col-md-6 d-flex justify-content-center align-items-center">
+                  <div className="col-md-6 d-flex justify-content-end align-items-center">
                     <img className="w-75 p-3" src={ilustracao} alt="" />
                   </div>
                 </div>
@@ -246,45 +284,73 @@ function Inicio() {
             <Slider {...settings}>
               <div key={0} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={Alemanha} />
+                  <Link to="../buscar/alemanha">
+                    <img alt="" width="75" height="75" src={Alemanha} />
+                  </Link>
                 </div>
-                <h3 className="d-none text-center flag-title">Alemanha</h3>
+                <Link className="text-decoration-none " to="../buscar/alemanha">
+                  <h3 className="d-none text-center flag-title">Alemanha</h3>
+                </Link>
               </div>
               <div key={1} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={Brasil} />
+                  <Link className="text-decoration-none " to="../buscar/brasil">
+                    <img alt="" width="75" height="75" src={Brasil} />
+                  </Link>
                 </div>
-                <h3 className="d-none text-center flag-title">Brasil</h3>
+                <Link className="text-decoration-none " to="../buscar/brasil">
+                  <h3 className="d-none text-center flag-title">Brasil</h3>
+                </Link>
               </div>
               <div key={2} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={China} />
+                  <Link className="text-decoration-none " to="../buscar/china">
+                    <img alt="" width="75" height="75" src={China} />
+                  </Link>
                 </div>
-                <h3 className="d-none text-center flag-title">China</h3>
+                <Link className="text-decoration-none " to="../buscar/china">
+                  <h3 className="d-none text-center flag-title">China</h3>
+                </Link>
               </div>
               <div key={3} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={EUA} />
+                  <Link className="text-decoration-none " to="../buscar/eua">
+                    <img alt="" width="75" height="75" src={EUA} />
+                  </Link>
                 </div>
-                <h3 className="d-none text-center flag-title">EUA</h3>
+                <Link className="text-decoration-none " to="../buscar/eua">
+                  <h3 className="d-none text-center flag-title">EUA</h3>
+                </Link>
               </div>
               <div key={4} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={França} />
+                  <Link className="text-decoration-none " to="../buscar/franca">
+                    <img alt="" width="75" height="75" src={França} />
+                  </Link>
                 </div>
-                <h3 className="d-none text-center flag-title">França</h3>
+                <Link className="text-decoration-none " to="../buscar/franca">
+                  <h3 className="d-none text-center flag-title">França</h3>
+                </Link>
               </div>
               <div key={5} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={Japao} />
+                  <Link className="text-decoration-none " to="../buscar/japao">
+                    <img alt="" width="75" height="75" src={Japao} />
+                  </Link>
                 </div>
-                <h3 className="d-none text-center flag-title">Japão</h3>
+                <Link className="text-decoration-none " to="../buscar/japao">
+                  <h3 className="d-none text-center flag-title">Japão</h3>
+                </Link>
               </div>
               <div key={6} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={UK} />
+                  <Link className="text-decoration-none " to="../buscar/uk">
+                    <img alt="" width="75" height="75" src={UK} />
+                  </Link>
                 </div>
-                <h3 className="d-none text-center flag-title">UK</h3>
+                <Link className="text-decoration-none " to="../buscar/uk">
+                  <h3 className="d-none text-center flag-title">UK</h3>
+                </Link>
               </div>
               <div key={7} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">

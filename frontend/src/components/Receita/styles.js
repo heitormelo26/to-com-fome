@@ -9,6 +9,16 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.h2`
+  a,
+  a:hover,
+  a:visited,
+  a:active {
+    font-size: 22px;
+    color: #2b2d42;
+    font-weight: 600;
+    max-width: 150px;
+    font-family: "Nunito";
+  }
   font-size: 22px;
   color: #2b2d42;
   font-weight: 600;

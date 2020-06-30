@@ -97,11 +97,10 @@ export const CategorySelected = styled.button`
   font-size: 16px;
   font-family: "Nunito";
   display: inline-block;
-  width: 170px;
   text-align: center;
   line-height: 1.5;
   border-radius: 40px;
-  padding: 2px 0 !important;
+  padding: 2px 14px !important;
   text-decoration: none !important;
   overflow: hidden !important;
   border: none !important;
@@ -111,7 +110,7 @@ export const CategorySelected = styled.button`
     overflow: hidden !important;
     font-size: 16px;
     font-family: "Nunito";
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     border: none !important;
     :active {
@@ -152,11 +151,10 @@ export const Category = styled.button`
   font-size: 16px;
   font-family: "Nunito";
   display: inline-block;
-  width: 170px;
   text-align: center;
   line-height: 1.5;
   border-radius: 40px;
-  padding: 2px 0 !important;
+  padding: 2px 14px !important;
   text-decoration: none !important;
   overflow: hidden !important;
   border: none !important;
@@ -166,7 +164,7 @@ export const Category = styled.button`
     overflow: hidden !important;
     font-size: 16px;
     font-family: "Nunito";
-    font-weight: 700;
+    font-weight: 600;
     color: #8d99ae;
     border: none !important;
     :active {

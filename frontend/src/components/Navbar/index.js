@@ -40,7 +40,7 @@ export default function Navbar(props) {
 
   return (
     <nav className="mb-4 d-flex justify-content-center navbar navbar-expand-lg navbar-light bg-white px-5 py-3 d-flex align-items-center">
-      <NavbarTitle className="navbar-brand m-0" to="#">
+      <NavbarTitle className="navbar-brand m-0" to="/">
         Tô Com Fome
       </NavbarTitle>
       <NavLinks className="d-none d-sm-none collapse navbar-collapse d-flex align-items-center">
