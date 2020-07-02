@@ -10,6 +10,8 @@ import CriarReceita from "./pages/criar-receita";
 import Ingredientes from "./pages/ingredientes";
 import EditarPerfil from "./pages/editar-perfil";
 import Inicio from "./pages/inicio";
+import EsqueceuSenha from "./pages/esqueceu-senha";
+import DefinirSenha from "./pages/definir-senha";
 
 const Routes = () => (
   <BrowserRouter>
@@ -24,6 +26,8 @@ const Routes = () => (
       <Route exact path="/ingredientes" component={Ingredientes} />
       <Route exact path="/editar-perfil" component={EditarPerfil} />
       <Route exact path="/" component={Inicio} />
+      <Route exact path="/esqueceu-senha" component={EsqueceuSenha} />
+      <Route exact path="/definir-senha" component={DefinirSenha} />
     </Switch>
   </BrowserRouter>
 );
