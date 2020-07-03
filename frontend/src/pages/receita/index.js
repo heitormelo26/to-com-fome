@@ -37,7 +37,7 @@ function Receita(props) {
             <Image
               src="https://cdn.panelinha.com.br/receita/1584371597251-macarr%C3%A3o%20roxo.jpg"
               alt="Macarrão Roxo de Beterraba Assada"
-              className="w-100"
+              className="img-fluid w-100"
             />
           </div>
           <div className="col-md-6 mt-5">

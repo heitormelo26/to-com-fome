@@ -71,7 +71,6 @@ export const Button = styled.button`
   background-color: transparent;
   display: inline-block;
   text-align: center;
-  padding: 10px 0 !important;
   text-decoration: none !important;
   overflow: hidden !important;
   border: none !important;

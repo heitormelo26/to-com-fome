@@ -23,7 +23,10 @@ function Perfil(props) {
       <Navbar estaLogado={true} />
       <div className="container mb-4">
         <Container className="row d-flex justify-content-end  mx-1 p-4 mb-5">
-          <Button type="button" className=" float-right h-auto btn btn-primary">
+          <Button
+            type="button"
+            className="px-3 float-right h-auto btn btn-primary"
+          >
             <Icon path={mdiPencil} size={0.8} color="#edf2f4" />
           </Button>
           <div className="col-md-12 d-flex justify-content-center">
@@ -80,7 +83,7 @@ function Perfil(props) {
             </div>
           </div>
         </div>
-        <div className="row d-flex justify-content-start">
+        <div className="row">
           <div className="col-md-3 mb-2 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"

@@ -87,7 +87,7 @@ function Cadastrar() {
               google={"Cadastrar com o Google"}
               texto={[
                 "Já possui uma conta? ",
-                <Link to={"/"}>Entre agora!</Link>,
+                <Link to={"/entrar"}>Entre agora!</Link>,
               ]}
             />
           </div>

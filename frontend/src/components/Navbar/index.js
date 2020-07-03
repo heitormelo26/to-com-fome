@@ -8,7 +8,7 @@ export default function Navbar(props) {
       return (
         <ul className="navbar-nav ml-auto d-flex align-items-center">
           <li className="nav-item mr-5">
-            <NavbarLink className="nav-link" to="/">
+            <NavbarLink className="nav-link" to="/entrar">
               Sair
             </NavbarLink>
           </li>

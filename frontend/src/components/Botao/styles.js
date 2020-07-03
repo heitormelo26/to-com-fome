@@ -18,7 +18,6 @@ const botao = (cor) => {
 export const StyledLink = styled(Link)`
   text-decoration: none;
   border-radius: 40px;
-  width: 220px !important;
   display: inline-block !important;
   overflow: hidden !important;
   button {
@@ -27,12 +26,10 @@ export const StyledLink = styled(Link)`
     font-size: 18px;
     font-family: "Nunito";
     font-weight: 700;
-    display: inline-block;
-    width: 220px;
     text-align: center;
     line-height: 1.5;
     border-radius: 40px;
-    padding: 10px 0 !important;
+    padding: 8px 32px !important;
     text-decoration: none !important;
     span {
       overflow: hidden !important;

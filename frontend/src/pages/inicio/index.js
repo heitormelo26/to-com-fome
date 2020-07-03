@@ -36,7 +36,7 @@ import { Link } from "react-router-dom";
 
 function Inicio() {
   function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <Icon
         path={mdiArrowRightCircle}
@@ -49,7 +49,7 @@ function Inicio() {
   }
 
   function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <Icon
         path={mdiArrowLeftCircle}
@@ -281,7 +281,7 @@ function Inicio() {
         {/* Slide */}
         <div className="row my-5">
           <div className="col-md-12">
-            <Slider {...settings}>
+            <Slider {...settings} className="my-4">
               <div key={0} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">
                   <Link to="../buscar/alemanha">

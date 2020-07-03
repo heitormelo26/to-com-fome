@@ -6,7 +6,7 @@ import Pagination from "../../components/Pagination";
 import Receita from "../../components/Receita";
 import Botao from "../../components/Botao";
 import { Link } from "react-router-dom";
-import { Button, InputText, IconGroup, Container, Menu } from "./styles";
+import { Button, InputText, IconGroup, Container, Select } from "./styles";
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
 
@@ -32,81 +32,52 @@ export default function Buscar() {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-9 d-flex align-items-center">
-            <div className="mr-3 d-flex align-items-center">
-              <div className="dropdown">
-                <Button
-                  className="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  data-toggle="dropdown"
-                >
-                  <span className="pr-2">Categoria</span>
-                </Button>
-                <Menu className="dropdown-menu">
-                  <Link className="dropdown-item" to="/buscar/acompanhamentos">
-                    Acompanhamentos
-                  </Link>
-                  <Link className="dropdown-item" to="/buscar/massas">
-                    Massas
-                  </Link>
-                  <Link className="dropdown-item" to="/buscar/frutos-do-mar">
-                    Frutos do mar
-                  </Link>
-                </Menu>
-              </div>
-            </div>
-            <div className="mr-3 d-flex align-items-center">
-              <div className="dropdown">
-                <Button
-                  className="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  data-toggle="dropdown"
-                >
-                  <span className="pr-2">Tipo de refeição</span>
-                </Button>
-                <Menu className="dropdown-menu">
-                  <Link className="dropdown-item" to="/buscar/almoço">
-                    Almoço
-                  </Link>
-                  <Link className="dropdown-item" to="/buscar/jantar">
-                    Jantar
-                  </Link>
-                  <Link className="dropdown-item" to="/buscar/sobremesa">
-                    Sobremesa
-                  </Link>
-                </Menu>
-              </div>
-            </div>
-            <div className="mr-3 d-flex align-items-center">
-              <div className="dropdown">
-                <Button
-                  className="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  data-toggle="dropdown"
-                >
-                  <span className="pr-2">Nacionalidade</span>
-                </Button>
-                <Menu className="dropdown-menu">
-                  <Link className="dropdown-item" to="/buscar/brasileira">
-                    Brasileira
-                  </Link>
-                  <Link className="dropdown-item" to="/buscar/italiana">
-                    Italiana
-                  </Link>
-                  <Link className="dropdown-item" to="/buscar/grega">
-                    Grega
-                  </Link>
-                </Menu>
-              </div>
-            </div>
+          <div className="mb-3 col-md-3 d-flex align-items-center justify-content-start">
+            <Select
+              className="selectpicker show-tick"
+              data-live-search="true"
+              data-width="100%"
+              title="Categoria"
+              data-size="5"
+            >
+              <option>Entrada</option>
+              <option>Acompanhamento</option>
+              <option>Sobremesa</option>
+            </Select>
+          </div>
+          <div className="mb-3 col-md-3 d-flex align-items-center justify-content-start">
+            <Select
+              className="selectpicker show-tick"
+              data-live-search="true"
+              data-width="100%"
+              title="Refeição"
+              data-size="5"
+            >
+              <option>Almoço</option>
+              <option>Café da manhã</option>
+              <option>Jantar</option>
+            </Select>
+          </div>
+          <div className="mb-3 col-md-3 d-flex align-items-center justify-content-start">
+            <Select
+              className="selectpicker show-tick"
+              data-live-search="true"
+              data-width="100%"
+              title="Nacionalidade"
+              data-size="5"
+            >
+              <option>Brasileira</option>
+              <option>Alemã</option>
+              <option>Italiana</option>
+            </Select>
           </div>
           <div className="col-md-3 d-flex align-items-center justify-content-end">
             <Botao cor="vermelho" texto="Buscar" link="/buscar" />
           </div>
         </div>
       </Container>
-      <div className="container-fluid mb-4">
-        <div className="row d-flex justify-content-start">
+      <div className="container mb-4">
+        <div className="row">
           <div className="col-md-3 mb-2 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"

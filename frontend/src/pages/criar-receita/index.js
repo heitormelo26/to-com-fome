@@ -30,6 +30,14 @@ function CriarReceita() {
 
   return (
     <div>
+      <button
+        type="button"
+        class="btn"
+        data-toggle="modal"
+        data-target="#criarReceita1"
+      >
+        sdhfkshd
+      </button>
       <div
         className="modal fade"
         id="criarReceita1"
@@ -92,8 +100,19 @@ function CriarReceita() {
                   </div>
                 </div>
                 <div className="form-group mb-0">
-                  <input type="checkbox" />
-                  <Label className="ml-2">Manter receita privada</Label>
+                  <div className="pl-3 custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="ingredient5"
+                    />
+                    <Label
+                      className="custom-control-label ml-2"
+                      for="ingredient5"
+                    >
+                      Manter receita privada
+                    </Label>
+                  </div>
                 </div>
               </form>
             </div>

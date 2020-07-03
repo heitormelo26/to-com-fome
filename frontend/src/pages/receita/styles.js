@@ -5,8 +5,8 @@ import "../../assets/fonts/fonts.css";
 export const Image = styled.img`
   border-radius: 40px;
   width: 540px;
-  height: auto;
   max-height: 360px !important;
+  object-fit: cover;
 `;
 
 export const Tag = styled(Link)`
