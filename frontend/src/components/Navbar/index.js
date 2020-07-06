@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Botao";
-import { NavbarLink, NavbarTitle, NavLinks } from "./styles";
+import { NavbarLink, NavbarTitle, NavLinks, ButtonLink } from "./styles";
+import CriarReceita from "../../pages/criar-receita";
 
 export default function Navbar(props) {
   function estaLogado() {
@@ -18,7 +19,15 @@ export default function Navbar(props) {
             </NavbarLink>
           </li>
           <li className="nav-item d-flex align-items-center">
-            <Button cor="vermelho" texto="Enviar receita" link="/criar" />
+            <ButtonLink
+              className="btn"
+              type="button"
+              data-toggle="modal"
+              data-target="#criarReceita1"
+            >
+              Enviar receita
+            </ButtonLink>
+            <CriarReceita />
           </li>
         </ul>
       );

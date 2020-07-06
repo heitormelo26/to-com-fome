@@ -22,22 +22,20 @@ import Input from "../../components/Input";
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiClose, mdiTrashCan } from "@mdi/js";
 import "../../App.css";
+import $ from "jquery";
+import swal from "sweetalert";
 
 function CriarReceita() {
   const [nomeArquivo, setNomeArquivo] = useState("Selecionar...");
 
   const [arquivo, setArquivo] = useState();
 
+  function fechar() {
+    $("#criarReceita2").modal("hide");
+  }
+
   return (
     <div>
-      <button
-        type="button"
-        class="btn"
-        data-toggle="modal"
-        data-target="#criarReceita1"
-      >
-        sdhfkshd
-      </button>
       <div
         className="modal fade"
         id="criarReceita1"
@@ -262,19 +260,34 @@ function CriarReceita() {
               </form>
             </div>
             <div className="modal-footer">
-              <StyledLinkSecondary
-                to="/criar"
-                className="d-flex align-items-center"
-              >
-                <button type="button" className="btn btn-primary">
+              <StyledLinkSecondary className="d-flex align-items-center">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#criarReceita1"
+                  onClick={fechar()}
+                >
                   <span>Anterior</span>
                 </button>
               </StyledLinkSecondary>
-              <StyledLink to="/criar" className="d-flex align-items-center">
+              <StyledLink className="d-flex align-items-center">
                 <button
                   type="button"
                   data-dismiss="modal"
                   className="btn btn-primary"
+                  onClick={() => {
+                    swal(
+                      "Sua receita foi enviada!",
+                      "Para ver sua receita, vá no Perfil em 'Receitas Enviadas'.",
+                      "success",
+                      {
+                        closeOnEsc: true,
+                        closeOnClickOutside: true,
+                        button: "Fechar",
+                      }
+                    );
+                  }}
                 >
                   <span>Enviar</span>
                 </button>

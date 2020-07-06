@@ -11,6 +11,7 @@ import { Title, Subtitle, Container, LinkAccount } from "./styles";
 import "../../App.css";
 
 import Imagem from "../../assets/images/ilustracao.png";
+import EsqueceuSenha from "../esqueceu-senha";
 import { mdiLock, mdiEmail } from "@mdi/js";
 
 function Entrar() {
@@ -53,9 +54,15 @@ function Entrar() {
                 icone={mdiLock}
                 label={"senha"}
               />
-              <LinkAccount className="w-100 d-block text-right" href="/">
+              <LinkAccount
+                className="w-100 d-block text-right"
+                href="/"
+                data-toggle="modal"
+                data-target="#esqueceuSenha"
+              >
                 Esqueceu a senha?
               </LinkAccount>
+              <EsqueceuSenha />
               <div className="w-100 d-block my-4">
                 <Botao cor="vermelho" texto="Entrar" link="/" />
               </div>

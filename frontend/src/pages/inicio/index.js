@@ -23,6 +23,14 @@ import {
   mdiArrowRight,
   mdiArrowRightCircle,
   mdiArrowLeftCircle,
+  mdiBaguette,
+  mdiCupcake,
+  mdiPasta,
+  mdiPotSteam,
+  mdiFood,
+  mdiSilverwareVariant,
+  mdiPizza,
+  mdiFoodCroissant,
 } from "@mdi/js";
 import Alemanha from "../../assets/images/alemanha.png";
 import Brasil from "../../assets/images/brasil.png";
