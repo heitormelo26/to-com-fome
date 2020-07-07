@@ -70,7 +70,7 @@ export default function Buscar() {
               <option>Italiana</option>
             </Select>
           </div>
-          <div className="col-md-3 d-flex align-items-center justify-content-end">
+          <div className="col-md-3 d-flex align-items-start justify-content-end">
             <Botao cor="vermelho" texto="Buscar" link="/buscar" />
           </div>
         </div>
