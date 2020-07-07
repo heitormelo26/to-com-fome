@@ -326,7 +326,7 @@ export const Plus = styled.select`
   border: 0 !important;
   outline: 0 !important;
   border-radius: 6px !important;
-  padding: 8px 32px !important;
+  padding: 6px 32px !important;
   :focus {
     box-shadow: none !important;
   }

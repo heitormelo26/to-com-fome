@@ -54,7 +54,7 @@ export default function Ingredientes() {
                       <InputText
                         type="text"
                         placeholder="Buscar..."
-                        className="py-3 form-control d-inline-block"
+                        className="form-control d-inline-block"
                       />
                       <Plus
                         className="selectpicker show-tick ml-2"
