@@ -250,3 +250,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   outline: none !important;
   box-shadow: none !important;
 }
+
+::selection {
+  color: #ffffff !important;
+  background: #ef233c !important;
+}
+
+::-moz-selection {
+  color: #ffffff !important;
+  background: #ef233c !important;
+}

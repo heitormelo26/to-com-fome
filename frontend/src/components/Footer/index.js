@@ -9,7 +9,9 @@ export default function Footer(props) {
     >
       <div className="row w-100">
         <div className="col-md-12">
-          <Title cor={props.cor}>Tô Com Fome</Title>
+          <Title cor={props.cor} to="/">
+            Tô Com Fome
+          </Title>
         </div>
       </div>
       <Line cor={props.cor} />

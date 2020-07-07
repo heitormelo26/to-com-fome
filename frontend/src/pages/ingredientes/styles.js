@@ -33,10 +33,11 @@ export const Placeholder = styled.label`
 
 export const InputText = styled.input`
   background-color: #edf2f4 !important;
-  font-size: 18px !important;
+  font-size: 16px !important;
   border: 0 !important;
   outline: 0 !important;
   color: #8d99ae !important;
+  padding: 8px auto !important;
   border-top-right-radius: 6px !important;
   border-bottom-right-radius: 6px !important;
   :focus {
@@ -65,6 +66,7 @@ export const IconGroup = styled.div`
   outline: 0 !important;
   border-top-left-radius: 6px !important;
   border-bottom-left-radius: 6px !important;
+  padding: 8px auto !important;
 `;
 
 export const Modal = styled.div`
@@ -109,7 +111,7 @@ export const Category = styled.button`
   text-align: center;
   line-height: 1.5;
   border-radius: 40px;
-  padding: 2px 10px !important;
+  padding: 2px 14px !important;
   text-decoration: none !important;
   overflow: hidden !important;
   border: none !important;
@@ -119,7 +121,7 @@ export const Category = styled.button`
     overflow: hidden !important;
     font-size: 16px;
     font-family: "Nunito";
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     border: none !important;
     :active {
@@ -133,21 +135,21 @@ export const Category = styled.button`
       box-shadow: none !important;
     }
     :hover {
-      color: #ffffff;
-      background-color: #ef233c;
+      color: #ffffff !important;
+      background-color: #ef233c !important;
       outline: none !important;
       box-shadow: none !important;
     }
   }
   :focus {
-    color: #ffffff;
-    background-color: #ef233c;
+    color: #ffffff !important;
+    background-color: #ef233c !important;
     outline: none !important;
     box-shadow: none !important;
   }
   :hover {
-    color: #ffffff;
-    background-color: #ef233c;
+    color: #ffffff !important;
+    background-color: #ef233c !important;
     outline: none !important;
     box-shadow: none !important;
   }
@@ -316,7 +318,103 @@ export const Subtitle = styled.h5`
   text-transform: uppercase;
 `;
 
-export const Plus = styled.button`
+export const Plus = styled.select`
+  z-index: 5 !important;
+  background-color: #ef233c !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  border-radius: 6px !important;
+  padding: 8px 32px !important;
+  :focus {
+    box-shadow: none !important;
+  }
+  ::placeholder {
+    color: #fff !important;
+    font-size: 16px !important;
+    font-family: "Nunito";
+  }
+  :-ms-input-placeholder {
+    color: #fff !important;
+    font-size: 16px !important;
+    font-family: "Nunito";
+  }
+  ::-ms-input-placeholder {
+    color: #fff !important;
+    font-size: 16px !important;
+    font-family: "Nunito";
+  }
+  button {
+    background-color: #ef233c !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-family: "Nunito";
+    padding: 0 !important;
+    border: 0 !important;
+    div:focus,
+    :focus,
+    .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+    .bootstrap-select .dropdown-toggle:focus,
+    .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
+      border: 0 !important;
+      outline: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+  .dropdown-menu {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: #ef233c !important;
+    color: #fff !important;
+    border: none !important;
+    width: auto;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    .no-results {
+      background-color: #ef233c !important;
+      color: #fff !important;
+    }
+    :focus,
+    :active {
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+      font-size: 16px !important;
+      font-family: "Nunito" !important;
+      font-weight: normal !important;
+      background-color: #ef233c !important;
+      color: #fff !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      margin: 8px 0;
+    }
+    .bs-searchbox {
+      input {
+        background-color: #fff !important;
+        font-size: 16px !important;
+        border: 0 !important;
+        outline: 0 !important;
+        color: #ef233c !important;
+        border-radius: 6px !important;
+        :focus {
+          border: none !important;
+          outline: none !important;
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
+`;
+
+export const AAA = styled.select`
   overflow: hidden !important;
   color: #ffffff;
   background-color: #ef233c;

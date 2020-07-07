@@ -214,4 +214,69 @@ export const More = styled(Link)`
   justify-content: center;
 `;
 
-export const Flags = styled.div``;
+export const IconCategorySelected = styled.button`
+  color: #ffffff;
+  background-color: #ef233c;
+  font-size: 16px;
+  font-family: "Nunito";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 100%;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  padding: 6px !important;
+  border: none !important;
+  width: 30px !important;
+  height: 30px !important;
+  text-align: center;
+  :focus {
+    color: #ffffff !important;
+    background-color: #ef233c !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  :hover {
+    color: #ffffff !important;
+    background-color: #ef233c !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+`;
+
+export const IconCategory = styled.button`
+  color: #8d99ae;
+  background-color: #edf2f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 100%;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  padding: 6px !important;
+  border: none !important;
+  width: 30px !important;
+  height: 30px !important;
+  text-align: center;
+  :focus {
+    color: #8d99ae !important;
+    background-color: #edf2f4 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  :hover {
+    color: #8d99ae !important;
+    background-color: #edf2f4 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+`;
+
+export const CategoryTitle = styled.h2`
+  color: #2b2d42 !important;
+  font-size: 24px !important;
+  font-family: "Nunito";
+  font-weight: bold;
+`;

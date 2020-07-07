@@ -5,8 +5,7 @@ import Footer from "../../components/Footer";
 import Pagination from "../../components/Pagination";
 import Receita from "../../components/Receita";
 import Botao from "../../components/Botao";
-import { Link } from "react-router-dom";
-import { Button, InputText, IconGroup, Container, Select } from "./styles";
+import { InputText, IconGroup, Container, Select } from "./styles";
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
 

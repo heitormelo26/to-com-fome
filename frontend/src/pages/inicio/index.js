@@ -15,6 +15,9 @@ import {
   IconGroup,
   InputText,
   More,
+  IconCategory,
+  IconCategorySelected,
+  CategoryTitle,
 } from "./styles";
 import ilustracao from "../../assets/images/ilustracao.png";
 import Icon from "@mdi/react";
@@ -26,7 +29,6 @@ import {
   mdiBaguette,
   mdiCupcake,
   mdiPasta,
-  mdiPotSteam,
   mdiFood,
   mdiSilverwareVariant,
   mdiPizza,
@@ -151,7 +153,7 @@ function Inicio() {
           </div>
         </div>
         <div className="row mb-4">
-          <div className="col-md-12 mb-4 d-flex justify-content-center align-items-center">
+          <div className="col-md-12 mb-4 d-none d-sm-none d-md-flex d-l-flex d-xl-flex justify-content-center align-items-center">
             <CategorySelected className="mr-3 text-center text-truncate btn">
               <span>Todas</span>
             </CategorySelected>
@@ -174,6 +176,29 @@ function Inicio() {
               <span>Sobremesa</span>
             </Category>
           </div>
+          <div className="col-md-12 mb-4 d-flex d-sm-flex d-md-none d-l-none d-xl-none justify-content-center align-items-center">
+            <IconCategorySelected className="mr-3 text-center btn">
+              <Icon path={mdiSilverwareVariant} color="#ffffff" size={1} />
+            </IconCategorySelected>
+            <IconCategory className="mr-3 text-center btn">
+              <Icon path={mdiBaguette} color="#8d99ae" size={1} />
+            </IconCategory>
+            <IconCategory className="mr-3 text-center btn">
+              <Icon path={mdiFoodCroissant} color="#8d99ae" size={1} />
+            </IconCategory>
+            <IconCategory className="mr-3 text-center btn">
+              <Icon path={mdiPasta} color="#8d99ae" size={1} />
+            </IconCategory>
+            <IconCategory className="mr-3 text-center btn">
+              <Icon path={mdiFood} color="#8d99ae" size={1} />
+            </IconCategory>
+            <IconCategory className="mr-3 text-center btn">
+              <Icon path={mdiPizza} color="#8d99ae" size={1} />
+            </IconCategory>
+            <IconCategory className="text-center btn">
+              <Icon path={mdiCupcake} color="#8d99ae" size={1} />
+            </IconCategory>
+          </div>
           <div className="col-md-12 mb-4 d-flex justify-content-center align-items-center">
             <div className="input-group">
               <div className="input-group-prepend">
@@ -190,6 +215,9 @@ function Inicio() {
           </div>
         </div>
         <div className="row mb-5">
+          <div className="col-md-12 mb-5 d-flex d-sm-flex d-md-none d-l-none d-xl-none justify-content-center align-items-center">
+            <CategoryTitle className="m-0">Todas as receitas</CategoryTitle>
+          </div>
           <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
