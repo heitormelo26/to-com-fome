@@ -14,6 +14,8 @@ export const Tag = styled(Link)`
   font-weight: 700 !important;
   text-transform: uppercase;
   font-family: "Nunito";
+  width: auto !important;
+  display: flex !important;
   :hover {
     color: #ef233c;
     text-decoration: none;
@@ -160,5 +162,36 @@ export const PrepareText = styled.li`
     display: flex;
     align-items: start !important;
     margin-right: 12px;
+  }
+`;
+
+export const IconButton = styled.button`
+  overflow: hidden !important;
+  color: #ffffff;
+  background-color: #2b2b42;
+  font-size: 18px;
+  font-family: "Nunito";
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 6px !important;
+  text-decoration: none !important;
+  border: none !important;
+  text-align: center;
+  :focus {
+    color: #ffffff !important;
+    background-color: #2b2b42 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  :hover {
+    color: #ffffff !important;
+    background-color: #2b2b42 !important;
+    outline: none !important;
+    box-shadow: none !important;
   }
 `;

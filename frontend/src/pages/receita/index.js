@@ -23,41 +23,38 @@ import {
   ListOL,
   PrepareText,
   Description,
+  IconButton,
 } from "./styles";
 
 function Receita(props) {
-  let tags = ["massa", "brasileira", "vegano", "almoço", "jantar"];
+  let tags = ["massa", "brasileira", "vegano"];
 
   return (
     <div>
       <Navbar estaLogado={true} />
       <div className="container">
         <div className="row mb-5">
-          <div className="col-md-6">
+          <div className="col-md-6 col-12 col-sm-12 col-lg-6 col-xl-6">
             <Image
               src="https://cdn.panelinha.com.br/receita/1584371597251-macarr%C3%A3o%20roxo.jpg"
               alt="Macarrão Roxo de Beterraba Assada"
               className="img-fluid w-100"
             />
           </div>
-          <div className="col-md-6 mt-5">
-            <div className="row mb-4">
-              <div className="col-md-12">
-                {tags.map(function (tag) {
-                  return (
-                    <Tag to={`/buscar/categoria/${tag}`} className="mr-4">
+          <div className="col-md-6">
+            <div className="row">
+              {tags.map(function (tag) {
+                return (
+                  <div className="col-md-4 col-sm-4 col-4">
+                    <Tag to={`/buscar/categoria/${tag}`} className="">
                       {tag}
                     </Tag>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="row mb-3">
-              <div className="col-md-12">
+                  </div>
+                );
+              })}
+              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-12 d-flex">
                 <Title>Macarrão Roxo de Beterraba Assada</Title>
               </div>
-            </div>
-            <div className="row mb-4 d-flex align-items-center">
               <div className="col-md-4 d-flex align-items-center">
                 <Icon
                   path={mdiClockOutline}
@@ -88,8 +85,6 @@ function Receita(props) {
                 />
                 <IconText>por Rita Lobo</IconText>
               </div>
-            </div>
-            <div className="row">
               <div className="col-md-12">
                 <Description className="text-justify">
                   Parece prato de restaurante, de tão bonito que fica. Mas não
@@ -101,7 +96,7 @@ function Receita(props) {
             </div>
           </div>
         </div>
-        <div className="row mb-5 d-flex justify-content-center">
+        <div className="row mb-5 justify-content-center d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
           <Button
             type="Button"
             className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
@@ -113,7 +108,9 @@ function Receita(props) {
               color="#ffffff"
               className="mr-2"
             />
-            <span>Curtir</span>
+            <span className="d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
+              Curtir
+            </span>
           </Button>
           <Button
             type="Button"
@@ -124,9 +121,11 @@ function Receita(props) {
               title="Salvar"
               size={0.8}
               color="#ffffff"
-              className="mr-2"
+              className="mr-2 "
             />
-            <span>Salvar</span>
+            <span className="d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
+              Salvar
+            </span>
           </Button>
           <Button
             type="Button"
@@ -137,15 +136,49 @@ function Receita(props) {
               title="Compartilhar"
               size={0.8}
               color="#ffffff"
-              className="mr-2"
+              className="mr-2 "
             />
-            <span>Compartilhar</span>
+            <span className="d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
+              Compartilhar
+            </span>
           </Button>
+        </div>
+        <div className="row mb-5 d-flex justify-content-center d-sm-flex d-md-none d-l-none d-xl-none">
+          <IconButton
+            type="Button"
+            className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
+          >
+            <Icon path={mdiHeart} title="Curtir" size={0.8} color="#ffffff" />
+          </IconButton>
+          <IconButton
+            type="Button"
+            className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
+          >
+            <Icon
+              path={mdiBookmark}
+              title="Salvar"
+              size={0.8}
+              color="#ffffff"
+            />
+          </IconButton>
+          <IconButton
+            type="Button"
+            className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
+          >
+            <Icon
+              path={mdiShareVariant}
+              title="Compartilhar"
+              size={0.8}
+              color="#ffffff"
+            />
+          </IconButton>
         </div>
         <div className="row mb-5">
           <div className="col-md-6 mb-5">
             <div className="col-md-12">
-              <SecondTitle className="mb-4">Ingredientes</SecondTitle>
+              <SecondTitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                Ingredientes
+              </SecondTitle>
             </div>
             <div className="col-md-12">
               <ListUL>
@@ -167,7 +200,9 @@ function Receita(props) {
           </div>
           <div className="col-md-6 mb-5">
             <div className="col-md-12">
-              <SecondTitle className="mb-4">Modo de preparo</SecondTitle>
+              <SecondTitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                Modo de preparo
+              </SecondTitle>
             </div>
             <div className="col-md-12">
               <ListOL>
