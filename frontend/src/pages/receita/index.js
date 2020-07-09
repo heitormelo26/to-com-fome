@@ -27,35 +27,37 @@ import {
 } from "./styles";
 
 function Receita(props) {
-  let tags = ["massa", "brasileira", "vegano"];
+  let tags = ["massa", "brasileira", "vegano", "almoço"];
 
   return (
     <div>
       <Navbar estaLogado={true} />
       <div className="container">
         <div className="row mb-5">
-          <div className="col-md-6 col-12 col-sm-12 col-lg-6 col-xl-6">
+          <div className="col-md-6 col-12 col-sm-12 col-lg-6 col-xl-6 mb-5">
             <Image
               src="https://cdn.panelinha.com.br/receita/1584371597251-macarr%C3%A3o%20roxo.jpg"
               alt="Macarrão Roxo de Beterraba Assada"
               className="img-fluid w-100"
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 d-flex justify-content-center align-items-center ">
             <div className="row">
               {tags.map(function (tag) {
                 return (
-                  <div className="col-md-4 col-sm-4 col-4">
+                  <div className="col-md-3 col-sm-3 col-3 mb-3 d-flex justify-content-center">
                     <Tag to={`/buscar/categoria/${tag}`} className="">
                       {tag}
                     </Tag>
                   </div>
                 );
               })}
-              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-12 d-flex">
-                <Title>Macarrão Roxo de Beterraba Assada</Title>
+              <div className="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-12 d-flex mb-3  ">
+                <Title className="text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                  Macarrão Roxo de Beterraba Assada
+                </Title>
               </div>
-              <div className="col-md-4 d-flex align-items-center">
+              <div className="col-md-4 d-flex align-items-center col-4 col-sm-4 col-lg-4 col-xl-4 mb-3">
                 <Icon
                   path={mdiClockOutline}
                   title="Tempo de preparo"
@@ -65,7 +67,7 @@ function Receita(props) {
                 />
                 <IconText>1 hora</IconText>
               </div>
-              <div className="col-md-4 d-flex align-items-center">
+              <div className="col-md-4 col-4 col-sm-4 col-lg-4 col-xl-4 d-flex align-items-center mb-3">
                 <Icon
                   path={mdiSilverware}
                   title="Rendimento"
@@ -75,13 +77,13 @@ function Receita(props) {
                 />
                 <IconText>3 porções</IconText>
               </div>
-              <div className="col-md-4 d-flex align-items-center">
+              <div className="col-md-4 col-4 col-sm-4 col-lg-4 col-xl-4 d-flex align-items-center mb-3">
                 <Icon
                   path={mdiAccountOutline}
                   title="Usuário"
                   size={1}
                   color="#8D99AE"
-                  className="mr-2"
+                  className="mr-2 "
                 />
                 <IconText>por Rita Lobo</IconText>
               </div>
