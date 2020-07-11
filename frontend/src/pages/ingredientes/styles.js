@@ -45,18 +45,15 @@ export const InputText = styled.input`
   }
   ::placeholder {
     color: #8d99ae !important;
-    font-size: 18px !important;
-    font-family: "Nunito";
+    font-size: 16px !important;
   }
   :-ms-input-placeholder {
     color: #8d99ae !important;
-    font-size: 18px !important;
-    font-family: "Nunito";
+    font-size: 16px !important;
   }
   ::-ms-input-placeholder {
     color: #8d99ae !important;
-    font-size: 18px !important;
-    font-family: "Nunito";
+    font-size: 16px !important;
   }
 `;
 
@@ -319,6 +316,9 @@ export const Subtitle = styled.h5`
 `;
 
 export const Plus = styled.select`
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   z-index: 5 !important;
   background-color: #ef233c !important;
   color: #fff !important;
@@ -346,6 +346,14 @@ export const Plus = styled.select`
     font-family: "Nunito";
   }
   button {
+    .filter-option {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ef233c !important;
     color: #fff !important;
     font-size: 16px !important;

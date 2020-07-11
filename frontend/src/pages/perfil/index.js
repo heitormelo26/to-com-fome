@@ -57,17 +57,17 @@ function Perfil(props) {
         <div className="row mx-1 mb-4 ">
           <div className="col-md-12 d-flex justify-content-center">
             <CategorySelected className="mr-3 text-center text-truncate btn ">
-              <span>Receitas Salvas</span>
+              <span>Salvas</span>
             </CategorySelected>
             <Category className="mr-3 text-center text-truncate btn">
-              <span> Receitas Enviadas </span>
+              <span>Enviadas </span>
             </Category>
             <Category className="btn text-center text-truncate">
-              <span>Receitas Privadas</span>
+              <span>Privadas</span>
             </Category>
           </div>
         </div>
-        <div className="row mx-1 mb-4">
+        <div className="row mb-4">
           <div className="col-md-12">
             <div className="input-group mb-4">
               <div className="input-group-prepend">
@@ -77,7 +77,7 @@ function Perfil(props) {
               </div>
               <InputText
                 type="text"
-                placeholder="Tá com fome? Busque uma receita aqui..."
+                placeholder="Buscar..."
                 className="py-3 form-control"
               />
             </div>

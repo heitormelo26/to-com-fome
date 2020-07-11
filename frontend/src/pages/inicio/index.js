@@ -126,13 +126,12 @@ function Inicio() {
             <Container className="jumbotron mb-5">
               <div className="container">
                 <div className="row d-flex align-items-center">
-                  <div className="col-md-6">
-                    <Title className="display-4">Tá com fome?</Title>
+                  <div className="col-md-6 text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                    <Title>Tá com fome?</Title>
                     <Subtitle className="lead">
                       Então o <strong>Tô Com Fome</strong> foi feito pra você!
-                      <br /> Escolha quais ingredientes você tem que a
-                      <br /> gente te indica quais receitas podem ser
-                      <br /> feitas com eles.
+                      Escolha quais ingredientes você tem que a gente te indica
+                      quais receitas podem ser feitas com eles.
                     </Subtitle>
                     <Fridge
                       type="button"
@@ -145,7 +144,11 @@ function Inicio() {
                     <Ingredientes />
                   </div>
                   <div className="col-md-6 d-flex justify-content-end align-items-center">
-                    <img className="w-75 p-3" src={ilustracao} alt="" />
+                    <img
+                      className="w-75 p-3 d-none d-sm-none d-md-flex d-lg-flex d-xl-flex"
+                      src={ilustracao}
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -218,84 +221,84 @@ function Inicio() {
           <div className="col-md-12 mb-5 d-flex d-sm-flex d-md-none d-l-none d-xl-none justify-content-center align-items-center">
             <CategoryTitle className="m-0">Todas as receitas</CategoryTitle>
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               titulo="Receita 1"
               usuario="TotozinDelas"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
               titulo="Receita 2"
               usuario="Zezezinho"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
               titulo="Receita 3"
               usuario="Fitipaldi"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
               titulo="Receita 4"
               usuario="Ana Carolina Carol"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               titulo="Receita 1"
               usuario="TotozinDelas"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
               titulo="Receita 2"
               usuario="Zezezinho"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
               titulo="Receita 3"
               usuario="Fitipaldi"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
               titulo="Receita 4"
               usuario="Ana Carolina Carol"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               titulo="Receita 1"
               usuario="TotozinDelas"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
               titulo="Receita 2"
               usuario="Zezezinho"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
               titulo="Receita 3"
               usuario="Fitipaldi"
             />
           </div>
-          <div className="col-md-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
               titulo="Receita 4"

@@ -10,13 +10,11 @@ import {
   Subtitle,
   Plus,
   Card,
-  Menu,
   Button,
 } from "./styles";
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiClose } from "@mdi/js";
 import "../../App.css";
-import { Link } from "react-router-dom";
 
 export default function Ingredientes() {
   return (
@@ -59,7 +57,7 @@ export default function Ingredientes() {
                       <Plus
                         className="selectpicker show-tick ml-2"
                         data-live-search="true"
-                        data-width="auto"
+                        data-width="25%"
                         title="Categoria"
                         data-size="5"
                       >

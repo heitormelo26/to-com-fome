@@ -13,6 +13,9 @@ export const Title = styled.h1`
   font-size: 48px;
   font-weight: bold;
   color: #edf2f4;
+  @media (max-width: 767px) {
+    font-size: 36px;
+  }
 `;
 
 export const Subtitle = styled.p`

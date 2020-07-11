@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   TextArea,
   Label,
@@ -14,8 +13,7 @@ import {
   Plus,
   TrashCan,
   Ingredient,
-  Button,
-  Menu,
+  Select,
   Placeholder,
 } from "./styles";
 import Input from "../../components/Input";
@@ -30,10 +28,6 @@ function CriarReceita() {
 
   const [arquivo, setArquivo] = useState();
 
-  function fechar() {
-    $("#criarReceita2").modal("hide");
-  }
-
   return (
     <div>
       <div
@@ -43,7 +37,7 @@ function CriarReceita() {
         role="dialog"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-centered modal-lg">
+        <div className="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
           <Modal className="modal-content">
             <div className="modal-header d-flex flex-column">
               <Title className="d-block w-100 modal-title">
@@ -150,7 +144,7 @@ function CriarReceita() {
         role="dialog"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-centered modal-lg">
+        <div className="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
           <Modal className="modal-content">
             <div className="modal-header d-flex flex-column">
               <Title className="d-block w-100 modal-title">
@@ -182,46 +176,34 @@ function CriarReceita() {
                       <span>+</span>
                     </Plus>
                   </div>
-                  <div className="container">
-                    <div className="mt-3 row d-flex align-items-center justify-content-center border-bottom">
-                      <div className="col-md-2 d-flex align-items-center justify-content-start mb-2">
+                  <div className="container-fluid d-block w-100">
+                    <div className="mt-3 row border-bottom">
+                      <div className="col-md-3 d-flex align-items-center justify-content-start mb-2">
                         <Ingredient className="mb-0"> Arroz </Ingredient>
                       </div>
-                      <div className="col-md-3 d-flex align-items-center justify-content-center mb-2">
+                      <div className="col-md-4 d-flex align-items-center justify-content-center mb-2">
                         <InputText
                           type="number"
-                          min="1"
+                          min="0.1"
                           step="0.1"
                           placeholder="Quantidade"
                           className="py-3 form-control d-inline-block"
                         />
                       </div>
                       <div className="col-md-4 d-flex align-items-center justify-content-center mb-2">
-                        <div className="dropdown">
-                          <Button
-                            className="btn btn-secondary dropdown-toggle"
-                            type="button"
-                            data-toggle="dropdown"
-                          >
-                            <span>Unidade de medida</span>
-                          </Button>
-                          <Menu className="dropdown-menu">
-                            <Link className="dropdown-item" to="/buscar/almoço">
-                              Almoço
-                            </Link>
-                            <Link className="dropdown-item" to="/buscar/jantar">
-                              Jantar
-                            </Link>
-                            <Link
-                              className="dropdown-item"
-                              to="/buscar/sobremesa"
-                            >
-                              Sobremesa
-                            </Link>
-                          </Menu>
-                        </div>
+                        <Select
+                          className="selectpicker show-tick"
+                          data-live-search="true"
+                          data-width="100%"
+                          title="Unidade de medida"
+                          data-size="5"
+                        >
+                          <option>Brasileira</option>
+                          <option>Alemã</option>
+                          <option>Italiana</option>
+                        </Select>
                       </div>
-                      <div className="col-md-3 d-flex align-items-center justify-content-end mb-2">
+                      <div className="col-md-1 d-flex align-items-center justify-content-end mb-2">
                         <TrashCan>
                           <Icon path={mdiTrashCan} size={0.8} color="#8D99AE" />
                         </TrashCan>
@@ -266,7 +248,9 @@ function CriarReceita() {
                   className="btn btn-primary"
                   data-toggle="modal"
                   data-target="#criarReceita1"
-                  onClick={fechar()}
+                  onClick={() => {
+                    $("#criarReceita2").modal("hide");
+                  }}
                 >
                   <span>Anterior</span>
                 </button>
