@@ -93,8 +93,4 @@ export const NavbarTitle = styled(Link)`
   }
 `;
 
-export const NavLinks = styled.div`
-  @media (max-width: 576px) {
-    display: none !important;
-  }
-`;
+export const NavLinks = styled.div``;

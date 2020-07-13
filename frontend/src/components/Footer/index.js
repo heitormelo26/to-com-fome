@@ -3,7 +3,10 @@ import { Container, Title, Copyright, Line } from "./styles";
 
 export default function Footer(props) {
   return (
-    <Container cor={props.cor} className="container text-center py-5 w-100 m-0">
+    <Container
+      cor={props.cor}
+      className="container-fluid  text-center py-5 w-100 m-0"
+    >
       <div className="row">
         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <Title cor={props.cor} to="/">
