@@ -72,6 +72,23 @@ export const ButtonLink = styled.button`
     outline: none !important;
     box-shadow: none !important;
   }
+  a {
+    font-size: 18px;
+    font-family: "Nunito";
+    font-weight: 700;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    :hover,
+    :focus,
+    :active,
+    :visited {
+      font-size: 18px;
+      font-family: "Nunito";
+      font-weight: 700;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+  }
 `;
 
 export const NavbarTitle = styled(Link)`
