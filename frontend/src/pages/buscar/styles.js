@@ -149,6 +149,7 @@ export const Select = styled.select`
   border-radius: 40px !important;
   padding: 8px 32px !important;
   width: 100% !important;
+  display: block;
   :focus {
     box-shadow: none !important;
   }
@@ -229,5 +230,8 @@ export const Select = styled.select`
         }
       }
     }
+  }
+  .selectpicker {
+    display: block !important;
   }
 `;

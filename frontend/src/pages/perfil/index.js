@@ -29,7 +29,7 @@ function Perfil(props) {
           >
             <Icon path={mdiPencil} size={0.8} color="#edf2f4" />
           </Button>
-          <div className="col-md-12 d-flex justify-content-center">
+          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 d-flex justify-content-center ">
             <img
               className="mb-3"
               width="100"
@@ -37,17 +37,17 @@ function Perfil(props) {
               alt="Foto de perfil"
             />
           </div>
-          <div className="col-md-12 text-center">
+          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 text-center">
             <Name className="mb-1">Paulinha</Name>
             <User>@monkeystoks</User>
           </div>
-          <div className="col-md-12 d-flex justify-content-center flex-fill">
+          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 d-flex justify-content-center flex-fill">
             <div className="row w-100">
-              <div className="col-md-6 text-center">
+              <div className="col-6 col-sm-6 col-lg-6 col-xl-6 col-md-6 text-center">
                 <Number>Receitas salvas</Number>
-                <Number>127</Number>
+                <Number>67</Number>
               </div>
-              <div className="col-md-6 text-center">
+              <div className="col-6 col-sm-6 col-lg-6 col-xl-6 col-md-6 text-center">
                 <Number>Receitas enviadas</Number>
                 <Number>13</Number>
               </div>
@@ -55,7 +55,7 @@ function Perfil(props) {
           </div>
         </Container>
         <div className="row mx-1 mb-4 ">
-          <div className="col-md-12 d-flex justify-content-center">
+          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 d-flex justify-content-center">
             <CategorySelected className="mr-3 text-center text-truncate btn ">
               <span>Salvas</span>
             </CategorySelected>
@@ -68,7 +68,7 @@ function Perfil(props) {
           </div>
         </div>
         <div className="row mb-4">
-          <div className="col-md-12">
+          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12">
             <div className="input-group mb-4">
               <div className="input-group-prepend">
                 <IconGroup className="input-group-text">
@@ -84,28 +84,28 @@ function Perfil(props) {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               titulo="Receita 1"
               usuario="TotozinDelas"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
               titulo="Receita 2"
               usuario="Zezezinho"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
               titulo="Receita 3"
               usuario="Fitipaldi"
             />
           </div>
-          <div className="col-md-3 mb-2 d-flex justify-content-center">
+          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
             <Receita
               imagem="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
               titulo="Receita 4"

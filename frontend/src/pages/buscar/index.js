@@ -8,8 +8,12 @@ import Botao from "../../components/Botao";
 import { InputText, IconGroup, Container, Select } from "./styles";
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
+import $ from "jquery";
 
 export default function Buscar() {
+  $(document).ready(function () {
+    $(".selectpicker").selectpicker("refresh");
+  });
   return (
     <div>
       <Navbar estaLogado={false} />
@@ -33,7 +37,7 @@ export default function Buscar() {
         <div className="row">
           <div className="mb-3 col-md-3 d-flex align-items-center justify-content-start">
             <Select
-              className="selectpicker show-tick"
+              className="selectpicker show-tick d-block"
               data-live-search="true"
               data-width="100%"
               title="Categoria"
@@ -46,7 +50,7 @@ export default function Buscar() {
           </div>
           <div className="mb-3 col-md-3 d-flex align-items-center justify-content-start">
             <Select
-              className="selectpicker show-tick"
+              className="selectpicker show-tick d-block"
               data-live-search="true"
               data-width="100%"
               title="Refeição"
@@ -59,7 +63,7 @@ export default function Buscar() {
           </div>
           <div className="mb-3 col-md-3 d-flex align-items-center justify-content-start">
             <Select
-              className="selectpicker show-tick"
+              className="selectpicker show-tick d-block"
               data-live-search="true"
               data-width="100%"
               title="Nacionalidade"

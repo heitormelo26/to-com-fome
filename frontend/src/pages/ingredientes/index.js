@@ -15,8 +15,12 @@ import {
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiClose } from "@mdi/js";
 import "../../App.css";
+import $ from "jquery";
 
 export default function Ingredientes() {
+  $(document).ready(function () {
+    $(".selectpicker").selectpicker("refresh");
+  });
   return (
     <div
       className="modal fade"
@@ -55,7 +59,7 @@ export default function Ingredientes() {
                         className="form-control d-inline-block"
                       />
                       <Plus
-                        className="selectpicker show-tick ml-2"
+                        className="selectpicker show-tick ml-2 d-inline-block"
                         data-live-search="true"
                         data-width="25%"
                         title="Categoria"
