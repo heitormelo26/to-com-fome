@@ -32,20 +32,20 @@ export default function Ingredientes() {
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <Modal className="modal-content">
           <div className="modal-header d-flex flex-column">
-            <Title className="d-block w-100 modal-title">
+            <Title className="d-block w-100 modal-title text-left">
               <button type="button" className="close" data-dismiss="modal">
                 <span aria-hidden="true">&times;</span>
               </button>
               O que tem na sua geladeira?
             </Title>
-            <Subtitle className="d-block w-100 modal-title">
+            <Subtitle className="d-block w-100 modal-title text-left">
               Escolher ingredientes
             </Subtitle>
           </div>
           <div className="modal-body">
             <div className="container-fluid overflow-auto">
               <div className="row">
-                <div className="col-md-12 p-0 mb-3">
+                <div className="col-md-12 p-0 mb-3 col-12 col-sm-12 col-lg-12 col-xl-12">
                   <form>
                     <div className="input-group">
                       <div className="input-group-prepend">
