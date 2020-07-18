@@ -23,8 +23,13 @@ import {
   mdiCalendar,
 } from "@mdi/js";
 import "../../App.css";
+import $ from "jquery";
 
 function EditarPerfil() {
+  $(document).ready(function () {
+    $(".selectpicker").selectpicker("refresh");
+  });
+
   const [tipo, setTipo] = useState("password");
   const [icone, setIcone] = useState(mdiEye);
 
