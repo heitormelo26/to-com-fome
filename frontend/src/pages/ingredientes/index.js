@@ -70,17 +70,17 @@ export default function Ingredientes() {
                         <option>Sobremesa</option>
                       </Plus>
                     </div>
-                    <div className="mt-3">
+                    <div className="mt-3 d-flex justify-content-start">
                       <Category className="btn mb-2 mr-2">
-                        <span className="mr-2">Massas</span>
+                        <span className="mr-2 text-truncate">Arroz</span>
                         <Icon path={mdiClose} size={0.6} color="#edf2f4" />
                       </Category>
                       <Category className="btn mb-2 mr-2">
-                        <span className="mr-2">Massas</span>
+                        <span className="mr-2 text-truncate">Alho</span>
                         <Icon path={mdiClose} size={0.6} color="#edf2f4" />
                       </Category>
                       <Category className="btn mb-2 mr-2">
-                        <span className="mr-2">Massas</span>
+                        <span className="mr-2 text-truncate">Óleo</span>
                         <Icon path={mdiClose} size={0.6} color="#edf2f4" />
                       </Category>
                     </div>

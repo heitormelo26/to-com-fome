@@ -104,15 +104,17 @@ export const Category = styled.button`
   background-color: #ef233c;
   font-size: 16px;
   font-family: "Nunito";
-  display: inline-block;
   text-align: center;
   line-height: 1.5;
   border-radius: 40px;
-  padding: 2px 14px !important;
+  padding: 2px 12px !important;
   text-decoration: none !important;
   overflow: hidden !important;
   border: none !important;
   text-align: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   span {
     line-height: 20px;
     overflow: hidden !important;

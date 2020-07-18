@@ -176,12 +176,14 @@ function CriarReceita() {
                       <span>+</span>
                     </Plus>
                   </div>
-                  <div className="container-fluid d-block w-100">
-                    <div className="mt-3 row border-bottom">
-                      <div className="col-md-3 d-flex align-items-center justify-content-start mb-2">
-                        <Ingredient className="mb-0"> Arroz </Ingredient>
+                  <div className="container-fluid d-block w-100 mt-3">
+                    <div className="row border-bottom">
+                      <div className="col-8 col-sm-8 col-md-3 col-lg-3 col-xl-3 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1 d-flex align-items-center justify-content-start mb-2">
+                        <Ingredient className="mb-0 text-truncate">
+                          Arroz
+                        </Ingredient>
                       </div>
-                      <div className="col-md-4 d-flex align-items-center justify-content-center mb-2">
+                      <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 order-3 order-sm-3 order-md-2 order-lg-2 order-xl-2  d-flex align-items-center justify-content-center mb-2">
                         <InputText
                           type="number"
                           min="0.1"
@@ -190,10 +192,9 @@ function CriarReceita() {
                           className="py-3 form-control d-inline-block"
                         />
                       </div>
-                      <div className="col-md-4 d-flex align-items-center justify-content-center mb-2">
+                      <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 order-4 order-sm-4 order-md-3 order-lg-3 order-xl-3  d-flex align-items-center justify-content-center mb-2">
                         <Select
                           className="selectpicker show-tick"
-                          data-live-search="true"
                           data-width="100%"
                           title="Unidade de medida"
                           data-size="5"
@@ -203,7 +204,7 @@ function CriarReceita() {
                           <option>Italiana</option>
                         </Select>
                       </div>
-                      <div className="col-md-1 d-flex align-items-center justify-content-end mb-2">
+                      <div className="col-4 col-sm-4 col-md-1 col-lg-1 col-xl-1 order-2 order-sm-2 order-md-4 order-lg-4 order-xl-4 d-flex align-items-center justify-content-end mb-2">
                         <TrashCan>
                           <Icon path={mdiTrashCan} size={0.8} color="#8D99AE" />
                         </TrashCan>

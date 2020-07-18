@@ -305,7 +305,7 @@ function Inicio() {
               usuario="Ana Carolina Carol"
             />
           </div>
-          <div className="col-md-12 mb-2 d-flex justify-content-center align-items-center">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-2 d-flex justify-content-center align-items-center">
             <More to="/buscar" className="text-decoration-none">
               Mais receitas{" "}
               <Icon
@@ -319,7 +319,7 @@ function Inicio() {
         </div>
         {/* Slide */}
         <div className="row my-5">
-          <div className="col-md-12">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <Slider {...settings} className="my-4">
               <div key={0} className="flag text-center">
                 <div className="d-flex justify-content-center align-items-center">

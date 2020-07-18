@@ -20,17 +20,14 @@ export const InputText = styled.input`
   ::placeholder {
     color: #8d99ae !important;
     font-size: 18px !important;
-    font-family: "Nunito";
   }
   :-ms-input-placeholder {
     color: #8d99ae !important;
     font-size: 18px !important;
-    font-family: "Nunito";
   }
   ::-ms-input-placeholder {
     color: #8d99ae !important;
     font-size: 18px !important;
-    font-family: "Nunito";
   }
 `;
 

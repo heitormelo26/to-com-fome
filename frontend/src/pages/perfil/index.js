@@ -16,6 +16,7 @@ import {
   Category,
   CategorySelected,
 } from "./styles";
+import EditarPerfil from "../editar-perfil";
 
 function Perfil(props) {
   return (
@@ -25,10 +26,13 @@ function Perfil(props) {
         <Container className="row d-flex justify-content-end  mx-1 p-4 mb-5">
           <Button
             type="button"
+            data-toggle="modal"
+            data-target="#editarPerfil"
             className="px-3 float-right h-auto btn btn-primary"
           >
             <Icon path={mdiPencil} size={0.8} color="#edf2f4" />
           </Button>
+          <EditarPerfil />
           <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 d-flex justify-content-center ">
             <img
               className="mb-3"
