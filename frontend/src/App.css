@@ -153,10 +153,18 @@ body {
   outline: none !important;
 }
 
-input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-inner-spin-button {
+  opacity: 0;
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='width:24px;height:24px' viewBox='0 0 24 24'%3E%3Cpath fill='%238D99AE' d='M7,10L12,15L17,10H7Z' /%3E%3C/svg%3E")
+    no-repeat;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='width:24px;height:24px' viewBox='0 0 24 24'%3E%3Cpath fill='%238D99AE' d='M7,10L12,15L17,10H7Z' /%3E%3C/svg%3E")
+    no-repeat;
 }
 
 /* SLIDE */
