@@ -15,10 +15,16 @@ import {
   Ingredient,
   Select,
   Placeholder,
+  InfoButton,
 } from "./styles";
 import Input from "../../components/Input";
 import Icon from "@mdi/react";
-import { mdiMagnify, mdiClose, mdiTrashCan } from "@mdi/js";
+import {
+  mdiMagnify,
+  mdiClose,
+  mdiTrashCan,
+  mdiInformationOutline,
+} from "@mdi/js";
 import "../../App.css";
 import $ from "jquery";
 import swal from "sweetalert";
@@ -27,6 +33,18 @@ function CriarReceita() {
   const [nomeArquivo, setNomeArquivo] = useState("Selecionar...");
 
   const [arquivo, setArquivo] = useState();
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  $(function () {
+    $('[data-toggle="popover"]').popover();
+  });
+
+  $(".popover-dismiss").popover({
+    trigger: "focus",
+  });
 
   return (
     <div>
@@ -92,7 +110,7 @@ function CriarReceita() {
                   </div>
                 </div>
                 <div className="form-group mb-0">
-                  <div className="pl-3 custom-control custom-checkbox">
+                  <div className="pl-3 custom-control custom-checkbox d-flex align-items-center">
                     <input
                       type="checkbox"
                       className="custom-control-input"
@@ -104,6 +122,20 @@ function CriarReceita() {
                     >
                       Manter receita privada
                     </Label>
+                    <InfoButton
+                      type="button"
+                      className="btn p-0 ml-2 d-flex align-items-center"
+                      data-toggle="popover"
+                      data-trigger="focus"
+                      title="Manter receita privada"
+                      data-content="Ao selecionar esta opção, somente você poderá acessar essa receita no seu Perfil. Você pode escolher publicá-la mais tarde."
+                    >
+                      <Icon
+                        path={mdiInformationOutline}
+                        size={0.8}
+                        color="#8d99ae"
+                      />
+                    </InfoButton>
                   </div>
                 </div>
               </form>

@@ -25,9 +25,14 @@ import {
   Description,
   IconButton,
 } from "./styles";
+import $ from "jquery";
 
 function Receita(props) {
   let tags = ["massa", "brasileira", "vegano", "almoço"];
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 
   return (
     <div>
@@ -100,6 +105,9 @@ function Receita(props) {
           <Button
             type="Button"
             className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
+            data-toggle="tooltip"
+            data-placement="left"
+            title="Gostou da receita? Deixe sua curtida!"
           >
             <Icon
               path={mdiHeart}
@@ -115,6 +123,9 @@ function Receita(props) {
           <Button
             type="Button"
             className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Quer usar a receita mais tarde? Ela ficará salva no seu perfil!"
           >
             <Icon
               path={mdiBookmark}
@@ -130,6 +141,9 @@ function Receita(props) {
           <Button
             type="Button"
             className="btn btn-primary mr-0 d-flex align-items-center justify-content-center"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Compartilhe essa receita com outras pessoas!"
           >
             <Icon
               path={mdiShareVariant}

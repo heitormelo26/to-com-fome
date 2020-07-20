@@ -19,6 +19,11 @@ export default function Navbar(props) {
               Perfil
             </NavbarLink>
           </li>
+          <li className="nav-item mr-5 ml-3 ml-sm-3 ml-lg-auto ml-md-auto ml-xl-auto">
+            <NavbarLink className="nav-link" to="/buscar">
+              Buscar
+            </NavbarLink>
+          </li>
           <li className="nav-item d-flex align-items-center ml-3 ml-sm-3 ml-lg-auto ml-md-auto ml-xl-auto">
             <NavbarLink
               className="nav-link d-flex d-sm-flex d-md-none d-lg-none d-xl-none"
@@ -42,6 +47,11 @@ export default function Navbar(props) {
     } else {
       return (
         <ul className="navbar-nav ml-auto d-flex align-items-start align-items-sm-start align-items-md-center align-items-lg-center align-items-xl-center">
+          <li className="nav-item mr-5 ml-3 ml-sm-3 ml-lg-auto ml-md-auto ml-xl-auto">
+            <NavbarLink className="nav-link" to="/buscar">
+              Buscar
+            </NavbarLink>
+          </li>
           <li className="nav-item mr-5 ml-3 ml-sm-3 ml-lg-auto ml-md-auto ml-xl-auto">
             <NavbarLink className="nav-link" to="/entrar">
               Faça login

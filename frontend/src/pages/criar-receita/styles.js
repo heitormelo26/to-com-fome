@@ -567,3 +567,18 @@ export const Button = styled.button`
     box-shadow: none !important;
   }
 `;
+
+export const InfoButton = styled.button`
+  background: transparent;
+  border: 0;
+  color: #8d99ae;
+  text-decoration: none;
+  :focus,
+  :active,
+  :hover {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+`;
