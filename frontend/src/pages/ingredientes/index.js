@@ -11,6 +11,7 @@ import {
   Plus,
   Card,
   Button,
+  Label,
 } from "./styles";
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiClose } from "@mdi/js";
@@ -70,19 +71,31 @@ export default function Ingredientes() {
                         <option>Sobremesa</option>
                       </Plus>
                     </div>
-                    <div className="mt-3 d-flex justify-content-start">
-                      <Category className="btn mb-2 mr-2">
-                        <span className="mr-2 text-truncate">Arroz</span>
-                        <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                      </Category>
-                      <Category className="btn mb-2 mr-2">
-                        <span className="mr-2 text-truncate">Alho</span>
-                        <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                      </Category>
-                      <Category className="btn mb-2 mr-2">
-                        <span className="mr-2 text-truncate">Óleo</span>
-                        <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                      </Category>
+                    <div className="container">
+                      <div className="mt-3 d-flex justify-content-start row">
+                        <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                          <Category className="btn mb-2 mr-2 ">
+                            <span className="mr-2 text-truncate">
+                              Beterraba
+                            </span>
+                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                          </Category>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                          <Category className="btn mb-2 mr-2 ">
+                            <span className="mr-2 text-truncate">Melancia</span>
+                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                          </Category>
+                        </div>
+                        <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                          <Category className="btn mb-2 mr-2 ">
+                            <span className="mr-2 text-truncate">
+                              Beterraba
+                            </span>
+                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                          </Category>
+                        </div>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -279,7 +292,22 @@ export default function Ingredientes() {
                 </div>
               </div>
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer d-flex align-items-center">
+              <div className="form-group mr-auto">
+                <div className="pl-3 custom-control custom-checkbox d-flex align-items-center">
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    id="opcao"
+                  />
+                  <Label
+                    className="custom-control-label ml-2 text-left"
+                    for="opcao"
+                  >
+                    Incluir receitas privadas
+                  </Label>
+                </div>
+              </div>
               <StyledLinkSecondary
                 to="/criar"
                 className="d-flex align-items-center"

@@ -326,3 +326,26 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   color: #ef233c !important;
   border-color: transparent !important;
 }
+
+.popover {
+  background-color: #2b2d42 !important;
+  border: 0 !important;
+  color: #edf2f4 !important;
+}
+
+.popover .arrow::after {
+  border-right-color: #2b2d42 !important;
+}
+
+.popover-header {
+  background-color: #2b2d42 !important;
+  border: 0 !important;
+  color: #edf2f4 !important;
+  font-family: "Nunito";
+}
+
+.popover-body {
+  background-color: #2b2d42 !important;
+  border: 0 !important;
+  color: #edf2f4 !important;
+}
