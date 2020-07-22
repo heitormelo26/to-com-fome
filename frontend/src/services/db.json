@@ -1,0 +1,933 @@
+{
+  "receitas": [
+    {
+      "id": 1,
+      "privada": false,
+      "titulo": "Crostini de pimentão com alho",
+      "autor": "Hazael Durão",
+      "rendimento": 4,
+      "tempoPreparo": "30 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1590612673825-_JW_8571.jpg",
+      "tags": [
+        {
+          "nome": "Aperitivos"
+        },
+        {
+          "nome": "Vegetariano"
+        },
+        {
+          "nome": "Almoço"
+        },
+        {
+          "nome": "Brasileira"
+        }
+      ],
+      "descricao": "O petisco ideal para quem é dos sabores intensos. O pimentão encontra o alho e fica perfumado, levemente tostado e bem macio. Receita prática para o happy hour, ou para um jantar preguiçoso.",
+      "ingredientes": [
+        {
+          "ingrediente": "Pimentão Vermelho",
+          "quantidade": 2,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Alho",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Azeite",
+          "quantidade": 2,
+          "unidadeMedida": "colheres de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Pão Cascudo",
+          "quantidade": 4,
+          "unidadeMedida": "fatias",
+          "categoria": "Pães"
+        },
+        {
+          "ingrediente": "Pimenta-do-reino",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        }
+      ],
+      "modoPreparo": [
+        "Lave, seque e corte os pimentões ao meio. Descarte as sementes e fatie cada metade em tiras finas de 0,5 cm. Com a lateral da lâmina da faca, amasse e descasque o dente de alho.",
+        "Leve uma frigideira grande ao fogo médio. Quando aquecer, toste levemente as fatias de pão por 1 minuto de cada lado. ",
+        "Mantenha a frigideira em fogo médio, regue com o azeite, adicione o dente de alho e mexa por 1 minuto, apenas para perfumar. Junte os pimentões, tempere com sal e pimenta a gosto e refogue por 8 minutos até ficarem bem macios e levemente tostados. Descarte o alho e sirva o pimentão sobre as fatias de pão."
+      ]
+    },
+    {
+      "id": 2,
+      "privada": false,
+      "titulo": "Arroz de forno gratinado",
+      "autor": "Juliana Vasques",
+      "rendimento": 4,
+      "tempoPreparo": "2 horas",
+      "imagem": "https://cdn.panelinha.com.br/receita/1583864167360-arroz%20de%20forno.jpg",
+      "tags": [
+        {
+          "nome": "Almoço"
+        },
+        {
+          "nome": "Prato principal"
+        }
+      ],
+      "descricao": "Para o arroz de forno ficar cremoso, vai bechamel. Para ficar mais saboroso, vai alho poró no molho e pedaços de abobrinha grelhada. Para a textura ficar mais interessante, uma farofinha de parmesão por cima. E para ficar mais moderninho, levamos ao forno em refratários individuais. Pode até servir em jantar para convidados, que ninguém vai torcer o nariz.",
+      "ingredientes": [
+        {
+          "ingrediente": "Arroz",
+          "quantidade": 3,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Grãos"
+        },
+        {
+          "ingrediente": "Peito de frango",
+          "quantidade": 1,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Carnes"
+        },
+        {
+          "ingrediente": "Abobrinha",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Alho-poró",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Parmesão",
+          "quantidade": 1,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Leite",
+          "quantidade": 2,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Latícinios"
+        },
+        {
+          "ingrediente": "Manteiga",
+          "quantidade": 1.5,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Azeite",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Farinha de Trigo",
+          "quantidade": 1.5,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Farinhas"
+        },
+        {
+          "ingrediente": "Farinha de Rosca",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Farinhas"
+        },
+        {
+          "ingrediente": "Noz-moscada",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Pimenta-do-reino",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        }
+      ],
+      "modoPreparo": [
+        "Preaqueça o forno a 220 ºC (temperatura alta). Unte com manteiga 4 refratários individuais, com capacidade de cerca de 400 ml, e coloque numa assadeira. ",
+        "Lave, seque e fatie o talo do alho-poró em rodelas finas – reserve as folhas (pode congelar) para outra receita. Lave, seque e corte a abobrinha em quartos, no sentido do comprimento. ",
+        "Derreta a manteiga em uma panela média ao fogo médio. Adicione o alho-poró, tempere com uma pitada de sal e refogue por 2 minutos até murchar. Polvilhe a farinha e mexa por 1 minuto – essa mistura de manteiga com farinha, chamada de roux, vai engrossar o molho bechamel. ",
+        "Retire a panela do fogo e adicione todo o leite de uma só vez, misturando bem com um batedor de arame para dissolver os gruminhos de farinha. Volte a panela ao fogo alto, tempere com ¼ de colher (chá) de sal e noz-moscada a gosto. Assim que ferver, abaixe o fogo e deixe cozinhar por cerca de 10 minutos, mexendo de vez em quando com uma espátula até engrossar. Transfira para uma tigela grande para amornar.",
+        "Enquanto isso, prepare as abobrinhas. Leve uma frigideira grande ao fogo médio. Quando aquecer, regue com o azeite e disponha os pedaços de abobrinha, um ao lado do outro, com a parte cortada para baixo. Deixe dourar por cerca de 2 minutos e vire com uma pinça, para dourar o outro lado por igual. Transfira para a tábua, tempere com uma pitada de sal e corte a abobrinha em fatias rústicas de 3 cm, com cortes diagonais.",
+        "Acrescente o arroz cozido ao molho bechamel com alho-poró, junte o frango e ¾ de xícara (chá) do queijo parmesão ralado. Misture bem e transfira para os refratários untados. Disponha os pedaços de abobrinha em cada refratário, aperte para que afundem no arroz com fiquem com algumas pontinhas para fora.",
+        "Numa tigela pequena, misture a farinha de rosca com o restante do queijo ralado. Polvilhe a mistura sobre o arroz de cada refratário e leve ao forno para assar por cerca de 25 minutos até dourar. Sirva com molho de pimentão."
+      ]
+    },
+    {
+      "id": 3,
+      "privada": false,
+      "titulo": "Salada de tomate com segurelha",
+      "autor": "Paloma Sítima",
+      "rendimento": 6,
+      "tempoPreparo": "2 horas",
+      "imagem": "https://cdn.panelinha.com.br/receita/956545200000-Salada-de-tomate-com-segurelha.jpg",
+      "tags": [
+        {
+          "nome": "Entrada"
+        },
+        {
+          "nome": "Almoço"
+        },
+        {
+          "nome": "Vegana"
+        }
+      ],
+      "descricao": "A olhos nus, esta parece uma simples saladinha. Logo no primeiro pedaço, você irá descobrir que trata-se da melhor salada de tomate que você já terá experimentado. E o segredo está na leve desidratação, feita com sal grosso, e também na combinação com a segurelha, uma erva pouco conhecida, mas ótima para temperar tomates.",
+      "ingredientes": [
+        {
+          "ingrediente": "Tomate",
+          "quantidade": 4,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Sal Grosso",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Segurelha",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Azeite",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Óleos"
+        }
+      ],
+      "modoPreparo": [
+        "Lave bem os tomates em água corrente. Corte cada tomate em 8 gomos: primeiro corte uma tampa, vire para baixo na tábua e corte em cruz e, depois, em x, formando as 8 partes.",
+        "Transfira os gomos de tomate para um escorredor de macarrão ou uma peneira. Salpique o sal grosso e metade da segurelha, misture para envolver bem todos os gomos com o sal.",
+        "Coloque o escorredor (ou peneira) sobre uma tigela, cubra os tomates com filme e leve à geladeira por 24 horas - o filme evita que os tomates ressequem.",
+        "Na hora de servir, retire a tigela da geladeira. Descarte a água que saiu dos tomates e chacoalhe delicadamente cada gomo para retirar o excesso de sal grosso.",
+        "Transfira os tomates para uma travessa, regue com azeite e o restante da segurelha. Sirva a seguir com salada de folhas verdes."
+      ]
+    },
+    {
+      "id": 4,
+      "privada": false,
+      "titulo": "Strudel folhado de maçã",
+      "autor": "Alisha Cascais",
+      "rendimento": 4,
+      "tempoPreparo": "2 horas",
+      "imagem": "https://cdn.panelinha.com.br/receita/1415152800000-Strudel-folhado-de-maca.jpg",
+      "tags": [
+        {
+          "nome": "Sobremesas"
+        },
+        {
+          "nome": "Alemã"
+        }
+      ],
+      "descricao": "Com massa folhada pronta, até um strudel vira receita rápida! A única demora? O tempo de descongelar a massa. Esse clássico versão express vai impressionar!",
+      "ingredientes": [
+        {
+          "ingrediente": "Massa semi folhada",
+          "quantidade": 150,
+          "unidadeMedida": "grama",
+          "categoria": "Massas"
+        },
+        {
+          "ingrediente": "Maçã verde",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Açúcar",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Doces e Chocolates"
+        },
+        {
+          "ingrediente": "Nozes",
+          "quantidade": 0.25,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Nozes e Sementes"
+        },
+        {
+          "ingrediente": "Uvas-passas brancas",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Rum",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Bebidas"
+        },
+        {
+          "ingrediente": "Canela",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Ovo de galinha",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Ovos"
+        }
+      ],
+      "modoPreparo": [
+        "Retire a massa folhada do congelador 2 horas antes de começar o preparo.",
+        "Preaqueça o forno a 200 oC (temperatura média).",
+        "Numa tigela, misture as uvas-passas com o rum e deixe hidratar por alguns minutos. Enquanto isso, numa tábua, descasque, retire as sementes e corte a maçã em cubos pequenos. Pique fino as nozes.",
+        "Transfira os cubos de maçã e as nozes para a tigela com as uvas-passas, junte o açúcar e a canela e misture bem.",
+        "Com um rolo, abra a massa folhada, mantendo o formato retangular, até ficar com cerca de 0,5 cm de espessura e transfira para uma assadeira.",
+        "Distribua a mistura de maçã cobrindo metade da massa no sentido do comprimento. Deixe uma borda de 0,5 cm sem recheio para fechar o strudel. Pincele as bordas com água, dobre a outra metade da massa sobre o recheio e aperte bem as bordas para fechar.",
+        "Numa tigela, quebre o ovo, junte 1 colher (chá) de água e bata com um garfo apenas para misturar. Pincele sobre o strudel e leve para assar em forno preaquecido durante 30 minutos ou até dourar. Sirva morno ou em temperatura ambiente, acompanhado de creme de leite fresco batido."
+      ]
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    },
+    {
+      "id": 0,
+      "privada": false,
+      "titulo": "",
+      "autor": "",
+      "rendimento": 0,
+      "tempoPreparo": "",
+      "imagem": "",
+      "tags": [
+        {
+          "nome": ""
+        }
+      ],
+      "descricao": "",
+      "ingredientes": [
+        {
+          "ingrediente": "",
+          "quantidade": 0,
+          "unidadeMedida": "",
+          "categoria": ""
+        }
+      ],
+      "modoPreparo": ""
+    }
+  ]
+}
