@@ -306,124 +306,240 @@
       ]
     },
     {
-      "id": 0,
+      "id": 5,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "RABANADA PARA A SOBREMESA",
+      "autor": "Panelinha",
+      "rendimento": 3,
+      "tempoPreparo": "5 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1591975435954-bolinho.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "Para matar a vontade de um doce no meio da tarde ou resolver uma sobremesa rápida. Para ficar com cara de festa, sirva com creme batido ou uma bola de sorvete.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Ovo",
+          "quantidade": 1,
+          "unidadeMedida": "Unidade",
+          "categoria": "Ovos"
+        },
+        {
+          "ingrediente": "Óleo",
+          "quantidade": 3,
+          "unidadeMedida": "Colheres de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Leite de Coco",
+          "quantidade": 4,
+          "unidadeMedida": "Colheres de sopa",
+          "categoria": "Laticíneo"
+        },
+        {
+          "ingrediente": "Chocolate em pó",
+          "quantidade": 4,
+          "unidadeMedida": "Colheres de sopa",
+          "categoria": "Doces e Chocolates"
+        },
+        {
+          "ingrediente": "Açúcar",
+          "quantidade": 3,
+          "unidadeMedida": "Colheres de sopa",
+          "categoria": "Doces e Chocolates"
+        },
+        {
+          "ingrediente": "Farinha de trigo",
+          "quantidade": 3,
+          "unidadeMedida": "Colheres de sopa",
+          "categoria": "Farinha"
+        },
+        {
+          "ingrediente": "Fermento",
+          "quantidade": 0.5,
+          "unidadeMedida": "Colher de chá",
+          "categoria": "Fermentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Numa tigela média, quebre o ovo. Junte o óleo, o leite e misture bem, com um batedor de arame (ou com um garfo). ",
+        "Adicione o chocolate em pó e a farinha, passando por uma peneira. Acrescente o açúcar e misture vigorosamente, até que a massa fique lisa. Por último, misture o fermento.",
+        "Divida a massa em 3 xícaras (ou 1 xícara e 1 tigelinha um pouco maior), sem deixar ultrapassar ⅔ da capacidade. Leve ao micro-ondas, na potência máxima, para rodar por 3 minutos. Se quiser, coloque os recipientes num prato dentro do forno — fica mais fácil na hora de tirar.",
+        "MUITO CUIDADO na hora de tirar os bolinhos, as xícaras ficam bem quentes – se for servir para crianças, espere esfriar um pouco."
+      ]
     },
     {
-      "id": 0,
+      "id": 6,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "BOLINHO QUENTE DE DOCE DE LEITE",
+      "autor": "Panelinha",
+      "rendimento": 4,
+      "tempoPreparo": "5 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1530803496949-IMG_7314-2.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "A colher rompe a tampa do bolinho e encontra uma calda cremosa, dourada. Essa receita é um tesouro; esse bolinho é um deleite. Mas atenção ao ponto: se ele ficar mais tempo do que deve no forno, perde a calda interior.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Doce de leite",
+          "quantidade": 0.75,
+          "unidadeMedida": "Xícara de chá",
+          "categoria": "Doces e Chocolates"
+        },
+        {
+          "ingrediente": "Ovo",
+          "quantidade": 2,
+          "unidadeMedida": "Unidade",
+          "categoria": "Ovos"
+        },
+        {
+          "ingrediente": "Manteiga",
+          "quantidade": 50,
+          "unidadeMedida": "Gramas",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Açúcar",
+          "quantidade": 0.25,
+          "unidadeMedida": "Xícara de chá",
+          "categoria": "Doces e Chocolates"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 1,
+          "unidadeMedida": "Pitada",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Farinha de Trigo",
+          "quantidade": 2,
+          "unidadeMedida": "Colheres de sopa",
+          "categoria": "Farinhas"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Preaqueça o forno a 200 ºC (temperatura média). Unte com manteiga quatro ramequins 7 cm de diâmetro e 5 cm de altura. Polvilhe com farinha de trigo, chacoalhe para espalhar e bata bem sobre a pia para retirar o excesso.",
+        "Numa tigela média, coloque a manteiga e leve ao micro-ondas por 1 minuto para derreter. Junte o doce de leite, o açúcar e misture bem com uma espátula até ficar liso.",
+        "Numa tigela pequena, quebre um ovo de cada vez e junte ao doce de leite  – se um estiver estragado, você não perde a receita. Acrescente uma pitada de sal e misture bem. Acrescente a farinha, aos poucos, passando pela peneira. Misture delicadamente com a espátula para incorporar.",
+        "Divida a massa de bolo nos ramequins e coloque numa assadeira. Leve ao forno para assar por cerca de 15 minutos. Atenção para o ponto: o bolinho deve crescer, e pode até rachar no centro, mas não deve assar completamente. Uma boa maneira de verificar é espetando um palito: nas bordas, deve sair limpo, porém no centro, sai molhado. Quem tem a manha na cozinha, pode dar uma chacoalhada na tigela: você vai notar que a borda está firme, mas o centro ainda se mexe. Se passar do tempo, o bolinho vai assar completamente e ficar sem a calda interior. Fique atento às características, pois os fornos são diferentes e o tempo pode variar.",
+        "Retire do forno, polvilhe com açúcar de confeiteiro ou cacau em pó e sirva imediatamente."
+      ]
     },
     {
-      "id": 0,
+      "id": 7,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "GELEIA DE MANGA E MARACUJÁ",
+      "autor": "Panelinha",
+      "rendimento": 4,
+      "tempoPreparo": "1 horas",
+      "imagem": "https://cdn.panelinha.com.br/receita/1540583468204-receita-geleiaaaaa.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Geleia"
         }
       ],
-      "descricao": "",
+      "descricao": "Tem fruta madura dando sopa? Geleia nelas! E geleia caseira, claro, sem conservantes e com aquele gostinho de cozinha do interior. Nesta receita, o maracujá (azedo, de sabor mais forte e rico em pectina) é combinado com a manga (mais doce e carnuda).",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Manga",
+          "quantidade": 2,
+          "unidadeMedida": "Unidade",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Maracujá",
+          "quantidade": 3,
+          "unidadeMedida": "Unidade",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Açucar",
+          "quantidade": 1,
+          "unidadeMedida": "Xícara de chá",
+          "categoria": "Doces e Chocolates"
+        },
+        {
+          "ingrediente": "Água",
+          "quantidade": 0.66,
+          "unidadeMedida": "Xícara",
+          "categoria": "Bebidas"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Coloque um pires no congelador - ele vai ser utilizado para verificar o ponto do cozimento da geleia.",
+        "Descasque e corte a polpa da manga em pedaços médios. Transfira para uma panela média, cubra com água e deixe cozinhar em fogo baixo por cerca de 15 minutos, mexendo de vez em quando e amassando com a espátula para formar um purê.",
+        "Corte o topo dos maracujás e junte a polpa (com as sementes) ao purê de manga. Acrescente o açúcar e misture bem. Deixe cozinhar em fogo baixo por mais 25 minutos, até engrossar, mexendo de vez em quando para não grudar no fundo e laterais da panela. Para verificar o ponto coloque um pouco da geleia num dos cantos do pires e incline delicadamente: a geleia deve estar na consistência de gel, ela não pode escorrer líquida.",
+        "Com uma concha, transfira a geleia ainda quente para potes de vidro esterilizados, deixando cerca de 2 cm até a tampa livre. Feche os potes com a geleia quente para formar vácuo."
+      ]
     },
     {
-      "id": 0,
+      "id": 8,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "CALDA DE CHOCOLATE BRANCO CARAMELIZADO",
+      "autor": "Panelinha",
+      "rendimento": 6,
+      "tempoPreparo": "1 hora",
+      "imagem": "https://cdn.panelinha.com.br/receita/1444273200000-Calda-de-chocolate-branco-caramelizado.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "O chocolate branco é feito com três ingredientes: leite, açúcar e manteiga de cacau. Ou seja, tem tudo o que precisa para se transformar numa deliciosa calda.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Chocolate branco",
+          "quantidade": 300,
+          "unidadeMedida": "Gramas",
+          "categoria": "Doces e Chocolates"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Numa tábua, pique o chocolate em pedaços pequenos e uniformes - assim eles derretem e caramelizam por igual. Transfira para uma frigideira grande.",
+        "Leve a frigideira ao fogo baixo e deixe cozinhar, mexendo de vez em quando. A cada 5 minutos, retire a frigideira do fogo, mexa e aperte bem o chocolate derretido com a espátula. Volte ao fogo baixo e deixe cozinhar novamente - não se preocupe se o chocolate endurecer e ficar com aparência granulada, ele volta a derreter novamente.",
+        "Cozinhe por cerca de 50 minutos, fazendo esse movimento de vai-vem até formar uma calda cor de caramelo. Desligue o fogo, transfira para um pote e sirva a seguir. Esta calda é ótima para acompanhar tortas, frutas e sorvetes."
+      ]
     },
     {
-      "id": 0,
+      "id": 9,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "MERENGUE SUÍÇO",
+      "autor": "Panelinha",
+      "rendimento": 6,
+      "tempoPreparo": "5 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1433300400000-Merengue-suico.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "Um merengue mais fácil de dar certo: no método suíço, o açúcar é rapidamente dissolvido na clara e só então vai para a batedeira. Dura até três dias na geladeira!",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Ovo",
+          "quantidade": 3,
+          "unidadeMedida": "Unidade",
+          "categoria": "Ovos"
+        },
+        {
+          "ingrediente": "Açucar",
+          "quantidade": 1,
+          "unidadeMedida": "Xícara de chá",
+          "categoria": "Doces e Chocolates"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Leve uma panela pequena com água ao fogo médio - ela servirá de base para o banho-maria. ",
+        "Numa tigela pequena, quebre um ovo e deixe escorrer apenas a clara, utilizando a casca para separar a gema. Transfira a clara para uma tigela de vidro (ou inox) e reserve a gema para outra receita. Repita com os outros ovos - se um deles não estiver bom, você não perde toda a receita. ",
+        "Junte o açúcar às claras, encaixe a tigela na panela e mexa com um batedor de arame, por cerca de 4 minutos, até ficar liso - cuidado para não cozinhar as claras. Para ter certeza de que está no ponto, com uma colher retire uma porção da mistura e com a ponta dos dedos verifique se as claras estão aquecidas e sem grãozinhos de açúcar. Você pode também fazer este procedimento direto na panela sem o banho-maria, é mais rápido, mas o risco das claras cozinharem é maior.",
+        "Transfira para a tigela da batedeira e bata em velocidade alta por cerca de 10 minutos, ou até esfriar e formar um merengue firme.",
+        "Transfira para um pote e sirva a seguir. Este merengue é ótimo para comer com tortas e frutas. Vai bem até com drinques!"
+      ]
     },
     {
       "id": 0,
