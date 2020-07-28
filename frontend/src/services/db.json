@@ -542,127 +542,295 @@
       ]
     },
     {
-      "id": 0,
+      "id": 10,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Molho de alho e limão para a salada",
+      "autor": "Gabi Gol",
+      "rendimento": 4,
+      "tempoPreparo": "10 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1585255240455-molho-alho-e-lima%CC%83o.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Entrada"
+        },
+        {
+          "nome": "Salada"
         }
       ],
-      "descricao": "",
+      "descricao": "Molho bem básico e curinga. Dura três dias na geladeira - atalho dos bons para o dia a dia.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Alho",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e verduras"
+        },
+        {
+          "ingrediente": "Azeite",
+          "quantidade": 6,
+          "unidadeMedida": "colheres de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Suco de limão",
+          "quantidade": 2,
+          "unidadeMedida": "colheres de sopa",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "No pilão, bata o dente de alho com o sal até formar uma pastinha. Transfira para um pote de vidro (que tenha tampa), junte o caldo do limão, o azeite, tampe e chacoalhe bem para misturar. Utilize a seguir ou mantenha na geladeira por até 3 dias."
+      ]
     },
     {
-      "id": 0,
+      "id": 11,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Banana dourada com merengue",
+      "autor": "Klebinho Damassa",
+      "rendimento": 4,
+      "tempoPreparo": "25 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1411700400000-Banana-dourada-com-merengue.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "Banana com merengue é como um casamento que deu certo: eles conversam, eles se entendem. Eles deixam a gente se sentindo muito bem!",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Ovo",
+          "quantidade": 3,
+          "unidadeMedida": "unidades",
+          "categoria": "Ovos"
+        },
+        {
+          "ingrediente": "Açucar",
+          "quantidade": 5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Doces e chocolates"
+        },
+        {
+          "ingrediente": "Bananas nanicas",
+          "quantidade": 4,
+          "unidadeMedida": "unidades",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Manteiga",
+          "quantidade": 1,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Raspas de limão siciliano",
+          "quantidade": 1,
+          "unidadeMedida": "cascas",
+          "categoria": "Frutas"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Leve uma panela pequena com água ao fogo médio - ela servirá de base para o banho-maria. ",
+        "Numa tigela, quebre um ovo e deixe escorrer apenas a clara, utilizando a casca para separar a gema. Transfira a clara para uma tigela de vidro (ou inox) e descarte a gema. Repita com os outros ovos - se um deles não estiver bom, você não perde toda a receita. ",
+        "Junte o açúcar às claras, encaixe a tigela na panela e mexa com um batedor de arame, por cerca de 4 minutos, até ficar liso - cuidado para não cozinhar as claras. Para ter certeza de que está no ponto, com uma colher retire uma porção da mistura e com a ponta dos dedos verifique se as claras estão aquecidas e sem grãozinhos de açúcar. Você pode também fazer este procedimento direto na panela sem o banho-maria, é mais rápido, mas o risco das claras cozinharem é maior.",
+        "Transfira para a tigela da batedeira e bata em velocidade alta por cerca de 10 minutos, ou até esfriar e formar um merengue firme.",
+        "Lave e seque as bananas com a casca. Com uma faca afiada, divida cada banana ao meio, no sentido do comprimento, mantendo a casca. ",
+        "Leve uma frigideira (de preferência antiaderente) ao fogo alto. Quando aquecer, com uma folha de papel toalha, unte com um pouco de manteiga (repita essa operação antes do preparo de cada banana). ",
+        "Polvilhe o lado da polpa de cada banana com ½ colher (chá) de açúcar e transfira para a frigideira com a polpa voltada para baixo. Deixe cozinhar por cerca de 4 minutos, até ficar dourada - pressione delicadamente com uma espátula para ficar uniforme. Transfira para uma travessa e repita esse processo com todas as bananas (se sua frigideira for grande o bastante, faça mais do que uma banana por vez). ",
+        "Sirva as bananas quentes com o merengue e decore com raspas de limão siciliano."
+      ]
     },
     {
-      "id": 0,
+      "id": 12,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Molho oriental para salada",
+      "autor": "Pinguim44",
+      "rendimento": 6,
+      "tempoPreparo": "10 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1585255748130-molho-oriental.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Salada"
+        },
+        {
+          "nome": "Entrada"
         }
       ],
-      "descricao": "",
+      "descricao": "Sabor agridoce e suave. Perfeito para preparos orientais - experimente também com arroz frito!",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Óleo de girassol",
+          "quantidade": 6,
+          "unidadeMedida": "colheres de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Vinagre de arroz",
+          "quantidade": 0.25,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Molhos e condimentos"
+        },
+        {
+          "ingrediente": "´Mel",
+          "quantidade": 2,
+          "unidadeMedida": "colheres de sopa",
+          "categoria": "Doces e chocolates"
+        },
+        {
+          "ingrediente": "Óleo de gergelim",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Num pote de vidro (que tenha tampa), coloque todos os ingredientes, feche e chacoalhe bem para misturar. Utilize a seguir ou mantenha na geladeira por até 10 dias."
+      ]
     },
     {
-      "id": 0,
+      "id": 13,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Sagu de uva",
+      "autor": "Juvenaldo",
+      "rendimento": 6,
+      "tempoPreparo": "2 horas e 30 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1589812546307-SAGU-DE-SUCO-DE-UVA.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "Quer fazer sagu mas não tem vinho? Não tem problema: experimente esta versão com suco de uva! É tão saborosa e linda quanto a receita clássica.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Sagu",
+          "quantidade": 0.5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Farinhas e grãos"
+        },
+        {
+          "ingrediente": "Suco de uva integral",
+          "quantidade": 1.5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Bebidas"
+        },
+        {
+          "ingrediente": "Água",
+          "quantidade": 2.5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Bebidas"
+        },
+        {
+          "ingrediente": "Açúcar",
+          "quantidade": 0.5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Doces e chocolates"
+        },
+        {
+          "ingrediente": "Canela",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Molhos e condimentos"
+        },
+        {
+          "ingrediente": "Cravos-da-Índia",
+          "quantidade": 2,
+          "unidadeMedida": "unidade",
+          "categoria": "Molhos e condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Numa tigela, coloque o sagu, cubra com 1 xícara (chá) da água filtrada e deixe descansar por uma hora. ",
+        "Faltando 15 minutos para completar o tempo do sagu, coloque numa panela média 1 ½ xícara (chá) da água, o suco de uva, a canela, os cravos e o açúcar. Misture bem, até o açúcar dissolver.",
+        "Leve a panela ao fogo alto. Quando ferver, junte o sagu (com o líquido que sobrou na tigela) e abaixe o fogo. Deixe cozinhar por 30 minutos, mexendo de vez em quando para o sagu não grudar no fundo da panela, até que as bolinhas estejam macias e quase transparentes.",
+        "Transfira o sagu para uma tigela e deixe esfriar em temperatura ambiente por 30 minutos – nesse tempo as bolinhas terminam de cozinhar no próprio calor e a sobremesa atinge a consistência ideal. Cubra e leve à geladeira para esfriar por pelo menos 1 hora antes de servir. Sirva puro, com creme inglês, creme batido ou pedaços de frutas."
+      ]
     },
     {
-      "id": 0,
+      "id": 14,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Bolinho de arroz (reaproveitamento)",
+      "autor": "Paolinha",
+      "rendimento": 20,
+      "tempoPreparo": "30 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/958186800000-Bolinho-de-arroz-reaproveitamento.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Entrada"
         }
       ],
-      "descricao": "",
+      "descricao": "Sobrou muito arroz? Que sorte! Estes bolinhos são irresistíveis!",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Arroz",
+          "quantidade": 2,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Grãos"
+        },
+        {
+          "ingrediente": "Salsinha",
+          "quantidade": 0.5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Legumes e verduras"
+        },
+        {
+          "ingrediente": "Ovos",
+          "quantidade": 2,
+          "unidadeMedida": "unidades",
+          "categoria": "Ovos"
+        },
+        {
+          "ingrediente": "Farinha de trigo",
+          "quantidade": 1,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Farinhas"
+        },
+        {
+          "ingrediente": "Queijo parmesão",
+          "quantidade": 4,
+          "unidadeMedida": "colheres de sopa",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Óleo de soja",
+          "quantidade": 1,
+          "unidadeMedida": "litro",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Pimenta do reino",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e condimentos"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Junte todos os ingredientes, exceto o óleo, numa tigela. Misture bem, usando uma colher de pau. A mistura deve ficar bem homogênea e desgrudando das mãos. ",
+        "Coloque o óleo numa panela e leve ao fogo médio para aquecer. ",
+        "Enquanto o óleo aquece, faça bolinhas com o auxílio de uma colher de chá e coloque num prato. ",
+        "Quando o óleo estiver bem quente, coloque as bolinhas delicadamente para fritar. Não coloque todas de uma vez, frite em várias etapas. Com a ajuda de uma escumadeira, retire as bolinhas da panela quando elas estiverem douradas e coloque sobre um prato forrado com papel-toalha. ",
+        "Sirva bem quente."
+      ]
     },
     {
-      "id": 0,
+      "id": 15,
       "privada": false,
       "titulo": "",
       "autor": "",
