@@ -388,37 +388,37 @@
         {
           "ingrediente": "Doce de leite",
           "quantidade": 0.75,
-          "unidadeMedida": "Xícara de chá",
+          "unidadeMedida": "xícara de chá",
           "categoria": "Doces e Chocolates"
         },
         {
           "ingrediente": "Ovo",
           "quantidade": 2,
-          "unidadeMedida": "Unidade",
+          "unidadeMedida": "unidade",
           "categoria": "Ovos"
         },
         {
           "ingrediente": "Manteiga",
           "quantidade": 50,
-          "unidadeMedida": "Gramas",
+          "unidadeMedida": "grama",
           "categoria": "Laticínios"
         },
         {
           "ingrediente": "Açúcar",
           "quantidade": 0.25,
-          "unidadeMedida": "Xícara de chá",
+          "unidadeMedida": "xícara de chá",
           "categoria": "Doces e Chocolates"
         },
         {
           "ingrediente": "Sal",
           "quantidade": 1,
-          "unidadeMedida": "Pitada",
+          "unidadeMedida": "pitada",
           "categoria": "Molhos e Condimentos"
         },
         {
           "ingrediente": "Farinha de Trigo",
           "quantidade": 2,
-          "unidadeMedida": "Colheres de sopa",
+          "unidadeMedida": "colher de sopa",
           "categoria": "Farinhas"
         }
       ],
@@ -436,7 +436,7 @@
       "titulo": "GELEIA DE MANGA E MARACUJÁ",
       "autor": "Panelinha",
       "rendimento": 4,
-      "tempoPreparo": "1 horas",
+      "tempoPreparo": "1 hora",
       "imagem": "https://cdn.panelinha.com.br/receita/1540583468204-receita-geleiaaaaa.jpg",
       "tags": [
         {
@@ -448,25 +448,25 @@
         {
           "ingrediente": "Manga",
           "quantidade": 2,
-          "unidadeMedida": "Unidade",
+          "unidadeMedida": "unidade",
           "categoria": "Frutas"
         },
         {
           "ingrediente": "Maracujá",
           "quantidade": 3,
-          "unidadeMedida": "Unidade",
+          "unidadeMedida": "unidade",
           "categoria": "Frutas"
         },
         {
           "ingrediente": "Açucar",
           "quantidade": 1,
-          "unidadeMedida": "Xícara de chá",
+          "unidadeMedida": "xícara de chá",
           "categoria": "Doces e Chocolates"
         },
         {
           "ingrediente": "Água",
           "quantidade": 0.66,
-          "unidadeMedida": "Xícara",
+          "unidadeMedida": "xícara",
           "categoria": "Bebidas"
         }
       ],
@@ -495,7 +495,7 @@
         {
           "ingrediente": "Chocolate branco",
           "quantidade": 300,
-          "unidadeMedida": "Gramas",
+          "unidadeMedida": "grama",
           "categoria": "Doces e Chocolates"
         }
       ],
@@ -523,13 +523,13 @@
         {
           "ingrediente": "Ovo",
           "quantidade": 3,
-          "unidadeMedida": "Unidade",
+          "unidadeMedida": "unidade",
           "categoria": "Ovos"
         },
         {
           "ingrediente": "Açucar",
           "quantidade": 1,
-          "unidadeMedida": "Xícara de chá",
+          "unidadeMedida": "xícara de chá",
           "categoria": "Doces e Chocolates"
         }
       ],
@@ -563,25 +563,25 @@
           "ingrediente": "Alho",
           "quantidade": 1,
           "unidadeMedida": "unidade",
-          "categoria": "Legumes e verduras"
+          "categoria": "Legumes e Verduras"
         },
         {
           "ingrediente": "Azeite",
           "quantidade": 6,
-          "unidadeMedida": "colheres de sopa",
+          "unidadeMedida": "colher de sopa",
           "categoria": "Óleos"
         },
         {
           "ingrediente": "Suco de limão",
           "quantidade": 2,
-          "unidadeMedida": "colheres de sopa",
+          "unidadeMedida": "colher de sopa",
           "categoria": "Frutas"
         },
         {
           "ingrediente": "Sal",
           "quantidade": 0.5,
           "unidadeMedida": "colher de chá",
-          "categoria": "Molhos e condimentos"
+          "categoria": "Molhos e Condimentos"
         }
       ],
       "modoPreparo": [
@@ -606,7 +606,7 @@
         {
           "ingrediente": "Ovo",
           "quantidade": 3,
-          "unidadeMedida": "unidades",
+          "unidadeMedida": "unidade",
           "categoria": "Ovos"
         },
         {
@@ -618,7 +618,7 @@
         {
           "ingrediente": "Bananas nanicas",
           "quantidade": 4,
-          "unidadeMedida": "unidades",
+          "unidadeMedida": "unidade",
           "categoria": "Frutas"
         },
         {
@@ -630,7 +630,7 @@
         {
           "ingrediente": "Raspas de limão siciliano",
           "quantidade": 1,
-          "unidadeMedida": "cascas",
+          "unidadeMedida": "casca",
           "categoria": "Frutas"
         }
       ],
@@ -666,20 +666,20 @@
         {
           "ingrediente": "Óleo de girassol",
           "quantidade": 6,
-          "unidadeMedida": "colheres de sopa",
+          "unidadeMedida": "colher de sopa",
           "categoria": "Óleos"
         },
         {
           "ingrediente": "Vinagre de arroz",
           "quantidade": 0.25,
           "unidadeMedida": "xícara de chá",
-          "categoria": "Molhos e condimentos"
+          "categoria": "Molhos e Condimentos"
         },
         {
           "ingrediente": "´Mel",
           "quantidade": 2,
-          "unidadeMedida": "colheres de sopa",
-          "categoria": "Doces e chocolates"
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Doces e Chocolates"
         },
         {
           "ingrediente": "Óleo de gergelim",
@@ -691,7 +691,7 @@
           "ingrediente": "Sal",
           "quantidade": 0.5,
           "unidadeMedida": "colher de chá",
-          "categoria": "Molhos e condimentos"
+          "categoria": "Molhos e Condimentos"
         }
       ],
       "modoPreparo": [
@@ -717,7 +717,7 @@
           "ingrediente": "Sagu",
           "quantidade": 0.5,
           "unidadeMedida": "xícara de chá",
-          "categoria": "Farinhas e grãos"
+          "categoria": "Grãos"
         },
         {
           "ingrediente": "Suco de uva integral",
@@ -735,19 +735,19 @@
           "ingrediente": "Açúcar",
           "quantidade": 0.5,
           "unidadeMedida": "xícara de chá",
-          "categoria": "Doces e chocolates"
+          "categoria": "Doces e Chocolates"
         },
         {
           "ingrediente": "Canela",
           "quantidade": 1,
           "unidadeMedida": "unidade",
-          "categoria": "Molhos e condimentos"
+          "categoria": "Molhos e Condimentos"
         },
         {
           "ingrediente": "Cravos-da-Índia",
           "quantidade": 2,
           "unidadeMedida": "unidade",
-          "categoria": "Molhos e condimentos"
+          "categoria": "Molhos e Condimentos"
         }
       ],
       "modoPreparo": [
@@ -782,7 +782,7 @@
           "ingrediente": "Salsinha",
           "quantidade": 0.5,
           "unidadeMedida": "xícara de chá",
-          "categoria": "Legumes e verduras"
+          "categoria": "Legumes e Verduras"
         },
         {
           "ingrediente": "Ovos",
@@ -799,7 +799,7 @@
         {
           "ingrediente": "Queijo parmesão",
           "quantidade": 4,
-          "unidadeMedida": "colheres de sopa",
+          "unidadeMedida": "colher de sopa",
           "categoria": "Laticínios"
         },
         {
@@ -812,13 +812,13 @@
           "ingrediente": "Pimenta do reino",
           "quantidade": 0.5,
           "unidadeMedida": "colher de chá",
-          "categoria": "Molhos e condimentos"
+          "categoria": "Molhos e Condimentos"
         },
         {
           "ingrediente": "Sal",
           "quantidade": 0.5,
           "unidadeMedida": "colher de chá",
-          "categoria": "Molhos e condimentos"
+          "categoria": "Molhos e Condimentos"
         }
       ],
       "modoPreparo": [
@@ -832,170 +832,417 @@
     {
       "id": 15,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Carne moída com vagem",
+      "autor": "Diana Tabanez",
+      "rendimento": 6,
+      "tempoPreparo": "15 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1582318381945-carne%20mo%C3%ADda%20com%20vagem.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Almoço"
+        },
+        {
+          "nome": "Prato Principal"
         }
       ],
-      "descricao": "",
+      "descricao": "Para variar os sabores da carne moída, vamos de vagens crocantes, um toque de especiarias e técnica francesa para fazer um molho mais encorpado.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
+          "ingrediente": "Patinho Moído",
+          "quantidade": 400,
+          "unidadeMedida": "grama",
+          "categoria": "Carnes"
+        },
+        {
+          "ingrediente": "Vagem",
+          "quantidade": 20,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Cebola",
+          "quantidade": 0.5,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Água",
+          "quantidade": 1,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Bebidas"
+        },
+        {
+          "ingrediente": "Farinha de trigo",
+          "quantidade": 1,
+          "unidadeMedida": "colher de sopa",
           "categoria": ""
+        },
+        {
+          "ingrediente": "Azeite",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Páprica doce",
+          "quantidade": 1,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Cominho",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Dente de alho",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Pimenta-do-reino",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Retire a carne moída da geladeira e mantenha em temperatura ambiente enquanto prepara os outros ingredientes – se estiver gelada na hora de ir para a panela, a carne vai cozinhar no próprio vapor em vez de dourar. Leve um pouco mais de 1 xícara (chá) de água ao fogo baixo para ferver.",
+        "Lave e seque as vagens. Descarte as pontinhas e fatie, na diagonal, em pedaços de 1,5 cm. Descasque e corte a cebola em cubos de 1 cm. Descasque e pique fino o dente de alho.",
+        "Leve uma panela média (ou frigideira grande) ao fogo médio. Quando estiver bem quente, regue com 1 colher (sopa) de azeite e coloque a carne moída em montinhos, distribuindo por todo o fundo da panela – assim ela doura melhor. Deixe cozinhar sem mexer por 1 minuto para dourar bem. Tempere a carne com sal e pimenta e polvilhe com a farinha de trigo. Deixe cozinhar por cerca de 5 minutos, mexendo de vez em quando com espátula para desmanchar os pedaços de carne e dourar por igual.",
+        "Transfira a carne dourada para uma tigela e mantenha a panela em fogo médio. Regue com o azeite restante e acrescente a cebola. Tempere com uma pitada de sal e refogue por cerca de 2 minutos, até murchar.",
+        "Adicione as vagens, tempere com sal, pimenta e refogue por 2 minutos até dourar levemente e começarem a ficar macias – não cozinhe demais, a ideia é que fiquem crocantes. Junte o alho e tempere com o cominho e a páprica. Mexa por 1 minuto para perfumar. ",
+        "Regue a frigideira com 1 xícara (chá) da água quente, aos poucos, misturando com a espátula para incorporar o sabor do refogado. Volte a carne para a panela e deixe cozinhar por mais 2 minutos para o molho encorpar. Sirva a seguir."
+      ]
     },
     {
-      "id": 0,
+      "id": 16,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Farofa de cenoura",
+      "autor": "Geovanna Sabala",
+      "rendimento": 6,
+      "tempoPreparo": "15 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1582317760223-farofa%20de%20cenoura.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Acompanhamento"
         }
       ],
-      "descricao": "",
+      "descricao": "Crocante e adocicada, essa farofa de milho com cenoura e cebola é viciante. A sorte é que combina com muita coisa: com grelhados, ensopados, assados, para comer com arroz e feijão…",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Farinha de milho",
+          "quantidade": 2.5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Farinhas"
+        },
+        {
+          "ingrediente": "Cenoura",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Cebola",
+          "quantidade": 1.5,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Manteiga",
+          "quantidade": 75,
+          "unidadeMedida": "grama",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Óleo de soja",
+          "quantidade": 0.25,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e Condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Lave, descasque  e passe a cenoura pela parte grossa do ralador. Descasque e fatie a cebola em meias-luas finas, de 0,5 cm.",
+        "Leve uma frigideira grande com o óleo ao fogo alto. Quando aquecer, acrescente as cebolas fatiadas e deixe fritar por cerca de 8 minutos até começarem a dourar – mexa de vez em quando com uma espátula para não queimar.",
+        "Diminua o fogo para médio, adicione a manteiga e mexa para derreter. Acrescente a cenoura ralada, tempere com ½ colher (chá) de sal e mexa por 2 minutos até murchar.",
+        "Junte a farinha de milho aos poucos, misturando com a espátula para incorporar. Deixe cozinhar por mais 5 minutos, mexendo de vez em quando, para a farofa ficar crocante. Sirva a seguir."
+      ]
     },
     {
-      "id": 0,
+      "id": 17,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Salada de duas frutas",
+      "autor": "Sarah Arantes",
+      "rendimento": 4,
+      "tempoPreparo": "10 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1544464037834-frutas%20%281%29.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "Não precisa ter uma quitanda inteira para preparar uma salada de frutas. Olha como fica linda esta salada que leva apenas mamão e manga! O caldo de limão dá frescor e acentua o sabor. Sirva com folhas de hortelã e farofinha de aveia.",
       "ingredientes": [
         {
-          "ingrediente": "",
+          "ingrediente": "Manga",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Mamão formosa",
+          "quantidade": 2.33,
+          "unidadeMedida": "xícara",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Limão",
+          "quantidade": 1,
+          "unidadeMedida": "caldo",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Raspas de limão",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Mel",
+          "quantidade": 2,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Doces e Verduras"
+        },
+        {
+          "ingrediente": "Hortelã",
           "quantidade": 0,
           "unidadeMedida": "",
-          "categoria": ""
+          "categoria": "Molhos e Condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Descasque e corte a manga em cubos de 1,5 cm e transfira para uma tigela. Descarte as sementes, descasque o mamão e corte a polpa em cubos de 1,5 cm. Junte à manga e misture bem delicadamente, para não amassar nem desmanchar as frutas. Cubra com filme e leve à geladeira  por até 1 hora antes de servir – assim a salada de frutas fica bem fresca.",
+        "Numa tigela pequena, misture o caldo de limão com o mel. Na hora de servir, regue a calda sobre a salada de frutas e misture delicadamente. Polvilhe com as raspas de limão e sirva com folhas de hortelã a gosto e farofa de aveia."
+      ]
     },
     {
-      "id": 0,
+      "id": 18,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Nhoque de abóbora",
+      "autor": "Virgínia Rodovalho",
+      "rendimento": 6,
+      "tempoPreparo": "2 horas",
+      "imagem": "https://cdn.panelinha.com.br/receita/1583852034986-nhoque%20ab%C3%B3bora.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Massas"
+        },
+        {
+          "nome": "Prato Principal"
         }
       ],
-      "descricao": "",
+      "descricao": "A abóbora empresta sua cremosidade ao nhoque, que ainda por cima fica com uma cor linda. Mas essas vantagens têm seu preço: por ser mais úmida, ela exige alguns cuidados no preparo para evitar a adição de farinha em excesso. Siga a receita com atenção que vai dar certo e ficar uma delícia. Aí você escolhe se vai servir com molho de tomate, com manteiga e sálvia, com bechamel e gorgonzola...",
       "ingredientes": [
         {
-          "ingrediente": "",
+          "ingrediente": "Abóbora japonesa",
+          "quantidade": 500,
+          "unidadeMedida": "grama",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Batata",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Farinha de trigo",
+          "quantidade": 0.5,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Farinhas"
+        },
+        {
+          "ingrediente": "Azeite",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 1,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Pimenta-do-reino",
           "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Noz-moscada",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Preaqueça o forno a 180 ºC (temperatura média).",
+        "Caso tenha comprado a abóbora com casca, descarte as sementes e corte a abóbora em fatias de cerca de 3 cm. Corte cada fatia em pedaços médios e descasque os pedaços. ",
+        "Transfira a abóbora para uma assadeira média, regue com o azeite, misture e distribua os pedaços para não acumular líquido ao assar.",
+        "Leve ao forno para assar por cerca de 40 minutos até a abóbora ficar bem macia – teste o ponto espetando com um garfo. Atenção: não precisa virar os pedaços, a crostinha dourada que forma dá mais sabor ao nhoque. ",
+        "Enquanto isso, descasque e corte a batata em 4 pedaços. Transfira para uma panela pequena, cubra com água e leve ao fogo alto. Assim que ferver, abaixe o fogo e deixe cozinhar por cerca de 15 minutos até ficar macia – espete com um garfo para verificar o ponto.",
+        "Escorra bem a água da batata. Sobre uma tigela grande, passe os pedaços ainda quentes pelo espremedor.",
+        "Retire a abóbora do forno e passe os pedaços também pelo espremedor. Tempere com o sal, pimenta e noz-moscada e misture bem com uma espátula. Deixe o purê amornar antes de preparar a massa do nhoque – se estiver muito quente, vai absorver mais farinha e o nhoque vai ficar pesado.",
+        "Na bancada limpa, coloque ½ xícara (chá) de farinha e, sobre ela, o purê de batata com abóbora. Com as mãos, vá misturando delicadamente para incorporar a farinha, sem sovar. Use a palma da mão para apertar a massa sobre ela mesma, virando sobre a farinha, apenas até conseguir formar uma bola. Atenção: essa massa é úmida. Quanto mais você mexer, mais farinha vai precisar e o nhoque vai ficar pesado. ",
+        "Para modelar os nhoques: polvilhe um pouco de farinha de trigo numa assadeira grande e na bancada. Com uma espátula de padeiro (ou faca), corte uma porção da massa e enrole sobre a farinha, formando um cilindro de 2 cm de diâmetro. Com a espátula, corte o rolo em pedaços de 2 cm para formar os nhoques. Transfira os nhoques para a assadeira enfarinhada e repita com o restante, sempre polvilhando a bancada com um pouco de farinha. ",
+        "Leve uma panela grande com cerca de 3 litros de água ao fogo alto. Unte uma assadeira grande (ou refratário) com óleo. Assim que a água ferver, adicione 1 ½ colher (sopa) de sal. ",
+        "Com uma escumadeira, mergulhe cerca de 20 nhoques por vez na água fervente e deixe cozinhar até subirem à superfície. Com a escumadeira, retire os nhoques cozidos, deixando escorrer bem a água, e transfira para a assadeira untada com óleo. Repita com todos os nhoques e sirva a seguir com o molho de sua preferência."
+      ]
     },
     {
-      "id": 0,
+      "id": 19,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Gelo de café",
+      "autor": "Kenzo Bonilha",
+      "rendimento": 10,
+      "tempoPreparo": "2 horas",
+      "imagem": "https://cdn.panelinha.com.br/receita/1545409954436-gelo%20de%20cafe.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Sobremesa"
         }
       ],
-      "descricao": "",
+      "descricao": "Esta ideia é o máximo: quando sobra café, leve ao congelador em forminhas de gelo. Use no café gelado para ele não ficar aguado, para tomar com leite puro, para bater com leite ou preparar outras receitas.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Café",
+          "quantidade": 1,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Bebidas"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": "Preencha as cavidades de uma fôrma de gelo com o café e leve ao congelador por ao menos 4 horas, até firmar. Sirva a seguir com café, com leite puro, batido com leite ou para preparar drinques."
     },
     {
-      "id": 0,
+      "id": 20,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Molho de pimentão",
+      "autor": "Cristina Lagoa",
+      "rendimento": 4,
+      "tempoPreparo": "1 hora",
+      "imagem": "https://cdn.panelinha.com.br/receita/1583864252524-molho%20pimentao.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Molhos"
         }
       ],
-      "descricao": "",
+      "descricao": "Versátil, combina com carnes, aves, peixes, risotos e legumes grelhados. Fica incrível com batata frita (ou assada). Para quem evita pimentão porque acha indigesto, pode ir tranquilo nesta receita: depois de tirar a pele e as sementes, ele fica inofensivo.",
       "ingredientes": [
         {
-          "ingrediente": "",
+          "ingrediente": "Pimentão vermelho",
+          "quantidade": 2,
+          "unidadeMedida": "unidade",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Vinagre balsâmico",
+          "quantidade": 1,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Azeite",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Sal",
           "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Pimenta-do-reino",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Preaqueça o forno a 220 ºC (temperatura média). ",
+        "Lave, seque e coloque os pimentões inteiros numa assadeira. Leve ao forno para assar, por cerca de 20 minutos até ficarem com a pele tostada. Se preferir, toste a pele dos pimentões diretamente na boca do fogão: com uma pinça, coloque cada pimentão sobre uma chama do fogão e espere a pele começar a borbulhar, escurecer e rachar, vá virando os legumes para tostar toda a superfície.",
+        "Abafe os pimentões por 10 minutos em uma tigela tampada  – a pele se solta mais facilmente. Com as mãos, ou a ajuda de uma colher, descasque os pimentões.",
+        "Descarte o cabo e as sementes, transfira para o mini-processador (ou liquidificador) e junte o vinagre balsâmico. Tempere com 1 colher (chá) de sal e pimenta a gosto. Bata até formar uma pasta. Fica uma delícia com carnes ou legumes grelhados e assados, risotos e peixes."
+      ]
     },
     {
-      "id": 0,
+      "id": 21,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "Chapati",
+      "autor": "Carla Tomé",
+      "rendimento": 10,
+      "tempoPreparo": "1 hora",
+      "imagem": "https://cdn.panelinha.com.br/receita/1594316806337-chapati1.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Acompanhamentos"
+        },
+        {
+          "nome": "Café da Manhã"
         }
       ],
-      "descricao": "",
+      "descricao": "Também conhecido como pão ázimo, o chapati é uma daquelas receitas que sobrevivem ao tempo. O pãozinho indiano, um dos mais antigos do mundo, é uma maravilha: não leva fermento e é feito na chapa!",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Farinha de trigo",
+          "quantidade": 1,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Farinhas"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0.5,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Molhos e condimentos"
+        },
+        {
+          "ingrediente": "Óleo de soja",
+          "quantidade": 1,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Água",
+          "quantidade": 0.33,
+          "unidadeMedida": "xícara de chá",
+          "categoria": "Bebidas"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Numa tigela grande misture a farinha de trigo com o sal. Regue com metade da água e misture com a mão até formar uma farofa grossa – a farinha precisa entrar em contato com um pouco de água antes do óleo, para absorver melhor o líquido.",
+        "Adicione o óleo e misture bem. Ainda dentro da tigela, acrescente aos poucos o restante da água, amassando com a mão até que a massa absorva todo o líquido.",
+        "Sove a massa por 5 minutos: aperte, amasse, estique e amasse novamente, dentro da tigela até atingir uma textura macia e elástica. Se preferir sovar na bancada, polvilhe a superfície com uma camada bem fina de farinha de trigo – é bem fina mesmo, evite juntar mais farinha na massa, o pão pode ficar ressecado.",
+        "Modele a massa numa bola e embale com filme (ou cubra com um pano) e deixe descansar por 10 minutos – esse descanso relaxa o glúten e faz o pão inflar com mais facilidade.",
+        "Modele um rolinho com a massa e, com uma espátula de padeiro (ou faca), divida em 10 porções. Enrole cada porção numa bolinha e polvilhe a bancada com farinha de trigo. Abra uma bolinha com o rolo de macarrão até formar um disco bem fino – vá polvilhando farinha sob e sobre a massa para não grudar.",
+        "Leve uma frigideira média (pode ser de inox ou ferro) ao fogo médio – não precisa untar. Quando estiver quente, bata o disco de massa contra as mãos para tirar o excesso de farinha e coloque na frigideira. Deixe o pão assar por 20 a 30 segundos, até começar a formar bolhas. Com cuidado para não rasgar a massa, vire o pão com uma pinça e deixe por mais 15 segundos na frigideira – o pão vai começar a inflar. Enquanto isso, acenda uma outra boca do fogão.",
+        "Tire o pão da frigideira com uma pinça e coloque diretamente na chama da outra boca do fogão para chamuscar levemente. Transfira o pão para um prato e cubra com um pano de prato – assim os pães ficam macios e permanecem quentinhos. Repita com o os outros discos. Você também pode finalizar os chapatis na frigideira, basta deixar cozinhar por mais tempo depois de virar. Sirva a seguir."
+      ]
     },
     {
       "id": 0,
