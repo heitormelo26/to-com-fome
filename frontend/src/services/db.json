@@ -1245,76 +1245,163 @@
       ]
     },
     {
-      "id": 0,
+      "id": 22,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "COCOTTE DE ERVILHA COM RICOTA",
+      "autor": "Panelinha",
+      "rendimento": 2,
+      "tempoPreparo": "5 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1593545244437-cocotte.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Brunch"
         }
       ],
-      "descricao": "",
+      "descricao": "Bastam três minutos no micro-ondas para transformar os ovos em uma refeição charmosa. Vale para um jantar levinho ou um café da manhã caprichado. Sem panela na pia! Não precisa nem ter fogão.",
       "ingredientes": [
         {
-          "ingrediente": "",
+          "ingrediente": "Ovo",
+          "quantidade": 2,
+          "unidadeMedida": "Unidade",
+          "categoria": "Ovos"
+        },
+        {
+          "ingrediente": "Ricota",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Ervilha",
+          "quantidade": 2,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Legumes e Verduras"
+        },
+        {
+          "ingrediente": "Leite",
+          "quantidade": 2,
+          "unidadeMedida": "colher de chá",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Azeite",
           "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "unidadeMedida": "a gosto",
+          "categoria": "Óleos"
+        },
+        {
+          "ingrediente": "Noz-moscada",
+          "quantidade": 1,
+          "unidadeMedida": "pitada",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Sal",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Pimenta do reino",
+          "quantidade": 0,
+          "unidadeMedida": "a gosto",
+          "categoria": "Molhos e Condimentos"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Num ramequim individual que comporte 250 ml (ou qualquer tigela refratária individual ou xícara que possa ir ao micro-ondas), coloque a ricota, a ervilha (nem precisa descongelar antes) e tempere com um fio de azeite, sal e pimenta-do-reino a gosto.",
+        "Quebre um ovo de cada vez em outra tigela e transfira para o ramequin – se um estiver estragado você não perde a receita. Fure as gemas com um garfo, acrescente o leite, tempere com uma pitada de sal e noz-moscada. Não precisa misturar.",
+        "Cubra o ramequin com um pedaço de papel-toalha – para garantir que as gemas não estourem. Coloque o ramequin num prato e leve ao micro-ondas para cozinhar, em potência média, por 2 minutos e 30 segundos para uma cocotte com gema mole ou 3 minutos para gema firme. Sirva a seguir."
+      ]
     },
     {
-      "id": 0,
+      "id": 23,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "LASSI DE IOGURTE COM CARDAMOMO",
+      "autor": "Panelinha",
+      "rendimento": 2,
+      "tempoPreparo": "5 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1588969918052-lassi-cardamomo-receita.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Brunch"
         }
       ],
-      "descricao": "",
+      "descricao": "Comece o dia com uma viagem à Índia: prepare essa bebida super refrescante para o seu café da manhã. Apesar de poucos ingredientes o sabor é incrível: ácido do iogurte, levemente adocicado do mel e perfume de cardamomo combinam demais!",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Iogurte Natural",
+          "quantidade": 340,
+          "unidadeMedida": "grama",
+          "categoria": "Laticínios"
+        },
+        {
+          "ingrediente": "Mel",
+          "quantidade": 1,
+          "unidadeMedida": "colher de sopa",
+          "categoria": "Doces de Chocolates"
+        },
+        {
+          "ingrediente": "Cardamomo",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Molhos e Condimentos"
+        },
+        {
+          "ingrediente": "Gelo",
+          "quantidade": 10,
+          "unidadeMedida": "unidade",
+          "categoria": "Bebidas"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Com uma faca para legumes, corte a baga de cardamomo e transfira as sementes para o copo do liquidificador. Junte o iogurte, o mel e os cubos de gelo. Bata até triturar bem o gelo. Divida em dois copos, acrescente cubos de gelo a gosto e sirva a seguir."
+      ]
     },
     {
-      "id": 0,
+      "id": 24,
       "privada": false,
-      "titulo": "",
-      "autor": "",
-      "rendimento": 0,
-      "tempoPreparo": "",
-      "imagem": "",
+      "titulo": "SALADA DE FRUTAS COM CARAMBOLA",
+      "autor": "Panelinha",
+      "rendimento": 4,
+      "tempoPreparo": "5 minutos",
+      "imagem": "https://cdn.panelinha.com.br/receita/1583183500949-salada%20de%20frutas%20com%20carambola.jpg",
       "tags": [
         {
-          "nome": ""
+          "nome": "Brunch"
         }
       ],
-      "descricao": "",
+      "descricao": "As fatias de carambola transformam a salada de fruta de sempre em sobremesa das estrelas! E saca essa combinação: ainda vai morango, kiwi e manga.",
       "ingredientes": [
         {
-          "ingrediente": "",
-          "quantidade": 0,
-          "unidadeMedida": "",
-          "categoria": ""
+          "ingrediente": "Carambola",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Manga",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Kiwi",
+          "quantidade": 1,
+          "unidadeMedida": "unidade",
+          "categoria": "Frutas"
+        },
+        {
+          "ingrediente": "Manga",
+          "quantidade": 125,
+          "unidadeMedida": "grama",
+          "categoria": "Frutas"
         }
       ],
-      "modoPreparo": ""
+      "modoPreparo": [
+        "Lave e seque a carambola, o kiwi, a manga e os morangos. Corte a carambola em fatias de 0,5 cm, para formar estrelas. Descasque e corte a manga em cubos de 2 cm. Descarte o cabinho e corte os morangos em quartos. Descasque e corte os kiwis ao meio no sentido do comprimento, corte cada metade em 3 tiras e as tiras em pedaços de 2 cm.",
+        "Numa tigela, misture os pedaços de manga, kiwi e morango com cuidado para não desmanchar as frutas. Distribua a salada de frutas em 3 tigelas, disponha as fatias de carambola e sirva a seguir."
+      ]
     },
     {
       "id": 0,
