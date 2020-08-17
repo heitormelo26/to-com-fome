@@ -3,7 +3,8 @@ import Knex from "knex";
 export async function up(knex: Knex) {
   return knex.schema.createTable("ingredients", (table) => {
     table.increments("id").primary();
-    table.string("name").notNullable();
+    table.string("title").notNullable();
+    table.string("description").notNullable();
     table.string("categories").notNullable();
     table.string("image").notNullable();
     table.specificType("products", "object ARRAY").notNullable();
@@ -15,7 +16,7 @@ export async function up(knex: Knex) {
       .inTable("users")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
-    table.integer("yield").notNullable();
+    table.integer("amount").notNullable();
     table.integer("time").notNullable();
     table.integer("likes").notNullable();
   });
