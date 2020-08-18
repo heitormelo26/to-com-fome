@@ -59,4 +59,63 @@ export default class RecipesController {
       });
     }
   }
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.body;
+    const trx = await db.transaction();
+    try {
+      await trx("recipes").where("id", id).del();
+      await trx.commit();
+      return response.status(201).send();
+    } catch (err) {
+      await trx.rollback();
+      return response.status(400).json({
+        error: "Unexpected error while deleting recipe",
+      });
+    }
+  }
+
+  async update(request: Request, response: Response) {
+    const {
+      id,
+      title,
+      categories,
+      image,
+      products,
+      description,
+      prepare_mode,
+      amount,
+      time,
+    } = request.body;
+    const trx = await db.transaction();
+    try {
+      const insertedPrepareMode = (prepare_mode as string).split("\n");
+      const insertedProducts = await products.map(
+        (productItem: ProductItem) => {
+          trx("ingredients_recipe").where("recipe_id", "=", id).update({
+            unity: productItem.unity,
+            quantity: productItem.quantity,
+            recipe_id: id,
+            ingredient_id: productItem.ingredient_id,
+          });
+        }
+      );
+      await trx("recipes").where("id", "=", id).update({
+        title,
+        categories,
+        image,
+        description,
+        prepare_mode,
+        amount,
+        time,
+      });
+      await trx.commit();
+      return response.status(201).send();
+    } catch (err) {
+      await trx.rollback();
+      return response.status(400).json({
+        error: "Unexpected error while updating recipe",
+      });
+    }
+  }
 }

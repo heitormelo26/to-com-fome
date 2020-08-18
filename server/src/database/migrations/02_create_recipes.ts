@@ -7,7 +7,6 @@ export async function up(knex: Knex) {
     table.string("description").notNullable();
     table.string("categories").notNullable();
     table.string("image").notNullable();
-    table.specificType("products", "object ARRAY").notNullable();
     table.specificType("prepare_mode", "text ARRAY").notNullable();
     table
       .integer("user_id")
