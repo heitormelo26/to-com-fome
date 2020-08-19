@@ -10,7 +10,26 @@ interface ProductItem {
 
 export default class RecipesController {
   async index(request: Request, response: Response) {
-    return response.status(201).send();
+    const filters = request.query;
+    const categories = filters.categories as string;
+    const meals = filters.meals as string;
+    const countries = filters.countries as string;
+    if (!filters.categories && !filters.meals && !filters.countries) {
+      return response.status(400).json({
+        error: "Missing filters to search recipes",
+      });
+    }
+
+    const recipes = await db("recipes")
+      .whereExists(function () {
+        this.select("id.*")
+          .from("recipes")
+          .whereRaw("`recipes`.`categories` like %??%", [categories])
+          .whereRaw("`recipes`.`categories` like %??%", [meals])
+          .whereRaw("`recipes`.`categories` like %??%", [countries]);
+      })
+      .select(["recipes.*"]);
+    return response.json(recipes);
   }
 
   async create(request: Request, response: Response) {
