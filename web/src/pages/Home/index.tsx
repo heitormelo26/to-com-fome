@@ -18,8 +18,6 @@ import {
   Fridge,
   IconCategory,
   IconCategorySelected,
-  IconGroup,
-  InputText,
   More,
   Subtitle,
   Title,
@@ -35,7 +33,6 @@ import {
   mdiCupcake,
   mdiFood,
   mdiFoodCroissant,
-  mdiMagnify,
   mdiPasta,
   mdiPizza,
   mdiSilverwareVariant,
@@ -209,20 +206,6 @@ function Home() {
             <IconCategory className="text-center btn">
               <Icon path={mdiCupcake} color="#8d99ae" size={1} />
             </IconCategory>
-          </div>
-          <div className="col-md-12 mb-4 d-flex justify-content-center align-items-center">
-            <div className="input-group">
-              <div className="input-group-prepend">
-                <IconGroup className="input-group-text">
-                  <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
-                </IconGroup>
-              </div>
-              <InputText
-                type="text"
-                placeholder="Buscar..."
-                className="py-3 form-control"
-              />
-            </div>
           </div>
         </div>
         <div className="row mb-5">
