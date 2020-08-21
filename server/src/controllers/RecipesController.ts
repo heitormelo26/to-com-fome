@@ -129,7 +129,8 @@ export default class RecipesController {
           .from("recipes")
           .whereRaw("`recipes`.`categories` like %??%", [meals]);
       })
-      .select(["recipes.*"]);
+      .select(["recipes.*"])
+      .limit(12);
     return response.json(recipes);
   }
 
@@ -259,5 +260,77 @@ export default class RecipesController {
         error: "Unexpected error while updating recipe",
       });
     }
+  }
+
+  async searchSavedRecipes(request: Request, response: Response) {
+    const filters = request.query;
+    const user_id = filters.id;
+    const recipes = await db("user_recipes") // fazer taxa de compatibilidade
+      .whereExists(function () {
+        this.select("recipe_id.*")
+          .from("user_recipes")
+          .whereRaw("`user_id` = ??", [Number(user_id)])
+          .whereRaw("`type` = ??", "saved");
+      })
+      .select(["recipes.*"]);
+    return response.json(recipes);
+  }
+
+  async searchPrivateRecipes(request: Request, response: Response) {
+    const filters = request.query;
+    const user_id = filters.id;
+    const recipes = await db("user_recipes") // fazer taxa de compatibilidade
+      .whereExists(function () {
+        this.select("recipe_id.*")
+          .from("user_recipes")
+          .whereRaw("`user_id` = ??", [Number(user_id)])
+          .whereRaw("`type` = ??", "private");
+      })
+      .select(["recipes.*"]);
+    return response.json(recipes);
+  }
+
+  async searchSendRecipes(request: Request, response: Response) {
+    const filters = request.query;
+    const user_id = filters.id;
+    const recipes = await db("user_recipes") // fazer taxa de compatibilidade
+      .whereExists(function () {
+        this.select("recipe_id.*")
+          .from("user_recipes")
+          .whereRaw("`user_id` = ??", [Number(user_id)])
+          .whereRaw("`type` = ??", "send");
+      })
+      .select(["recipes.*"]);
+    return response.json(recipes);
+  }
+
+  async countSavedRecipes(request: Request, response: Response) {
+    const filters = request.query;
+    const user_id = filters.id;
+    const recipes = await db("user_recipes") // fazer taxa de compatibilidade
+      .whereExists(function () {
+        this.select("recipe_id.*")
+          .from("user_recipes")
+          .whereRaw("`user_id` = ??", [Number(user_id)])
+          .whereRaw("`type` = ??", "saved");
+      })
+      .select(["recipes.*"])
+      .count();
+    return response.json(recipes);
+  }
+
+  async countSendRecipes(request: Request, response: Response) {
+    const filters = request.query;
+    const user_id = filters.id;
+    const recipes = await db("user_recipes") // fazer taxa de compatibilidade
+      .whereExists(function () {
+        this.select("recipe_id.*")
+          .from("user_recipes")
+          .whereRaw("`user_id` = ??", [Number(user_id)])
+          .whereRaw("`type` = ??", "send");
+      })
+      .select(["recipes.*"])
+      .count();
+    return response.json(recipes);
   }
 }
