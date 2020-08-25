@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import IngredientForm from "../IngredientForm";
 
 import Navbar from "../../components/Navbar";
-import Recipe from "../../components/Recipe";
+import Recipe, { RecipeProps } from "../../components/Recipe";
 import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
 
@@ -46,6 +46,8 @@ import euaIcon from "../../assets/images/estados-unidos.png";
 import francaIcon from "../../assets/images/franca.png";
 import japaoIcon from "../../assets/images/japao.png";
 import ukIcon from "../../assets/images/reino-unido.png";
+
+import api from "../../services/api";
 
 function Home() {
   function SampleNextArrow(props: any) {
@@ -122,6 +124,7 @@ function Home() {
       },
     ],
   };
+  const [recipes, setRecipes] = useState<RecipeProps[]>([]);
   return (
     <>
       <Navbar isLogged={true} />
@@ -212,90 +215,13 @@ function Home() {
           <div className="col-md-12 mb-5 d-flex d-sm-flex d-md-none d-l-none d-xl-none justify-content-center align-items-center">
             <CategoryTitle className="m-0">Todas as receitas</CategoryTitle>
           </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
-              title="Receita 1"
-              user="TotozinDelas"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
-              title="Receita 2"
-              user="Zezezinho"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
-              title="Receita 3"
-              user="Fitipaldi"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
-              title="Receita 4"
-              user="Ana Carolina Carol"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
-              title="Receita 1"
-              user="TotozinDelas"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
-              title="Receita 2"
-              user="Zezezinho"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
-              title="Receita 3"
-              user="Fitipaldi"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
-              title="Receita 4"
-              user="Ana Carolina Carol"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
-              title="Receita 1"
-              user="TotozinDelas"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
-              title="Receita 2"
-              user="Zezezinho"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
-              title="Receita 3"
-              user="Fitipaldi"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
-              title="Receita 4"
-              user="Ana Carolina Carol"
-            />
-          </div>
+          {recipes.map((recipe: RecipeProps) => {
+            return (
+              <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+                <Recipe key={recipe.id} recipe={recipe} />
+              </div>
+            );
+          })}
           <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-2 d-flex justify-content-center align-items-center">
             <More to="/buscar" className="text-decoration-none">
               Mais receitas{" "}

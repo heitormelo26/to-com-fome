@@ -19,6 +19,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/react-slick": "^0.23.4",
     "@types/styled-components": "^5.1.2",
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "bootstrap-select": "^1.13.18",
     "jquery": "^3.5.1",
