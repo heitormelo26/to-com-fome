@@ -13,20 +13,36 @@ export default class IngredientsController {
     const filters = request.query;
     const name = filters.name as string;
     const category = filters.category as string;
-    if (!filters.category && !filters.name) {
+    if (!filters.name && !filters.category) {
       return response.status(400).json({
         error: "Missing filters to search ingredients",
       });
     }
-
     const ingredients = await db("ingredients")
-      .whereExists(function () {
-        this.select("id.*")
-          .from("ingredients")
-          .whereRaw("`ingredients`.`name` = ??", [name])
-          .whereRaw("`ingredients`.`category` = ??", [category]);
+      .where({
+        name: name,
+        category: category,
       })
-      .select(["ingredients.*"]);
+      .select("*");
     return response.json(ingredients);
+  }
+
+  async create(request: Request, response: Response) {
+    const { name, category, image } = request.body;
+    const trx = await db.transaction();
+    try {
+      await trx("ingredients").insert({
+        name,
+        category,
+        image,
+      });
+      await trx.commit();
+      return response.status(201).send();
+    } catch (err) {
+      await trx.rollback();
+      return response.status(400).json({
+        error: "Unexpected error while creating new ingredient",
+      });
+    }
   }
 }

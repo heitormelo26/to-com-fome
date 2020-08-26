@@ -125,6 +125,16 @@ function Home() {
     ],
   };
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
+
+  useEffect(() => {
+    api.get("recipes").then((response) => {
+      console.log(response.data);
+      // const { total } = response.data;
+
+      // setTotalConnections(total);
+    });
+  }, []);
+
   return (
     <>
       <Navbar isLogged={true} />

@@ -92,34 +92,13 @@ function Profile() {
           </div>
         </div>
         <div className="row">
-          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
+          {/* <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
             <Recipe
               image="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
               title="Receita 1"
               user="TotozinDelas"
             />
-          </div>
-          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1588970548521-_JW_4008.jpg"
-              title="Receita 2"
-              user="Zezezinho"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586463883276-16_Panelinha_04_12_19_338.jpg"
-              title="Receita 3"
-              user="Fitipaldi"
-            />
-          </div>
-          <div className="col-6 col-sm-6 col-lg-3 col-xl-3 col-md-3 mb-2 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1586460384106-frango%20erva-doce.jpg"
-              title="Receita 4"
-              user="Ana Carolina Carol"
-            />
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="mb-5 d-flex justify-content-center">
