@@ -22,6 +22,11 @@ export default class UsersController {
     }
   }
 
+  async index(request: Request, response: Response) {
+    const users = await db("users").select("*");
+    return response.json(users);
+  }
+
   async login(request: Request, response: Response) {
     const { email, password } = request.body;
     const trx = await db.transaction();

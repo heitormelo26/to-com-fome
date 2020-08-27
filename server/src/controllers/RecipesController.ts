@@ -124,12 +124,8 @@ export default class RecipesController {
       });
     }
     const recipes = await db("recipes")
-      .whereExists(function () {
-        this.select("id.*")
-          .from("recipes")
-          .whereRaw("`recipes`.`categories` like %??%", [meals]);
-      })
-      .select(["recipes.*"])
+      .where("categories", "like", `%${meals}%`)
+      .select("*")
       .limit(12);
     return response.json(recipes);
   }
@@ -192,7 +188,9 @@ export default class RecipesController {
           quantity: productItem.quantity,
         };
       });
-      await trx("ingredients_recipe").insert(insertedProducts);
+      for (var i = 0; i < insertedProducts.length; i++) {
+        await trx("ingredients_recipe").insert(insertedProducts[i]);
+      }
       await trx.commit();
       return response.status(201).send();
     } catch (err) {
