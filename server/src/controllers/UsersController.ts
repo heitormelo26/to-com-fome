@@ -27,6 +27,38 @@ export default class UsersController {
     return response.json(users);
   }
 
+  async serachByEmail(request: Request, response: Response) {
+    const filters = request.query;
+    const email = filters.email as string;
+    if (!filters.email) {
+      return response.status(400).json({
+        error: "Missing filters to search user",
+      });
+    }
+    const user = await db("users")
+      .where({
+        email: email,
+      })
+      .select("*");
+    return response.json(user);
+  }
+
+  async changePassword(request: Request, response: Response) {
+    const filters = request.query;
+    const email = filters.email as string;
+    if (!filters.email) {
+      return response.status(400).json({
+        error: "Missing filters to search user",
+      });
+    }
+    const user = await db("users")
+      .where({
+        email: email,
+      })
+      .select("*");
+    return response.json(user);
+  }
+
   async login(request: Request, response: Response) {
     const { email, password } = request.body;
     const trx = await db.transaction();
