@@ -18,6 +18,7 @@ routes.post("/i", ingredientsController.create);
 routes.get("/i", ingredientsController.index);
 
 routes.post("/u", usersControllers.create);
+routes.post("/changePassword", usersControllers.changePassword);
 routes.get("/u", usersControllers.index);
 
 routes.get("/ir", ingredientsRecipeController.index);

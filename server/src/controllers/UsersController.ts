@@ -46,16 +46,15 @@ export default class UsersController {
   async changePassword(request: Request, response: Response) {
     const filters = request.query;
     const email = filters.email as string;
-    if (!filters.email) {
+    const password = filters.password as string;
+    if (!filters.email && !filters.password) {
       return response.status(400).json({
         error: "Missing filters to search user",
       });
     }
-    const user = await db("users")
-      .where({
-        email: email,
-      })
-      .select("*");
+    const user = await db("users").where("email", "=", email).update({
+      password: password,
+    });
     return response.json(user);
   }
 
