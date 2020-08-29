@@ -18,50 +18,56 @@ import {
   IconGroup,
   InputText,
   Name,
+  Data,
   Number,
-  User,
 } from "./styles";
+
+import profile from "../../assets/images/profile.png";
 
 function Profile() {
   return (
     <div>
       <Navbar isLogged={true} />
-      <div className="container mb-4">
-        <Container className="row d-flex justify-content-end  mx-1 p-4 mb-5">
-          <EditButton
-            type="button"
-            data-toggle="modal"
-            data-target="#editarPerfil"
-            className="px-3 float-right h-auto btn btn-primary"
-          >
-            <Icon path={mdiPencil} size={0.8} color="#edf2f4" />
-          </EditButton>
-          <ProfileForm />
-          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 d-flex justify-content-center ">
-            <img
-              className="mb-3"
-              width="100"
-              src="https://image.flaticon.com/icons/svg/306/306005.svg"
-              alt="Foto de perfil"
-            />
-          </div>
-          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 text-center">
-            <Name className="mb-1">Paulinha</Name>
-            <User>@monkeystoks</User>
-          </div>
-          <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 d-flex justify-content-center flex-fill">
-            <div className="row w-100">
-              <div className="col-6 col-sm-6 col-lg-6 col-xl-6 col-md-6 text-center">
-                <Number>Receitas salvas</Number>
-                <Number>67</Number>
+      <div className="container mb-4 w-100">
+        <div className="row">
+          <div className="col-12">
+            <Container className="d-flex flex-row justify-content-center p-4 mb-5 mx-5 mx-sm-5 mx-md-auto mx-lg-auto mx-xl-auto">
+              <div className="d-none d-sm-none d-md-flex justify-content-end align-items-center mr-md-4">
+                <img
+                  className="img-fluid rounded-circle"
+                  width="100"
+                  src={profile}
+                  alt="Perfil"
+                />
               </div>
-              <div className="col-6 col-sm-6 col-lg-6 col-xl-6 col-md-6 text-center">
-                <Number>Receitas enviadas</Number>
-                <Number>13</Number>
+              <div className="d-flex justify-content-md-start justify-content-center flex-column align-self-center">
+                <Name className="d-flex flex-row align-self-center align-self-sm-center align-self-md-start align-self-lg-start align-self-xl-start">
+                  Usuário
+                  <EditButton
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#editarPerfil"
+                    className="btn d-flex justify-content-center align-items-center"
+                  >
+                    <Icon path={mdiPencil} size={0.7} color="#8d99ae" />
+                  </EditButton>
+                  <ProfileForm />
+                </Name>
+                <div className="d-flex flex-row">
+                  <Data className="text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                    <Number>N</Number> enviadas
+                  </Data>
+                  <Data className="text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                    <Number>N</Number> privadas
+                  </Data>
+                  <Data className="text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                    <Number>N</Number> salvas
+                  </Data>
+                </div>
               </div>
-            </div>
+            </Container>
           </div>
-        </Container>
+        </div>
         <div className="row mx-1 mb-4 ">
           <div className="col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12 d-flex justify-content-center">
             <CategorySelected className="mr-3 text-center text-truncate btn ">

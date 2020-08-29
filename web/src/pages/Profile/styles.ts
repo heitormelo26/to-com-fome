@@ -1,31 +1,33 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #2b2d42 !important;
-  border-radius: 40px !important;
+  background-color: transparent !important;
 `;
 
-export const Number = styled.p`
+export const Name = styled.h1`
+  font-family: Nunito;
+  font-weight: bold;
+  color: #2b2d42;
+  font-size: 24px;
+`;
+
+export const Data = styled.p`
   font-family: Nunito;
   font-weight: 600;
-  color: #edf2f4;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  color: #8d99ae;
+  font-size: 16px;
+  margin-right: 24px;
+  margin-bottom: 0;
+  :last-child {
+    margin-right: 0;
+  }
 `;
 
-export const User = styled.p`
-  font-family: Nunito;
-  font-weight: 600;
-  color: #edf2f4;
-  font-size: 20px;
-`;
-
-export const Name = styled.p`
+export const Number = styled.span`
   font-family: Nunito;
   font-weight: 700;
-  color: #edf2f4;
-  font-size: 24px;
+  color: #2b2d42;
+  font-size: 16px;
 `;
 
 export const InputText = styled.input`
@@ -66,20 +68,22 @@ export const IconGroup = styled.div`
 
 export const EditButton = styled.button`
   overflow: hidden !important;
-  color: #edf2f4;
+  color: #8d99ae;
   background-color: transparent;
-  display: inline-block;
   text-align: center;
   text-decoration: none !important;
   overflow: hidden !important;
-  border: none !important;
+  border: 0 !important;
   text-align: center;
+  padding: 0 !important;
+  margin-left: 8px;
   :focus,
   :hover {
-    color: #edf2f4 !important;
-    background-color: transparent !important;
+    color: #8d99ae;
+    background-color: transparent;
     outline: none !important;
     box-shadow: none !important;
+    border: 0 !important;
   }
 `;
 

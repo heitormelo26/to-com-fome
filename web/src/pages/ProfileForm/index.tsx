@@ -84,14 +84,6 @@ function ProfileForm() {
                 />
               </div>
               <div className="form-group">
-                <Input
-                  label="Usuário"
-                  iconName={mdiAt}
-                  type="text"
-                  name="usuario"
-                />
-              </div>
-              <div className="form-group">
                 <Label className="w-100 mb-3 d-block">País</Label>
                 <div className="w-100 d-flex">
                   <div className="input-group-prepend">
