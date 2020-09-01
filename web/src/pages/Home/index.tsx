@@ -24,6 +24,13 @@ import {
 } from "./styles";
 import "../../App.css";
 
+import headerImage from "../../assets/images/ilustracao.png";
+
+import api from "../../services/api";
+
+import { flags } from "../../assets/settings/slider/flags";
+import { settings } from "../../assets/settings/slider/slider";
+
 import Icon from "@mdi/react";
 import {
   mdiArrowLeftCircle,
@@ -37,18 +44,6 @@ import {
   mdiPizza,
   mdiSilverwareVariant,
 } from "@mdi/js";
-
-import headerImage from "../../assets/images/ilustracao.png";
-import alemanhaIcon from "../../assets/images/alemanha.png";
-import brasilIcon from "../../assets/images/brasil.png";
-import chinaIcon from "../../assets/images/china.png";
-import euaIcon from "../../assets/images/estados-unidos.png";
-import francaIcon from "../../assets/images/franca.png";
-import japaoIcon from "../../assets/images/japao.png";
-import ukIcon from "../../assets/images/reino-unido.png";
-
-import api from "../../services/api";
-import { settings } from "../../assets/settings/slider/slider";
 
 function Home() {
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
@@ -175,100 +170,27 @@ function Home() {
         <div className="row my-5">
           <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <Slider {...settings} className="my-4">
-              <div key={0} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link to="../buscar/alemanha">
-                    <img alt="" width="75" height="75" src={alemanhaIcon} />
-                  </Link>
-                </div>
-                <Link className="text-decoration-none " to="../buscar/alemanha">
-                  <h3 className="d-none text-center flag-title">Alemanha</h3>
-                </Link>
-              </div>
-              <div key={1} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link className="text-decoration-none " to="../buscar/brasil">
-                    <img alt="" width="75" height="75" src={brasilIcon} />
-                  </Link>
-                </div>
-                <Link className="text-decoration-none " to="../buscar/brasil">
-                  <h3 className="d-none text-center flag-title">Brasil</h3>
-                </Link>
-              </div>
-              <div key={2} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link className="text-decoration-none " to="../buscar/china">
-                    <img alt="" width="75" height="75" src={chinaIcon} />
-                  </Link>
-                </div>
-                <Link className="text-decoration-none " to="../buscar/china">
-                  <h3 className="d-none text-center flag-title">China</h3>
-                </Link>
-              </div>
-              <div key={3} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link className="text-decoration-none " to="../buscar/eua">
-                    <img alt="" width="75" height="75" src={euaIcon} />
-                  </Link>
-                </div>
-                <Link className="text-decoration-none " to="../buscar/eua">
-                  <h3 className="d-none text-center flag-title">EUA</h3>
-                </Link>
-              </div>
-              <div key={4} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link className="text-decoration-none " to="../buscar/franca">
-                    <img alt="" width="75" height="75" src={francaIcon} />
-                  </Link>
-                </div>
-                <Link className="text-decoration-none " to="../buscar/franca">
-                  <h3 className="d-none text-center flag-title">França</h3>
-                </Link>
-              </div>
-              <div key={5} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link className="text-decoration-none " to="../buscar/japao">
-                    <img alt="" width="75" height="75" src={japaoIcon} />
-                  </Link>
-                </div>
-                <Link className="text-decoration-none " to="../buscar/japao">
-                  <h3 className="d-none text-center flag-title">Japão</h3>
-                </Link>
-              </div>
-              <div key={6} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <Link className="text-decoration-none " to="../buscar/uk">
-                    <img alt="" width="75" height="75" src={ukIcon} />
-                  </Link>
-                </div>
-                <Link className="text-decoration-none " to="../buscar/uk">
-                  <h3 className="d-none text-center flag-title">UK</h3>
-                </Link>
-              </div>
-              <div key={7} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={alemanhaIcon} />
-                </div>
-                <h3 className="d-none text-center flag-title">Alemanha 2</h3>
-              </div>
-              <div key={8} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={brasilIcon} />
-                </div>
-                <h3 className="d-none text-center flag-title">Brasil 2</h3>
-              </div>
-              <div key={9} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={chinaIcon} />
-                </div>
-                <h3 className="d-none text-center flag-title">China 2</h3>
-              </div>
-              <div key={10} className="flag text-center">
-                <div className="d-flex justify-content-center align-items-center">
-                  <img alt="" width="75" height="75" src={euaIcon} />
-                </div>
-                <h3 className="d-none text-center flag-title">EUA 2</h3>
-              </div>
+              {flags.map((flag) => {
+                return (
+                  <div className="flag text-center">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <Link to={flag.link}>
+                        <img
+                          alt={flag.country}
+                          width="75"
+                          height="75"
+                          src={flag.image}
+                        />
+                      </Link>
+                    </div>
+                    <Link className="text-decoration-none" to={flag.link}>
+                      <h3 className="d-none text-center flag-title">
+                        {flag.country}
+                      </h3>
+                    </Link>
+                  </div>
+                );
+              })}
             </Slider>
           </div>
         </div>

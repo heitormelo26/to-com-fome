@@ -33,7 +33,12 @@ import turquia from "../../images/flags/turquia.png";
 import uruguai from "../../images/flags/uruguai.png";
 import vietna from "../../images/flags/vietna.png";
 
-export let array = [
+export let flags = [
+  {
+    country: "Brasileira",
+    image: brasil,
+    link: "/buscar/r?country=Brasil",
+  },
   {
     country: "Alemã",
     image: alemanha,
@@ -53,11 +58,6 @@ export let array = [
     country: "Belga",
     image: belgica,
     link: "/buscar/r?country=Bélgica",
-  },
-  {
-    country: "Brasileira",
-    image: brasil,
-    link: "/buscar/r?country=Brasil",
   },
   {
     country: "Chilena",
