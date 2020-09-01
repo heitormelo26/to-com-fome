@@ -14,85 +14,298 @@ export default class RecipesController {
     const categories = filters.categories as string;
     const meals = filters.meals as string;
     const countries = filters.countries as string;
-    if (!filters.categories && !filters.meals && !filters.countries) {
-      const recipes = await db("recipes").select();
-      return response.json(recipes);
+    const input = filters.input as string;
+    const qtd = filters.qtd;
+    if (
+      !filters.categories &&
+      !filters.meals &&
+      !filters.countries &&
+      !filters.input
+    ) {
+      console.log("nenhum");
+      if (filters.qtd) {
+        const recipes = await db("recipes").select().limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes").select();
+        return response.json(recipes);
+      }
     }
-    if (filters.categories && !filters.meals && !filters.countries) {
+    if (
+      filters.categories &&
+      !filters.meals &&
+      !filters.countries &&
+      !filters.input
+    ) {
       // CATEGORIES
-      const recipes = await db("recipes")
-        .whereExists(function () {
-          this.select("id.*")
-            .from("recipes")
-            .whereRaw("`recipes`.`categories` like %??%", [categories]);
-        })
-        .select(["recipes.*"]);
-      return response.json(recipes);
-    } else if (!filters.categories && filters.meals && !filters.countries) {
+      console.log("CATEGORIES");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[categories]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[categories]}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      !filters.categories &&
+      filters.meals &&
+      !filters.countries &&
+      !filters.input
+    ) {
       // MEALS
-      const recipes = await db("recipes")
-        .whereExists(function () {
-          this.select("id.*")
-            .from("recipes")
-            .whereRaw("`recipes`.`categories` like %??%", [meals]);
-        })
-        .select(["recipes.*"]);
-      return response.json(recipes);
-    } else if (!filters.categories && !filters.meals && filters.countries) {
+      console.log("MEALS");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      !filters.categories &&
+      !filters.meals &&
+      filters.countries &&
+      !filters.input
+    ) {
       // COUNTRIES
-      const recipes = await db("recipes")
-        .whereExists(function () {
-          this.select("id.*")
-            .from("recipes")
-            .whereRaw("`recipes`.`categories` like %??%", [countries]);
-        })
-        .select(["recipes.*"]);
-      return response.json(recipes);
-    } else if (filters.categories && filters.meals && !filters.countries) {
+      console.log("COUNTRIES");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[countries]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[countries]}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      !filters.categories &&
+      !filters.meals &&
+      !filters.countries &&
+      filters.input
+    ) {
+      // INPUT
+      console.log("INPUT");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .where("title", "like", `%${input}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .where("title", "like", `%${input}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      filters.categories &&
+      filters.meals &&
+      !filters.countries &&
+      !filters.input
+    ) {
       // CATEGORIES & MEALS
-      const recipes = await db("recipes")
-        .whereExists(function () {
-          this.select("id.*")
-            .from("recipes")
-            .whereRaw("`recipes`.`categories` like %??%", [categories])
-            .whereRaw("`recipes`.`categories` like %??%", [meals]);
-        })
-        .select(["recipes.*"]);
-      return response.json(recipes);
+      console.log("CATEGORIES & MEALS");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`);
+        return response.json(recipes);
+      }
     } else if (filters.categories && !filters.meals && filters.countries) {
       // CATEGORIES & COUNTRIES
-      const recipes = await db("recipes")
-        .whereExists(function () {
-          this.select("id.*")
-            .from("recipes")
-            .whereRaw("`recipes`.`categories` like %??%", [categories])
-            .whereRaw("`recipes`.`categories` like %??%", [countries]);
-        })
-        .select(["recipes.*"]);
-      return response.json(recipes);
+      console.log("CATEGORIES & COUNTRIES");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[countries]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[countries]}%`)
+          .where("categories", "like", `%${[categories]}%`);
+        return response.json(recipes);
+      }
     } else if (!filters.categories && filters.meals && filters.countries) {
       // MEALS & COUNTRIES
-      const recipes = await db("recipes")
-        .whereExists(function () {
-          this.select("id.*")
-            .from("recipes")
-            .whereRaw("`recipes`.`categories` like %??%", [countries])
-            .whereRaw("`recipes`.`categories` like %??%", [meals]);
-        })
-        .select(["recipes.*"]);
-      return response.json(recipes);
-    } else {
+      console.log("MEALS & COUNTRIES");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[countries]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[countries]}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      filters.categories &&
+      filters.meals &&
+      !filters.countries &&
+      filters.input
+    ) {
+      // CATEGORIES & MEALS & INPUT
+      console.log("CATEGORIES & MEALS & INPUT");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("title", "like", `%${[input]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("title", "like", `%${[input]}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      filters.categories &&
+      !filters.meals &&
+      filters.countries &&
+      filters.input
+    ) {
+      // CATEGORIES & COUNTRIES & INPUT
+      console.log("CATEGORIES & COUNTRIES & INPUT");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[countries]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("title", "like", `%${[input]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[countries]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("title", "like", `%${[input]}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      !filters.categories &&
+      filters.meals &&
+      filters.countries &&
+      filters.input
+    ) {
+      // MEALS & COUNTRIES & INPUT
+      console.log("MEALS & COUNTRIES & INPUT");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[countries]}%`)
+          .where("title", "like", `%${[input]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[countries]}%`)
+          .where("title", "like", `%${[input]}%`);
+        return response.json(recipes);
+      }
+    } else if (
+      filters.categories &&
+      filters.meals &&
+      filters.countries &&
+      !filters.input
+    ) {
       // CATEGORIES, MEALS & COUNTRIES
-      const recipes = await db("recipes")
-        .whereExists(function () {
-          this.select("id.*")
-            .from("recipes")
-            .whereRaw("`recipes`.`categories` like %??%", [categories])
-            .whereRaw("`recipes`.`categories` like %??%", [meals])
-            .whereRaw("`recipes`.`categories` like %??%", [countries]);
-        })
-        .select(["recipes.*"]);
-      return response.json(recipes);
+      console.log("CATEGORIES, MEALS & COUNTRIES");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("categories", "like", `%${[countries]}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("categories", "like", `%${[countries]}%`);
+        return response.json(recipes);
+      }
+    } else {
+      // CATEGORIES, MEALS & COUNTRIES && INPUT
+      console.log("CATEGORIES, MEALS & COUNTRIES && INPUT");
+      if (filters.qtd) {
+        const recipes = await db("recipes")
+          .select("id.*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("categories", "like", `%${[countries]}%`)
+          .where("title", "like", `%${input}%`)
+          .limit(Number(qtd));
+        return response.json(recipes);
+      } else {
+        const recipes = await db("recipes")
+          .select("id.*")
+          .from("recipes")
+          .where("categories", "like", `%${[meals]}%`)
+          .where("categories", "like", `%${[categories]}%`)
+          .where("categories", "like", `%${[countries]}%`)
+          .where("title", "like", `%${input}%`);
+        return response.json(recipes);
+      }
     }
   }
 
