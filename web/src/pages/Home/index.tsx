@@ -33,9 +33,7 @@ import { settings } from "../../assets/settings/slider/slider";
 
 import Icon from "@mdi/react";
 import {
-  mdiArrowLeftCircle,
   mdiArrowRight,
-  mdiArrowRightCircle,
   mdiBaguette,
   mdiCupcake,
   mdiFood,
@@ -49,11 +47,8 @@ function Home() {
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
 
   useEffect(() => {
-    api.get("recipes").then((response) => {
-      console.log(response.data);
-      // const { total } = response.data;
-
-      // setTotalConnections(total);
+    api.get("r").then((response) => {
+      setRecipes(response.data);
     });
   }, []);
 
@@ -149,8 +144,11 @@ function Home() {
           </div>
           {recipes.map((recipe: RecipeProps) => {
             return (
-              <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-                <Recipe key={recipe.id} recipe={recipe} />
+              <div
+                key={recipe.id}
+                className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center"
+              >
+                <Recipe recipe={recipe} />
               </div>
             );
           })}
@@ -172,7 +170,7 @@ function Home() {
             <Slider {...settings} className="my-4">
               {flags.map((flag) => {
                 return (
-                  <div className="flag text-center">
+                  <div key={flag.country} className="flag text-center">
                     <div className="d-flex justify-content-center align-items-center">
                       <Link to={flag.link}>
                         <img

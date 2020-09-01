@@ -5,7 +5,7 @@ import ProfileForm from "../ProfileForm";
 import Pagination from "../../components/Pagination";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import Recipe from "../../components/Recipe";
+//import Recipe from "../../components/Recipe";
 
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiPencil } from "@mdi/js";

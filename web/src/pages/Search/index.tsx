@@ -23,18 +23,13 @@ export default function Search() {
     $(".selectpicker").selectpicker("refresh");
   });
 
-  function useQuery() {
-    return new URLSearchParams(useLocation().search);
-  }
-
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
 
   const location = useLocation();
   useEffect(() => {
-    const currentPath = location.pathname;
+    // const currentPath = location.pathname;
     const searchParams = new URLSearchParams(location.search);
     api.get(`r?${searchParams}`).then((response) => {
-      console.log(response.data);
       setRecipes(response.data);
     });
   }, [location]);
@@ -108,8 +103,11 @@ export default function Search() {
         <div className="row">
           {recipes.map((recipe: RecipeProps) => {
             return (
-              <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
-                <Recipe key={recipe.id} recipe={recipe} />
+              <div
+                key={recipe.id}
+                className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center"
+              >
+                <Recipe recipe={recipe} />
               </div>
             );
           })}

@@ -18,7 +18,6 @@ import Button from "../../components/Button";
 import Icon from "@mdi/react";
 import {
   mdiAccount,
-  mdiAt,
   mdiCalendar,
   mdiEmail,
   mdiEye,
