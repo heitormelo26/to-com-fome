@@ -12,13 +12,14 @@ const usersControllers = new UsersController();
 const ingredientsRecipeController = new Ingredients_RecipeController();
 
 routes.post("/r", recipesControllers.create);
-routes.get("/r", recipesControllers.searchByMeal);
+routes.get("/r", recipesControllers.index);
+routes.get("/r-searchByInput", recipesControllers.searchByInput);
 
 routes.post("/i", ingredientsController.create);
 routes.get("/i", ingredientsController.index);
 
 routes.post("/u", usersControllers.create);
-routes.post("/changePassword", usersControllers.changePassword);
+routes.post("/u-changePassword", usersControllers.changePassword);
 routes.get("/u", usersControllers.index);
 
 routes.get("/ir", ingredientsRecipeController.index);

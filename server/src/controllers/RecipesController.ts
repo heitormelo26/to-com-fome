@@ -15,9 +15,8 @@ export default class RecipesController {
     const meals = filters.meals as string;
     const countries = filters.countries as string;
     if (!filters.categories && !filters.meals && !filters.countries) {
-      return response.status(400).json({
-        error: "Missing filters to search recipes",
-      });
+      const recipes = await db("recipes").select();
+      return response.json(recipes);
     }
     if (filters.categories && !filters.meals && !filters.countries) {
       // CATEGORIES
@@ -95,6 +94,20 @@ export default class RecipesController {
         .select(["recipes.*"]);
       return response.json(recipes);
     }
+  }
+
+  async searchByInput(request: Request, response: Response) {
+    const filters = request.query;
+    const input = filters.input as string;
+    if (!filters.input) {
+      return response.status(400).json({
+        error: "Missing filters to search recipes",
+      });
+    }
+    const recipes = await db("recipes")
+      .select("*")
+      .where("title", "like", `%${input}%`);
+    return response.json(recipes);
   }
 
   async searchByCountry(request: Request, response: Response) {
