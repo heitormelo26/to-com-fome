@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Navbar from "../../components/Navbar";
 import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
 import Pagination from "../../components/Pagination";
-import Recipe from "../../components/Recipe";
+import Recipe, { RecipeProps } from "../../components/Recipe";
 import Button from "../../components/Button";
 
 import { InputText, IconGroup, Container, Select } from "./styles";
@@ -14,10 +14,30 @@ import { mdiMagnify } from "@mdi/js";
 
 import $ from "jquery";
 
+import { useLocation } from "react-router-dom";
+
+import api from "../../services/api";
+
 export default function Search() {
   $(document).ready(function () {
     $(".selectpicker").selectpicker("refresh");
   });
+
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
+
+  const [recipes, setRecipes] = useState<RecipeProps[]>([]);
+
+  const location = useLocation();
+  useEffect(() => {
+    const currentPath = location.pathname;
+    const searchParams = new URLSearchParams(location.search);
+    api.get(`r?${searchParams}`).then((response) => {
+      console.log(response.data);
+      setRecipes(response.data);
+    });
+  }, [location]);
 
   return (
     <>
@@ -86,13 +106,13 @@ export default function Search() {
       </Container>
       <div className="container mb-4">
         <div className="row">
-          {/* <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 d-flex justify-content-center">
-            <Recipe
-              image="https://cdn.panelinha.com.br/receita/1589814396193-_JW_8824.jpg"
-              title="Receita 1"
-              user="TotozinDelas"
-            />
-          </div> */}
+          {recipes.map((recipe: RecipeProps) => {
+            return (
+              <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center">
+                <Recipe key={recipe.id} recipe={recipe} />
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="mb-5 d-flex justify-content-center">
