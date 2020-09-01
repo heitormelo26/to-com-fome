@@ -48,82 +48,9 @@ import japaoIcon from "../../assets/images/japao.png";
 import ukIcon from "../../assets/images/reino-unido.png";
 
 import api from "../../services/api";
+import { settings } from "../../assets/settings/slider/slider";
 
 function Home() {
-  function SampleNextArrow(props: any) {
-    const { className, onClick } = props;
-    return (
-      <Icon
-        path={mdiArrowRightCircle}
-        className={className}
-        color="#8d99ae"
-        size={1}
-        // @ts-ignore
-        onClick={onClick}
-      />
-    );
-  }
-
-  function SamplePrevArrow(props: any) {
-    const { className, onClick } = props;
-    return (
-      <Icon
-        path={mdiArrowLeftCircle}
-        className={className}
-        color="#8d99ae"
-        size={1}
-        // @ts-ignore
-        onClick={onClick}
-      />
-    );
-  }
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 7,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    arrows: true,
-    autoplaySpeed: 5000,
-    centerMode: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    centerPadding: "10px",
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 7,
-          swipeToSlide: true,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-          swipeToSlide: true,
-          arrows: false,
-          centerMode: true,
-          centerPadding: "0px",
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          swipeToSlide: true,
-          arrows: false,
-          centerMode: true,
-          centerPadding: "0px",
-        },
-      },
-    ],
-  };
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
 
   useEffect(() => {
