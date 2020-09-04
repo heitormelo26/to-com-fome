@@ -15,14 +15,16 @@ export const Title = styled.h2`
     font-size: 22px;
     color: #2b2d42;
     font-weight: 600;
-    max-width: 150px;
     font-family: Nunito;
   }
   font-size: 22px;
   color: #2b2d42;
   font-weight: 600;
-  max-width: 150px;
+  max-width: 135px;
   font-family: Nunito;
+  @media (min-width: 768px) {
+    max-width: 235px;
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -32,4 +34,7 @@ export const Subtitle = styled.p`
   font-weight: 600;
   text-transform: uppercase;
   font-family: Nunito;
+  @media (min-width: 768px) {
+    max-width: 235px;
+  }
 `;

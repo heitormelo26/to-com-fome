@@ -27,6 +27,22 @@ export default class UsersController {
     return response.json(users);
   }
 
+  async getUserById(request: Request, response: Response) {
+    const filters = request.query;
+    const id = filters.id as string;
+    if (!filters.id) {
+      return response.status(400).json({
+        error: "Missing filters to search user",
+      });
+    }
+    const user = await db("users")
+      .where({
+        id: id,
+      })
+      .select("name");
+    return response.json(user);
+  }
+
   async serachByEmail(request: Request, response: Response) {
     const filters = request.query;
     const email = filters.email as string;

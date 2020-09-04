@@ -21,6 +21,7 @@ routes.get("/i", ingredientsController.index);
 routes.post("/u", usersControllers.create);
 routes.post("/u-changePassword", usersControllers.changePassword);
 routes.get("/u", usersControllers.index);
+routes.get("/u-getById", usersControllers.getUserById);
 
 routes.get("/ir", ingredientsRecipeController.index);
 
