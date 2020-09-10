@@ -124,6 +124,13 @@ export const Select = styled.select`
     font-size: 16px !important;
     font-family: Nunito;
   }
+  .btn.dropdown-toggle.btn-light:focus,
+  .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
+  .bootstrap-select .dropdown-toggle:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+    border: 0px !important;
+  }
   button {
     color: #8d99ae !important;
     font-size: 16px !important;

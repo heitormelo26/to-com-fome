@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const InputText = styled.input`
   background-color: #edf2f4 !important;
-  font-size: 18px !important;
+  font-size: 16px !important;
   border: 0 !important;
   outline: 0 !important;
   color: #8d99ae !important;
@@ -18,15 +18,15 @@ export const InputText = styled.input`
   }
   ::placeholder {
     color: #8d99ae !important;
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
   :-ms-input-placeholder {
     color: #8d99ae !important;
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
   ::-ms-input-placeholder {
     color: #8d99ae !important;
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
 `;
 

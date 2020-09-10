@@ -21,6 +21,8 @@ import { mdiClose, mdiMagnify } from "@mdi/js";
 
 import $ from "jquery";
 
+import { ingredients as categories } from "../../assets/settings/selects/data";
+
 export default function IngredientForm() {
   $(document).ready(function () {
     $(".selectpicker").selectpicker("refresh");
@@ -67,12 +69,12 @@ export default function IngredientForm() {
                         className="selectpicker show-tick ml-2 d-inline-block"
                         data-live-search="true"
                         data-width="25%"
-                        title="Categoria"
+                        title="Categorias"
                         data-size="5"
                       >
-                        <option>Entrada</option>
-                        <option>Acompanhamento</option>
-                        <option>Sobremesa</option>
+                        {categories.map((category: string) => {
+                          return <option>{category}</option>;
+                        })}
                       </Plus>
                     </div>
                     <div className="container">

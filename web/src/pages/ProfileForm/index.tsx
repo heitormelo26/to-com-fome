@@ -28,6 +28,8 @@ import {
 
 import $ from "jquery";
 
+import { country } from "../../assets/settings/selects/data";
+
 function ProfileForm() {
   $(document).ready(function () {
     $(".selectpicker").selectpicker("refresh");
@@ -71,7 +73,7 @@ function ProfileForm() {
                   label="Nome"
                   iconName={mdiAccount}
                   type="text"
-                  name="nome"
+                  name="name"
                 />
               </div>
               <div className="form-group">
@@ -91,20 +93,16 @@ function ProfileForm() {
                     </IconGroup>
                   </div>
                   <Select
-                    data-width="auto"
+                    name="country"
+                    data-width="100%"
                     title="País"
                     data-size="5"
+                    data-dropup-auto="false"
                     className="selectpicker show-tick w-100 form-control"
                   >
-                    <option>Argentina</option>
-                    <option>Brasil</option>
-                    <option>Chile</option>
-                    <option>Argentina</option>
-                    <option>Brasil</option>
-                    <option>Chile</option>
-                    <option>Argentina</option>
-                    <option>Brasil</option>
-                    <option>Chile</option>
+                    {country.map((c: any) => {
+                      return <option value={c.value}>{c.countryName}</option>;
+                    })}
                   </Select>
                 </div>
               </div>
@@ -116,7 +114,11 @@ function ProfileForm() {
                       <Icon path={mdiLock} size={0.7} color="#8D99AE" />
                     </IconGroup>
                   </div>
-                  <InputText type={tipo} className="py-3 form-control" />
+                  <InputText
+                    type={tipo}
+                    className="py-3 form-control"
+                    name="password"
+                  />
                   <div className="input-group-append" onClick={mostrarSenha}>
                     <IconGroupRight className="input-group-text">
                       <Icon path={icone} size={0.7} color="#8D99AE" />
@@ -129,7 +131,7 @@ function ProfileForm() {
                   label="Data de nascimento"
                   iconName={mdiCalendar}
                   type="date"
-                  name="dataNascimento"
+                  name="birthday"
                 />
               </div>
             </form>

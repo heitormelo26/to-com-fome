@@ -128,7 +128,10 @@ export const Plus = styled.select`
   outline: 0 !important;
   border-radius: 6px !important;
   padding: 6px 32px !important;
-  :focus {
+  :focus,
+  :active {
+    border: none !important;
+    outline: none !important;
     box-shadow: none !important;
   }
   ::placeholder {
@@ -146,6 +149,13 @@ export const Plus = styled.select`
     font-size: 16px !important;
     font-family: Nunito;
   }
+  .btn.dropdown-toggle.btn-light:focus,
+  .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
+  .bootstrap-select .dropdown-toggle:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+    border: 0px !important;
+  }
   button {
     .filter-option {
       display: flex;
@@ -161,6 +171,12 @@ export const Plus = styled.select`
     font-family: Nunito;
     padding: 0 !important;
     border: 0 !important;
+    :focus,
+    :active {
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
     div:focus,
     :focus,
     .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,

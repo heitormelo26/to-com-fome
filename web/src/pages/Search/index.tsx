@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Navbar from "../../components/Navbar";
 import Contact from "../../components/Contact";
@@ -14,9 +15,13 @@ import { mdiMagnify } from "@mdi/js";
 
 import $ from "jquery";
 
-import { useLocation } from "react-router-dom";
-
 import api from "../../services/api";
+
+import {
+  meals,
+  categories,
+  countries,
+} from "../../assets/settings/selects/data";
 
 export default function Search() {
   $(document).ready(function () {
@@ -61,11 +66,11 @@ export default function Search() {
               data-live-search="true"
               data-width="100%"
               title="Categoria"
-              data-size="5"
+              data-size="4"
             >
-              <option>Entrada</option>
-              <option>Acompanhamento</option>
-              <option>Sobremesa</option>
+              {categories.map((category: string) => {
+                return <option>{category}</option>;
+              })}
             </Select>
           </div>
           <div className="mb-3 col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-center justify-content-start">
@@ -74,11 +79,11 @@ export default function Search() {
               data-live-search="true"
               data-width="100%"
               title="Refeição"
-              data-size="5"
+              data-size="4"
             >
-              <option>Almoço</option>
-              <option>Café da manhã</option>
-              <option>Jantar</option>
+              {meals.map((meal: string) => {
+                return <option>{meal}</option>;
+              })}
             </Select>
           </div>
           <div className="mb-3 col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-center justify-content-start">
@@ -87,14 +92,14 @@ export default function Search() {
               data-live-search="true"
               data-width="100%"
               title="Nacionalidade"
-              data-size="5"
+              data-size="4"
             >
-              <option>Brasileira</option>
-              <option>Alemã</option>
-              <option>Italiana</option>
+              {countries.map((country: string) => {
+                return <option>{country}</option>;
+              })}
             </Select>
           </div>
-          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-start justify-content-end">
+          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-center justify-content-end">
             <Button color="vermelho" text="Buscar" link="/buscar" />
           </div>
         </div>

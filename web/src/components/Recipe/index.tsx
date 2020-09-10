@@ -22,7 +22,7 @@ const Recipe: React.FC<Props> = ({ recipe }) => {
     api.get(`u-getById?id=${recipe.user_id}`).then((response) => {
       setName(response.data[0].name);
     });
-  }, []);
+  }, [recipe.user_id]);
   return (
     <div className="mb-3">
       <Link className="text-decoration-none" to="/receita">
