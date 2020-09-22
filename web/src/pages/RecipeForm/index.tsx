@@ -80,7 +80,8 @@ function RecipeForm() {
                   <Input
                     label="Rendimento (em porções)"
                     type="number"
-                    name="rendimento"
+                    name="amount"
+                    id="amount"
                     min={1}
                   />
                 </div>
@@ -88,7 +89,8 @@ function RecipeForm() {
                   <Input
                     label="Tempo de preparo"
                     type="text"
-                    name="tempoPreparo"
+                    name="time"
+                    id="time"
                   />
                 </div>
                 <div className="form-group">
@@ -98,8 +100,8 @@ function RecipeForm() {
                   <TextArea
                     maxLength={100}
                     className="form-control"
-                    id="descricao"
-                    name="descricao"
+                    id="description"
+                    name="description"
                   ></TextArea>
                 </div>
                 <div className="form-group">
@@ -114,8 +116,8 @@ function RecipeForm() {
                     </div>
                     <InputText
                       type="text"
-                      id="categorias"
-                      name="categorias"
+                      id="categories"
+                      name="categories"
                       placeholder="Buscar..."
                       className="py-3 form-control"
                     />
@@ -132,8 +134,8 @@ function RecipeForm() {
                     <input
                       type="checkbox"
                       className="custom-control-input"
-                      id="receitaPrivada"
-                      name="receitaPrivada"
+                      id="isPrivate"
+                      name="isPrivate"
                     />
                     <Label
                       className="custom-control-label ml-2"
@@ -203,10 +205,7 @@ function RecipeForm() {
               <form>
                 <div className="form-group">
                   <div className="input-group">
-                    <Label
-                      className="w-100 mb-3 d-block"
-                      htmlFor="ingredientes"
-                    >
+                    <Label className="w-100 mb-3 d-block" htmlFor="ingredients">
                       Ingredientes
                     </Label>
                     <div className="input-group-prepend">
@@ -216,8 +215,8 @@ function RecipeForm() {
                     </div>
                     <InputText
                       type="text"
-                      id="ingredientes"
-                      name="ingredientes"
+                      id="ingredients"
+                      name="ingredients"
                       placeholder="Buscar..."
                       className="py-3 form-control d-inline-block"
                     />
@@ -237,6 +236,8 @@ function RecipeForm() {
                           type="number"
                           min="0.1"
                           step="0.1"
+                          id="ingredientAmount"
+                          name="ingredientAmount"
                           placeholder="Quantidade"
                           className="py-3 form-control d-inline-block"
                         />
@@ -247,6 +248,8 @@ function RecipeForm() {
                           data-width="100%"
                           title="Unidade de medida"
                           data-size="5"
+                          name="unity"
+                          id="unity"
                         >
                           <option>Brasileira</option>
                           <option>Alemã</option>
@@ -262,13 +265,13 @@ function RecipeForm() {
                   </div>
                 </div>
                 <div className="form-group">
-                  <Label className="w-100 mb-3 d-block" htmlFor="modoPreparo">
+                  <Label className="w-100 mb-3 d-block" htmlFor="prepareMode">
                     Modo de preparo
                   </Label>
                   <TextArea
                     maxLength={100}
-                    id="modoPreparo"
-                    name="modoPreparo"
+                    id="prepareMode"
+                    name="prepareMode"
                     className="form-control"
                   ></TextArea>
                 </div>
@@ -278,6 +281,8 @@ function RecipeForm() {
                     <input
                       accept="image/*"
                       type="file"
+                      id="image"
+                      name="image"
                       className="custom-file-input d-flex align-items-center"
                       onChange={(event) => {
                         setNomeArquivo(
