@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useHistory} from "react-router-dom";
 
 import ForgotPassword from "../ForgotPassword";
 
@@ -16,7 +17,20 @@ import sidebarImage from "../../assets/images/ilustracao.png";
 
 import { mdiEmail, mdiLock } from "@mdi/js";
 
+import api from "../../services/api";
+
 function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+  function login() {
+    setEmail(email);
+    setPassword(password);
+    api.get(`l?email=${email}&password=${password}`).then((response)=>{if(response.status === 200){
+      history.push("/")
+    }});
+    
+  };
   return (
     <div className="container-fluid p-0 h-100">
       <div className="row m-0 h-100">
@@ -32,6 +46,8 @@ function SignIn() {
               <Title className="my-5 w-100 d-block">Tô Com Fome</Title>
               <Subtitle className="mb-5 w-100 d-block">Entrar</Subtitle>
               <Input
+                onChange = {e=>setEmail(e.target.value)}
+                value = {email}
                 className="w-100 d-block"
                 type="email"
                 iconName={mdiEmail}
@@ -39,6 +55,8 @@ function SignIn() {
                 name="email"
               />
               <Input
+                value = {password}
+                onChange = {e=>setPassword(e.target.value)}
                 className="w-100 d-block"
                 type="password"
                 iconName={mdiLock}
@@ -55,7 +73,7 @@ function SignIn() {
               </LinkAccount>
               <ForgotPassword />
               <div className="w-100 d-block my-4">
-                <Button color="vermelho" text="Entrar" link="/" />
+                <button type = "submit" onClick={login} > entrar</button>
               </div>
             </Container>
           </div>

@@ -75,25 +75,21 @@ export default class UsersController {
   }
 
   async login(request: Request, response: Response) {
-    const { email, password } = request.body;
-    const trx = await db.transaction();
-    try {
-      const user = await db("users") // fazer taxa de compatibilidade
-        .whereExists(function () {
-          this.select("id")
-            .from("users")
-            .whereRaw("`email` = ??", email)
-            .whereRaw("`password` = ??", password);
-        })
-        .select(["users"]);
-      return response.json(user);
-      await trx.commit();
-      return response.status(201).send();
-    } catch (err) {
-      await trx.rollback();
+    const filters = request.query;
+    const email = filters.email as string;
+    const password = filters.password as string;
+    if (!filters.email && !filters.password) {
       return response.status(400).json({
-        error: "Unexpected error while creating new user",
+        error: "Missing filters to log user",
       });
     }
+    const user = await db("users")
+      .where({
+        email: email,
+        password: password,
+      })
+      .select("*")
+      .limit(1);
+    return response.json(user);
   }
-}
+  }
