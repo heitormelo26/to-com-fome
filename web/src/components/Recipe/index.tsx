@@ -25,7 +25,7 @@ const Recipe: React.FC<Props> = ({ recipe }) => {
   }, [recipe.user_id]);
   return (
     <div className="mb-3">
-      <Link className="text-decoration-none" to="/receita">
+      <Link className="text-decoration-none" to={`/receita?id=${recipe.id}`}>
         <Image
           src={recipe.image}
           alt={recipe.title}

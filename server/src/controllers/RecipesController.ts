@@ -309,6 +309,23 @@ export default class RecipesController {
     }
   }
 
+  async getById(request: Request, response: Response) {
+    const filters = request.query;
+    const id = filters.id as string;
+    if (!filters.id) {
+      return response.status(400).json({
+        error: "Missing filters to search recipes",
+      });
+    } else {
+      const recipes = await db("recipes")
+        .select("*")
+        .from("recipes")
+        .where("id", "=", id)
+        .limit(1);
+      return response.json(recipes);
+    }
+  }
+
   async searchByInput(request: Request, response: Response) {
     const filters = request.query;
     const input = filters.input as string;
