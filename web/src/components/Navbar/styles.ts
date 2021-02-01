@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   justify-content: space-between !important;
   margin-bottom: 2rem;
   background-color: #ffffff !important;
-  @media (max-width: 768px) {
+  @media (max-width: 769px) {
     padding: 0.5rem !important;
   }
 `;
@@ -40,7 +40,7 @@ export const NavbarTitle = styled(Link)`
   padding: 0.5rem 0rem;
   margin-right: 2rem !important;
   color: var(--color-red) !important;
-  @media (max-width: 768px) {
+  @media (max-width: 769px) {
     margin-right: 1rem !important;
   }
 `;

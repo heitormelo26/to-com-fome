@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Container = styled.div`
-  background-color: #2b2d42 !important;
-  border-radius: 40px !important;
-  padding: 32px;
-`;
+export const Container = styled.div``;
 
 export const Title = styled.h1`
   font-family: Nunito;

@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar";
 import Recipe, { RecipeProps } from "../../components/Recipe";
 import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 import {
   Category,
@@ -55,41 +56,10 @@ function Home() {
   return (
     <>
       <Navbar isLogged={true} />
+      <div className="container-fluid">
+        <Header />
+      </div>
       <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <Container className="jumbotron mb-5">
-              <div className="container">
-                <div className="row d-flex align-items-center">
-                  <div className="col-md-6 text-center text-sm-center text-md-left text-lg-left text-xl-left">
-                    <Title>Tá com fome?</Title>
-                    <Subtitle className="lead">
-                      Então o Tô Com Fome foi feito pra você! Escolha quais
-                      ingredientes você tem que a gente te indica quais receitas
-                      podem ser feitas com eles.
-                    </Subtitle>
-                    <Fridge
-                      type="button"
-                      className="btn"
-                      data-toggle="modal"
-                      data-target="#selecionarIngredientes"
-                    >
-                      O que tem na sua geladeira?
-                    </Fridge>
-                    <IngredientForm />
-                  </div>
-                  <div className="col-md-6 d-flex justify-content-end align-items-center">
-                    <img
-                      className="w-75 p-3 d-none d-sm-none d-md-flex d-lg-flex d-xl-flex"
-                      src={headerImage}
-                      alt="Café da manhã"
-                    />
-                  </div>
-                </div>
-              </div>
-            </Container>
-          </div>
-        </div>
         <div className="row mb-4">
           <div className="col-md-12 mb-4 d-none d-sm-none d-md-flex d-l-flex d-xl-flex justify-content-center align-items-center">
             <CategorySelected className="mr-3 text-center text-truncate btn">
