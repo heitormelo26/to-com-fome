@@ -64,9 +64,9 @@ function Home() {
                   <div className="col-md-6 text-center text-sm-center text-md-left text-lg-left text-xl-left">
                     <Title>Tá com fome?</Title>
                     <Subtitle className="lead">
-                      Então o <strong>Tô Com Fome</strong> foi feito pra você!
-                      Escolha quais ingredientes você tem que a gente te indica
-                      quais receitas podem ser feitas com eles.
+                      Então o Tô Com Fome foi feito pra você! Escolha quais
+                      ingredientes você tem que a gente te indica quais receitas
+                      podem ser feitas com eles.
                     </Subtitle>
                     <Fridge
                       type="button"

@@ -1,0 +1,66 @@
+:root {
+  font-size: 16px;
+
+  --color-blue: #2b2d42;
+  --color-red: #ef233c;
+  --color-white: #ffffff;
+  --color-light-gray: #edf2f4;
+  --color-dark-gray: #8d99ae;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+*,
+body,
+input,
+button,
+textarea {
+  font: 500 1rem Lato;
+  color: var(--color-blue);
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-white) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0 !important;
+  background: var(--color-light-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-light-gray);
+}
+
+::selection {
+  color: var(--color-white) !important;
+  background: var(--color-red) !important;
+}
+
+::-moz-selection {
+  color: var(--color-white) !important;
+  background: var(--color-red) !important;
+}
