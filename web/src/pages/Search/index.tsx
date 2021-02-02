@@ -122,7 +122,7 @@ export default function Search() {
         <Pagination activePage={1} totalOfRecipes={16} recipesPerPage={3} />
       </div>
       <Contact isLogged={false} />
-      <Footer color="branco" />
+      <Footer />
     </>
   );
 }

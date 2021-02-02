@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
-import IngredientForm from "../IngredientForm";
-
 import Navbar from "../../components/Navbar";
 import Recipe, { RecipeProps } from "../../components/Recipe";
 import Contact from "../../components/Contact";
@@ -13,24 +11,18 @@ import Header from "../../components/Header";
 
 import {
   Category,
-  CategorySelected,
   CategoryTitle,
-  Container,
-  Fridge,
   IconCategory,
   IconCategorySelected,
   More,
-  Subtitle,
-  Title,
 } from "./styles";
 import "../../App.css";
-
-import headerImage from "../../assets/images/ilustracao.png";
 
 import api from "../../services/api";
 
 import { flags } from "../../assets/settings/slider/flags";
 import { settings } from "../../assets/settings/slider/slider";
+import { homeMeals } from "../../assets/settings/selects/data";
 
 import Icon from "@mdi/react";
 import {
@@ -50,17 +42,40 @@ function Home() {
   useEffect(() => {
     api.get("r-m").then((response) => {
       setRecipes(response.data);
+      let activeButton = document.getElementById("Todas");
+      if (activeButton) {
+        activeButton.classList.add("active");
+        activeButton.style.background = "#ef233c";
+        activeButton.style.color = "#ffffff";
+      }
     });
   }, []);
 
-  function selectMeal(meal :any){
-    if(meal === "Todas"){
+  function selectMeal(meal: any) {
+    if (meal === "Todas") {
       api.get(`r-m`).then((response) => {
         setRecipes(response.data);
+        let activeButton = document.getElementById(meal);
+        if (activeButton) {
+          activeButton.style.background = "#ef233c";
+          activeButton.style.color = "#ffffff";
+        }
       });
-    }else{
+    } else {
       api.get(`r-m?meals=${meal}`).then((response) => {
         setRecipes(response.data);
+        document.querySelectorAll("button.category").forEach((b) => {
+          let activeButton = document.getElementById(b.id);
+          if (activeButton) {
+            activeButton.style.background = "#edf2f4";
+            activeButton.style.color = "#8d99ae";
+          }
+        });
+        let activeButton = document.getElementById(meal);
+        if (activeButton) {
+          activeButton.style.background = "#ef233c";
+          activeButton.style.color = "#ffffff";
+        }
       });
     }
   }
@@ -71,32 +86,23 @@ function Home() {
       <div className="container-fluid">
         <Header />
       </div>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row mb-4">
-          <div className="col-md-12 mb-4 d-none d-sm-none d-md-flex d-l-flex d-xl-flex justify-content-center align-items-center">
-            <CategorySelected onClick = {() => selectMeal("Todas")} className="mr-3 text-center text-truncate btn">
-              Todas
-            </CategorySelected>
-            <Category onClick = {() => selectMeal("Café da manhã")} className="mr-3 text-center text-truncate btn">
-              Café da manhã
-            </Category>
-            <Category onClick = {() => selectMeal("Brunch")} className="mr-3 text-center text-truncate btn">
-              Brunch
-            </Category>
-            <Category onClick = {() => selectMeal("Almoço")} className="mr-3 text-center text-truncate btn">
-              Almoço
-            </Category>
-            <Category onClick = {() => selectMeal("Lanche")} className="mr-3 text-center text-truncate btn">
-              Lanche
-            </Category>
-            <Category onClick = {() => selectMeal("Jantar")} className="mr-3 text-center text-truncate btn">
-              Jantar
-            </Category>
-            <Category onClick = {() => selectMeal("Sobremesa")} className="text-center text-truncate btn">
-              Sobremesa
-            </Category>
+          <div className="col-12 mb-4 d-none d-md-flex center-center">
+            {homeMeals.map((meal: string) => {
+              return (
+                <Category
+                  key={meal}
+                  id={meal}
+                  onClick={() => selectMeal(meal)}
+                  className="category text-truncate center-center"
+                >
+                  {meal}
+                </Category>
+              );
+            })}
           </div>
-          <div className="col-md-12 mb-4 d-flex d-sm-flex d-md-none d-l-none d-xl-none justify-content-center align-items-center">
+          <div className="col-md-12 mb-4 d-flex d-md-none center-center">
             <IconCategorySelected className="mr-3 text-center btn">
               <Icon path={mdiSilverwareVariant} color="#ffffff" size={1} />
             </IconCategorySelected>
@@ -121,20 +127,13 @@ function Home() {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col-md-12 mb-5 d-flex d-sm-flex d-md-none d-l-none d-xl-none justify-content-center align-items-center">
+          <div className="col-md-12 mb-5 d-flex d-md-none center-center">
             <CategoryTitle className="m-0">Todas as receitas</CategoryTitle>
           </div>
           {recipes.map((recipe: RecipeProps) => {
-            return (
-              <div
-                key={recipe.id}
-                className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center"
-              >
-                <Recipe recipe={recipe} />
-              </div>
-            );
+            return <Recipe key={recipe.id} recipe={recipe} />;
           })}
-          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-2 d-flex justify-content-center align-items-center">
+          <div className="col-12 center-center">
             <More to="/buscar" className="text-decoration-none">
               Mais receitas{" "}
               <Icon
@@ -147,13 +146,13 @@ function Home() {
           </div>
         </div>
         {/* Slide */}
-        <div className="row my-5">
-          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div className="row my-5 mx-lg-5">
+          <div className="col-12">
             <Slider {...settings} className="my-4">
               {flags.map((flag) => {
                 return (
                   <div key={flag.country} className="flag text-center">
-                    <div className="d-flex justify-content-center align-items-center">
+                    <div className="center-center">
                       <Link to={flag.link}>
                         <img
                           alt={flag.country}
@@ -176,8 +175,10 @@ function Home() {
         </div>
         {/* Slide */}
       </div>
-      <Contact isLogged={false} />
-      <Footer color="branco" />
+      <div className="container-fluid">
+        <Contact isLogged={false} />
+      </div>
+      <Footer />
     </>
   );
 }

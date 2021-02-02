@@ -27,7 +27,12 @@ const Header = () => {
         <IngredientForm />
       </div>
       <div className="image">
-        <img src={cooking} width="350" className="d-none d-md-flex" />
+        <img
+          src={cooking}
+          alt="Chef de Cozinha"
+          width="350"
+          className="d-none d-md-flex"
+        />
       </div>
     </Container>
   );

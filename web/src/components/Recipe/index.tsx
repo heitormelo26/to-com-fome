@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Image, Title, Subtitle } from "./styles";
+import { Card, Image, Title, Subtitle } from "./styles";
 
 import { Link } from "react-router-dom";
 
@@ -18,26 +18,30 @@ interface Props {
 
 const Recipe: React.FC<Props> = ({ recipe }) => {
   const [name, setName] = useState("");
+
   useEffect(() => {
     api.get(`u-getById?id=${recipe.user_id}`).then((response) => {
       setName(response.data[0].name);
     });
   }, [recipe.user_id]);
+
   return (
-    <div className="mb-3">
-      <Link className="text-decoration-none" to={`/receita?id=${recipe.id}`}>
-        <Image
-          src={recipe.image}
-          alt={recipe.title}
-          className="img-fluid mb-3"
-        />
-      </Link>
-      <Title className="mb-1 text-truncate">
-        <Link className="text-decoration-none" to="/receita">
-          {recipe.title}
+    <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 d-flex justify-content-center mb-3">
+      <Card className="card">
+        <Link to={`/receita?id=${recipe.id}`}>
+          <Image
+            src={recipe.image}
+            alt={recipe.title}
+            className="card-img-top text-decoration-none"
+          />
         </Link>
-      </Title>
-      <Subtitle className="text-truncate">por {name}</Subtitle>
+        <div className="card-body">
+          <Title className="card-title text-decoration-none">
+            <Link to="/receita">{recipe.title.toLowerCase()}</Link>
+          </Title>
+          <Subtitle className="card-subtitle">Enviada por {name}</Subtitle>
+        </div>
+      </Card>
     </div>
   );
 };

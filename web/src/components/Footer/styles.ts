@@ -1,38 +1,29 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FooterProps } from "./index";
+
+export const Container = styled.div`
+  background-color: var(--color-white);
+  margin-top: 3rem;
+  padding: 4rem 2rem;
+`;
 
 export const Title = styled(Link)`
-  font-family: Nunito;
-  font-size: 30px;
-  font-weight: bold;
+  font: 700 2rem Lora;
   text-decoration: none !important;
-  color: ${(props: FooterProps) =>
-    props.color === "branco" ? "#ef233c" : "#ffffff"};
+  color: var(--color-red);
   :hover,
   :active,
   :visited {
-    font-family: Nunito;
-    font-size: 30px;
-    font-weight: bold;
+    font: 700 2rem Lora;
     text-decoration: none !important;
-    color: ${(props: FooterProps) =>
-      props.color === "branco" ? "#ef233c" : "#ffffff"};
+    color: var(--color-red);
   }
 `;
 
 export const Copyright = styled.span`
-  font-size: 14px;
-  color: ${(props: FooterProps) =>
-    props.color === "branco" ? "#2b2d42" : "#bcc1c7"};
-`;
-
-export const Line = styled.hr`
-  border-top-color: ${(props: FooterProps) =>
-    props.color === "branco" ? "#edf2f4" : "#484b5d"};
-`;
-
-export const Container = styled.div`
-  background-color: ${(props: FooterProps) =>
-    props.color === "branco" ? "#ffffff" : "#2b2d42"};
+  font: 500 1rem Lato;
+  color: var(--color-blue);
+  :first-of-type {
+    margin-right: 2rem;
+  }
 `;

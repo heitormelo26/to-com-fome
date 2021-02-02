@@ -110,7 +110,7 @@ function Profile() {
       <div className="mb-5 d-flex justify-content-center">
         <Pagination activePage={1} totalOfRecipes={16} recipesPerPage={3} />
       </div>
-      <Footer color="azul" />
+      <Footer />
     </div>
   );
 }

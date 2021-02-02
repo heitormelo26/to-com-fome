@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Check,
@@ -33,7 +33,6 @@ export interface IngredientProps {
 }
 
 export default function IngredientForm() {
-
   const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
 
   useEffect(() => {
@@ -91,7 +90,7 @@ export default function IngredientForm() {
                         data-size="5"
                       >
                         {categories.map((category: string) => {
-                          return <option>{category}</option>;
+                          return <option key={category}>{category}</option>;
                         })}
                       </Plus>
                     </div>
@@ -129,32 +128,34 @@ export default function IngredientForm() {
                 </div>
               </div>
               <div className="row">
-              {ingredients.map((ingredient: IngredientProps) => {
-            return (
-              <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src= {ingredient.image}
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox1" />
-                          <label className="m-0" htmlFor="checkbox1"></label>
+                {ingredients.map((ingredient: IngredientProps) => {
+                  return (
+                    <div key={ingredient.id} className="col-md-4 mb-4">
+                      <Card className="card">
+                        <img
+                          src={ingredient.image}
+                          className="card-img-top"
+                          alt=""
+                        />
+                        <div className="card-img-overlay">
+                          <Check
+                            type="button"
+                            className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
+                          >
+                            <div className="round">
+                              <input type="checkbox" id="checkbox1" />
+                              <label
+                                className="m-0"
+                                htmlFor="checkbox1"
+                              ></label>
+                            </div>
+                          </Check>
+                          <h5 className="card-title">{ingredient.name}</h5>
                         </div>
-                      </Check>
-                      <h5 className="card-title">{ingredient.name}</h5>
+                      </Card>
                     </div>
-                  </Card>
-                </div>
-            );
-            })}
-               
+                  );
+                })}
               </div>
             </div>
             <div className="modal-footer d-flex align-items-center">

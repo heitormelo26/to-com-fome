@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Container, Subtitle, Title } from "./styles";
+import { Container, Title, Subtitle, ContactButton } from "./styles";
 
-import Button from "../Button";
+import { Link } from "react-router-dom";
 
 interface ContactProps {
   isLogged: boolean;
@@ -11,17 +11,22 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ isLogged }) => {
   if (!isLogged) {
     return (
-      <Container className="container-fluid text-center py-5 m-0">
-        <div className="row">
-          <div className="col-md-6 my-3">
-            <Title className="mb-3">Quer salvar suas receitas favoritas?</Title>
-            <Subtitle>Crie sua conta agora!</Subtitle>
-          </div>
-          <div className="col-md-6 d-flex justify-content-center align-items-center my-3">
-            <Button color="branco" link="/cadastrar" text="Cadastrar" />
-            <div className="mr-4"></div>
-            <Button color="transparente" link="/entrar" text="Entrar" />
-          </div>
+      <Container className="jumbotron">
+        <div className="d-flex flex-column align-items-center align-items-md-start justify-content-center mr-0 mr-md-5 mb-4 mb-md-0">
+          <Title className="contact-title text-center text-md-left">
+            Quer salvar suas receitas favoritas?
+          </Title>
+          <Subtitle className="text-center text-md-left m-0">
+            Crie sua conta e tenha acesso a novas funções!
+          </Subtitle>
+        </div>
+        <div className="d-flex flex-grow-1 align-items-center justify-content-center ml-0 ml-md-5 pl-0 pl-md-5">
+          <ContactButton
+            className="btn btn-contact btn-lg btn-block"
+            to="/cadastrar"
+          >
+            Cadastre-se agora
+          </ContactButton>
         </div>
       </Container>
     );

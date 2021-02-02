@@ -265,7 +265,7 @@ function RecipePage() {
         </div>
       </div>
       <Contact isLogged={true} />
-      <Footer color="branco" />
+      <Footer />
     </div>
   );
 }

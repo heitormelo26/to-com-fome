@@ -7,6 +7,16 @@ export let meals = [
   "Sobremesa",
 ];
 
+export let homeMeals = [
+  "Todas",
+  "Almoço",
+  "Brunch",
+  "Café da manhã",
+  "Jantar",
+  "Lanche",
+  "Sobremesa",
+];
+
 export let categories = [
   "Acompanhamentos",
   "Aperitivos",
