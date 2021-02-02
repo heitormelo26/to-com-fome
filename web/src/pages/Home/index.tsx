@@ -9,14 +9,8 @@ import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
-import {
-  Category,
-  CategoryTitle,
-  IconCategory,
-  IconCategorySelected,
-  More,
-} from "./styles";
-import "../../App.css";
+import { Category, Dropdown, DropdownMenu, More } from "./styles";
+import "./styles.css";
 
 import api from "../../services/api";
 
@@ -24,30 +18,35 @@ import { flags } from "../../assets/settings/slider/flags";
 import { settings } from "../../assets/settings/slider/slider";
 import { homeMeals } from "../../assets/settings/selects/data";
 
+import $ from "jquery";
+
 import Icon from "@mdi/react";
-import {
-  mdiArrowRight,
-  mdiBaguette,
-  mdiCupcake,
-  mdiFood,
-  mdiFoodCroissant,
-  mdiPasta,
-  mdiPizza,
-  mdiSilverwareVariant,
-} from "@mdi/js";
+import { mdiArrowRight } from "@mdi/js";
 
 function Home() {
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
+  const [selected, setSelected] = useState("Todas as receitas");
+
+  function setActiveButton(meal: any) {
+    document.querySelectorAll("button.category").forEach((b) => {
+      let button = document.getElementById(b.id);
+      if (button) {
+        button.style.background = "#edf2f4";
+        button.style.color = "#8d99ae";
+      }
+    });
+    let activeButton = document.getElementById(meal);
+    if (activeButton) {
+      activeButton.style.background = "#ef233c";
+      activeButton.style.color = "#ffffff";
+    }
+  }
 
   useEffect(() => {
     api.get("r-m").then((response) => {
       setRecipes(response.data);
-      let activeButton = document.getElementById("Todas");
-      if (activeButton) {
-        activeButton.classList.add("active");
-        activeButton.style.background = "#ef233c";
-        activeButton.style.color = "#ffffff";
-      }
+      setActiveButton("Todas");
+      setSelected("Todas as receitas");
     });
   }, []);
 
@@ -55,27 +54,14 @@ function Home() {
     if (meal === "Todas") {
       api.get(`r-m`).then((response) => {
         setRecipes(response.data);
-        let activeButton = document.getElementById(meal);
-        if (activeButton) {
-          activeButton.style.background = "#ef233c";
-          activeButton.style.color = "#ffffff";
-        }
+        setActiveButton(meal);
+        setSelected(meal);
       });
     } else {
       api.get(`r-m?meals=${meal}`).then((response) => {
         setRecipes(response.data);
-        document.querySelectorAll("button.category").forEach((b) => {
-          let activeButton = document.getElementById(b.id);
-          if (activeButton) {
-            activeButton.style.background = "#edf2f4";
-            activeButton.style.color = "#8d99ae";
-          }
-        });
-        let activeButton = document.getElementById(meal);
-        if (activeButton) {
-          activeButton.style.background = "#ef233c";
-          activeButton.style.color = "#ffffff";
-        }
+        setActiveButton(meal);
+        setSelected(meal);
       });
     }
   }
@@ -85,9 +71,8 @@ function Home() {
       <Navbar isLogged={true} />
       <div className="container-fluid">
         <Header />
-      </div>
-      <div className="container-fluid">
         <div className="row mb-4">
+          {/* Categorias - tablet, em diante */}
           <div className="col-12 mb-4 d-none d-md-flex center-center">
             {homeMeals.map((meal: string) => {
               return (
@@ -95,56 +80,61 @@ function Home() {
                   key={meal}
                   id={meal}
                   onClick={() => selectMeal(meal)}
-                  className="category text-truncate center-center"
+                  className="category center-center"
                 >
                   {meal}
                 </Category>
               );
             })}
           </div>
+
+          {/* Categorias - mobile */}
           <div className="col-md-12 mb-4 d-flex d-md-none center-center">
-            <IconCategorySelected className="mr-3 text-center btn">
-              <Icon path={mdiSilverwareVariant} color="#ffffff" size={1} />
-            </IconCategorySelected>
-            <IconCategory className="mr-3 text-center btn">
-              <Icon path={mdiBaguette} color="#8d99ae" size={1} />
-            </IconCategory>
-            <IconCategory className="mr-3 text-center btn">
-              <Icon path={mdiFoodCroissant} color="#8d99ae" size={1} />
-            </IconCategory>
-            <IconCategory className="mr-3 text-center btn">
-              <Icon path={mdiPasta} color="#8d99ae" size={1} />
-            </IconCategory>
-            <IconCategory className="mr-3 text-center btn">
-              <Icon path={mdiFood} color="#8d99ae" size={1} />
-            </IconCategory>
-            <IconCategory className="mr-3 text-center btn">
-              <Icon path={mdiPizza} color="#8d99ae" size={1} />
-            </IconCategory>
-            <IconCategory className="text-center btn">
-              <Icon path={mdiCupcake} color="#8d99ae" size={1} />
-            </IconCategory>
+            <div className="dropdown w-100">
+              <Dropdown
+                className="btn btn-block dropdown-toggle"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {selected}
+              </Dropdown>
+              <DropdownMenu
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuLink"
+              >
+                {homeMeals.map((meal: string) => {
+                  return (
+                    <button
+                      key={meal}
+                      id={meal}
+                      onClick={() => selectMeal(meal)}
+                      className="dropdown-item"
+                    >
+                      {meal}
+                    </button>
+                  );
+                })}
+              </DropdownMenu>
+            </div>
           </div>
         </div>
+
+        {/* Receitas */}
         <div className="row mb-5">
-          <div className="col-md-12 mb-5 d-flex d-md-none center-center">
-            <CategoryTitle className="m-0">Todas as receitas</CategoryTitle>
-          </div>
           {recipes.map((recipe: RecipeProps) => {
             return <Recipe key={recipe.id} recipe={recipe} />;
           })}
           <div className="col-12 center-center">
             <More to="/buscar" className="text-decoration-none">
-              Mais receitas{" "}
-              <Icon
-                path={mdiArrowRight}
-                size={0.7}
-                color="#ef233c"
-                className="ml-2"
-              />
+              <span>Mostrar mais</span>
+              <Icon path={mdiArrowRight} size={0.8} color="#ef233c" />
             </More>
           </div>
         </div>
+
         {/* Slide */}
         <div className="row my-5 mx-lg-5">
           <div className="col-12">
@@ -173,11 +163,12 @@ function Home() {
             </Slider>
           </div>
         </div>
-        {/* Slide */}
-      </div>
-      <div className="container-fluid">
+
+        {/* Contato */}
         <Contact isLogged={false} />
       </div>
+
+      {/* Footer*/}
       <Footer />
     </>
   );

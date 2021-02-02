@@ -138,56 +138,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     no-repeat;
 }
 
-/* SLIDE */
-
-.carousel-inner .carousel-item-right.active,
-.carousel-inner .carousel-item-next {
-  transform: translateX(25%);
-}
-
-.carousel-inner .carousel-item-left.active,
-.carousel-inner .carousel-item-prev {
-  transform: translateX(-25%);
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left {
-  transform: translateX(0);
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: rgb(0, 0, 0) !important;
-}
-
-.slick-center > div > div > a > h3 {
-  display: block !important;
-  color: #2b2d42 !important;
-  font-size: 16px !important;
-  font-family: "Nunito" !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  font-weight: bold !important;
-  transition: all 1000ms ease;
-}
-
-.slick-slide {
-  transition: all 1000ms ease;
-}
-
-.slick-slide:not(.slick-center) > div > div > div {
-  height: 150px !important;
-  transition: all 1000ms ease;
-  opacity: 80%;
-}
-
-.slick-center > div > div > div > a > img {
-  width: 100px !important;
-  height: 100px !important;
-  margin-bottom: 24px;
-  transition: all 1000ms ease;
-}
-
 .swal-modal {
   border-radius: 30px !important;
 }

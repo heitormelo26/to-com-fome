@@ -14,11 +14,6 @@
   box-sizing: border-box;
 }
 
-.normal {
-  color: var(--color-dark-gray);
-  background-color: var(--color-light-gray);
-}
-
 *:focus {
   outline: 0 !important;
   box-shadow: none !important;
