@@ -9,6 +9,7 @@ interface ProductItem {
 }
 
 export default class RecipesController {
+
   async index(request: Request, response: Response) {
     const filters = request.query;
     const categories = filters.categories as string;
@@ -362,15 +363,17 @@ export default class RecipesController {
     const filters = request.query;
     const meals = filters.meals as string;
     if (!filters.meals) {
-      return response.status(400).json({
-        error: "Missing filters to search recipes",
-      });
-    }
-    const recipes = await db("recipes")
+      const recipes = await db("recipes")
+      .select("*")
+      .limit(12);
+      return response.json(recipes);
+    }else{
+      const recipes = await db("recipes")
       .where("categories", "like", `%${meals}%`)
       .select("*")
       .limit(12);
-    return response.json(recipes);
+      return response.json(recipes);
+    }   
   }
 
   async searchByIngredients(request: Request, response: Response) {

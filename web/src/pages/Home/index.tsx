@@ -48,10 +48,22 @@ function Home() {
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
 
   useEffect(() => {
-    api.get("r").then((response) => {
+    api.get("r-m").then((response) => {
       setRecipes(response.data);
     });
   }, []);
+
+  function selectMeal(meal :any){
+    if(meal === "Todas"){
+      api.get(`r-m`).then((response) => {
+        setRecipes(response.data);
+      });
+    }else{
+      api.get(`r-m?meals=${meal}`).then((response) => {
+        setRecipes(response.data);
+      });
+    }
+  }
 
   return (
     <>
@@ -62,25 +74,25 @@ function Home() {
       <div className="container">
         <div className="row mb-4">
           <div className="col-md-12 mb-4 d-none d-sm-none d-md-flex d-l-flex d-xl-flex justify-content-center align-items-center">
-            <CategorySelected className="mr-3 text-center text-truncate btn">
+            <CategorySelected onClick = {() => selectMeal("Todas")} className="mr-3 text-center text-truncate btn">
               Todas
             </CategorySelected>
-            <Category className="mr-3 text-center text-truncate btn">
+            <Category onClick = {() => selectMeal("Café da manhã")} className="mr-3 text-center text-truncate btn">
               Café da manhã
             </Category>
-            <Category className="mr-3 text-center text-truncate btn">
+            <Category onClick = {() => selectMeal("Brunch")} className="mr-3 text-center text-truncate btn">
               Brunch
             </Category>
-            <Category className="mr-3 text-center text-truncate btn">
+            <Category onClick = {() => selectMeal("Almoço")} className="mr-3 text-center text-truncate btn">
               Almoço
             </Category>
-            <Category className="mr-3 text-center text-truncate btn">
+            <Category onClick = {() => selectMeal("Lanche")} className="mr-3 text-center text-truncate btn">
               Lanche
             </Category>
-            <Category className="mr-3 text-center text-truncate btn">
+            <Category onClick = {() => selectMeal("Jantar")} className="mr-3 text-center text-truncate btn">
               Jantar
             </Category>
-            <Category className="text-center text-truncate btn">
+            <Category onClick = {() => selectMeal("Sobremesa")} className="text-center text-truncate btn">
               Sobremesa
             </Category>
           </div>

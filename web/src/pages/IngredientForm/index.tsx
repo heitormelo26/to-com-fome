@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 
 import {
   Check,
@@ -23,7 +23,25 @@ import $ from "jquery";
 
 import { ingredients as categories } from "../../assets/settings/selects/data";
 
+import api from "../../services/api";
+
+export interface IngredientProps {
+  id: number;
+  image: string;
+  name: string;
+  category: string;
+}
+
 export default function IngredientForm() {
+
+  const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
+
+  useEffect(() => {
+    api.get("i-c").then((response) => {
+      setIngredients(response.data);
+    });
+  }, []);
+
   $(document).ready(function () {
     $(".selectpicker").selectpicker("refresh");
   });
@@ -111,10 +129,12 @@ export default function IngredientForm() {
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-4 mb-4">
+              {ingredients.map((ingredient: IngredientProps) => {
+            return (
+              <div className="col-md-4 mb-4">
                   <Card className="card">
                     <img
-                      src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                      src= {ingredient.image}
                       className="card-img-top"
                       alt=""
                     />
@@ -128,178 +148,13 @@ export default function IngredientForm() {
                           <label className="m-0" htmlFor="checkbox1"></label>
                         </div>
                       </Check>
-                      <h5 className="card-title">Arroz Branco</h5>
+                      <h5 className="card-title">{ingredient.name}</h5>
                     </div>
                   </Card>
                 </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://images.unsplash.com/photo-1585433206082-ca1f8da26ae8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox2" />
-                          <label className="m-0" htmlFor="checkbox2"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Limão</h5>
-                    </div>
-                  </Card>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://images.pexels.com/photos/603030/pexels-photo-603030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox3" />
-                          <label className="m-0" htmlFor="checkbox3"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Milho Verde</h5>
-                    </div>
-                  </Card>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://images.pexels.com/photos/452773/pexels-photo-452773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox4" />
-                          <label className="m-0" htmlFor="checkbox4"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Pimentão Vermelho</h5>
-                    </div>
-                  </Card>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://images.unsplash.com/photo-1582515073490-39981397c445?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox5" />
-                          <label className="m-0" htmlFor="checkbox5"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Cenoura</h5>
-                    </div>
-                  </Card>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://images.unsplash.com/photo-1550409174-a8ea3586299c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox6" />
-                          <label className="m-0" htmlFor="checkbox6"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Brócolis</h5>
-                    </div>
-                  </Card>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://cdn.pixabay.com/photo/2016/04/15/08/04/strawberries-1330459_960_720.jpg"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox7" />
-                          <label className="m-0" htmlFor="checkbox7"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Morango</h5>
-                    </div>
-                  </Card>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://images.pexels.com/photos/760281/pexels-photo-760281.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox8" />
-                          <label className="m-0" htmlFor="checkbox8"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Uva</h5>
-                    </div>
-                  </Card>
-                </div>
-                <div className="col-md-4 mb-4">
-                  <Card className="card">
-                    <img
-                      src="https://images.pexels.com/photos/1395958/pexels-photo-1395958.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                      className="card-img-top"
-                      alt=""
-                    />
-                    <div className="card-img-overlay">
-                      <Check
-                        type="button"
-                        className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
-                      >
-                        <div className="round">
-                          <input type="checkbox" id="checkbox9" />
-                          <label className="m-0" htmlFor="checkbox9"></label>
-                        </div>
-                      </Check>
-                      <h5 className="card-title">Mirtilo</h5>
-                    </div>
-                  </Card>
-                </div>
+            );
+            })}
+               
               </div>
             </div>
             <div className="modal-footer d-flex align-items-center">

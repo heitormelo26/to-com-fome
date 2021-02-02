@@ -16,7 +16,9 @@ export const Title = styled.h2`
     color: #2b2d42;
     font-weight: 600;
     font-family: Nunito;
+    text-transform: lowercase;
   }
+  text-transform:lowercase;
   font-size: 22px;
   color: #2b2d42;
   font-weight: 600;

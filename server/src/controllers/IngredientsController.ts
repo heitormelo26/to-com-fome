@@ -9,6 +9,7 @@ interface ProductItem {
 }
 
 export default class IngredientsController {
+  
   async index(request: Request, response: Response) {
     const filters = request.query;
     const name = filters.name as string;
@@ -49,4 +50,24 @@ export default class IngredientsController {
       });
     }
   }
+
+  async searchByCategory(request: Request, response: Response) {
+    const filters = request.query;
+    const category = filters.category as string;
+    if (!filters.category) {
+      const ingredients = await db("ingredients")
+      .select("*")
+      .limit(9)
+      .orderByRaw("RANDOM()");
+      console.log("random")
+      return response.json(ingredients);
+    }else{
+      const ingredients = await db("ingredients")
+      .select("*")
+      .where("title", "like", `%${category}%`)
+      .limit(9);
+    return response.json(ingredients);
+    }
+  }
+
 }
