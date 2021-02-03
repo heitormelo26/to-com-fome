@@ -48,6 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
             className="btn btn-navbar"
             data-toggle="modal"
             data-target="#criarReceita1"
+            type="button"
           >
             Enviar Receita
           </NavButton>

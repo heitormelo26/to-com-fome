@@ -1,68 +1,49 @@
 import styled from "styled-components";
 
 export const CircleSelected = styled.li`
-  background-color: #ef233c !important;
-  color: #ffffff !important;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Nunito;
-  border-radius: 100%;
-  border: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  text-align: center;
-  margin-right: 12px;
+  box-sizing: border-box !important;
+  margin-right: 1rem;
   a {
-    padding: 6px !important;
-    margin: 0 !important;
-    background-color: transparent !important;
-    color: #ffffff !important;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Nunito !important;
+    width: 2rem !important;
+    height: 2rem !important;
     border-radius: 100% !important;
-    border: none !important;
-    width: 32px !important;
-    height: 32px !important;
-    :focus {
-      box-shadow: none !important;
-      outline: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem;
+    margin-left: 0;
+    font: 500 1rem Lato;
+    line-height: 1rem;
+    color: var(--color-white);
+    background-color: var(--color-red);
+    border: 0;
+    :hover {
+      color: var(--color-white);
+      background-color: var(--color-red);
     }
   }
 `;
 
 export const Circle = styled.li`
-  background-color: #f1f5f7;
-  color: #8d99ae;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Nunito;
-  border-radius: 100%;
-  border: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  text-align: center;
-  margin-right: 12px;
-  :focus {
-    box-shadow: none !important;
-    outline: 0 !important;
-    border: 0 !important;
-  }
+  box-sizing: border-box !important;
+  margin-right: 1rem;
   a {
-    padding: 6px !important;
-    margin: 0 !important;
-    background-color: transparent !important;
-    color: #8d99ae !important;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Nunito !important;
+    width: 2rem !important;
+    height: 2rem !important;
     border-radius: 100% !important;
-    border: none !important;
-    width: 32px !important;
-    height: 32px !important;
-    :focus {
-      box-shadow: none !important;
-      outline: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem;
+    margin-left: 0;
+    font: 500 1rem Lato;
+    line-height: 1rem;
+    color: var(--color-dark-gray);
+    background-color: var(--color-light-gray);
+    border: 0;
+    :hover {
+      color: var(--color-dark-gray);
+      background-color: var(--color-light-gray);
     }
   }
 `;

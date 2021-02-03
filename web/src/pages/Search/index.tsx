@@ -6,14 +6,17 @@ import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
 import Pagination from "../../components/Pagination";
 import Recipe, { RecipeProps } from "../../components/Recipe";
-import Button from "../../components/Button";
 
-import { InputText, IconGroup, Container, Select } from "./styles";
+import {
+  InputText,
+  IconGroup,
+  Container,
+  Select,
+  SearchButton,
+} from "./styles";
 
 import Icon from "@mdi/react";
 import { mdiMagnify } from "@mdi/js";
-
-import $ from "jquery";
 
 import api from "../../services/api";
 
@@ -24,10 +27,6 @@ import {
 } from "../../assets/settings/selects/data";
 
 export default function Search() {
-  $(document).ready(function () {
-    $(".selectpicker").selectpicker("refresh");
-  });
-
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
 
   const location = useLocation();
@@ -41,87 +40,98 @@ export default function Search() {
 
   return (
     <>
-      <Navbar isLogged={false} />
-      <Container className="jumbotron mb-5">
-        <div className="row mb-4">
-          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div className="input-group mb-2">
-              <div className="input-group-prepend">
-                <IconGroup className="input-group-text">
-                  <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
-                </IconGroup>
+      <Navbar isLogged={true} />
+
+      <div className="container-fluid">
+        <Container className="jumbotron">
+          {/* Buscar */}
+          <div className="row mb-4">
+            <div className="col-12 center-center">
+              <div className="input-group">
+                <InputText
+                  type="text"
+                  className="form-control"
+                  placeholder="Buscar..."
+                  aria-label="Buscar..."
+                />
+                <div className="input-group-append">
+                  <IconGroup className="input-group-text">
+                    <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
+                  </IconGroup>
+                </div>
               </div>
-              <InputText
-                type="text"
-                placeholder="Busque uma receita aqui..."
-                className="py-3 form-control"
-              />
             </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="mb-3 col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-center justify-content-start">
-            <Select
-              className="selectpicker show-tick d-block"
-              data-live-search="true"
-              data-width="100%"
-              title="Categoria"
-              data-size="4"
-            >
-              {categories.map((category: string) => {
-                return <option>{category}</option>;
-              })}
-            </Select>
+
+          {/* Selects */}
+          <div className="row">
+            {/* Categoria */}
+            <div className="col-12 col-md-3 center-center">
+              <Select
+                className="selectpicker w-100"
+                data-live-search="true"
+                title="Categoria"
+                data-size="4"
+              >
+                {categories.map((category: string) => {
+                  return <option>{category}</option>;
+                })}
+              </Select>
+            </div>
+
+            {/* Refeição */}
+            <div className="col-12 col-md-3 center-center">
+              <Select
+                className="selectpicker w-100"
+                data-live-search="true"
+                title="Refeição"
+                data-size="4"
+              >
+                {meals.map((meal: string) => {
+                  return <option>{meal}</option>;
+                })}
+              </Select>
+            </div>
+
+            {/* Nacionalidade */}
+            <div className="col-12 col-md-3 center-center">
+              <Select
+                className="selectpicker w-100"
+                data-live-search="true"
+                title="Nacionalidade"
+                data-size="4"
+              >
+                {countries.map((country: string) => {
+                  return <option>{country}</option>;
+                })}
+              </Select>
+            </div>
+
+            {/* Botão */}
+            <div className="col-12 col-md-3 d-flex align-items-center justify-content-end">
+              <SearchButton type="button" className="btn">
+                Buscar
+              </SearchButton>
+            </div>
           </div>
-          <div className="mb-3 col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-center justify-content-start">
-            <Select
-              className="selectpicker show-tick d-block"
-              data-live-search="true"
-              data-width="100%"
-              title="Refeição"
-              data-size="4"
-            >
-              {meals.map((meal: string) => {
-                return <option>{meal}</option>;
-              })}
-            </Select>
-          </div>
-          <div className="mb-3 col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-center justify-content-start">
-            <Select
-              className="selectpicker show-tick d-block"
-              data-live-search="true"
-              data-width="100%"
-              title="Nacionalidade"
-              data-size="4"
-            >
-              {countries.map((country: string) => {
-                return <option>{country}</option>;
-              })}
-            </Select>
-          </div>
-          <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex align-items-center justify-content-end">
-            <Button color="vermelho" text="Buscar" link="/buscar" />
-          </div>
-        </div>
-      </Container>
-      <div className="container mb-4">
+        </Container>
+        {/* Receitas */}
         <div className="row">
           {recipes.map((recipe: RecipeProps) => {
-            return (
-              <div
-                key={recipe.id}
-                className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-2 col-lg-3 col-xl-3 d-flex justify-content-center"
-              >
-                <Recipe recipe={recipe} />
-              </div>
-            );
+            return <Recipe key={recipe.id} recipe={recipe} />;
           })}
         </div>
+
+        {/* Paginação */}
+        <div className="mb-5 center-center">
+          <Pagination activePage={1} totalOfRecipes={16} recipesPerPage={3} />
+        </div>
+
+        {/* Contato */}
+        <Contact isLogged={false} />
       </div>
-      <div className="mb-5 d-flex justify-content-center">
-        <Pagination activePage={1} totalOfRecipes={16} recipesPerPage={3} />
-      </div>
-      <Contact isLogged={false} />
+
+      {/* Footer */}
       <Footer />
     </>
   );

@@ -27,7 +27,7 @@ const Pagination: React.FC<PaginationProps> = ({
   function prev() {
     if (activePage !== 1) {
       return (
-        <Circle className="page-item d-flex justify-content-center text-center">
+        <Circle className="center-center">
           <Link to={`${match.url}/${activePage - 1}`} className="page-link">
             <Icon path={mdiArrowLeft} size={0.7} color="#8D99AE" />
           </Link>
@@ -39,7 +39,7 @@ const Pagination: React.FC<PaginationProps> = ({
   function next() {
     if (activePage !== totalOfPages) {
       return (
-        <Circle className="page-item d-flex justify-content-center text-center">
+        <Circle className="center-center">
           <Link to={`${match.url}/${activePage + 1}`} className="page-link">
             <Icon path={mdiArrowRight} size={0.7} color="#8D99AE" />
           </Link>
@@ -70,10 +70,7 @@ const Pagination: React.FC<PaginationProps> = ({
         {pageNumbers.map(function (number) {
           if (number === activePage) {
             return (
-              <CircleSelected
-                key={number}
-                className="page-item d-flex justify-content-center text-center"
-              >
+              <CircleSelected key={number} className="center-center">
                 <Link to={`${match.url}/${number}`} className="page-link">
                   {number}
                 </Link>
@@ -81,10 +78,7 @@ const Pagination: React.FC<PaginationProps> = ({
             );
           } else {
             return (
-              <Circle
-                key={number}
-                className="page-item d-flex justify-content-center text-center"
-              >
+              <Circle key={number} className="center-center">
                 <Link to={`${match.url}/${number}`} className="page-link">
                   {number}
                 </Link>
