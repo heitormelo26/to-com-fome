@@ -23,7 +23,7 @@ export default class RecipesController {
       !filters.countries &&
       !filters.input
     ) {
-      console.log("nenhum");
+      
       if (filters.qtd) {
         const recipes = await db("recipes").select().limit(Number(qtd));
         return response.json(recipes);
@@ -39,7 +39,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // CATEGORIES
-      console.log("CATEGORIES");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -61,7 +61,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // MEALS
-      console.log("MEALS");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -83,7 +83,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // COUNTRIES
-      console.log("COUNTRIES");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -105,7 +105,7 @@ export default class RecipesController {
       filters.input
     ) {
       // INPUT
-      console.log("INPUT");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -125,7 +125,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // CATEGORIES & MEALS
-      console.log("CATEGORIES & MEALS");
+     
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -144,7 +144,7 @@ export default class RecipesController {
       }
     } else if (filters.categories && !filters.meals && filters.countries) {
       // CATEGORIES & COUNTRIES
-      console.log("CATEGORIES & COUNTRIES");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -163,7 +163,7 @@ export default class RecipesController {
       }
     } else if (!filters.categories && filters.meals && filters.countries) {
       // MEALS & COUNTRIES
-      console.log("MEALS & COUNTRIES");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -187,7 +187,7 @@ export default class RecipesController {
       filters.input
     ) {
       // CATEGORIES & MEALS & INPUT
-      console.log("CATEGORIES & MEALS & INPUT");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -213,7 +213,7 @@ export default class RecipesController {
       filters.input
     ) {
       // CATEGORIES & COUNTRIES & INPUT
-      console.log("CATEGORIES & COUNTRIES & INPUT");
+     
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -239,7 +239,7 @@ export default class RecipesController {
       filters.input
     ) {
       // MEALS & COUNTRIES & INPUT
-      console.log("MEALS & COUNTRIES & INPUT");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -265,7 +265,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // CATEGORIES, MEALS & COUNTRIES
-      console.log("CATEGORIES, MEALS & COUNTRIES");
+      
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -286,7 +286,7 @@ export default class RecipesController {
       }
     } else {
       // CATEGORIES, MEALS & COUNTRIES && INPUT
-      console.log("CATEGORIES, MEALS & COUNTRIES && INPUT");
+    
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("id.*")

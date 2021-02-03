@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import $ from "jquery";
 
 import Navbar from "../../components/Navbar";
 import Contact from "../../components/Contact";
@@ -27,6 +28,9 @@ import {
 } from "../../assets/settings/selects/data";
 
 export default function Search() {
+  $(document).ready(function () {
+    $(".selectpicker").selectpicker("refresh");
+  });
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
 
   const location = useLocation();

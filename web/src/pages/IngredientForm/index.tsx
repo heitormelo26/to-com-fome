@@ -41,6 +41,20 @@ export default function IngredientForm() {
     });
   }, []);
 
+  function selectCategory(category: any){
+    console.log(category);
+    if (category === "") {
+      api.get(`i-c`).then((response) => {
+        setIngredients(response.data);
+      });
+    } else {
+      console.log(category)
+      api.get(`i-c?category=${category}`).then((response) => {
+        setIngredients(response.data);
+      });
+    }
+  }
+
   $(document).ready(function () {
     $(".selectpicker").selectpicker("refresh");
   });
@@ -82,17 +96,33 @@ export default function IngredientForm() {
                         placeholder="Buscar..."
                         className="form-control d-inline-block"
                       />
-                      <Plus
-                        className="selectpicker show-tick ml-2 d-inline-block"
-                        data-live-search="true"
-                        data-width="25%"
-                        title="Categorias"
-                        data-size="5"
-                      >
-                        {categories.map((category: string) => {
-                          return <option key={category}>{category}</option>;
-                        })}
-                      </Plus>
+                     <div className="dropdown">
+                        <button
+                          className="btn btn-secondary dropdown-toggle"
+                          type="button"
+                          id="dropdownMenuButton"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          Categorias
+                        </button>
+                        <div
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          {categories.map((category: string) => {
+                            return (
+                              <button
+                                onClick = {()=>selectCategory(category)}
+                                key={category}
+                                className="dropdown-item"
+                                type="button"
+                              ></button>
+                            );
+                          })}
+                        </div>
+                      </div>
                     </div>
                     <div className="container">
                       <div className="mt-3 row">
@@ -143,10 +173,10 @@ export default function IngredientForm() {
                             className="p-3 icongroup custom-control custom-checkbox btn btn-primary"
                           >
                             <div className="round">
-                              <input type="checkbox" id="checkbox1" />
+                              <input type="checkbox" id={ingredient.name} />
                               <label
                                 className="m-0"
-                                htmlFor="checkbox1"
+                                htmlFor={ingredient.name}
                               ></label>
                             </div>
                           </Check>
