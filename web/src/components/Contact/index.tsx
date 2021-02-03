@@ -2,8 +2,6 @@ import React from "react";
 
 import { Container, Title, Subtitle, ContactButton } from "./styles";
 
-import { Link } from "react-router-dom";
-
 interface ContactProps {
   isLogged: boolean;
 }

@@ -105,7 +105,7 @@ export const SearchButton = styled.button`
 
 export const Modal = styled.div`
   border: none !important;
-  padding: 1rem !important;
+  padding: 0.5rem !important;
   border-radius: 1rem !important;
   outline: 0;
   box-shadow: none !important;
@@ -115,11 +115,11 @@ export const Modal = styled.div`
   }
   .modal-header {
     .close {
-      color: #8d99ae !important;
+      color: var(--color-light-gray) !important;
       :active,
       :focus,
       :hover {
-        color: #8d99ae !important;
+        color: var(--color-light-gray) !important;
         outline: none !important;
         box-shadow: none !important;
       }
@@ -161,185 +161,13 @@ export const Category = styled.button`
 `;
 
 export const Title = styled.h5`
-  color: #2b2d42;
-  font-family: Nunito;
-  font-weight: 600;
+  font: 600 1.5rem Lora;
+  color: var(--color-blue);
 `;
 
 export const Subtitle = styled.h5`
-  color: #8d99ae;
-  font-family: "Open Sans";
-  letter-spacing: 2px;
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-`;
-
-export const Plus = styled.select`
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  z-index: 5 !important;
-  background-color: #ef233c !important;
-  color: #fff !important;
-  font-size: 16px !important;
-  border: 0 !important;
-  outline: 0 !important;
-  border-radius: 6px !important;
-  padding: 6px 32px !important;
-  :focus,
-  :active {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  ::placeholder {
-    color: #fff !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-  }
-  :-ms-input-placeholder {
-    color: #fff !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-  }
-  ::-ms-input-placeholder {
-    color: #fff !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-  }
-  .btn.dropdown-toggle.btn-light:focus,
-  .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
-  .bootstrap-select .dropdown-toggle:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
-    border: 0px !important;
-  }
-  button {
-    .filter-option {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ef233c !important;
-    color: #fff !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-    padding: 0 !important;
-    border: 0 !important;
-    :focus,
-    :active {
-      border: none !important;
-      outline: none !important;
-      box-shadow: none !important;
-    }
-    div:focus,
-    :focus,
-    .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
-    .bootstrap-select .dropdown-toggle:focus,
-    .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
-      border: 0 !important;
-      outline: none !important;
-      box-shadow: none !important;
-      outline: none !important;
-    }
-  }
-  .dropdown-menu {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: #ef233c !important;
-    color: #fff !important;
-    border: none !important;
-    width: auto;
-    box-shadow: none !important;
-    border-radius: 6px !important;
-    .no-results {
-      background-color: #ef233c !important;
-      color: #fff !important;
-    }
-    :focus,
-    :active {
-      border: none !important;
-      outline: none !important;
-      box-shadow: none !important;
-    }
-    a,
-    a:hover,
-    a:focus,
-    a:active {
-      font-size: 16px !important;
-      font-family: Nunito !important;
-      font-weight: normal !important;
-      background-color: #ef233c !important;
-      color: #fff !important;
-      border: none !important;
-      outline: none !important;
-      box-shadow: none !important;
-      margin: 8px 0;
-    }
-    .bs-searchbox {
-      input {
-        background-color: #fff !important;
-        font-size: 16px !important;
-        border: 0 !important;
-        outline: 0 !important;
-        color: #ef233c !important;
-        border-radius: 6px !important;
-        :focus {
-          border: none !important;
-          outline: none !important;
-          box-shadow: none !important;
-        }
-      }
-    }
-  }
-`;
-
-export const Menu = styled.div`
-  margin-top: 24px;
-  position: relative !important;
-  z-index: 999 !important;
-  background-color: #edf2f4 !important;
-  border: none !important;
-  width: auto;
-  box-shadow: none !important;
-  color: #8d99ae !important;
-  border-radius: 6px !important;
-  :focus,
-  :active {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  :before {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -8px;
-    width: 0;
-    height: 0;
-    content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #edf2f4;
-  }
-  a,
-  a:hover,
-  a:focus,
-  a:active {
-    font-size: 18px !important;
-    font-family: Nunito !important;
-    font-weight: 600 !important;
-    color: #8d99ae !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    background-color: #edf2f4;
-    margin: 8px 0;
-  }
+  font: 500 1rem Lato;
+  color: var(--color-dark-gray);
 `;
 
 export const Check = styled.button`
@@ -426,12 +254,8 @@ export const Card = styled.div`
     border-radius: 0.5rem !important;
     h5 {
       text-align: center !important;
-      color: #ffffff;
-      font-family: Nunito;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-      font-size: 18px;
+      color: var(--color-white);
+      font: 700 1rem Lato;
       margin: 0;
     }
   }

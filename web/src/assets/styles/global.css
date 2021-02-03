@@ -71,3 +71,18 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+.nth-padding {
+  padding-left: 0 !important;
+}
+
+.nth-padding:nth-last-of-type(3n + 1) {
+  padding-right: 0 !important;
+}
+
+@media (max-width: 769px) {
+  .nth-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

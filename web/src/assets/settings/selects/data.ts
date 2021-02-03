@@ -74,6 +74,7 @@ export let countries = [
 ];
 
 export let ingredients = [
+  "Todas",
   "Bebidas",
   "Biscoitos",
   "Carnes",

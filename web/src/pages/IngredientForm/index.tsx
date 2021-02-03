@@ -3,24 +3,18 @@ import React, { useState, useEffect } from "react";
 import {
   Check,
   Card,
-  Category,
   IconGroup,
   InputText,
-  Label,
   Modal,
-  Plus,
   CategoryButton,
   CategoryMenu,
-  Subtitle,
   Title,
   SearchButton,
 } from "./styles";
-import "../../App.css";
-
-import Button from "../../components/Button";
+import "./styles.css";
 
 import Icon from "@mdi/react";
-import { mdiClose, mdiMagnify } from "@mdi/js";
+import { mdiMagnify } from "@mdi/js";
 
 import $ from "jquery";
 
@@ -46,14 +40,12 @@ export default function IngredientForm() {
   }, []);
 
   function selectCategory(category: any) {
-    console.log(category);
-    if (category === "") {
+    if (category === "Todas") {
       api.get(`i-c`).then((response) => {
         setIngredients(response.data);
         setSelected("Categorias");
       });
     } else {
-      console.log(category);
       api.get(`i-c?category=${category}`).then((response) => {
         setIngredients(response.data);
         setSelected(category);
@@ -75,16 +67,13 @@ export default function IngredientForm() {
     >
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <Modal className="modal-content">
-          <div className="modal-header d-flex flex-column">
+          <div className="modal-header pb-0">
             <Title className="d-block w-100 modal-title text-left">
               <button type="button" className="close" data-dismiss="modal">
                 <span aria-hidden="true">&times;</span>
               </button>
               O que tem na sua geladeira?
             </Title>
-            <Subtitle className="d-block w-100 modal-title text-left">
-              Escolher ingredientes
-            </Subtitle>
           </div>
           <div className="modal-body">
             <div className="container-fluid">
@@ -108,8 +97,8 @@ export default function IngredientForm() {
               </div>
 
               <div className="row">
-                <div className="col-6 p-0 mb-3 d-flex align-items-center justify-content-start">
-                  <div className="dropdown">
+                <div className="col-12 col-lg-8 p-0 mb-3 d-flex align-items-center justify-content-start">
+                  <div className="dropdown mr-3">
                     <CategoryButton
                       className="btn dropdown-toggle"
                       type="button"
@@ -138,8 +127,18 @@ export default function IngredientForm() {
                       })}
                     </CategoryMenu>
                   </div>
+                  <div className="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="private"
+                    />
+                    <label className="custom-control-label" htmlFor="private">
+                      Incluir minhas receitas privadas
+                    </label>
+                  </div>
                 </div>
-                <div className="col-6 p-0 mb-3 d-flex align-items-center justify-content-end">
+                <div className="col-12 col-lg-4 p-0 mb-3 d-flex align-items-center justify-content-end">
                   <div className="dropdown">
                     <SearchButton className="btn" type="button">
                       Buscar
@@ -180,12 +179,15 @@ export default function IngredientForm() {
               <div className="row">
                 {ingredients.map((ingredient: IngredientProps) => {
                   return (
-                    <div key={ingredient.id} className="col-md-4 mb-4">
+                    <div
+                      key={ingredient.id}
+                      className="nth-padding col-md-4 mb-3"
+                    >
                       <Card className="card">
                         <img
                           src={ingredient.image}
                           className="card-img-top"
-                          alt=""
+                          alt={ingredient.name}
                         />
                         <div className="card-img-overlay">
                           <Check
@@ -208,35 +210,10 @@ export default function IngredientForm() {
                 })}
               </div>
             </div>
-            <div className="modal-footer d-flex align-items-center">
-              <div className="form-group mr-auto">
-                <div className="pl-3 custom-control custom-checkbox d-flex align-items-center">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="opcao"
-                  />
-                  <Label
-                    className="custom-control-label ml-2 text-left"
-                    htmlFor="opcao"
-                  >
-                    Incluir receitas privadas
-                  </Label>
-                </div>
-              </div>
-              <Button
-                text="Fechar"
-                color="branco"
-                data-dismiss="modal"
-                type="button"
-              />
-              <Button
-                text="Tô com fome!"
-                color="vermelho"
-                data-dismiss="modal"
-                data-toggle="modal"
-                type="button"
-              />
+            <div className="modal-footer p-0 d-flex align-items-center">
+              <SearchButton className="btn" type="button">
+                Tô com fome!
+              </SearchButton>
             </div>
           </div>
         </Modal>

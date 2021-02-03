@@ -18,8 +18,6 @@ import { flags } from "../../assets/settings/slider/flags";
 import { settings } from "../../assets/settings/slider/slider";
 import { homeMeals } from "../../assets/settings/selects/data";
 
-import $ from "jquery";
-
 import Icon from "@mdi/react";
 import { mdiArrowRight } from "@mdi/js";
 
