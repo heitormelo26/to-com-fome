@@ -9,8 +9,11 @@ import {
   Label,
   Modal,
   Plus,
+  CategoryButton,
+  CategoryMenu,
   Subtitle,
   Title,
+  SearchButton,
 } from "./styles";
 import "../../App.css";
 
@@ -34,6 +37,7 @@ export interface IngredientProps {
 
 export default function IngredientForm() {
   const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
+  const [selected, setSelected] = useState("Categorias");
 
   useEffect(() => {
     api.get("i-c").then((response) => {
@@ -41,16 +45,18 @@ export default function IngredientForm() {
     });
   }, []);
 
-  function selectCategory(category: any){
+  function selectCategory(category: any) {
     console.log(category);
     if (category === "") {
       api.get(`i-c`).then((response) => {
         setIngredients(response.data);
+        setSelected("Categorias");
       });
     } else {
-      console.log(category)
+      console.log(category);
       api.get(`i-c?category=${category}`).then((response) => {
         setIngredients(response.data);
+        setSelected(category);
       });
     }
   }
@@ -81,82 +87,96 @@ export default function IngredientForm() {
             </Subtitle>
           </div>
           <div className="modal-body">
-            <div className="container-fluid overflow-auto">
-              <div className="row">
-                <div className="col-md-12 p-0 mb-3 col-12 col-sm-12 col-lg-12 col-xl-12">
-                  <form>
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <IconGroup className="input-group-text">
-                          <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
-                        </IconGroup>
-                      </div>
-                      <InputText
-                        type="text"
-                        placeholder="Buscar..."
-                        className="form-control d-inline-block"
-                      />
-                     <div className="dropdown">
-                        <button
-                          className="btn btn-secondary dropdown-toggle"
-                          type="button"
-                          id="dropdownMenuButton"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          Categorias
-                        </button>
-                        <div
-                          className="dropdown-menu"
-                          aria-labelledby="dropdownMenuButton"
-                        >
-                          {categories.map((category: string) => {
-                            return (
-                              <button
-                                onClick = {()=>selectCategory(category)}
-                                key={category}
-                                className="dropdown-item"
-                                type="button"
-                              ></button>
-                            );
-                          })}
-                        </div>
-                      </div>
+            <div className="container-fluid">
+              {/* Input */}
+              <div className="row mb-3">
+                <div className="col-12 p-0 center-center">
+                  <div className="input-group">
+                    <InputText
+                      type="text"
+                      className="form-control"
+                      placeholder="Buscar..."
+                      aria-label="Buscar..."
+                    />
+                    <div className="input-group-append">
+                      <IconGroup className="input-group-text">
+                        <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
+                      </IconGroup>
                     </div>
-                    <div className="container">
-                      <div className="mt-3 row">
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
-                          <Category className="btn mb-2 mr-2">
-                            <span>Beterraba</span>
-                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                          </Category>
-                          <Category className="btn mb-2 mr-2">
-                            <span>Açúcar</span>
-                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                          </Category>
-                          <Category className="btn mb-2 mr-2">
-                            <span>Orégano</span>
-                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                          </Category>
-                          <Category className="btn mb-2 mr-2">
-                            <span>Morango</span>
-                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                          </Category>
-                          <Category className="btn mb-2 mr-2">
-                            <span>Sal grosso</span>
-                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                          </Category>
-                          <Category className="btn mb-2 mr-2">
-                            <span>Maracujá</span>
-                            <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                          </Category>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+                  </div>
                 </div>
               </div>
+
+              <div className="row">
+                <div className="col-6 p-0 mb-3 d-flex align-items-center justify-content-start">
+                  <div className="dropdown">
+                    <CategoryButton
+                      className="btn dropdown-toggle"
+                      type="button"
+                      id="categoryButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      {selected}
+                    </CategoryButton>
+                    <CategoryMenu
+                      className="dropdown-menu"
+                      aria-labelledby="categoryButton"
+                    >
+                      {categories.map((category: string) => {
+                        return (
+                          <button
+                            onClick={() => selectCategory(category)}
+                            key={category}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            {category}
+                          </button>
+                        );
+                      })}
+                    </CategoryMenu>
+                  </div>
+                </div>
+                <div className="col-6 p-0 mb-3 d-flex align-items-center justify-content-end">
+                  <div className="dropdown">
+                    <SearchButton className="btn" type="button">
+                      Buscar
+                    </SearchButton>
+                  </div>
+                </div>
+              </div>
+              {/* <div className="container">
+                    <div className="mt-3 row">
+                      <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                        <Category className="btn mb-2 mr-2">
+                          <span>Beterraba</span>
+                          <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                        </Category>
+                        <Category className="btn mb-2 mr-2">
+                          <span>Açúcar</span>
+                          <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                        </Category>
+                        <Category className="btn mb-2 mr-2">
+                          <span>Orégano</span>
+                          <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                        </Category>
+                        <Category className="btn mb-2 mr-2">
+                          <span>Morango</span>
+                          <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                        </Category>
+                        <Category className="btn mb-2 mr-2">
+                          <span>Sal grosso</span>
+                          <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                        </Category>
+                        <Category className="btn mb-2 mr-2">
+                          <span>Maracujá</span>
+                          <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                        </Category>
+                      </div>
+                    </div>
+                  </div>*/}
               <div className="row">
                 {ingredients.map((ingredient: IngredientProps) => {
                   return (

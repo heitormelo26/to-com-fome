@@ -1,53 +1,112 @@
 import styled from "styled-components";
 
 export const Label = styled.label`
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: Nunito;
-  color: #2b2d42;
+  font: 500 1rem Lato;
+  color: var(--color-blue);
 `;
 
 export const InputText = styled.input`
-  background-color: #edf2f4 !important;
-  font-size: 16px !important;
-  border: 0 !important;
-  outline: 0 !important;
-  color: #8d99ae !important;
-  padding: 8px auto !important;
-  border-top-right-radius: 6px !important;
-  border-bottom-right-radius: 6px !important;
-  :focus {
-    box-shadow: none !important;
-  }
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-blue);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
   ::placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
   }
   :-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
   }
   ::-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :focus {
+    background-color: var(--color-light-gray);
   }
 `;
 
 export const IconGroup = styled.div`
-  background-color: #edf2f4 !important;
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+`;
+
+export const CategoryButton = styled.button`
+  font: 500 1rem Lato;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  align-self: center;
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray) !important;
   border: 0 !important;
-  outline: 0 !important;
-  border-top-left-radius: 6px !important;
-  border-bottom-left-radius: 6px !important;
-  padding: 8px auto !important;
+  :focus {
+    color: var(--color-dark-gray);
+  }
+  :hover {
+    color: var(--color-dark-gray);
+    background-color: var(--color-light-gray) !important;
+  }
+`;
+
+export const CategoryMenu = styled.div`
+  margin-top: 0.5rem !important;
+  background-color: var(--color-light-gray) !important;
+  color: var(--color-dark-gray) !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  overflow-y: scroll;
+  max-height: 10rem;
+  :focus,
+  :active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  button,
+  button:focus {
+    font: 500 1rem Lato;
+    background-color: var(--color-light-gray) !important;
+    padding: 0.5rem 1rem !important;
+    color: var(--color-dark-gray) !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    margin: 0;
+  }
+`;
+
+export const SearchButton = styled.button`
+  font: 600 1rem "Lato";
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  align-self: center;
+  color: var(--color-white);
+  background-color: var(--color-red) !important;
+  border: 0 !important;
+  :focus {
+    color: var(--color-white);
+  }
+  :hover {
+    color: var(--color-white);
+    background-color: rgba(239, 35, 60, 0.9) !important;
+  }
 `;
 
 export const Modal = styled.div`
   border: none !important;
-  padding: 24px !important;
-  border-radius: 30px !important;
+  padding: 1rem !important;
+  border-radius: 1rem !important;
   outline: 0;
   box-shadow: none !important;
   .modal-header,
@@ -319,7 +378,7 @@ export const Card = styled.div`
   border: none !important;
   background: transparent;
   box-shadow: none !important;
-  border-radius: 20px !important;
+  border-radius: 0.5rem !important;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -328,7 +387,7 @@ export const Card = styled.div`
     border: none !important;
     background: transparent;
     box-shadow: none !important;
-    border-radius: 20px !important;
+    border-radius: 0.5rem !important;
     z-index: 2;
     object-fit: cover;
     min-height: 146px;
@@ -339,7 +398,7 @@ export const Card = styled.div`
     border: none !important;
     background: transparent;
     box-shadow: none !important;
-    border-radius: 20px !important;
+    border-radius: 0.5rem !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -364,6 +423,7 @@ export const Card = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 4;
+    border-radius: 0.5rem !important;
     h5 {
       text-align: center !important;
       color: #ffffff;
