@@ -17,10 +17,7 @@ import {
 import {
   Border,
   Container,
-  Button,
   Description,
-  IconButton,
-  IconText,
   Image,
   IngredientText,
   ListOL,
@@ -29,6 +26,8 @@ import {
   Subtitle,
   Tags,
   Title,
+  Header,
+  Buttons,
 } from "./styles";
 
 import $ from "jquery";
@@ -41,10 +40,10 @@ function RecipePage() {
   });
 
   return (
-    <div>
+    <>
       <Navbar isLogged={true} />
       <div className="container-fluid">
-        <div className="d-flex">
+        <Header>
           <Container className="jumbotron">
             <Title className="">Macarrão Roxo de Beterraba Assada</Title>
             <Description className="">
@@ -53,6 +52,50 @@ function RecipePage() {
               com um pouco da água do cozimento, vira o molho que tinge a massa.
               A ricota e o endro completam o sabor do prato.
             </Description>
+            <Buttons>
+              <button
+                type="button"
+                className="btn"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Gostou da receita? Deixe sua curtida!"
+              >
+                <Icon
+                  path={mdiHeart}
+                  title="Curtir"
+                  size="1rem"
+                  color="#2b2d42"
+                />
+              </button>
+              <button
+                type="button"
+                className="btn"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Quer usar a receita mais tarde? Ela ficará salva no seu perfil!"
+              >
+                <Icon
+                  path={mdiBookmark}
+                  title="Salvar"
+                  size="1rem"
+                  color="#2b2d42"
+                />
+              </button>
+              <button
+                type="button"
+                className="btn"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Compartilhe essa receita com outras pessoas!"
+              >
+                <Icon
+                  path={mdiShareVariant}
+                  title="Compartilhar"
+                  size="1rem"
+                  color="#2b2d42"
+                />
+              </button>
+            </Buttons>
           </Container>
           <Border>
             <Image
@@ -61,64 +104,7 @@ function RecipePage() {
               className="w-100"
             />
           </Border>
-        </div>
-
-        {/* <div className="row mb-5 mb-sm-5 mb-md-1">
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center ">
-            <div className="row">
-              {tags.map(function (tag) {
-                return (
-                  <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 mb-3 d-flex justify-content-start">
-                    <Tag to={`/buscar/categoria/${tag}`}>{tag}</Tag>
-                  </div>
-                );
-              })}
-              <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex mb-3">
-                <Title className="text-center text-sm-center text-md-left text-lg-left text-xl-left">
-                  Macarrão Roxo de Beterraba Assada
-                </Title>
-              </div>
-              <div className="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 d-flex align-items-center mb-3">
-                <Icon
-                  path={mdiClockOutline}
-                  title="Tempo de preparo"
-                  size={1}
-                  color="#8D99AE"
-                  className="mr-2"
-                />
-                <IconText className="text-truncate">1 hora</IconText>
-              </div>
-              <div className="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 d-flex align-items-center mb-3">
-                <Icon
-                  path={mdiSilverware}
-                  title="Rendimento"
-                  size={1}
-                  color="#8D99AE"
-                  className="mr-2"
-                />
-                <IconText className="text-truncate">3 porções</IconText>
-              </div>
-              <div className="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 d-flex align-items-center mb-3">
-                <Icon
-                  path={mdiAccount}
-                  title="Usuário"
-                  size={1}
-                  color="#8D99AE"
-                  className="mr-2 "
-                />
-                <IconText className="text-truncate">Rita Lobo</IconText>
-              </div>
-              <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <Description className="text-justify">
-                  Parece prato de restaurante, de tão bonito que fica. Mas não
-                  poderia ser mais fácil de preparar. A beterraba, assada e
-                  batida com um pouco da água do cozimento, vira o molho que
-                  tinge a massa. A ricota e o endro completam o sabor do prato.
-                </Description>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        </Header>
         {/* <div className="row mb-5 justify-content-center d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
           <Button
             type="button"
@@ -282,43 +268,43 @@ function RecipePage() {
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-6">
-            <Subtitle className="">Informações</Subtitle>
+            <Subtitle>Sobre a receita</Subtitle>
             <Tags className="tags">
               <li>
-                <a href="#" className="tag">
+                <span className="tag">
                   <Icon
                     path={mdiClockOutline}
                     title="Usuário"
-                    size={0.67}
+                    size="1rem"
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
                   1 hora
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="tag">
+                <span className="tag">
                   <Icon
                     path={mdiSilverware}
                     title="Usuário"
-                    size={0.67}
+                    size="1rem"
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
                   3 porções
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="tag">
+                <span className="tag">
                   <Icon
                     path={mdiAccount}
                     title="Usuário"
-                    size={0.67}
+                    size="1rem"
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
                   Fulano
-                </a>
+                </span>
               </li>
               {tags.map(function (tag) {
                 return (
@@ -330,9 +316,7 @@ function RecipePage() {
                 );
               })}
             </Tags>
-            <Subtitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
-              Ingredientes
-            </Subtitle>
+            <Subtitle>Ingredientes</Subtitle>
             <ListUL>
               <IngredientText>2 beterrabas</IngredientText>
               <IngredientText>250 g de macarrão bavette</IngredientText>
@@ -350,13 +334,11 @@ function RecipePage() {
             </ListUL>
           </div>
           <div className="col-12 col-lg-6 text-justify">
-            <Subtitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
-              Modo de preparo
-            </Subtitle>
+            <Subtitle>Modo de preparo</Subtitle>
             <ListOL>
               <PrepareText>
                 Preaqueça o forno a 200°C. Descasque e corte a beterraba em
-                quartos.{" "}
+                quartos.
               </PrepareText>
               <PrepareText>
                 Corte um pedaço grande de papel-alumínio de 35 cm x 40 cm,
@@ -392,9 +374,11 @@ function RecipePage() {
           </div>
         </div>
       </div>
-      <Contact isLogged={true} />
+      <div className="container-fluid">
+        <Contact isLogged={false} />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -127,11 +127,12 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   background-color: #2b2d42 !important;
   border: 0 !important;
   color: #edf2f4 !important;
-  font-family: "Nunito";
+  font: 500 1rem Lato !important;
 }
 
 .popover-body {
   background-color: #2b2d42 !important;
   border: 0 !important;
   color: #edf2f4 !important;
+  font: 500 1rem Lato !important;
 }
