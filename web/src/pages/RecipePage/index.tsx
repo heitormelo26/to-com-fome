@@ -15,6 +15,8 @@ import {
 } from "@mdi/js";
 
 import {
+  Border,
+  Container,
   Button,
   Description,
   IconButton,
@@ -24,8 +26,8 @@ import {
   ListOL,
   ListUL,
   PrepareText,
-  SecondTitle,
-  Tag,
+  Subtitle,
+  Tags,
   Title,
 } from "./styles";
 
@@ -41,15 +43,27 @@ function RecipePage() {
   return (
     <div>
       <Navbar isLogged={true} />
-      <div className="container">
-        <div className="row mb-5 mb-sm-5 mb-md-1">
-          <div className="col-md-6 col-12 col-sm-12 col-lg-6 col-xl-6 mb-5">
+      <div className="container-fluid">
+        <div className="d-flex">
+          <Container className="jumbotron">
+            <Title className="">Macarrão Roxo de Beterraba Assada</Title>
+            <Description className="">
+              Parece prato de restaurante, de tão bonito que fica. Mas não
+              poderia ser mais fácil de preparar. A beterraba, assada e batida
+              com um pouco da água do cozimento, vira o molho que tinge a massa.
+              A ricota e o endro completam o sabor do prato.
+            </Description>
+          </Container>
+          <Border>
             <Image
               src="https://cdn.panelinha.com.br/receita/1584371597251-macarr%C3%A3o%20roxo.jpg"
               alt="Macarrão Roxo de Beterraba Assada"
-              className="img-fluid w-100"
+              className="w-100"
             />
-          </div>
+          </Border>
+        </div>
+
+        {/* <div className="row mb-5 mb-sm-5 mb-md-1">
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center align-items-center ">
             <div className="row">
               {tags.map(function (tag) {
@@ -104,8 +118,8 @@ function RecipePage() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="row mb-5 justify-content-center d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
+        </div> */}
+        {/* <div className="row mb-5 justify-content-center d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
           <Button
             type="button"
             className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
@@ -160,8 +174,8 @@ function RecipePage() {
               Compartilhar
             </span>
           </Button>
-        </div>
-        <div className="row mb-5 d-flex justify-content-center d-sm-flex d-md-none d-l-none d-xl-none">
+        </div> */}
+        {/* <div className="row mb-5 d-flex justify-content-center d-sm-flex d-md-none d-l-none d-xl-none">
           <IconButton
             type="button"
             className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
@@ -190,8 +204,9 @@ function RecipePage() {
               color="#ffffff"
             />
           </IconButton>
-        </div>
-        <div className="row mb-5">
+        </div> */}
+
+        {/* <div className="row mb-5">
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <SecondTitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
@@ -261,6 +276,119 @@ function RecipePage() {
                 </PrepareText>
               </ListOL>
             </div>
+          </div>
+        </div> */}
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-lg-6">
+            <Subtitle className="">Informações</Subtitle>
+            <Tags className="tags">
+              <li>
+                <a href="#" className="tag">
+                  <Icon
+                    path={mdiClockOutline}
+                    title="Usuário"
+                    size={0.67}
+                    color="#8D99AE"
+                    className="mr-2 tag-icon"
+                  />
+                  1 hora
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tag">
+                  <Icon
+                    path={mdiSilverware}
+                    title="Usuário"
+                    size={0.67}
+                    color="#8D99AE"
+                    className="mr-2 tag-icon"
+                  />
+                  3 porções
+                </a>
+              </li>
+              <li>
+                <a href="#" className="tag">
+                  <Icon
+                    path={mdiAccount}
+                    title="Usuário"
+                    size={0.67}
+                    color="#8D99AE"
+                    className="mr-2 tag-icon"
+                  />
+                  Fulano
+                </a>
+              </li>
+              {tags.map(function (tag) {
+                return (
+                  <li>
+                    <a href={`/buscar/categoria/${tag}`} className="tag">
+                      {tag}
+                    </a>
+                  </li>
+                );
+              })}
+            </Tags>
+            <Subtitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
+              Ingredientes
+            </Subtitle>
+            <ListUL>
+              <IngredientText>2 beterrabas</IngredientText>
+              <IngredientText>250 g de macarrão bavette</IngredientText>
+              <IngredientText>1 dente de alho descascado</IngredientText>
+              <IngredientText>azeite a gosto</IngredientText>
+              <IngredientText>
+                sal e pimenta-do-reino moída na hora a gosto
+              </IngredientText>
+              <IngredientText>
+                ricota esfarelada a gosto para servir
+              </IngredientText>
+              <IngredientText>
+                folhas de endro (dill) a gosto para servir
+              </IngredientText>
+            </ListUL>
+          </div>
+          <div className="col-12 col-lg-6 text-justify">
+            <Subtitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
+              Modo de preparo
+            </Subtitle>
+            <ListOL>
+              <PrepareText>
+                Preaqueça o forno a 200°C. Descasque e corte a beterraba em
+                quartos.{" "}
+              </PrepareText>
+              <PrepareText>
+                Corte um pedaço grande de papel-alumínio de 35 cm x 40 cm,
+                coloque os pedaços de beterraba no centro, regue com um fio de
+                azeite e tempere com sal e pimenta a gosto. Una as pontas e
+                dobre, formando uma trouxinha. Transfira para um assadeira e
+                leve para assar por cerca de 30 minutos, ou até as beterrabas
+                ficarem macias.
+              </PrepareText>
+              <PrepareText>
+                Quando faltar 10 minutos para o tempo da beterraba, leve uma
+                panela média com cerca de 3 litros de água ao fogo alto. Assim
+                que ferver, adicione 1 colher (sopa) de sal, junte o macarrão e
+                misture. Deixe cozinhar pelo tempo indicado na embalagem ou até
+                ficar al dente, mexendo de vez em quando.
+              </PrepareText>
+              <PrepareText>
+                Retire a assadeira do forno e, com cuidado para não se queimar
+                com o vapor, abra a trouxinha de papel-alumínio. Transfira as
+                beterrabas (com o líquido que se formou na trouxinha) para o
+                liquidificador, junte o alho, 1 colher (sopa) de azeite e
+                tempere com ½ colher (chá) de sal. Adicione ½ xícara (chá) da
+                água do cozimento do macarrão e bata até ficar liso.
+              </PrepareText>
+              <PrepareText>
+                Assim que estiver cozido, escorra a água e transfira o macarrão
+                para uma tigela grande. Adicione o molho de beterraba e misture
+                delicadamente – ele vai absorver parte do molho e ficar com a
+                cor da beterraba. Sirva a seguir com ricota esfarelada, folhas
+                de endro, azeite e pimenta-do-reino moída na hora a gosto.
+              </PrepareText>
+            </ListOL>
           </div>
         </div>
       </div>
