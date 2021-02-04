@@ -86,3 +86,39 @@ a {
     padding-right: 0 !important;
   }
 }
+
+.swal-modal {
+  border-radius: 1rem !important;
+}
+
+.swal-title {
+  font: 600 1.5rem Lora;
+  color: var(--color-blue);
+}
+
+.swal-text {
+  font: 500 1rem Lato;
+  color: var(--color-dark-gray);
+  text-align: center;
+}
+
+.swal-icon {
+  margin: 1rem auto;
+}
+
+.swal-button {
+  font: 600 1rem "Lato";
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  align-self: center;
+  color: var(--color-white);
+  background-color: var(--color-red) !important;
+  border: 0 !important;
+}
+
+.swal-button:active,
+.swal-button:hover,
+.swal-button:focus {
+  color: var(--color-white);
+  background-color: rgba(239, 35, 60, 0.9) !important;
+}

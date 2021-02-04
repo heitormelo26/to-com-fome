@@ -113,48 +113,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     no-repeat;
 }
 
-.swal-modal {
-  border-radius: 30px !important;
-}
-
-.swal-title {
-  color: #2b2d42;
-  font-family: "Nunito";
-  font-weight: 600;
-}
-.swal-text {
-  font-size: 16px !important;
-  text-align: center;
-  font-family: "Nunito" !important;
-  color: #8d99ae !important;
-}
-
-.swal-button {
-  text-decoration: none;
-  overflow: hidden !important;
-  color: #ffffff !important;
-  background: #ef233c !important;
-  border: none !important;
-  font-size: 18px;
-  font-family: "Nunito";
-  font-weight: 700;
-  display: inline-block;
-  text-align: center;
-  line-height: 1.5;
-  border-radius: 40px;
-  padding: 10px 20px !important;
-}
-
-.swal-button:active,
-.swal-button:hover,
-.swal-button:focus {
-  color: #ffffff !important;
-  background: #ef233c !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
 .popover {
   background-color: #2b2d42 !important;
   border: 0 !important;

@@ -1,12 +1,17 @@
 import React from "react";
 
-import Input from "../../components/Input";
-import Button from "../../components/Button";
+import {
+  Modal,
+  Paragraph,
+  Title,
+  InputText,
+  IconGroup,
+  Button,
+} from "./styles";
 
-import { Modal, Paragraph, Title } from "./styles";
-import "../../App.css";
+import Icon from "@mdi/react";
+import { mdiClose, mdiEmail } from "@mdi/js";
 
-import { mdiEmail } from "@mdi/js";
 import swal from "sweetalert";
 
 function ForgotPassword() {
@@ -20,10 +25,10 @@ function ForgotPassword() {
     >
       <div className="modal-dialog modal-dialog-centered">
         <Modal className="modal-content">
-          <div className="modal-header d-flex flex-column">
+          <div className="modal-header pb-0">
             <Title className="d-block w-100 modal-title">
               <button type="button" className="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
+                <Icon path={mdiClose} size={0.8} color="#8D99AE" />
               </button>
               Esqueceu a senha?
             </Title>
@@ -33,17 +38,16 @@ function ForgotPassword() {
               Digite o email que você usou quando criou sua conta e nós te
               enviaremos as instruções para definir uma nova senha.
             </Paragraph>
-            <form>
-              <div className="form-group">
-                <Input iconName={mdiEmail} type="email" name="email" />
-              </div>
-            </form>
+            <div className="input-group">
+              <IconGroup className="input-group-prepend">
+                <Icon path={mdiEmail} size={0.8} color="#8D99AE" />
+              </IconGroup>
+              <InputText className="form-control" type="email" name="email" />
+            </div>
           </div>
           <div className="modal-footer">
-            <Button data-dismiss="modal" color="branco" text="Fechar" />
             <Button
-              color="vermelho"
-              text="Enviar"
+              type="button"
               data-dismiss="modal"
               onClick={() => {
                 swal(
@@ -65,7 +69,9 @@ function ForgotPassword() {
                   }
                 );
               }}
-            />
+            >
+              Enviar
+            </Button>
           </div>
         </Modal>
       </div>

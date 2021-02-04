@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Modal = styled.div`
   border: none !important;
-  padding: 24px !important;
-  border-radius: 30px !important;
+  padding: 0.5rem !important;
+  border-radius: 1rem !important;
   outline: 0;
   box-shadow: none !important;
   .modal-header,
@@ -12,19 +12,11 @@ export const Modal = styled.div`
   }
   .modal-header {
     .close {
-      color: #8d99ae !important;
-      :active {
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
-      :focus {
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
+      color: var(--color-light-gray) !important;
+      :active,
+      :focus,
       :hover {
-        color: #8d99ae !important;
+        color: var(--color-light-gray) !important;
         outline: none !important;
         box-shadow: none !important;
       }
@@ -33,13 +25,65 @@ export const Modal = styled.div`
 `;
 
 export const Title = styled.h5`
-  color: #2b2d42;
-  font-family: "Nunito";
-  font-weight: 600;
+  font: 600 1.5rem Lora;
+  color: var(--color-blue);
 `;
 
 export const Paragraph = styled.p`
-  font-size: 16px !important;
-  font-family: "Nunito" !important;
-  color: #8d99ae !important;
+  font: 500 1rem Lato;
+  color: var(--color-dark-gray);
+`;
+
+export const InputText = styled.input`
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-blue);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+  ::placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  ::-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :focus {
+    background-color: var(--color-light-gray);
+  }
+`;
+
+export const IconGroup = styled.div`
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+`;
+
+export const Button = styled.button`
+  font: 600 1rem "Lato";
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  align-self: center;
+  color: var(--color-white);
+  background-color: var(--color-red) !important;
+  border: 0 !important;
+  :focus {
+    color: var(--color-white);
+  }
+  :hover {
+    color: var(--color-white);
+    background-color: rgba(239, 35, 60, 0.9) !important;
+  }
 `;

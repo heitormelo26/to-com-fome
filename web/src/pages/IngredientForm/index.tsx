@@ -14,7 +14,7 @@ import {
 import "./styles.css";
 
 import Icon from "@mdi/react";
-import { mdiMagnify } from "@mdi/js";
+import { mdiMagnify, mdiClose } from "@mdi/js";
 
 import $ from "jquery";
 
@@ -70,7 +70,7 @@ export default function IngredientForm() {
           <div className="modal-header pb-0">
             <Title className="d-block w-100 modal-title text-left">
               <button type="button" className="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
+                <Icon path={mdiClose} size={0.8} color="#8D99AE" />
               </button>
               O que tem na sua geladeira?
             </Title>
