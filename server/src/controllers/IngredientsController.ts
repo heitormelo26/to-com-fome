@@ -70,4 +70,13 @@ export default class IngredientsController {
     }
   }
 
+  async searchByName(request: Request, response: Response) {
+    const filters = request.query;
+    const name = filters.name as string;
+    const ingredients = await db("ingredients")
+      .select("*")
+      .where("name", "like", `%${name}%`)
+    return response.json(ingredients);
+  }
+
 }

@@ -32,6 +32,8 @@ export interface IngredientProps {
 export default function IngredientForm() {
   const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
   const [selected, setSelected] = useState("Categorias");
+  const [invalidInput, setInvalidInput] = useState(true);
+  const [firstSearch, setfirstSearch] = useState(true);
 
   useEffect(() => {
     api.get("i-c").then((response) => {
@@ -51,6 +53,25 @@ export default function IngredientForm() {
         setSelected(category);
       });
     }
+  }
+
+  function setarInput(){
+    const inputElement = document.getElementById("inputIngredient") as HTMLInputElement;
+    if(firstSearch){
+      setfirstSearch(false);
+      if(inputElement.value.length >= 0) setInvalidInput(false);
+      else setInvalidInput(true);
+    }else{
+      if(inputElement.value.length > 0) setInvalidInput(false);
+      else setInvalidInput(true);
+    }
+  }
+
+  function selectName() {
+    const inputElement = document.getElementById("inputIngredient") as HTMLInputElement;
+    api.get(`i-n?name=${inputElement.value}`).then((response) => {
+      setIngredients(response.data);
+   });
   }
 
   $(document).ready(function () {
@@ -86,6 +107,8 @@ export default function IngredientForm() {
                       className="form-control"
                       placeholder="Buscar..."
                       aria-label="Buscar..."
+                      id="inputIngredient"
+                      onChange = {() => setarInput()}
                     />
                     <div className="input-group-append">
                       <IconGroup className="input-group-text">
@@ -140,7 +163,7 @@ export default function IngredientForm() {
                 </div>
                 <div className="col-12 col-lg-4 p-0 mb-3 d-flex align-items-center justify-content-end">
                   <div className="dropdown">
-                    <SearchButton className="btn" type="button">
+                    <SearchButton className="btn" type="button" onClick={() => selectName()} disabled={invalidInput} >
                       Buscar
                     </SearchButton>
                   </div>

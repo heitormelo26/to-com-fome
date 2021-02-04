@@ -20,6 +20,7 @@ routes.get("/receita", recipesControllers.getById);
 routes.post("/i", ingredientsController.create);
 routes.get("/i", ingredientsController.index);
 routes.get("/i-c", ingredientsController.searchByCategory);
+routes.get("/i-n", ingredientsController.searchByName);
 
 routes.post("/u", usersControllers.create);
 routes.post("/u-changePassword", usersControllers.changePassword);
