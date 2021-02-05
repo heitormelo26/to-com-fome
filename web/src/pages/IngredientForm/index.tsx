@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, createRef } from "react";
 
 import {
+  Label,
   Check,
   Card,
   IconGroup,
@@ -11,7 +12,6 @@ import {
   Title,
   SearchButton,
 } from "./styles";
-import "./styles.css";
 
 import Icon from "@mdi/react";
 import { mdiMagnify, mdiClose } from "@mdi/js";
@@ -41,6 +41,15 @@ export default function IngredientForm() {
     });
   }, []);
 
+  const handleKeypress = (e: any) => {
+    if (e.key === "Enter") {
+      console.log("ehjhcsdjf");
+      e.preventDefault();
+
+      selectName();
+    }
+  };
+
   function selectCategory(category: any) {
     if (category === "Todas") {
       api.get(`i-c`).then((response) => {
@@ -55,23 +64,27 @@ export default function IngredientForm() {
     }
   }
 
-  function setarInput(){
-    const inputElement = document.getElementById("inputIngredient") as HTMLInputElement;
-    if(firstSearch){
+  function setarInput() {
+    const inputElement = document.getElementById(
+      "inputIngredient"
+    ) as HTMLInputElement;
+    if (firstSearch) {
       setfirstSearch(false);
-      if(inputElement.value.length >= 0) setInvalidInput(false);
+      if (inputElement.value.length >= 0) setInvalidInput(false);
       else setInvalidInput(true);
-    }else{
-      if(inputElement.value.length > 0) setInvalidInput(false);
+    } else {
+      if (inputElement.value.length > 0) setInvalidInput(false);
       else setInvalidInput(true);
     }
   }
 
   function selectName() {
-    const inputElement = document.getElementById("inputIngredient") as HTMLInputElement;
+    const inputElement = document.getElementById(
+      "inputIngredient"
+    ) as HTMLInputElement;
     api.get(`i-n?name=${inputElement.value}`).then((response) => {
       setIngredients(response.data);
-   });
+    });
   }
 
   $(document).ready(function () {
@@ -91,7 +104,7 @@ export default function IngredientForm() {
           <div className="modal-header pb-0">
             <Title className="d-block w-100 modal-title text-left">
               <button type="button" className="close" data-dismiss="modal">
-                <Icon path={mdiClose} size={0.8} color="#8D99AE" />
+                <Icon path={mdiClose} size="1rem" color="#8D99AE" />
               </button>
               O que tem na sua geladeira?
             </Title>
@@ -108,11 +121,12 @@ export default function IngredientForm() {
                       placeholder="Buscar..."
                       aria-label="Buscar..."
                       id="inputIngredient"
-                      onChange = {() => setarInput()}
+                      onChange={() => setarInput()}
+                      onKeyPress={handleKeypress}
                     />
                     <div className="input-group-append">
                       <IconGroup className="input-group-text">
-                        <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
+                        <Icon path={mdiMagnify} size="1rem" color="#8D99AE" />
                       </IconGroup>
                     </div>
                   </div>
@@ -156,17 +170,21 @@ export default function IngredientForm() {
                       className="custom-control-input"
                       id="private"
                     />
-                    <label className="custom-control-label" htmlFor="private">
+                    <Label className="custom-control-label" htmlFor="private">
                       Incluir minhas receitas privadas
-                    </label>
+                    </Label>
                   </div>
                 </div>
                 <div className="col-12 col-lg-4 p-0 mb-3 d-flex align-items-center justify-content-end">
-                  <div className="dropdown">
-                    <SearchButton className="btn" type="button" onClick={() => selectName()} disabled={invalidInput} >
-                      Buscar
-                    </SearchButton>
-                  </div>
+                  <SearchButton
+                    className="btn"
+                    type="button"
+                    onClick={() => selectName()}
+                    disabled={invalidInput}
+                    onKeyPress={handleKeypress}
+                  >
+                    Buscar
+                  </SearchButton>
                 </div>
               </div>
               {/* <div className="container">

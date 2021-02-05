@@ -1,71 +1,109 @@
 import styled from "styled-components";
 
 export const TextArea = styled.textarea`
-  background-color: #edf2f4 !important;
-  font-size: 16px !important;
-  border: 0 !important;
-  outline: 0 !important;
-  width: 100% !important;
-  color: #8d99ae !important;
-  border-radius: 6px !important;
-  padding: 8px;
+  padding: 0.5rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-blue);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-radius: 0.5rem !important;
+  ::placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  ::-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
   :focus {
-    box-shadow: none !important;
+    background-color: var(--color-light-gray);
   }
 `;
 
 export const Label = styled.label`
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: Nunito;
-  color: #2b2d42;
+  font: 600 1rem Lato;
+  color: var(--color-blue);
+  line-height: 1.4rem;
 `;
 
 export const Placeholder = styled.label`
-  font-size: 18px;
-  color: #8d99ae !important;
-  font-family: Nunito !important;
+  font: 500 1rem Lato;
+  color: var(--color-dark-gray);
 `;
 
 export const InputText = styled.input`
-  background-color: #edf2f4 !important;
-  font-size: 16px !important;
-  border: 0 !important;
-  outline: 0 !important;
-  color: #8d99ae !important;
-  border-top-right-radius: 6px !important;
-  border-bottom-right-radius: 6px !important;
-  :focus {
-    box-shadow: none !important;
-  }
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-blue);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
   ::placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
   }
   :-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
   }
   ::-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :focus {
+    background-color: var(--color-light-gray);
+  }
+`;
+
+export const InputNoIcon = styled.input`
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-blue);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-radius: 0.5rem !important;
+  ::placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  ::-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :focus {
+    background-color: var(--color-light-gray);
   }
 `;
 
 export const IconGroup = styled.div`
-  background-color: #edf2f4 !important;
-  border: 0 !important;
-  outline: 0 !important;
-  border-top-left-radius: 6px !important;
-  border-bottom-left-radius: 6px !important;
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+  display: flex;
+  align-items: center;
 `;
 
 export const Modal = styled.div`
   border: none !important;
-  padding: 24px !important;
-  border-radius: 30px !important;
+  padding: 0.5rem;
+  border-radius: 1rem !important;
   outline: 0;
   box-shadow: none !important;
   .modal-header,
@@ -73,178 +111,52 @@ export const Modal = styled.div`
     border: none !important;
   }
   .modal-header {
+    padding-bottom: 1rem !important;
     .close {
-      color: #8d99ae !important;
-      :active {
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
-      :focus {
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
+      color: var(--color-light-gray) !important;
+      :active,
+      :focus,
       :hover {
-        color: #8d99ae !important;
+        color: var(--color-light-gray) !important;
         outline: none !important;
         box-shadow: none !important;
       }
     }
   }
-`;
-
-export const Category = styled.button`
-  overflow: hidden !important;
-  color: #ffffff !important;
-  background-color: #ef233c !important;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: Nunito;
-  text-align: center;
-  border-radius: 40px;
-  padding: 2px 14px !important;
-  text-decoration: none !important;
-  overflow: hidden !important;
-  border: none !important;
-  text-align: center;
-  :focus,
-  :hover,
-  :active {
-    color: #ffffff !important;
-    background-color: #ef233c !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  span {
-    font-size: 16px;
-    font-weight: 600;
-    font-family: Nunito;
-    margin-right: 8px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .modal-body {
+    padding-top: 0;
   }
 `;
 
 export const Title = styled.h5`
-  color: #2b2d42;
-  font-family: Nunito;
-  font-weight: 600;
-`;
-
-export const Subtitle = styled.h5`
-  color: #8d99ae;
-  font-family: "Open Sans";
-  letter-spacing: 2px;
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-`;
-
-export const Plus = styled.button`
-  overflow: hidden !important;
-  color: #ffffff !important;
-  background: #ef233c !important;
-  border: none !important;
-  :active {
-    border: 0px transparent solid !important;
-  }
-  font-size: 18px;
-  font-family: Nunito;
-  font-weight: 700;
-  display: inline-block;
-  text-align: center;
-  line-height: 1.5;
-  border-radius: 6px;
-  text-decoration: none !important;
-  span {
-    overflow: hidden !important;
-    font-size: 18px;
-    font-family: Nunito;
-    font-weight: 700;
-    color: #ffffff !important;
-    background: #ef233c !important;
-    border: none !important;
-    :active {
-      border: 0px transparent solid !important;
-    }
-    border: none !important;
-    :active {
-      outline: none !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-    :focus {
-      outline: none !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-  }
+  font: 600 1.5rem Lora;
+  color: var(--color-blue);
 `;
 
 export const TrashCan = styled.button`
-  overflow: hidden !important;
-  color: #8d99ae !important;
   background: transparent !important;
-  border: none !important;
-  :focus,
-  :active {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  font-size: 18px;
-  font-family: Nunito;
-  font-weight: 700;
-  display: inline-block;
-  text-align: center;
-  line-height: 1.5;
-  border-radius: 6px;
+  border: 0 !important;
+  text-align: center !important;
+  line-height: 1rem;
+  font: 500 1rem var(--color-dark-gray);
+  border-radius: 0;
   text-decoration: none !important;
-`;
-
-export const Ingredient = styled.p`
-  font-size: 18px;
-  font-family: Nunito;
-  color: #8d99ae !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 0 !important;
 `;
 
 export const Select = styled.select`
-  background-color: #edf2f4 !important;
-  color: #8d99ae !important;
-  font-size: 16px;
-  border: 0 !important;
-  outline: 0 !important;
-  border-radius: 6px !important;
-  padding: 6px 12px !important;
-  width: 100% !important;
-  :focus {
-    box-shadow: none !important;
-  }
-  ::placeholder {
-    color: #8d99ae !important;
-    font-size: 16px;
-    font-family: Nunito;
-  }
-  :-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px;
-    font-family: Nunito;
-  }
-  ::-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px;
-    font-family: Nunito;
-  }
+  color: var(--color-dark-gray) !important;
   button {
-    background-color: #edf2f4 !important;
-    color: #8d99ae !important;
-    font-size: 16px;
-    font-family: Nunito;
-    padding: 0 !important;
-    border: 0 !important;
-    div:focus,
+    font: 500 1rem Lato;
+    color: var(--color-dark-gray) !important;
+    background-color: var(--color-light-gray);
+    border: 0;
+    padding: 0.5rem 1rem !important;
+    line-height: 1rem;
+    border-radius: 0.5rem;
     :focus,
     .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
     .bootstrap-select .dropdown-toggle:focus,
@@ -252,46 +164,78 @@ export const Select = styled.select`
       border: 0 !important;
       outline: none !important;
       box-shadow: none !important;
-      outline: none !important;
+      background-color: var(--color-light-gray);
+    }
+    .filter-option .filter-option-inner .filter-option-inner-inner {
+      color: var(--color-dark-gray) !important;
+    }
+    :hover {
+      background-color: var(--color-light-gray);
     }
   }
-  .dropdown-menu {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: #edf2f4 !important;
-    color: #8d99ae !important;
-    border: none !important;
-    width: auto;
+  .bootstrap-select > .dropdown-toggle.bs-placeholder,
+  .bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+  .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+  .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+    color: var(--color-dark-gray) !important;
+    background-color: var(--color-light-gray);
+  }
+  ::placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  ::-ms-input-placeholder {
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :focus {
+    background-color: var(--color-light-gray);
+  }
+  .btn.dropdown-toggle.btn-light:focus,
+  .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
+  .bootstrap-select .dropdown-toggle:focus {
     box-shadow: none !important;
-    border-radius: 6px !important;
+    outline: 0px !important;
+    border: 0px !important;
+  }
+  .dropdown-menu {
+    z-index: 9999999 !important;
+    margin: 0.5rem 0 0 0;
+    background-color: var(--color-light-gray) !important;
+    color: var(--color-dark-gray) !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
     :focus,
     :active {
       border: none !important;
       outline: none !important;
       box-shadow: none !important;
     }
-    a,
-    a:hover,
-    a:focus,
-    a:active {
-      font-size: 16px;
-      font-family: Nunito !important;
-      font-weight: normal !important;
-      background-color: #edf2f4 !important;
-      color: #8d99ae !important;
+    li a,
+    li a:hover,
+    li a:focus {
+      font: 500 1rem Lato;
+      background-color: var(--color-light-gray) !important;
+      padding: 0.5rem 1rem !important;
+      color: var(--color-dark-gray) !important;
       border: none !important;
       outline: none !important;
       box-shadow: none !important;
-      margin: 8px 0;
+      margin: 0;
     }
     .bs-searchbox {
+      padding: 0 0.5rem;
       input {
         background-color: #8d99ae !important;
-        font-size: 16px;
+        font-size: 16px !important;
         border: 0 !important;
         outline: 0 !important;
         color: #edf2f4 !important;
-        border-radius: 6px !important;
+        border-radius: 0.25rem !important;
         :focus {
           border: none !important;
           outline: none !important;
@@ -302,17 +246,36 @@ export const Select = styled.select`
   }
 `;
 
-export const InfoButton = styled.button`
-  background: transparent;
-  border: 0;
-  color: #8d99ae;
-  text-decoration: none;
-  :focus,
-  :active,
+export const Button = styled.button`
+  font: 600 1rem "Lato";
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  align-self: center;
+  color: var(--color-white);
+  background-color: var(--color-red) !important;
+  border: 0 !important;
+  :focus {
+    color: var(--color-white);
+  }
   :hover {
-    border: 0 !important;
-    outline: 0 !important;
-    box-shadow: none !important;
-    background: transparent !important;
+    color: var(--color-white);
+    background-color: rgba(239, 35, 60, 0.9) !important;
+  }
+`;
+
+export const WhiteButton = styled(Button)`
+  font: 600 1rem "Lato";
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  align-self: center;
+  color: var(--color-blue);
+  background-color: var(--color-white) !important;
+  border: 0 !important;
+  :focus {
+    color: var(--color-blue);
+  }
+  :hover {
+    color: var(--color-blue);
+    background-color: var(--color-white) !important;
   }
 `;

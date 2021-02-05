@@ -1,11 +1,9 @@
 .custom-file-label::after {
-  font-size: 18px !important;
-  color: #8d99ae !important;
-  font-family: "Nunito" !important;
+  font: 600 1rem Lato !important;
+  color: var(--color-dark-gray) !important;
   content: "Selecionar" !important;
-  font-weight: 700;
-  background-color: #edf2f4 !important;
-  border-radius: 0 6px 6px 0 !important;
+  background-color: var(--color-light-gray) !important;
+  border-radius: 0 0.5rem 0.5rem 0 !important;
   border: none !important;
   display: flex !important;
   align-items: center !important;
@@ -14,8 +12,8 @@
 }
 
 .input-group > .custom-file:not(:first-child) .custom-file-label {
-  background-color: #edf2f4 !important;
-  border-radius: 6px !important;
+  background-color: var(--color-light-gray) !important;
+  border-radius: 0.5rem !important;
   border: none !important;
 }
 

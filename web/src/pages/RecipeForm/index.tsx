@@ -1,33 +1,23 @@
 import React, { useState } from "react";
 
 import {
-  Category,
+  Button,
   IconGroup,
-  InfoButton,
-  Ingredient,
   InputText,
+  InputNoIcon,
   Label,
   Modal,
   Placeholder,
-  Plus,
   Select,
-  Subtitle,
   TextArea,
   Title,
   TrashCan,
+  WhiteButton,
 } from "./styles";
 import "../../App.css";
 
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-
 import Icon from "@mdi/react";
-import {
-  mdiClose,
-  mdiInformationOutline,
-  mdiMagnify,
-  mdiTrashCan,
-} from "@mdi/js";
+import { mdiClose, mdiMagnify, mdiTrashCan } from "@mdi/js";
 
 import $ from "jquery";
 import swal from "sweetalert";
@@ -49,6 +39,14 @@ function RecipeForm() {
     trigger: "focus",
   });
 
+  $(".table-responsive").on("show.bs.dropdown", function () {
+    $(".table-responsive").css("overflow", "inherit");
+  });
+
+  $(".table-responsive").on("hide.bs.dropdown", function () {
+    $(".table-responsive").css("overflow", "auto");
+  });
+
   return (
     <>
       <div
@@ -58,129 +56,159 @@ function RecipeForm() {
         role="dialog"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div
+          className="modal-dialog modal-dialog-centered 
+            modal-lg modal-dialog-scrollable"
+        >
           <Modal className="modal-content">
-            <div className="modal-header d-flex flex-column">
-              <Title className="d-block w-100 modal-title">
+            {/* Header */}
+            <div className="modal-header pb-0">
+              <Title className="d-block w-100 modal-title text-left">
                 <button type="button" className="close" data-dismiss="modal">
-                  <span aria-hidden="true">&times;</span>
+                  <Icon path={mdiClose} size="1rem" color="#8D99AE" />
                 </button>
                 Compartilhe suas habilidades!
               </Title>
-              <Subtitle className="d-block w-100 modal-title">
-                Criar uma nova receita
-              </Subtitle>
             </div>
+
             <div className="modal-body">
-              <form>
-                <div className="form-group">
-                  <Input label="Título da receita" type="text" name="titulo" />
-                </div>
-                <div className="form-group">
-                  <Input
-                    label="Rendimento (em porções)"
-                    type="number"
-                    name="amount"
-                    id="amount"
-                    min={1}
-                  />
-                </div>
-                <div className="form-group">
-                  <Input
-                    label="Tempo de preparo"
-                    type="text"
-                    name="time"
-                    id="time"
-                  />
-                </div>
-                <div className="form-group">
-                  <Label className="w-100 mb-3 d-block" htmlFor="descricao">
-                    Descrição
-                  </Label>
-                  <TextArea
-                    maxLength={100}
-                    className="form-control"
-                    id="description"
-                    name="description"
-                  ></TextArea>
-                </div>
-                <div className="form-group">
-                  <div className="input-group">
-                    <Label className="w-100 mb-3 d-block" htmlFor="categorias">
-                      Categorias
-                    </Label>
-                    <div className="input-group-prepend">
-                      <IconGroup className="input-group-text">
-                        <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
-                      </IconGroup>
-                    </div>
-                    <InputText
+              <div className="container-fluid p-0">
+                <form className="w-100">
+                  {/* Título */}
+                  <div className="form-group">
+                    <Label htmlFor="titulo">Título</Label>
+                    <InputNoIcon
                       type="text"
-                      id="categories"
-                      name="categories"
-                      placeholder="Buscar..."
-                      className="py-3 form-control"
+                      id="titulo"
+                      name="titulo"
+                      className="form-control"
                     />
                   </div>
-                  <div className="mt-3">
-                    <Category className="btn mb-2 mr-2">
-                      <span>Massas</span>
-                      <Icon path={mdiClose} size={0.6} color="#edf2f4" />
-                    </Category>
-                  </div>
-                </div>
-                <div className="form-group mb-0">
-                  <div className="pl-3 custom-control custom-checkbox d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="isPrivate"
-                      name="isPrivate"
+
+                  {/* Rendimento */}
+                  <div className="form-group">
+                    <Label htmlFor="rendimento">Rendimento (em porções)</Label>
+                    <InputNoIcon
+                      type="number"
+                      min={1}
+                      id="rendimento"
+                      name="rendimento"
+                      className="form-control"
                     />
-                    <Label
-                      className="custom-control-label ml-2"
-                      htmlFor="receitaPrivada"
-                    >
-                      Manter receita privada
-                    </Label>
-                    <InfoButton
-                      type="button"
-                      className="btn p-0 ml-2 d-flex align-items-center"
-                      data-toggle="popover"
-                      data-trigger="focus"
-                      title="Manter receita privada"
-                      data-content="Ao selecionar esta opção, somente você poderá acessar essa receita no seu Perfil. Você pode escolher publicá-la mais tarde."
-                    >
-                      <Icon
-                        path={mdiInformationOutline}
-                        size={0.8}
-                        color="#8d99ae"
+                  </div>
+
+                  {/* Tempo de preparo */}
+                  <div className="form-group">
+                    <Label htmlFor="tempoPreparo">Tempo de preparo</Label>
+                    <InputNoIcon
+                      type="number"
+                      id="tempoPreparo"
+                      name="tempoPreparo"
+                      className="form-control"
+                    />
+                  </div>
+
+                  {/* Descrição */}
+                  <div className="form-group">
+                    <Label htmlFor="descricao">Descrição</Label>
+                    <TextArea
+                      maxLength={100}
+                      className="form-control"
+                      id="descricao"
+                      name="descricao"
+                    ></TextArea>
+                  </div>
+
+                  {/* Categorias */}
+                  <div className="form-group">
+                    <Label htmlFor="categorias">Categorias</Label>
+                    <div className="input-group">
+                      <InputText
+                        type="text"
+                        id="categorias"
+                        name="categorias"
+                        placeholder="Buscar..."
+                        className="form-control"
                       />
-                    </InfoButton>
+                      <div className="input-group-append">
+                        <IconGroup className="input-group-text">
+                          <Icon path={mdiMagnify} size="1rem" color="#8D99AE" />
+                        </IconGroup>
+                      </div>
+                    </div>
+                    {/* <div className="mt-3">
+                      <Category className="btn mb-2 mr-2">
+                        <span>Massas</span>
+                        <Icon path={mdiClose} size={0.6} color="#edf2f4" />
+                      </Category>
+                    </div> */}
                   </div>
-                </div>
-              </form>
+
+                  {/* Receita privada */}
+                  <div className="form-group mb-0 d-flex align-items-center">
+                    <div className="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="receitaPrivada"
+                      />
+                      <Label
+                        className="custom-control-label"
+                        htmlFor="receitaPrivada"
+                      >
+                        Manter minha receita privada
+                      </Label>
+                    </div>
+
+                    {/* <div className="pl-3 custom-control custom-checkbox d-flex align-items-center">
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="isPrivate"
+                        name="isPrivate"
+                      />
+                      <Label
+                        className="custom-control-label ml-2"
+                        htmlFor="receitaPrivada"
+                      >
+                        Manter receita privada
+                      </Label>
+                      <InfoButton
+                        type="button"
+                        className="btn p-0 ml-2 d-flex align-items-center"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        data-content="Ao selecionar esta opção, somente você poderá acessar essa receita no seu perfil. Você pode escolher publicá-la mais tarde."
+                      >
+                        <Icon
+                          path={mdiInformationOutline}
+                          size={0.8}
+                          color="#8d99ae"
+                        />
+                      </InfoButton>
+                    </div> */}
+                  </div>
+                </form>
+              </div>
             </div>
+
+            {/* Footer */}
             <div className="modal-footer">
               <Button
-                text="Fechar"
-                color="branco"
-                data-dismiss="modal"
-                type="button"
-              />
-              <Button
-                text="Próximo"
-                color="vermelho"
                 data-toggle="modal"
                 data-dismiss="modal"
                 data-target="#criarReceita2"
                 type="button"
-              />
+                className="btn"
+              >
+                Próximo
+              </Button>
             </div>
           </Modal>
         </div>
       </div>
-      {/* SEGUNDA PÁGINA DO POP-UP */}
+
+      {/* Segunda página */}
       <div
         className="modal fade"
         id="criarReceita2"
@@ -188,152 +216,162 @@ function RecipeForm() {
         role="dialog"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div
+          className="modal-dialog modal-dialog-centered
+          modal-lg modal-dialog-scrollable"
+        >
           <Modal className="modal-content">
-            <div className="modal-header d-flex flex-column">
-              <Title className="d-block w-100 modal-title">
+            {/* Header */}
+            <div className="modal-header pb-0">
+              <Title className="d-block w-100 modal-title text-left">
                 <button type="button" className="close" data-dismiss="modal">
-                  <span aria-hidden="true">&times;</span>
+                  <Icon path={mdiClose} size="1rem" color="#8D99AE" />
                 </button>
                 Compartilhe suas habilidades!
               </Title>
-              <Subtitle className="d-block w-100 modal-title">
-                Escolha seus ingredientes e descreva o modo de preparo
-              </Subtitle>
             </div>
+
             <div className="modal-body">
-              <form>
-                <div className="form-group">
+              <div className="container-fluid p-0">
+                <form className="w-100">
+                  {/* Ingredientes */}
+                  <div className="form-group">
+                    <Label htmlFor="ingredientes">Ingredientes</Label>
+                    <div className="input-group">
+                      <InputText
+                        type="text"
+                        id="ingredientes"
+                        name="ingredientes"
+                        placeholder="Buscar..."
+                        className="form-control"
+                      />
+                      <div className="input-group-append">
+                        <IconGroup className="input-group-text">
+                          <Icon path={mdiMagnify} size="1rem" color="#8D99AE" />
+                        </IconGroup>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div className="table-responsive">
+                  <table className="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <td scope="col">Arroz Arbóreo</td>
+                        <td scope="col">
+                          <InputNoIcon
+                            type="number"
+                            min="0.1"
+                            step="0.1"
+                            id="ingredientAmount"
+                            name="ingredientAmount"
+                            placeholder="Quantidade"
+                            className="py-3 form-control d-inline-block"
+                          />
+                        </td>
+                        <td scope="col">
+                          <Select
+                            className="selectpicker show-tick"
+                            data-width="100%"
+                            title="Unidade de medida"
+                            data-size="5"
+                            name="unity"
+                            id="unity"
+                          >
+                            <option>Brasileira</option>
+                            <option>Alemã</option>
+                            <option>Italiana</option>
+                          </Select>
+                        </td>
+                        <td scope="col" className="text-center align-middle">
+                          <TrashCan className="m-0 align-middle">
+                            <Icon
+                              path={mdiTrashCan}
+                              size="1rem"
+                              className="m-0"
+                              color="#8D99AE"
+                            />
+                          </TrashCan>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <form className="w-100">
+                  {/* Modo de preparo */}
+                  <div className="form-group">
+                    <Label htmlFor="modoPreparo">Modo de preparo</Label>
+                    <TextArea
+                      maxLength={100}
+                      id="modoPreparo"
+                      name="modoPreparo"
+                      className="form-control"
+                    ></TextArea>
+                  </div>
+
+                  {/* Imagem */}
                   <div className="input-group">
-                    <Label className="w-100 mb-3 d-block" htmlFor="ingredients">
-                      Ingredientes
+                    <Label htmlFor="imagem" className="w-100">
+                      Imagem
                     </Label>
-                    <div className="input-group-prepend">
-                      <IconGroup className="input-group-text">
-                        <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
-                      </IconGroup>
-                    </div>
-                    <InputText
-                      type="text"
-                      id="ingredients"
-                      name="ingredients"
-                      placeholder="Buscar..."
-                      className="py-3 form-control d-inline-block"
-                    />
-                    <Plus className="d-inline-block ml-2 px-4 btn">
-                      <span>+</span>
-                    </Plus>
-                  </div>
-                  <div className="container-fluid d-block w-100 mt-3">
-                    <div className="row border-bottom">
-                      <div className="col-8 col-sm-8 col-md-3 col-lg-3 col-xl-3 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1 d-flex align-items-center justify-content-start mb-2">
-                        <Ingredient className="mb-0 text-truncate">
-                          Arroz
-                        </Ingredient>
-                      </div>
-                      <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 order-3 order-sm-3 order-md-2 order-lg-2 order-xl-2  d-flex align-items-center justify-content-center mb-2">
-                        <InputText
-                          type="number"
-                          min="0.1"
-                          step="0.1"
-                          id="ingredientAmount"
-                          name="ingredientAmount"
-                          placeholder="Quantidade"
-                          className="py-3 form-control d-inline-block"
-                        />
-                      </div>
-                      <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 order-4 order-sm-4 order-md-3 order-lg-3 order-xl-3  d-flex align-items-center justify-content-center mb-2">
-                        <Select
-                          className="selectpicker show-tick"
-                          data-width="100%"
-                          title="Unidade de medida"
-                          data-size="5"
-                          name="unity"
-                          id="unity"
-                        >
-                          <option>Brasileira</option>
-                          <option>Alemã</option>
-                          <option>Italiana</option>
-                        </Select>
-                      </div>
-                      <div className="col-4 col-sm-4 col-md-1 col-lg-1 col-xl-1 order-2 order-sm-2 order-md-4 order-lg-4 order-xl-4 d-flex align-items-center justify-content-end mb-2">
-                        <TrashCan>
-                          <Icon path={mdiTrashCan} size={0.8} color="#8D99AE" />
-                        </TrashCan>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <Label className="w-100 mb-3 d-block" htmlFor="prepareMode">
-                    Modo de preparo
-                  </Label>
-                  <TextArea
-                    maxLength={100}
-                    id="prepareMode"
-                    name="prepareMode"
-                    className="form-control"
-                  ></TextArea>
-                </div>
-                <div className="input-group mb-3">
-                  <Label className="w-100 mb-3 d-block">Imagem</Label>
-                  <div className="custom-file d-flex align-items-center">
-                    <input
-                      accept="image/*"
-                      type="file"
-                      id="image"
-                      name="image"
-                      className="custom-file-input d-flex align-items-center"
-                      onChange={(event) => {
-                        setNomeArquivo(
-                          event.target.files != null
-                            ? event.target.files[0].name
-                            : ""
-                        );
-                        setArquivo(
-                          URL.createObjectURL(
+                    <div className="custom-file d-flex align-items-center">
+                      <input
+                        accept="image/*"
+                        type="file"
+                        id="imagem"
+                        name="imagem"
+                        className="custom-file-input d-flex align-items-center"
+                        onChange={(event) => {
+                          setNomeArquivo(
                             event.target.files != null
-                              ? event.target.files[0]
-                              : {}
-                          )
-                        );
-                      }}
-                    />
-                    <Placeholder className="custom-file-label d-flex align-items-center">
-                      {nomeArquivo}
-                    </Placeholder>
+                              ? event.target.files[0].name
+                              : ""
+                          );
+                          setArquivo(
+                            URL.createObjectURL(
+                              event.target.files != null
+                                ? event.target.files[0]
+                                : {}
+                            )
+                          );
+                        }}
+                      />
+                      <Placeholder className="custom-file-label d-flex align-items-center">
+                        {nomeArquivo}
+                      </Placeholder>
+                    </div>
                   </div>
-                </div>
-                <div className="d-flex justify-content-center mt-2">
-                  <img
-                    src={arquivo}
-                    alt="Imagem da receita"
-                    className="img-fluid img-thumbnail"
-                  />
-                </div>
-              </form>
+                  <div className="d-flex justify-content-center mt-2">
+                    <img
+                      src={arquivo}
+                      alt=""
+                      className="img-fluid img-thumbnail"
+                    />
+                  </div>
+                </form>
+              </div>
             </div>
             <div className="modal-footer">
-              <Button
-                text="Anterior"
-                color="branco"
+              <WhiteButton
                 data-toggle="modal"
                 data-target="#criarReceita1"
                 onClick={() => {
                   $("#criarReceita2").modal("hide");
                 }}
                 type="button"
-              />
+                className="btn"
+              >
+                Anterior
+              </WhiteButton>
               <Button
-                text="Enviar"
-                color="vermelho"
                 data-dismiss="modal"
                 data-toggle="modal"
                 type="button"
+                className="btn"
                 onClick={() => {
                   swal(
                     "Sua receita foi enviada!",
-                    "Para ver sua receita, vá no Perfil em 'Receitas Enviadas'.",
+                    "Para ver sua receita, vá ao seu perfil e clique em 'Receitas Enviadas'.",
                     "success",
                     {
                       closeOnEsc: true,
@@ -350,7 +388,9 @@ function RecipeForm() {
                     }
                   );
                 }}
-              />
+              >
+                Enviar
+              </Button>
             </div>
           </Modal>
         </div>

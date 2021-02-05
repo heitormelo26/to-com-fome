@@ -54,6 +54,7 @@ export const Description = styled.p`
   color: rgba(237, 242, 244, 0.75) !important;
   line-height: 1.625rem !important;
   margin-bottom: 1rem;
+  text-align: justify;
 `;
 
 export const Buttons = styled.div`

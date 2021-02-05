@@ -40,7 +40,7 @@ function ForgotPassword() {
             </Paragraph>
             <div className="input-group">
               <IconGroup className="input-group-prepend">
-                <Icon path={mdiEmail} size={0.8} color="#8D99AE" />
+                <Icon path={mdiEmail} size="1rem" color="#8D99AE" />
               </IconGroup>
               <InputText className="form-control" type="email" name="email" />
             </div>

@@ -40,7 +40,7 @@ function SignUp() {
               Nome
             </Label>
             <IconGroup className="input-group-prepend">
-              <Icon path={mdiAccount} size={0.8} color="#8D99AE" />
+              <Icon path={mdiAccount} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText className="form-control" type="text" name="nome" />
           </SubContainer>
@@ -50,7 +50,7 @@ function SignUp() {
               Email
             </Label>
             <IconGroup className="input-group-prepend">
-              <Icon path={mdiEmail} size={0.8} color="#8D99AE" />
+              <Icon path={mdiEmail} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText className="form-control" type="email" name="email" />
           </SubContainer>
@@ -60,7 +60,7 @@ function SignUp() {
               Senha
             </Label>
             <IconGroup className="input-group-prepend">
-              <Icon path={mdiLock} size={0.8} color="#8D99AE" />
+              <Icon path={mdiLock} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText className="form-control" type="password" name="senha" />
           </SubContainer>

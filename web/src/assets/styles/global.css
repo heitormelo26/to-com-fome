@@ -72,14 +72,6 @@ a {
   justify-content: center;
 }
 
-.nth-padding {
-  padding-left: 0 !important;
-}
-
-.nth-padding:nth-last-of-type(3n + 1) {
-  padding-right: 0 !important;
-}
-
 @media (max-width: 769px) {
   .nth-padding {
     padding-left: 0 !important;
@@ -121,4 +113,57 @@ a {
 .swal-button:focus {
   color: var(--color-white);
   background-color: rgba(239, 35, 60, 0.9) !important;
+}
+
+.custom-control {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.custom-control-label::before {
+  border: 1px solid var(--color-dark-gray);
+}
+
+.custom-control-input {
+  height: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  align-items: center;
+}
+
+.custom-control-input:active ~ .custom-control-label::before {
+  background-color: var(--color-white) !important;
+  border: 1px solid var(--color-red) !important;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: none !important;
+  border: 1px solid var(--color-red) !important;
+}
+
+.custom-control-label {
+  font-size: 1rem;
+  color: var(--color-blue);
+}
+
+.custom-control-label:before {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-red);
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--color-red);
+  border: 1px solid var(--color-red);
+}
+
+.table-bordered {
+  border: 1px solid var(--color-light-gray) !important;
+}
+
+.table {
+  color: var(--color-blue) !important;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
 }

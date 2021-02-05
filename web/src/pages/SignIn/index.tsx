@@ -60,7 +60,7 @@ function SignIn() {
               Email
             </Label>
             <IconGroup className="input-group-prepend">
-              <Icon path={mdiEmail} size={0.8} color="#8D99AE" />
+              <Icon path={mdiEmail} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText
               onChange={(e) => setEmail(e.target.value)}
@@ -76,7 +76,7 @@ function SignIn() {
               Senha
             </Label>
             <IconGroup className="input-group-prepend">
-              <Icon path={mdiLock} size={0.8} color="#8D99AE" />
+              <Icon path={mdiLock} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText
               value={password}

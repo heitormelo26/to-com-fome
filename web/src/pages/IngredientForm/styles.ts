@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Label = styled.label`
   font: 500 1rem Lato;
   color: var(--color-blue);
+  line-height: 1.4rem;
 `;
 
 export const InputText = styled.input`
@@ -40,6 +41,8 @@ export const IconGroup = styled.div`
   border: 0;
   border-top-right-radius: 0.5rem !important;
   border-bottom-right-radius: 0.5rem !important;
+  display: flex;
+  align-items: center;
 `;
 
 export const CategoryButton = styled.button`
@@ -105,7 +108,7 @@ export const SearchButton = styled.button`
 
 export const Modal = styled.div`
   border: none !important;
-  padding: 0.5rem !important;
+  padding: 0.5rem;
   border-radius: 1rem !important;
   outline: 0;
   box-shadow: none !important;
@@ -114,6 +117,7 @@ export const Modal = styled.div`
     border: none !important;
   }
   .modal-header {
+    padding-bottom: 1rem !important;
     .close {
       color: var(--color-light-gray) !important;
       :active,
@@ -124,6 +128,9 @@ export const Modal = styled.div`
         box-shadow: none !important;
       }
     }
+  }
+  .modal-body {
+    padding-top: 0;
   }
 `;
 

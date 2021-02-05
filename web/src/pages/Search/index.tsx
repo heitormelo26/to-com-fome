@@ -60,7 +60,7 @@ export default function Search() {
                 />
                 <div className="input-group-append">
                   <IconGroup className="input-group-text">
-                    <Icon path={mdiMagnify} size={0.8} color="#8D99AE" />
+                    <Icon path={mdiMagnify} size="1rem" color="#8D99AE" />
                   </IconGroup>
                 </div>
               </div>

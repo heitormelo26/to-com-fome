@@ -48,6 +48,8 @@ export const IconGroup = styled.div`
   border: 0;
   border-top-right-radius: 0.5rem !important;
   border-bottom-right-radius: 0.5rem !important;
+  display: flex;
+  align-items: center;
 `;
 
 export const Select = styled.select`

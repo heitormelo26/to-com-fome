@@ -69,6 +69,8 @@ export const IconGroup = styled.div`
   border: 0;
   border-top-left-radius: 0.5rem !important;
   border-bottom-left-radius: 0.5rem !important;
+  display: flex;
+  align-items: center;
 `;
 
 export const Button = styled.button`
