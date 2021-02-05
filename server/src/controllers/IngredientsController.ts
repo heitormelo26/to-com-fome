@@ -57,15 +57,12 @@ export default class IngredientsController {
     if (!filters.category) {
       const ingredients = await db("ingredients")
       .select("*")
-      .limit(9)
       .orderByRaw("RANDOM()");
-      
       return response.json(ingredients);
     }else{
       const ingredients = await db("ingredients")
       .select("*")
-      .where("category", "like", `${category}`)
-      .limit(9);
+      .where("category", "like", `${category}`);
     return response.json(ingredients);
     }
   }

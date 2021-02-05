@@ -30,6 +30,7 @@ import Icon from "@mdi/react";
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [invalidInput, setInvalidInput] = useState(true);
   const history = useHistory();
 
   function login() {
@@ -40,6 +41,18 @@ function SignIn() {
         history.push("/");
       }
     });
+  }
+
+  function setarInput() {
+    const inputEmailElement = document.getElementById(
+      "inputEmail"
+    ) as HTMLInputElement;
+    const inputPasswordElement = document.getElementById(
+      "inputPassword"
+    ) as HTMLInputElement;
+    
+    if (inputEmailElement.value.length > 0 && inputPasswordElement.value.length > 0) setInvalidInput(false);
+    else setInvalidInput(true)
   }
 
   return (
@@ -63,11 +76,12 @@ function SignIn() {
               <Icon path={mdiEmail} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {setEmail(e.target.value);setarInput()}}
               value={email}
               className="form-control"
               type="email"
               name="email"
+              id ="inputEmail"
             />
           </SubContainer>
 
@@ -80,10 +94,11 @@ function SignIn() {
             </IconGroup>
             <InputText
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {setPassword(e.target.value);setarInput()}}
               className="form-control"
               type="password"
               name="senha"
+              id ="inputPassword"
             />
           </SubContainer>
 
@@ -98,7 +113,7 @@ function SignIn() {
             <ForgotPassword />
           </SubContainer>
 
-          <Button className="btn" type="submit" onClick={login}>
+          <Button className="btn" type="submit" onClick={login} disabled={invalidInput}>
             Entrar
           </Button>
           <SubContainer>

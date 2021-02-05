@@ -22,10 +22,54 @@ import { mdiClose, mdiMagnify, mdiTrashCan } from "@mdi/js";
 import $ from "jquery";
 import swal from "sweetalert";
 
+
+export interface IngredientProps {
+  id: number;
+  image: string;
+  name: string;
+  category: string;
+}
+
 function RecipeForm() {
   const [nomeArquivo, setNomeArquivo] = useState("Selecionar...");
-
+  const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
+  const [categorys, setCategorys] = useState("");
   const [arquivo, setArquivo] = useState("");
+  const [invalidInput, setInvalidInput] = useState(true);
+  const [alertFlag, setAlertFlag] = useState(<> </>);
+
+  function setarInput() {
+    const inputTitleElement = document.getElementById(
+      "titulo"
+    ) as HTMLInputElement;
+    const inputAmountElement = document.getElementById(
+      "rendimento"
+    ) as HTMLInputElement;
+    const inputTimeElement = document.getElementById(
+      "tempoPreparo"
+    ) as HTMLInputElement;
+    const inputDescriptionElement = document.getElementById(
+      "descricao"
+    ) as HTMLInputElement;
+    const inputPrepareElement = document.getElementById(
+      "modoPreparo"
+    ) as HTMLInputElement;
+    if (inputTitleElement.value.length > 0 && inputAmountElement.value.length > 0 &&
+      inputTimeElement.value.length > 0 && inputDescriptionElement.value.length > 0 &&
+      inputPrepareElement.value.length > 0 
+      ){
+        setAlertFlag(<> </>);
+        setInvalidInput(false);
+      } 
+    else{
+      setAlertFlag(
+        <div className="alert alert-danger" role="alert">
+         Por favor, preencha todos os campos!
+        </div>
+      );
+     setInvalidInput(true);
+    }
+  }
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
@@ -352,6 +396,7 @@ function RecipeForm() {
               </div>
             </div>
             <div className="modal-footer">
+              {alertFlag}
               <WhiteButton
                 data-toggle="modal"
                 data-target="#criarReceita1"
@@ -364,29 +409,30 @@ function RecipeForm() {
                 Anterior
               </WhiteButton>
               <Button
-                data-dismiss="modal"
+                //data-dismiss="modal"
                 data-toggle="modal"
                 type="button"
                 className="btn"
                 onClick={() => {
-                  swal(
-                    "Sua receita foi enviada!",
-                    "Para ver sua receita, vá ao seu perfil e clique em 'Receitas Enviadas'.",
-                    "success",
-                    {
-                      closeOnEsc: true,
-                      closeOnClickOutside: true,
-                      buttons: {
-                        confirm: {
-                          text: "Fechar",
-                          value: null,
-                          visible: true,
-                          className: "",
-                          closeModal: true,
-                        },
-                      },
-                    }
-                  );
+                  // swal(
+                  //   "Sua receita foi enviada!",
+                  //   "Para ver sua receita, vá ao seu perfil e clique em 'Receitas Enviadas'.",
+                  //   "success",
+                  //   {
+                  //     closeOnEsc: true,
+                  //     closeOnClickOutside: true,
+                  //     buttons: {
+                  //       confirm: {
+                  //         text: "Fechar",
+                  //         value: null,
+                  //         visible: true,
+                  //         className: "",
+                  //         closeModal: true,
+                  //       },
+                  //     },
+                  //   }
+                  // );
+                  setarInput()
                 }}
               >
                 Enviar

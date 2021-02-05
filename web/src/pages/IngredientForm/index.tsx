@@ -33,7 +33,6 @@ export default function IngredientForm() {
   const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
   const [selected, setSelected] = useState("Categorias");
   const [invalidInput, setInvalidInput] = useState(true);
-  const [firstSearch, setfirstSearch] = useState(true);
 
   useEffect(() => {
     api.get("i-c").then((response) => {
@@ -43,9 +42,7 @@ export default function IngredientForm() {
 
   const handleKeypress = (e: any) => {
     if (e.key === "Enter") {
-      console.log("ehjhcsdjf");
       e.preventDefault();
-
       selectName();
     }
   };
@@ -68,14 +65,9 @@ export default function IngredientForm() {
     const inputElement = document.getElementById(
       "inputIngredient"
     ) as HTMLInputElement;
-    if (firstSearch) {
-      setfirstSearch(false);
-      if (inputElement.value.length >= 0) setInvalidInput(false);
-      else setInvalidInput(true);
-    } else {
-      if (inputElement.value.length > 0) setInvalidInput(false);
-      else setInvalidInput(true);
-    }
+
+    if (inputElement.value.length > 0) setInvalidInput(false);
+    else setInvalidInput(true);
   }
 
   function selectName() {
