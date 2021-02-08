@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import {useFormik} from "formik";
+import * as Yup from "yup";
 
 import ForgotPassword from "../ForgotPassword";
 
@@ -7,9 +9,10 @@ import Sidebar from "../../components/Sidebar";
 import FooterAccount from "../../components/FooterAccount";
 
 import { Link } from "react-router-dom";
-
+ 
 import {
   Container,
+  Form,
   ForgotButton,
   InputText,
   IconGroup,
@@ -32,6 +35,20 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [invalidInput, setInvalidInput] = useState(true);
   const history = useHistory();
+ 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    //validate,
+    onSubmit: (values: any) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email('Invalid email address').required('Required'),
+    }),
+  });
 
   function login() {
     setEmail(email);
@@ -68,6 +85,9 @@ function SignIn() {
 
           <Subtitle>Entrar</Subtitle>
 
+          <Form className="" onSubmit={formik.handleSubmit}>
+
+          
           <SubContainer className="input-group mb-3">
             <Label className="w-100 mb-3 d-block" htmlFor="email">
               Email
@@ -76,13 +96,20 @@ function SignIn() {
               <Icon path={mdiEmail} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText
-              onChange={(e) => {setEmail(e.target.value);setarInput()}}
-              value={email}
+              //onChange={(e) => {setEmail(e.target.value);setarInput()}}
+              //value={email}
               className="form-control"
               type="email"
               name="email"
-              id ="inputEmail"
+              id ="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              onBlur = { formik . handleBlur }
+              
             />
+              {formik.touched.email && formik.errors.email ? (
+         <div>{formik.errors.email}</div>
+       ) : null}
           </SubContainer>
 
           <SubContainer className="input-group mb-3">
@@ -93,13 +120,19 @@ function SignIn() {
               <Icon path={mdiLock} size="1rem" color="#8D99AE" />
             </IconGroup>
             <InputText
-              value={password}
-              onChange={(e) => {setPassword(e.target.value);setarInput()}}
+              //value={password}
+              //onChange={(e) => {setPassword(e.target.value);setarInput()}}
               className="form-control"
               type="password"
-              name="senha"
-              id ="inputPassword"
+              name="password"
+              id ="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+              onBlur = { formik . handleBlur }
             />
+            {formik.touched.password && formik.errors.password ? (
+         <div>{formik.errors.password}</div>
+       ) : null}
           </SubContainer>
 
           <SubContainer className="d-flex justify-content-end mb-4">
@@ -113,9 +146,10 @@ function SignIn() {
             <ForgotPassword />
           </SubContainer>
 
-          <Button className="btn" type="submit" onClick={login} disabled={invalidInput}>
+          <Button className="btn" type="submit">
             Entrar
           </Button>
+          </Form>
           <SubContainer>
             <FooterAccount
               google={"Entrar com o Google"}
