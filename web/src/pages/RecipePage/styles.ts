@@ -37,6 +37,7 @@ export const Header = styled.div`
 export const Title = styled.h1`
   font: 600 2rem "Lora" !important;
   color: var(--color-light-gray) !important;
+  text-transform: capitalize;
   margin-bottom: 1rem;
   @media (max-width: 769px) {
     font: 700 1.5rem "Lora" !important;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Navbar from "../../components/Navbar";
 import Contact from "../../components/Contact";
@@ -32,12 +32,80 @@ import {
 
 import $ from "jquery";
 
-function RecipePage() {
-  let tags = ["massa", "brasileira", "vegano", "almoço"];
+import { useLocation } from "react-router-dom";
 
+import api from "../../services/api";
+
+interface Receita {
+  id: number;
+  title: string;
+  description: string;
+  categories: string;
+  image: string;
+  prepare_mode: string;
+  user_id: number;
+  amount: number;
+  time: number;
+  likes: number;
+}
+
+function RecipePage() {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
+
+  const [amount, setAmount] = useState<string>();
+  const [user, setUser] = useState<string>();
+  const [tags, setTags] = useState<string[]>();
+  const [prepareMode, setPrepareMode] = useState<string[]>();
+  const [recipe, setRecipe] = useState({
+    id: 0,
+    title: "",
+    description: "",
+    categories: "",
+    image: "",
+    prepare_mode: "",
+    user_id: 0,
+    amount: 0,
+    time: 0,
+    likes: 0,
+  });
+
+  const location = useLocation();
+  useEffect(() => {
+    const getRecipe = async () => {
+      try {
+        const searchParams = new URLSearchParams(location.search);
+        const { data } = await api.get(`receita?${searchParams}`);
+        setRecipe(data[0]);
+      } catch (error) {
+        console.log("Ocorreu um erro ao carregar a receita: " + error);
+      }
+    };
+    getRecipe();
+  }, [location.search]);
+
+  useEffect(() => {
+    setTags(recipe.categories.split(","));
+    setPrepareMode(recipe.prepare_mode.split("\n"));
+    if (recipe.amount <= 1) {
+      setAmount(recipe.amount + " porção");
+    } else {
+      setAmount(recipe.amount + " porções");
+    }
+  }, [recipe]);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const { data } = await api.get(`/u-i?id=${recipe.user_id}`);
+        setUser(data[0].name);
+      } catch (error) {
+        console.log("Ocorreu um erro ao carregar o usuário: " + error);
+      }
+    };
+    getUser();
+  }, [recipe.user_id]);
 
   return (
     <>
@@ -45,13 +113,8 @@ function RecipePage() {
       <div className="container-fluid">
         <Header>
           <Container className="jumbotron">
-            <Title className="">Macarrão Roxo de Beterraba Assada</Title>
-            <Description className="">
-              Parece prato de restaurante, de tão bonito que fica. Mas não
-              poderia ser mais fácil de preparar. A beterraba, assada e batida
-              com um pouco da água do cozimento, vira o molho que tinge a massa.
-              A ricota e o endro completam o sabor do prato.
-            </Description>
+            <Title>{recipe.title.toLowerCase()}</Title>
+            <Description>{recipe.description}</Description>
             <Buttons>
               <button
                 type="button"
@@ -98,172 +161,9 @@ function RecipePage() {
             </Buttons>
           </Container>
           <Border>
-            <Image
-              src="https://cdn.panelinha.com.br/receita/1584371597251-macarr%C3%A3o%20roxo.jpg"
-              alt="Macarrão Roxo de Beterraba Assada"
-              className="w-100"
-            />
+            <Image src={recipe.image} alt={recipe.title} className="w-100" />
           </Border>
         </Header>
-        {/* <div className="row mb-5 justify-content-center d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
-          <Button
-            type="button"
-            className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
-            data-toggle="tooltip"
-            data-placement="left"
-            title="Gostou da receita? Deixe sua curtida!"
-          >
-            <Icon
-              path={mdiHeart}
-              title="Curtir"
-              size={0.8}
-              color="#ffffff"
-              className="mr-2"
-            />
-            <span className="d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
-              Curtir
-            </span>
-          </Button>
-          <Button
-            type="button"
-            className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
-            data-toggle="tooltip"
-            data-placement="top"
-            title="Quer usar a receita mais tarde? Ela ficará salva no seu perfil!"
-          >
-            <Icon
-              path={mdiBookmark}
-              title="Salvar"
-              size={0.8}
-              color="#ffffff"
-              className="mr-2 "
-            />
-            <span className="d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
-              Salvar
-            </span>
-          </Button>
-          <Button
-            type="button"
-            className="btn btn-primary mr-0 d-flex align-items-center justify-content-center"
-            data-toggle="tooltip"
-            data-placement="right"
-            title="Compartilhe essa receita com outras pessoas!"
-          >
-            <Icon
-              path={mdiShareVariant}
-              title="Compartilhar"
-              size={0.8}
-              color="#ffffff"
-              className="mr-2 "
-            />
-            <span className="d-none d-sm-none d-md-flex d-l-flex d-xl-flex">
-              Compartilhar
-            </span>
-          </Button>
-        </div> */}
-        {/* <div className="row mb-5 d-flex justify-content-center d-sm-flex d-md-none d-l-none d-xl-none">
-          <IconButton
-            type="button"
-            className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
-          >
-            <Icon path={mdiHeart} title="Curtir" size={0.8} color="#ffffff" />
-          </IconButton>
-          <IconButton
-            type="button"
-            className="btn btn-primary mr-4 d-flex align-items-center justify-content-center"
-          >
-            <Icon
-              path={mdiBookmark}
-              title="Salvar"
-              size={0.8}
-              color="#ffffff"
-            />
-          </IconButton>
-          <IconButton
-            type="button"
-            className="btn btn-primary mr-0 d-flex align-items-center justify-content-center"
-          >
-            <Icon
-              path={mdiShareVariant}
-              title="Compartilhar"
-              size={0.8}
-              color="#ffffff"
-            />
-          </IconButton>
-        </div> */}
-
-        {/* <div className="row mb-5">
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <SecondTitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
-                Ingredientes
-              </SecondTitle>
-            </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <ListUL>
-                <IngredientText>2 beterrabas</IngredientText>
-                <IngredientText>250 g de macarrão bavette</IngredientText>
-                <IngredientText>1 dente de alho descascado</IngredientText>
-                <IngredientText>azeite a gosto</IngredientText>
-                <IngredientText>
-                  sal e pimenta-do-reino moída na hora a gosto
-                </IngredientText>
-                <IngredientText>
-                  ricota esfarelada a gosto para servir
-                </IngredientText>
-                <IngredientText>
-                  folhas de endro (dill) a gosto para servir
-                </IngredientText>
-              </ListUL>
-            </div>
-          </div>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <SecondTitle className="mb-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
-                Modo de preparo
-              </SecondTitle>
-            </div>
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <ListOL>
-                <PrepareText>
-                  Preaqueça o forno a 200°C. Descasque e corte a beterraba em
-                  quartos.{" "}
-                </PrepareText>
-                <PrepareText>
-                  Corte um pedaço grande de papel-alumínio de 35 cm x 40 cm,
-                  coloque os pedaços de beterraba no centro, regue com um fio de
-                  azeite e tempere com sal e pimenta a gosto. Una as pontas e
-                  dobre, formando uma trouxinha. Transfira para um assadeira e
-                  leve para assar por cerca de 30 minutos, ou até as beterrabas
-                  ficarem macias.
-                </PrepareText>
-                <PrepareText>
-                  Quando faltar 10 minutos para o tempo da beterraba, leve uma
-                  panela média com cerca de 3 litros de água ao fogo alto. Assim
-                  que ferver, adicione 1 colher (sopa) de sal, junte o macarrão
-                  e misture. Deixe cozinhar pelo tempo indicado na embalagem ou
-                  até ficar al dente, mexendo de vez em quando.
-                </PrepareText>
-                <PrepareText>
-                  Retire a assadeira do forno e, com cuidado para não se queimar
-                  com o vapor, abra a trouxinha de papel-alumínio. Transfira as
-                  beterrabas (com o líquido que se formou na trouxinha) para o
-                  liquidificador, junte o alho, 1 colher (sopa) de azeite e
-                  tempere com ½ colher (chá) de sal. Adicione ½ xícara (chá) da
-                  água do cozimento do macarrão e bata até ficar liso.
-                </PrepareText>
-                <PrepareText>
-                  Assim que estiver cozido, escorra a água e transfira o
-                  macarrão para uma tigela grande. Adicione o molho de beterraba
-                  e misture delicadamente – ele vai absorver parte do molho e
-                  ficar com a cor da beterraba. Sirva a seguir com ricota
-                  esfarelada, folhas de endro, azeite e pimenta-do-reino moída
-                  na hora a gosto.
-                </PrepareText>
-              </ListOL>
-            </div>
-          </div>
-        </div> */}
       </div>
       <div className="container">
         <div className="row">
@@ -279,7 +179,7 @@ function RecipePage() {
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
-                  1 hora
+                  {recipe.time}
                 </span>
               </li>
               <li>
@@ -291,7 +191,7 @@ function RecipePage() {
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
-                  3 porções
+                  {amount}
                 </span>
               </li>
               <li>
@@ -303,13 +203,13 @@ function RecipePage() {
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
-                  Fulano
+                  {user}
                 </span>
               </li>
-              {tags.map(function (tag) {
+              {tags?.map(function (tag: string) {
                 return (
-                  <li>
-                    <a href={`/buscar/categoria/${tag}`} className="tag">
+                  <li key={tag}>
+                    <a href={`/buscar?categories=${tag}`} className="tag">
                       {tag}
                     </a>
                   </li>
@@ -336,40 +236,9 @@ function RecipePage() {
           <div className="col-12 col-lg-6 text-justify">
             <Subtitle>Modo de preparo</Subtitle>
             <ListOL>
-              <PrepareText>
-                Preaqueça o forno a 200°C. Descasque e corte a beterraba em
-                quartos.
-              </PrepareText>
-              <PrepareText>
-                Corte um pedaço grande de papel-alumínio de 35 cm x 40 cm,
-                coloque os pedaços de beterraba no centro, regue com um fio de
-                azeite e tempere com sal e pimenta a gosto. Una as pontas e
-                dobre, formando uma trouxinha. Transfira para um assadeira e
-                leve para assar por cerca de 30 minutos, ou até as beterrabas
-                ficarem macias.
-              </PrepareText>
-              <PrepareText>
-                Quando faltar 10 minutos para o tempo da beterraba, leve uma
-                panela média com cerca de 3 litros de água ao fogo alto. Assim
-                que ferver, adicione 1 colher (sopa) de sal, junte o macarrão e
-                misture. Deixe cozinhar pelo tempo indicado na embalagem ou até
-                ficar al dente, mexendo de vez em quando.
-              </PrepareText>
-              <PrepareText>
-                Retire a assadeira do forno e, com cuidado para não se queimar
-                com o vapor, abra a trouxinha de papel-alumínio. Transfira as
-                beterrabas (com o líquido que se formou na trouxinha) para o
-                liquidificador, junte o alho, 1 colher (sopa) de azeite e
-                tempere com ½ colher (chá) de sal. Adicione ½ xícara (chá) da
-                água do cozimento do macarrão e bata até ficar liso.
-              </PrepareText>
-              <PrepareText>
-                Assim que estiver cozido, escorra a água e transfira o macarrão
-                para uma tigela grande. Adicione o molho de beterraba e misture
-                delicadamente – ele vai absorver parte do molho e ficar com a
-                cor da beterraba. Sirva a seguir com ricota esfarelada, folhas
-                de endro, azeite e pimenta-do-reino moída na hora a gosto.
-              </PrepareText>
+              {prepareMode?.map(function (mode: string) {
+                return <PrepareText key={mode}>{mode}</PrepareText>;
+              })}
             </ListOL>
           </div>
         </div>

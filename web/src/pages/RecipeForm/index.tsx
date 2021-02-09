@@ -20,8 +20,7 @@ import Icon from "@mdi/react";
 import { mdiClose, mdiMagnify, mdiTrashCan } from "@mdi/js";
 
 import $ from "jquery";
-import swal from "sweetalert";
-
+//import swal from "sweetalert";
 
 export interface IngredientProps {
   id: number;
@@ -32,8 +31,8 @@ export interface IngredientProps {
 
 function RecipeForm() {
   const [nomeArquivo, setNomeArquivo] = useState("Selecionar...");
-  const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
-  const [categorys, setCategorys] = useState("");
+  //const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
+  //const [categorys, setCategorys] = useState("");
   const [arquivo, setArquivo] = useState("");
   const [invalidInput, setInvalidInput] = useState(true);
   const [alertFlag, setAlertFlag] = useState(<> </>);
@@ -54,20 +53,22 @@ function RecipeForm() {
     const inputPrepareElement = document.getElementById(
       "modoPreparo"
     ) as HTMLInputElement;
-    if (inputTitleElement.value.length > 0 && inputAmountElement.value.length > 0 &&
-      inputTimeElement.value.length > 0 && inputDescriptionElement.value.length > 0 &&
-      inputPrepareElement.value.length > 0 
-      ){
-        setAlertFlag(<> </>);
-        setInvalidInput(false);
-      } 
-    else{
+    if (
+      inputTitleElement.value.length > 0 &&
+      inputAmountElement.value.length > 0 &&
+      inputTimeElement.value.length > 0 &&
+      inputDescriptionElement.value.length > 0 &&
+      inputPrepareElement.value.length > 0
+    ) {
+      setAlertFlag(<> </>);
+      setInvalidInput(false);
+    } else {
       setAlertFlag(
         <div className="alert alert-danger" role="alert">
-         Por favor, preencha todos os campos!
+          Por favor, preencha todos os campos!
         </div>
       );
-     setInvalidInput(true);
+      setInvalidInput(true);
     }
   }
 
@@ -301,8 +302,8 @@ function RecipeForm() {
                   <table className="table table-bordered">
                     <tbody>
                       <tr>
-                        <td scope="col">Arroz Arbóreo</td>
-                        <td scope="col">
+                        <td>Arroz Arbóreo</td>
+                        <td>
                           <InputNoIcon
                             type="number"
                             min="0.1"
@@ -313,7 +314,7 @@ function RecipeForm() {
                             className="py-3 form-control d-inline-block"
                           />
                         </td>
-                        <td scope="col">
+                        <td>
                           <Select
                             className="selectpicker show-tick"
                             data-width="100%"
@@ -327,7 +328,7 @@ function RecipeForm() {
                             <option>Italiana</option>
                           </Select>
                         </td>
-                        <td scope="col" className="text-center align-middle">
+                        <td className="text-center align-middle">
                           <TrashCan className="m-0 align-middle">
                             <Icon
                               path={mdiTrashCan}
@@ -432,7 +433,7 @@ function RecipeForm() {
                   //     },
                   //   }
                   // );
-                  setarInput()
+                  setarInput();
                 }}
               >
                 Enviar
