@@ -20,6 +20,13 @@ export const Form = styled.form`
   align-items: center;
 `;
 
+export const Error = styled.div`
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  font: 600 1rem Lato;
+  color: var(--color-red);
+`;
+
 export const Title = styled.h1`
   font: 600 2rem Lora;
   color: var(--color-red);

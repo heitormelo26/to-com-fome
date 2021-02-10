@@ -18,6 +18,21 @@ export const Title = styled.h1`
   margin-bottom: 1rem;
 `;
 
+export const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Error = styled.div`
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  font: 600 1rem Lato;
+  color: var(--color-red);
+`;
+
 export const Subtitle = styled.h2`
   font: 600 1rem Lato;
   color: var(--color-blue);

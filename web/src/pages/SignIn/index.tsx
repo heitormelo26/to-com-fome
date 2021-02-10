@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import {
   Container,
   Form,
+  Error,
   ForgotButton,
   InputText,
   IconGroup,
@@ -35,15 +36,36 @@ function SignIn() {
   const [invalidInput, setInvalidInput] = useState(true);
   const history = useHistory(); */
 
+  const validate = (values :any) => {
+
+    const errors :any = {};
+  
+    if (!values.password) {
+      errors.password = 'Por favor, preencha o campo acima.';
+    } else if (values.password.length < 6) {
+      errors.password = 'Para sua segurança, utilize uma senha com no mínimo 6 dígitos.';
+    }
+  
+    if (!values.email) {
+      errors.email = 'Por favor, preencha o campo acima.';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+      errors.email = 'Por favor, informe um email válido.';
+    }
+  
+    return errors;
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    //validate,
+    validate,
     onSubmit: (values: any) => {
       alert(JSON.stringify(values, null, 2));
     },
+    validateOnBlur :false,
+    validateOnChange: false,
   });
 
   /* function login() {
@@ -104,11 +126,13 @@ function SignIn() {
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
               />
-              {formik.touched.email && formik.errors.email ? (
-                <div>{formik.errors.email}</div>
-              ) : null}
+              
             </SubContainer>
-
+            <SubContainer>
+              {formik.touched.email && formik.errors.email ? (
+                  <Error>{formik.errors.email}</Error>
+                ) : null}
+            </SubContainer>
             <SubContainer className="input-group mb-3">
               <Label className="w-100 mb-3 d-block" htmlFor="senha">
                 Senha
@@ -127,11 +151,12 @@ function SignIn() {
                 value={formik.values.password}
                 onBlur={formik.handleBlur}
               />
-              {formik.touched.password && formik.errors.password ? (
-                <div>{formik.errors.password}</div>
-              ) : null}
             </SubContainer>
-
+            <SubContainer>
+              {formik.touched.email && formik.errors.email ? (
+                  <Error>{formik.errors.email}</Error>
+                ) : null}
+            </SubContainer>
             <SubContainer className="d-flex justify-content-end mb-4">
               <ForgotButton
                 type="button"
@@ -143,7 +168,7 @@ function SignIn() {
               <ForgotPassword />
             </SubContainer>
 
-            <Button className="btn" type="submit">
+            <Button className="btn" type="submit" disabled={!formik.dirty}>
               Entrar
             </Button>
           </Form>
