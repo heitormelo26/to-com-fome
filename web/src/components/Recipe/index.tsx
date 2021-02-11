@@ -20,7 +20,7 @@ const Recipe: React.FC<Props> = ({ recipe }) => {
   const [name, setName] = useState("");
 
   useEffect(() => {
-    api.get(`u-getById?id=${recipe.user_id}`).then((response) => {
+    api.get(`u-i?id=${recipe.user_id}`).then((response) => {
       setName(response.data[0].name);
     });
   }, [recipe.user_id]);

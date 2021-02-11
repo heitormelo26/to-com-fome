@@ -2,10 +2,11 @@ import React from "react";
 
 import Sidebar from "../../components/Sidebar";
 import FooterAccount from "../../components/FooterAccount";
+import api from "../../services/api";
 
 import { useFormik } from "formik";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import {
   Container,
@@ -35,7 +36,7 @@ function SignUp() {
       errors.name = 'Por favor, preencha o campo acima.';
     } else if (values.name.length < 2) {
       errors.name = 'Por favor, preencha seu nome.';
-    }else if(!/^[A-Za-z]+$/i.test(values.name)){
+    }else if(!/^[a-zA-Z\s]*$/i.test(values.name)){
       errors.name = 'Por favor, utilize somente letras.';
     }
   
@@ -53,7 +54,7 @@ function SignUp() {
   
     return errors;
   };
-
+  let history = useHistory();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -62,7 +63,12 @@ function SignUp() {
     },
     validate,
     onSubmit: (values: any) => {
-      alert(JSON.stringify(values, null, 2));
+      api.get(`/u?name=${values.name}&email=${values.email}&password=${values.password}`).then((response)=>{
+        if(response.status === 200){
+          history.push("/");
+        }else{
+        }
+      })
     },
     validateOnBlur :false,
     validateOnChange: false,
@@ -136,8 +142,8 @@ function SignUp() {
             />
           </SubContainer>
           <SubContainer>
-          {formik.touched.name && formik.errors.name ? (
-                <Error>{formik.errors.name}</Error>
+          {formik.touched.email && formik.errors.email ? (
+                <Error>{formik.errors.email}</Error>
               ) : null}
           </SubContainer>
           <SubContainer className="input-group mb-3">
@@ -158,8 +164,8 @@ function SignUp() {
             />
           </SubContainer>
           <SubContainer>
-          {formik.touched.name && formik.errors.name ? (
-                <Error>{formik.errors.name}</Error>
+          {formik.touched.password && formik.errors.password ? (
+                <Error>{formik.errors.password}</Error>
               ) : null}
           </SubContainer>
           <Button className="btn" type="submit" disabled={!formik.dirty}>

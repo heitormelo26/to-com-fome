@@ -6,8 +6,9 @@ import ForgotPassword from "../ForgotPassword";
 
 import Sidebar from "../../components/Sidebar";
 import FooterAccount from "../../components/FooterAccount";
+import api from "../../services/api";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import {
   Container,
@@ -54,7 +55,7 @@ function SignIn() {
   
     return errors;
   };
-
+  let history = useHistory();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -62,7 +63,16 @@ function SignIn() {
     },
     validate,
     onSubmit: (values: any) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(values);
+      api.get(`l?email=${values.email}&password=${values.password}`).then((response) =>{
+        if(response){
+          history.push("/");
+        } else{
+        }
+      }
+      )
+
+      
     },
     validateOnBlur :false,
     validateOnChange: false,
@@ -153,8 +163,8 @@ function SignIn() {
               />
             </SubContainer>
             <SubContainer>
-              {formik.touched.email && formik.errors.email ? (
-                  <Error>{formik.errors.email}</Error>
+              {formik.touched.password && formik.errors.password ? (
+                  <Error>{formik.errors.password}</Error>
                 ) : null}
             </SubContainer>
             <SubContainer className="d-flex justify-content-end mb-4">
