@@ -29,5 +29,6 @@ routes.get("/u-i", usersControllers.getUserById);
 routes.get("/l", usersControllers.login);
 
 routes.get("/ir", ingredientsRecipeController.index);
+routes.get("/ir-i", ingredientsRecipeController.getIngredients);
 
 export default routes;

@@ -35,18 +35,12 @@ import $ from "jquery";
 import { useLocation } from "react-router-dom";
 
 import api from "../../services/api";
+import { isGetAccessor } from "typescript";
 
-interface Receita {
-  id: number;
-  title: string;
-  description: string;
-  categories: string;
-  image: string;
-  prepare_mode: string;
-  user_id: number;
-  amount: number;
-  time: number;
-  likes: number;
+interface Ingrediente {
+  name: string;
+  quantity: number;
+  unity: string;
 }
 
 function RecipePage() {
@@ -70,6 +64,7 @@ function RecipePage() {
     time: 0,
     likes: 0,
   });
+  const [ingredients, setIngredients] = useState<any[]>([]);
 
   const location = useLocation();
   useEffect(() => {
@@ -93,7 +88,7 @@ function RecipePage() {
     } else {
       setAmount(recipe.amount + " porções");
     }
-  }, [recipe]);
+  }, [recipe, ingredients]);
 
   useEffect(() => {
     const getUser = async () => {
@@ -106,6 +101,20 @@ function RecipePage() {
     };
     getUser();
   }, [recipe.user_id]);
+
+  useEffect(() => {
+    const getIngredients = async () => {
+      try {
+        const { data } = await api.get(`ir-i?id=${recipe.id}`);
+        setIngredients(data);
+      } catch (error) {
+        console.log("Ocorreu um erro ao carregar os ingredientes: " + error);
+      }
+    };
+    getIngredients();
+  }, [recipe]);
+
+  useEffect(() => {}, [ingredients]);
 
   return (
     <>
@@ -218,19 +227,13 @@ function RecipePage() {
             </Tags>
             <Subtitle>Ingredientes</Subtitle>
             <ListUL>
-              <IngredientText>2 beterrabas</IngredientText>
-              <IngredientText>250 g de macarrão bavette</IngredientText>
-              <IngredientText>1 dente de alho descascado</IngredientText>
-              <IngredientText>azeite a gosto</IngredientText>
-              <IngredientText>
-                sal e pimenta-do-reino moída na hora a gosto
-              </IngredientText>
-              <IngredientText>
-                ricota esfarelada a gosto para servir
-              </IngredientText>
-              <IngredientText>
-                folhas de endro (dill) a gosto para servir
-              </IngredientText>
+              {ingredients?.map(function (i: Ingrediente) {
+                return (
+                  <IngredientText key={i.name}>
+                    {i.quantity} {i.unity} - {i.name}
+                  </IngredientText>
+                );
+              })}
             </ListUL>
           </div>
           <div className="col-12 col-lg-6 text-justify">
