@@ -9,7 +9,6 @@ interface ProductItem {
 }
 
 export default class RecipesController {
-
   async index(request: Request, response: Response) {
     const filters = request.query;
     const categories = filters.categories as string;
@@ -23,7 +22,6 @@ export default class RecipesController {
       !filters.countries &&
       !filters.input
     ) {
-      
       if (filters.qtd) {
         const recipes = await db("recipes").select().limit(Number(qtd));
         return response.json(recipes);
@@ -39,7 +37,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // CATEGORIES
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -61,7 +59,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // MEALS
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -83,7 +81,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // COUNTRIES
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -105,7 +103,7 @@ export default class RecipesController {
       filters.input
     ) {
       // INPUT
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -125,7 +123,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // CATEGORIES & MEALS
-     
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -144,7 +142,7 @@ export default class RecipesController {
       }
     } else if (filters.categories && !filters.meals && filters.countries) {
       // CATEGORIES & COUNTRIES
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -163,7 +161,7 @@ export default class RecipesController {
       }
     } else if (!filters.categories && filters.meals && filters.countries) {
       // MEALS & COUNTRIES
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -187,7 +185,7 @@ export default class RecipesController {
       filters.input
     ) {
       // CATEGORIES & MEALS & INPUT
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -213,7 +211,7 @@ export default class RecipesController {
       filters.input
     ) {
       // CATEGORIES & COUNTRIES & INPUT
-     
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -239,7 +237,7 @@ export default class RecipesController {
       filters.input
     ) {
       // MEALS & COUNTRIES & INPUT
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -265,7 +263,7 @@ export default class RecipesController {
       !filters.input
     ) {
       // CATEGORIES, MEALS & COUNTRIES
-      
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("*")
@@ -286,7 +284,7 @@ export default class RecipesController {
       }
     } else {
       // CATEGORIES, MEALS & COUNTRIES && INPUT
-    
+
       if (filters.qtd) {
         const recipes = await db("recipes")
           .select("id.*")
@@ -363,17 +361,15 @@ export default class RecipesController {
     const filters = request.query;
     const meals = filters.meals as string;
     if (!filters.meals) {
-      const recipes = await db("recipes")
-      .select("*")
-      .limit(12);
+      const recipes = await db("recipes").select("*").limit(12);
       return response.json(recipes);
-    }else{
+    } else {
       const recipes = await db("recipes")
-      .where("categories", "like", `%${meals}%`)
-      .select("*")
-      .limit(12);
+        .where("categories", "like", `%${meals}%`)
+        .select("*")
+        .limit(12);
       return response.json(recipes);
-    }   
+    }
   }
 
   async searchByIngredients(request: Request, response: Response) {
@@ -448,7 +444,9 @@ export default class RecipesController {
   }
 
   async delete(request: Request, response: Response) {
-    const { id } = request.body;
+    const filters = request.query;
+    const id = filters.id as string;
+    console.log(id);
     const trx = await db.transaction();
     try {
       await trx("recipes").where("id", id).del();

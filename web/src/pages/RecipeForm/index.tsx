@@ -34,6 +34,7 @@ function RecipeForm() {
   //const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
   //const [categorys, setCategorys] = useState("");
   const [arquivo, setArquivo] = useState("");
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [invalidInput, setInvalidInput] = useState(true);
   const [alertFlag, setAlertFlag] = useState(<> </>);
 
@@ -90,6 +91,10 @@ function RecipeForm() {
 
   $(".table-responsive").on("hide.bs.dropdown", function () {
     $(".table-responsive").css("overflow", "auto");
+  });
+
+  $(document).ready(function () {
+    $(".selectpicker").selectpicker("refresh");
   });
 
   return (

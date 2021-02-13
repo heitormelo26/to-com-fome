@@ -16,6 +16,7 @@ routes.get("/r", recipesControllers.index);
 routes.get("/r-i", recipesControllers.searchByInput);
 routes.get("/r-m", recipesControllers.searchByMeal);
 routes.get("/receita", recipesControllers.getById);
+routes.delete("/r", recipesControllers.delete);
 
 routes.post("/i", ingredientsController.create);
 routes.get("/i", ingredientsController.index);

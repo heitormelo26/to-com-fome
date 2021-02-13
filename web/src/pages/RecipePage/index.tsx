@@ -35,7 +35,6 @@ import $ from "jquery";
 import { useLocation } from "react-router-dom";
 
 import api from "../../services/api";
-import { isGetAccessor } from "typescript";
 
 interface Ingrediente {
   name: string;
@@ -82,7 +81,7 @@ function RecipePage() {
 
   useEffect(() => {
     setTags(recipe.categories.split(","));
-    setPrepareMode(recipe.prepare_mode.split("\n"));
+    setPrepareMode(recipe.prepare_mode.split("@"));
     if (recipe.amount <= 1) {
       setAmount(recipe.amount + " porção");
     } else {
@@ -96,7 +95,7 @@ function RecipePage() {
         const { data } = await api.get(`/u-i?id=${recipe.user_id}`);
         setUser(data[0].name);
       } catch (error) {
-        console.log("Ocorreu um erro ao carregar o usuário: " + error);
+        //console.log("Ocorreu um erro ao carregar o usuário: " + error);
       }
     };
     getUser();
@@ -188,7 +187,7 @@ function RecipePage() {
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
-                  {recipe.time}
+                  {recipe.time} minutos
                 </span>
               </li>
               <li>
@@ -230,7 +229,7 @@ function RecipePage() {
               {ingredients?.map(function (i: Ingrediente) {
                 return (
                   <IngredientText key={i.name}>
-                    {i.quantity} {i.unity} - {i.name}
+                    {i.quantity} {i.unity} de {i.name}
                   </IngredientText>
                 );
               })}
