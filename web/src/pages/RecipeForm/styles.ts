@@ -25,10 +25,24 @@ export const TextArea = styled.textarea`
   }
 `;
 
+export const Form = styled.form`
+  width: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+`;
+
 export const Label = styled.label`
   font: 600 1rem Lato;
   color: var(--color-blue);
   line-height: 1.4rem;
+
+  span {
+    font: 600 1rem Lato;
+    color: var(--color-red);
+    margin-left: 1rem;
+  }
 `;
 
 export const Placeholder = styled.label`

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import {
   Button,
+  Form,
   IconGroup,
   InputText,
   InputNoIcon,
@@ -17,6 +18,8 @@ import {
 import "../../App.css";
 
 import Icon from "@mdi/react";
+import { useFormik } from "formik";
+// import api from "../../services/api";
 import { mdiClose, mdiMagnify, mdiTrashCan } from "@mdi/js";
 
 import $ from "jquery";
@@ -36,42 +39,109 @@ function RecipeForm() {
   const [arquivo, setArquivo] = useState("");
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [invalidInput, setInvalidInput] = useState(true);
-  const [alertFlag, setAlertFlag] = useState(<> </>);
+  //const [alertFlag, setAlertFlag] = useState(<> </>);
 
-  function setarInput() {
-    const inputTitleElement = document.getElementById(
-      "titulo"
-    ) as HTMLInputElement;
-    const inputAmountElement = document.getElementById(
-      "rendimento"
-    ) as HTMLInputElement;
-    const inputTimeElement = document.getElementById(
-      "tempoPreparo"
-    ) as HTMLInputElement;
-    const inputDescriptionElement = document.getElementById(
-      "descricao"
-    ) as HTMLInputElement;
-    const inputPrepareElement = document.getElementById(
-      "modoPreparo"
-    ) as HTMLInputElement;
-    if (
-      inputTitleElement.value.length > 0 &&
-      inputAmountElement.value.length > 0 &&
-      inputTimeElement.value.length > 0 &&
-      inputDescriptionElement.value.length > 0 &&
-      inputPrepareElement.value.length > 0
-    ) {
-      setAlertFlag(<> </>);
-      setInvalidInput(false);
-    } else {
-      setAlertFlag(
-        <div className="alert alert-danger" role="alert">
-          Por favor, preencha todos os campos!
-        </div>
-      );
-      setInvalidInput(true);
+  const validate = (values: any) => {
+    const errors: any = {};
+    if (!values.title) {
+      errors.title = "Por favor, preencha o título da receita.";
+    } else if (values.title.length > 40) {
+      errors.title = "O título deve ser menor que 40 caracteres.";
+    } else if (!/^[a-zA-Z\s]*$/i.test(values.title)) {
+      errors.title = "Por favor, utilize somente letras.";
     }
-  }
+
+    if (!values.amount) {
+      errors.amount = "Por favor, informe o rendimento.";
+    }
+
+    if (!values.time) {
+      errors.time = "Por favor, informe o tempo de preparo.";
+    }
+
+    if (!values.description) {
+      errors.description = "Por favor, preencha a descrição da receita.";
+    } else if (values.description.length > 200) {
+      errors.description = "A descrição deve ser menor que 200 caracteres.";
+    }
+
+    if (!values.categories) {
+      errors.categories = "Por favor, informe ao menos uma categoria.";
+    }
+
+    if (!values.ingredients) {
+      errors.ingredients = "Por favor, informe pelo menos um ingrediente.";
+    }
+
+    if (!values.prepareMode) {
+      errors.prepareMode = "Por favor, informe o modo de preparo da receita.";
+    }
+
+    if (!values.image) {
+      errors.image = "Por favor, adicione uma imagem.";
+    }
+
+    return errors;
+  };
+  const formik = useFormik({
+    initialValues: {
+      title: "",
+      amount: 0,
+      time: 0,
+      description: "",
+      categories: "",
+      private: false,
+      ingredients: [],
+      prepareMode: "",
+      image: "",
+    },
+    validate,
+    onSubmit: (values: any) => {
+      const form1 = document.getElementById("form1") as HTMLFormElement;
+      const form2 = document.getElementById("form2") as HTMLFormElement;
+      const form3 = document.getElementById("form3") as HTMLFormElement;
+      form1.submit();
+      form2.submit();
+      form3.submit();
+    },
+    validateOnBlur: false,
+    validateOnChange: false,
+  });
+
+  // function setarInput() {
+  //   const inputTitleElement = document.getElementById(
+  //     "titulo"
+  //   ) as HTMLInputElement;
+  //   const inputAmountElement = document.getElementById(
+  //     "rendimento"
+  //   ) as HTMLInputElement;
+  //   const inputTimeElement = document.getElementById(
+  //     "tempoPreparo"
+  //   ) as HTMLInputElement;
+  //   const inputDescriptionElement = document.getElementById(
+  //     "descricao"
+  //   ) as HTMLInputElement;
+  //   const inputPrepareElement = document.getElementById(
+  //     "modoPreparo"
+  //   ) as HTMLInputElement;
+  //   if (
+  //     inputTitleElement.value.length > 0 &&
+  //     inputAmountElement.value.length > 0 &&
+  //     inputTimeElement.value.length > 0 &&
+  //     inputDescriptionElement.value.length > 0 &&
+  //     inputPrepareElement.value.length > 0
+  //   ) {
+  //     setAlertFlag(<> </>);
+  //     setInvalidInput(false);
+  //   } else {
+  //     setAlertFlag(
+  //       <div className="alert alert-danger" role="alert">
+  //         Por favor, preencha todos os campos!
+  //       </div>
+  //     );
+  //     setInvalidInput(true);
+  //   }
+  // }
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
@@ -123,62 +193,104 @@ function RecipeForm() {
 
             <div className="modal-body">
               <div className="container-fluid p-0">
-                <form className="w-100">
+                <Form id="form1" onSubmit={formik.handleSubmit}>
                   {/* Título */}
                   <div className="form-group">
-                    <Label htmlFor="titulo">Título</Label>
+                    <Label htmlFor="title">
+                      Título
+                      {formik.touched.title && formik.errors.title ? (
+                        <span>{formik.errors.title}</span>
+                      ) : null}
+                    </Label>
                     <InputNoIcon
                       type="text"
-                      id="titulo"
-                      name="titulo"
+                      id="title"
+                      name="title"
                       className="form-control"
+                      onChange={formik.handleChange}
+                      value={formik.values.title}
+                      onBlur={formik.handleBlur}
                     />
                   </div>
 
                   {/* Rendimento */}
                   <div className="form-group">
-                    <Label htmlFor="rendimento">Rendimento (em porções)</Label>
+                    <Label htmlFor="amount">
+                      Rendimento (em porções)
+                      {formik.touched.amount && formik.errors.amount ? (
+                        <span>{formik.errors.amount}</span>
+                      ) : null}
+                    </Label>
                     <InputNoIcon
                       type="number"
                       min={1}
-                      id="rendimento"
-                      name="rendimento"
+                      id="amount"
+                      name="amount"
                       className="form-control"
+                      onChange={formik.handleChange}
+                      value={formik.values.amount}
+                      onBlur={formik.handleBlur}
                     />
                   </div>
 
                   {/* Tempo de preparo */}
                   <div className="form-group">
-                    <Label htmlFor="tempoPreparo">Tempo de preparo</Label>
+                    <Label htmlFor="time">
+                      Tempo de preparo (em minutos)
+                      {formik.touched.time && formik.errors.time ? (
+                        <span>{formik.errors.time}</span>
+                      ) : null}
+                    </Label>
                     <InputNoIcon
                       type="number"
-                      id="tempoPreparo"
-                      name="tempoPreparo"
+                      id="time"
+                      min={1}
+                      name="time"
+                      onChange={formik.handleChange}
+                      value={formik.values.time}
+                      onBlur={formik.handleBlur}
                       className="form-control"
                     />
                   </div>
 
                   {/* Descrição */}
                   <div className="form-group">
-                    <Label htmlFor="descricao">Descrição</Label>
+                    <Label htmlFor="description">
+                      Descrição
+                      {formik.touched.description &&
+                      formik.errors.description ? (
+                        <span>{formik.errors.description}</span>
+                      ) : null}
+                    </Label>
                     <TextArea
-                      maxLength={100}
+                      maxLength={200}
                       className="form-control"
-                      id="descricao"
-                      name="descricao"
+                      id="description"
+                      name="description"
+                      onChange={formik.handleChange}
+                      value={formik.values.description}
+                      onBlur={formik.handleBlur}
                     ></TextArea>
                   </div>
 
                   {/* Categorias */}
                   <div className="form-group">
-                    <Label htmlFor="categorias">Categorias</Label>
+                    <Label htmlFor="categories">
+                      Categorias
+                      {formik.touched.categories && formik.errors.categories ? (
+                        <span>{formik.errors.categories}</span>
+                      ) : null}
+                    </Label>
                     <div className="input-group">
                       <InputText
                         type="text"
-                        id="categorias"
-                        name="categorias"
+                        id="categories"
+                        name="categories"
                         placeholder="Buscar..."
                         className="form-control"
+                        onChange={formik.handleChange}
+                        value={formik.values.categories}
+                        onBlur={formik.handleBlur}
                       />
                       <div className="input-group-append">
                         <IconGroup className="input-group-text">
@@ -238,7 +350,7 @@ function RecipeForm() {
                       </InfoButton>
                     </div> */}
                   </div>
-                </form>
+                </Form>
               </div>
             </div>
 
@@ -283,17 +395,26 @@ function RecipeForm() {
 
             <div className="modal-body">
               <div className="container-fluid p-0">
-                <form className="w-100">
+                <Form id="form2" onSubmit={formik.handleSubmit}>
                   {/* Ingredientes */}
                   <div className="form-group">
-                    <Label htmlFor="ingredientes">Ingredientes</Label>
+                    <Label htmlFor="ingredients">
+                      Ingredientes
+                      {formik.touched.ingredients &&
+                      formik.errors.ingredients ? (
+                        <span>{formik.errors.ingredients}</span>
+                      ) : null}
+                    </Label>
                     <div className="input-group">
                       <InputText
                         type="text"
-                        id="ingredientes"
-                        name="ingredientes"
+                        id="ingredients"
+                        name="ingredients"
                         placeholder="Buscar..."
                         className="form-control"
+                        onChange={formik.handleChange}
+                        value={formik.values.ingredients}
+                        onBlur={formik.handleBlur}
                       />
                       <div className="input-group-append">
                         <IconGroup className="input-group-text">
@@ -302,7 +423,7 @@ function RecipeForm() {
                       </div>
                     </div>
                   </div>
-                </form>
+                </Form>
                 <div className="table-responsive">
                   <table className="table table-bordered">
                     <tbody>
@@ -347,30 +468,43 @@ function RecipeForm() {
                     </tbody>
                   </table>
                 </div>
-                <form className="w-100">
+                <Form id="form3" onSubmit={formik.handleSubmit}>
                   {/* Modo de preparo */}
                   <div className="form-group">
-                    <Label htmlFor="modoPreparo">Modo de preparo</Label>
+                    <Label htmlFor="prepareMode">
+                      Modo de preparo
+                      {formik.touched.prepareMode &&
+                      formik.errors.prepareMode ? (
+                        <span>{formik.errors.prepareMode}</span>
+                      ) : null}
+                    </Label>
                     <TextArea
-                      maxLength={100}
-                      id="modoPreparo"
-                      name="modoPreparo"
+                      id="prepareMode"
+                      name="prepareMode"
                       className="form-control"
+                      onChange={formik.handleChange}
+                      value={formik.values.prepareMode}
+                      onBlur={formik.handleBlur}
                     ></TextArea>
                   </div>
 
                   {/* Imagem */}
                   <div className="input-group">
-                    <Label htmlFor="imagem" className="w-100">
+                    <Label htmlFor="image" className="w-100">
                       Imagem
+                      {formik.touched.image && formik.errors.image ? (
+                        <span>{formik.errors.image}</span>
+                      ) : null}
                     </Label>
                     <div className="custom-file d-flex align-items-center">
                       <input
                         accept="image/*"
                         type="file"
-                        id="imagem"
-                        name="imagem"
+                        id="image"
+                        name="image"
                         className="custom-file-input d-flex align-items-center"
+                        value={formik.values.image}
+                        onBlur={formik.handleBlur}
                         onChange={(event) => {
                           setNomeArquivo(
                             event.target.files != null
@@ -398,51 +532,30 @@ function RecipeForm() {
                       className="img-fluid img-thumbnail"
                     />
                   </div>
-                </form>
+                  <div className="modal-footer">
+                    {/* {alertFlag} */}
+                    <WhiteButton
+                      data-toggle="modal"
+                      data-target="#criarReceita1"
+                      onClick={() => {
+                        $("#criarReceita2").modal("hide");
+                      }}
+                      type="button"
+                      className="btn"
+                    >
+                      Anterior
+                    </WhiteButton>
+                    <Button
+                      //data-dismiss="modal"
+                      data-toggle="modal"
+                      type="submit"
+                      className="btn"
+                    >
+                      Enviar
+                    </Button>
+                  </div>
+                </Form>
               </div>
-            </div>
-            <div className="modal-footer">
-              {alertFlag}
-              <WhiteButton
-                data-toggle="modal"
-                data-target="#criarReceita1"
-                onClick={() => {
-                  $("#criarReceita2").modal("hide");
-                }}
-                type="button"
-                className="btn"
-              >
-                Anterior
-              </WhiteButton>
-              <Button
-                //data-dismiss="modal"
-                data-toggle="modal"
-                type="button"
-                className="btn"
-                onClick={() => {
-                  // swal(
-                  //   "Sua receita foi enviada!",
-                  //   "Para ver sua receita, vá ao seu perfil e clique em 'Receitas Enviadas'.",
-                  //   "success",
-                  //   {
-                  //     closeOnEsc: true,
-                  //     closeOnClickOutside: true,
-                  //     buttons: {
-                  //       confirm: {
-                  //         text: "Fechar",
-                  //         value: null,
-                  //         visible: true,
-                  //         className: "",
-                  //         closeModal: true,
-                  //       },
-                  //     },
-                  //   }
-                  // );
-                  setarInput();
-                }}
-              >
-                Enviar
-              </Button>
             </div>
           </Modal>
         </div>
