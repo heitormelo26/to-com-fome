@@ -3,7 +3,8 @@ import Knex from "knex";
 export async function up(knex: Knex) {
   return knex.schema.createTable("user_recipes", (table) => {
     table.increments("id").primary();
-    table.string("type").notNullable;
+    table.integer("isLiked").notNullable();
+    table.integer("isSaved").notNullable();
     table
       .integer("recipe_id")
       .notNullable()

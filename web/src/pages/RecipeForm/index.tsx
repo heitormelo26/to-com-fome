@@ -98,7 +98,7 @@ function RecipeForm() {
       errors.prepareMode = "Por favor, informe o modo de preparo da receita.";
     }
 
-    if (!values.image) {
+    if (!arquivo) {
       errors.image = "Por favor, adicione uma imagem.";
     }
 
