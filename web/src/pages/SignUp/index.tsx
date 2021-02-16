@@ -70,7 +70,7 @@ function SignUp() {
           `/u?name=${values.name}&email=${values.email}&password=${values.password}`
         )
         .then((response) => {
-          if (response.status === 200) {
+          if (response.status === 201) {
             history.push("/");
           } else if (response.status === 205) {
             swal({

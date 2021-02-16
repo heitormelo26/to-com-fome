@@ -39,9 +39,9 @@ export interface RecipeProps {
   categories: string;
   image: string;
   prepare_mode: string;
-  amount: string;
-  time: string;
-  likes: string;
+  amoe: string;
+  likunt: string;
+  times: string;
   user_id: number;
 }
 

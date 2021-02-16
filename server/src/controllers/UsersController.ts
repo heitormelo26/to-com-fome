@@ -6,10 +6,13 @@ export default class UsersController {
   async create(request: Request, response: Response) {
     const filters = request.query;
     const name = filters.name;
-    const email = filters.email;
+    const email = filters.email as string;
     const password = filters.password;
-    const user = true;
-    if (!user) {
+    const user: any = await db("users")
+      .select("*")
+      .where("email", email)
+      .limit(1);
+    if (!user[0]) {
       const trx = await db.transaction();
       try {
         await trx("users").insert({

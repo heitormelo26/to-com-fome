@@ -62,14 +62,24 @@ function SignIn() {
       api
         .get(`l?email=${values.email}&password=${values.password}`)
         .then((response) => {
-          console.log(response.data[0]);
           if (response.data[0]) {
             history.push("/");
           } else {
             swal({
-              title: "Atenção",
-              text: "Não existe esse usuário!",
+              title: "Atenção!",
+              text:
+                "A senha ou usuário não correspondem. Por favor, verifique os dados e tente novamente!",
               icon: "warning",
+              buttons: {
+                cancel: false,
+                confirm: {
+                  text: "Tudo bem!",
+                  value: true,
+                  visible: true,
+                  className: "",
+                  closeModal: true,
+                },
+              },
             });
           }
         });
