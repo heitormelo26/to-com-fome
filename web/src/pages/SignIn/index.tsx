@@ -37,22 +37,17 @@ function SignIn() {
   const [invalidInput, setInvalidInput] = useState(true);
   const history = useHistory(); */
 
-  const validate = (values :any) => {
+  const validate = (values: any) => {
+    const errors: any = {};
 
-    const errors :any = {};
-  
     if (!values.password) {
-      errors.password = 'Por favor, preencha o campo acima.';
-    } else if (values.password.length < 6) {
-      errors.password = 'Para sua segurança, utilize uma senha com no mínimo 6 dígitos.';
+      errors.password = "Por favor, preencha o campo acima.";
     }
-  
+
     if (!values.email) {
-      errors.email = 'Por favor, preencha o campo acima.';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Por favor, informe um email válido.';
+      errors.email = "Por favor, preencha o campo acima.";
     }
-  
+
     return errors;
   };
   let history = useHistory();
@@ -64,17 +59,16 @@ function SignIn() {
     validate,
     onSubmit: (values: any) => {
       console.log(values);
-      api.get(`l?email=${values.email}&password=${values.password}`).then((response) =>{
-        if(response){
-          history.push("/");
-        } else{
-        }
-      }
-      )
-
-      
+      api
+        .get(`l?email=${values.email}&password=${values.password}`)
+        .then((response) => {
+          if (response) {
+            history.push("/");
+          } else {
+          }
+        });
     },
-    validateOnBlur :false,
+    validateOnBlur: false,
     validateOnChange: false,
   });
 
@@ -136,12 +130,11 @@ function SignIn() {
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
               />
-              
             </SubContainer>
             <SubContainer>
               {formik.touched.email && formik.errors.email ? (
-                  <Error>{formik.errors.email}</Error>
-                ) : null}
+                <Error>{formik.errors.email}</Error>
+              ) : null}
             </SubContainer>
             <SubContainer className="input-group mb-3">
               <Label className="w-100 mb-3 d-block" htmlFor="senha">
@@ -164,8 +157,8 @@ function SignIn() {
             </SubContainer>
             <SubContainer>
               {formik.touched.password && formik.errors.password ? (
-                  <Error>{formik.errors.password}</Error>
-                ) : null}
+                <Error>{formik.errors.password}</Error>
+              ) : null}
             </SubContainer>
             <SubContainer className="d-flex justify-content-end mb-4">
               <ForgotButton

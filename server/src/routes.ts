@@ -27,6 +27,7 @@ routes.post("/u", usersControllers.create);
 routes.post("/u-changePassword", usersControllers.changePassword);
 routes.get("/u", usersControllers.index);
 routes.get("/u-i", usersControllers.getUserById);
+routes.get("/u-e", usersControllers.getUserByEmail);
 routes.get("/l", usersControllers.login);
 
 routes.get("/ir", ingredientsRecipeController.index);

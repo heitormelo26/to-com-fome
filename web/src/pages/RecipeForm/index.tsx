@@ -16,10 +16,10 @@ import {
   WhiteButton,
 } from "./styles";
 import "../../App.css";
-
+import api from "../../services/api";
 import Icon from "@mdi/react";
 import { useFormik } from "formik";
-// import api from "../../services/api";
+import { Link, useHistory } from "react-router-dom";
 import { mdiClose, mdiMagnify, mdiTrashCan } from "@mdi/js";
 
 import $ from "jquery";
@@ -30,6 +30,27 @@ export interface IngredientProps {
   image: string;
   name: string;
   category: string;
+}
+
+export interface RecipeProps {
+  id: number;
+  title: string;
+  description: string;
+  categories: string;
+  image: string;
+  prepare_mode: string;
+  amount: string;
+  time: string;
+  likes: string;
+  user_id: number;
+}
+
+export interface IngredientsRecipeProps {
+  id: number;
+  unity: string;
+  quantity: number;
+  recipe_id: number;
+  integer_id: number;
 }
 
 function RecipeForm() {
@@ -83,6 +104,7 @@ function RecipeForm() {
 
     return errors;
   };
+  let history = useHistory();
   const formik = useFormik({
     initialValues: {
       title: "",
@@ -103,6 +125,15 @@ function RecipeForm() {
       form1.submit();
       form2.submit();
       form3.submit();
+      api.get(`/u-e?email=${values.email}`).then((response) => {
+        if (response.status === 200) {
+          //history.push("/");
+          console.log("deu certo");
+          console.log(response);
+        } else {
+          console.log("deu certo não");
+        }
+      });
     },
     validateOnBlur: false,
     validateOnChange: false,

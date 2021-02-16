@@ -43,7 +43,7 @@ export default class UsersController {
     return response.json(user);
   }
 
-  async serachByEmail(request: Request, response: Response) {
+  async getUserByEmail(request: Request, response: Response) {
     const filters = request.query;
     const email = filters.email as string;
     if (!filters.email) {
@@ -51,6 +51,7 @@ export default class UsersController {
         error: "Missing filters to search user",
       });
     }
+    console.log(email);
     const user = await db("users")
       .where({
         email: email,
@@ -92,4 +93,4 @@ export default class UsersController {
       .limit(1);
     return response.json(user);
   }
-  }
+}
