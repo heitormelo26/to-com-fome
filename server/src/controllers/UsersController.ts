@@ -4,7 +4,10 @@ import db from "../database/connection";
 
 export default class UsersController {
   async create(request: Request, response: Response) {
-    const { name, email, password } = request.body;
+    const filters = request.query;
+    const name = filters.name;
+    const email = filters.email;
+    const password = filters.password;
     const trx = await db.transaction();
     try {
       await trx("users").insert({

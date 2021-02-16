@@ -66,7 +66,7 @@ function SignUp() {
     validate,
     onSubmit: (values: any) => {
       api
-        .get(
+        .post(
           `/u?name=${values.name}&email=${values.email}&password=${values.password}`
         )
         .then((response) => {
