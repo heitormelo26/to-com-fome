@@ -1,4 +1,4 @@
-import React /*, { useState } */ from "react";
+import React, { useState } from "react";
 //import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 
@@ -7,7 +7,7 @@ import ForgotPassword from "../ForgotPassword";
 import Sidebar from "../../components/Sidebar";
 import FooterAccount from "../../components/FooterAccount";
 import api from "../../services/api";
-
+import swal from "sweetalert";
 import { Link, useHistory } from "react-router-dom";
 
 import {
@@ -62,9 +62,15 @@ function SignIn() {
       api
         .get(`l?email=${values.email}&password=${values.password}`)
         .then((response) => {
-          if (response) {
+          console.log(response.data[0]);
+          if (response.data[0]) {
             history.push("/");
           } else {
+            swal({
+              title: "Atenção",
+              text: "Não existe esse usuário!",
+              icon: "warning",
+            });
           }
         });
     },

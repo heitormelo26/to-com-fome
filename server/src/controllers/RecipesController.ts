@@ -446,7 +446,6 @@ export default class RecipesController {
   async delete(request: Request, response: Response) {
     const filters = request.query;
     const id = filters.id as string;
-    console.log(id);
     const trx = await db.transaction();
     try {
       await trx("recipes").where("id", id).del();

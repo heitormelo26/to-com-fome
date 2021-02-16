@@ -3,7 +3,7 @@ import React from "react";
 import Sidebar from "../../components/Sidebar";
 import FooterAccount from "../../components/FooterAccount";
 import api from "../../services/api";
-
+import swal from "sweetalert";
 import { useFormik } from "formik";
 
 import { Link, useHistory } from "react-router-dom";
@@ -72,29 +72,18 @@ function SignUp() {
         .then((response) => {
           if (response.status === 200) {
             history.push("/");
-          } else {
+          } else if (response.status === 205) {
+            swal({
+              title: "Atenção",
+              text: "Email já está cadastrado",
+              icon: "warning",
+            });
           }
         });
     },
     validateOnBlur: false,
     validateOnChange: false,
   });
-
-  // function setarInput() {
-  //   const inputEmailElement = document.getElementById(
-  //     "inputEmail"
-  //   ) as HTMLInputElement;
-  //   const inputPasswordElement = document.getElementById(
-  //     "inputPassword"
-  //   ) as HTMLInputElement;
-  //   const inputNameElement = document.getElementById(
-  //     "inputName"
-  //   ) as HTMLInputElement;
-
-  //   if (inputEmailElement.value.length > 0 && inputPasswordElement.value.length > 0  && inputNameElement.value.length >0) setInvalidInput(false);
-  //   else setInvalidInput(true)
-
-  // }
 
   return (
     <div className="container-fluid">

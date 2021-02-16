@@ -8,20 +8,25 @@ export default class UsersController {
     const name = filters.name;
     const email = filters.email;
     const password = filters.password;
-    const trx = await db.transaction();
-    try {
-      await trx("users").insert({
-        name,
-        email,
-        password,
-      });
-      await trx.commit();
-      return response.status(201).send();
-    } catch (err) {
-      await trx.rollback();
-      return response.status(400).json({
-        error: "Unexpected error while creating new user",
-      });
+    const user = true;
+    if (!user) {
+      const trx = await db.transaction();
+      try {
+        await trx("users").insert({
+          name,
+          email,
+          password,
+        });
+        await trx.commit();
+        return response.status(201).send();
+      } catch (err) {
+        await trx.rollback();
+        return response.status(400).json({
+          error: "Unexpected error while creating new user",
+        });
+      }
+    } else {
+      return response.status(205).send();
     }
   }
 
@@ -49,12 +54,12 @@ export default class UsersController {
   async getUserByEmail(request: Request, response: Response) {
     const filters = request.query;
     const email = filters.email as string;
+    console.log(email);
     if (!filters.email) {
       return response.status(400).json({
         error: "Missing filters to search user",
       });
     }
-    console.log(email);
     const user = await db("users")
       .where({
         email: email,
