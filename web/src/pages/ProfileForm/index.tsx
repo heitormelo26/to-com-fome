@@ -8,27 +8,22 @@ import {
   InputText,
   Label,
   Modal,
-  Select,
   Title,
+  Button,
 } from "./styles";
 import "../../App.css";
-
-import Button from "../../components/Button";
 
 import Icon from "@mdi/react";
 import {
   mdiAccount,
-  mdiCalendar,
+  mdiClose,
   mdiEmail,
   mdiEye,
   mdiEyeOff,
   mdiLock,
-  mdiMapMarker,
 } from "@mdi/js";
 
 import $ from "jquery";
-
-import { country } from "../../assets/settings/selects/data";
 
 function ProfileForm() {
   $(document).ready(function () {
@@ -58,98 +53,99 @@ function ProfileForm() {
     >
       <div className="modal-dialog modal-dialog-centered modal-lg">
         <Modal className="modal-content">
-          <div className="modal-header d-flex flex-column">
-            <Title className="d-block w-100 modal-title">
+          <div className="modal-header pb-0">
+            <Title className="d-block w-100 modal-title text-left">
               <button type="button" className="close" data-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
+                <Icon path={mdiClose} size="1rem" color="#8D99AE" />
               </button>
               Editar perfil
             </Title>
           </div>
           <div className="modal-body">
-            <form>
-              <div className="form-group">
-                <Input
-                  label="Nome"
-                  iconName={mdiAccount}
-                  type="text"
-                  name="name"
-                />
-              </div>
-              <div className="form-group">
-                <Input
-                  label="Email"
-                  iconName={mdiEmail}
-                  type="email"
-                  name="email"
-                />
-              </div>
-              <div className="form-group">
-                <Label className="w-100 mb-3 d-block">País</Label>
-                <div className="w-100 d-flex">
-                  <div className="input-group-prepend">
-                    <IconGroup className="input-group-text">
-                      <Icon path={mdiMapMarker} size={0.7} color="#8D99AE" />
-                    </IconGroup>
-                  </div>
-                  <Select
-                    name="country"
-                    data-width="100%"
-                    title="País"
-                    data-size="5"
-                    data-dropup-auto="false"
-                    className="selectpicker show-tick w-100 form-control"
-                  >
-                    {country.map((c: any) => {
-                      return <option value={c.value}>{c.countryName}</option>;
-                    })}
-                  </Select>
+            <div className="container-fluid">
+              <form className="w-100">
+                <div className="input-group mb-3">
+                  <Label className="w-100 mb-3 d-block" htmlFor="name">
+                    Nome
+                  </Label>
+                  <IconGroup className="input-group-prepend">
+                    <Icon path={mdiAccount} size="1rem" color="#8D99AE" />
+                  </IconGroup>
+                  <InputText
+                    className="form-control"
+                    type="text"
+                    name="name"
+                    id="name"
+                  />
                 </div>
-              </div>
-              <div className="form-group">
-                <Label className="w-100 mb-3 d-block">Senha</Label>
-                <div className="w-100 d-flex">
+                <div className="input-group mb-3">
+                  <Label className="w-100 mb-3 d-block" htmlFor="email">
+                    Email
+                  </Label>
+                  <IconGroup className="input-group-prepend">
+                    <Icon path={mdiEmail} size="1rem" color="#8D99AE" />
+                  </IconGroup>
+                  <InputText
+                    className="form-control"
+                    type="email"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <Label className="w-100 mb-3 d-block" htmlFor="password">
+                    Senha
+                  </Label>
                   <div className="input-group-prepend">
                     <IconGroup className="input-group-text">
-                      <Icon path={mdiLock} size={0.7} color="#8D99AE" />
+                      <Icon path={mdiLock} size="1rem" color="#8D99AE" />
                     </IconGroup>
                   </div>
                   <InputText
                     type={tipo}
-                    className="py-3 form-control"
+                    className="form-control password"
                     name="password"
+                    id="password"
                   />
                   <div className="input-group-append" onClick={mostrarSenha}>
                     <IconGroupRight className="input-group-text">
-                      <Icon path={icone} size={0.7} color="#8D99AE" />
+                      <Icon path={icone} size="1rem" color="#8D99AE" />
                     </IconGroupRight>
                   </div>
                 </div>
-              </div>
-              <div className="form-group">
-                <Input
-                  label="Data de nascimento"
-                  iconName={mdiCalendar}
-                  type="date"
-                  name="birthday"
-                />
-              </div>
-            </form>
+                <div className="input-group mb-3">
+                  <Label className="w-100 mb-3 d-block" htmlFor="newPassword">
+                    Confirme sua senha
+                  </Label>
+                  <div className="input-group-prepend">
+                    <IconGroup className="input-group-text">
+                      <Icon path={mdiLock} size="1rem" color="#8D99AE" />
+                    </IconGroup>
+                  </div>
+                  <InputText
+                    type={tipo}
+                    className="form-control password"
+                    name="newPassword"
+                    id="newPassword"
+                  />
+                  <div className="input-group-append" onClick={mostrarSenha}>
+                    <IconGroupRight className="input-group-text">
+                      <Icon path={icone} size="1rem" color="#8D99AE" />
+                    </IconGroupRight>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
           <div className="modal-footer">
             <Button
-              text="Fechar"
-              color="branco"
-              data-dismiss="modal"
+              className="btn"
               type="button"
-            />
-            <Button
-              text="Confirmar"
-              color="vermelho"
               data-dismiss="modal"
               data-toggle="modal"
-              type="button"
-            />
+            >
+              Confirmar
+            </Button>
           </div>
         </Modal>
       </div>

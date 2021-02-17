@@ -1,65 +1,67 @@
 import styled from "styled-components";
 
 export const Label = styled.label`
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-family: Nunito;
-  color: #2b2d42;
+  font: 600 1rem Lato;
+  color: var(--color-blue);
 `;
 
 export const InputText = styled.input`
-  background-color: #edf2f4 !important;
-  font-size: 16px !important;
-  border: 0 !important;
-  outline: 0 !important;
-  color: #8d99ae !important;
-  border-radius: 0px !important;
-  :focus {
-    box-shadow: none !important;
-  }
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-blue);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   ::placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
-    font-family: Nunito;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
   }
   :-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
-    font-family: Nunito;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
   }
   ::-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
-    font-family: Nunito;
+    color: var(--color-dark-gray);
+    font: 500 1rem Lato;
+  }
+  :focus {
+    background-color: var(--color-light-gray);
+  }
+  .password {
+    border-top-right-radius: 0rem !important;
+    border-bottom-right-radius: 0rem !important;
   }
 `;
 
 export const IconGroup = styled.div`
-  background-color: #edf2f4 !important;
-  border: 0 !important;
-  outline: 0 !important;
-  border-top-left-radius: 6px !important;
-  border-bottom-left-radius: 6px !important;
-  border-bottom-right-radius: 0px !important;
-  border-top-right-radius: 0px !important;
+  padding: 0.5rem 1rem !important;
+  font: 500 1rem Lato;
+  line-height: 1rem;
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray);
+  border: 0;
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+  display: flex;
+  align-items: center;
 `;
 
 export const IconGroupRight = styled.div`
-  background-color: #edf2f4 !important;
-  border: 0 !important;
-  outline: 0 !important;
+  background-color: var(--color-light-gray);
+  border: 0;
+  outline: 0;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 6px !important;
-  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 0.5rem !important;
+  border-top-right-radius: 0.5rem !important;
 `;
 
 export const Modal = styled.div`
   border: none !important;
-  padding: 24px !important;
-  border-radius: 30px !important;
+  padding: 0.5rem;
+  border-radius: 1rem !important;
   outline: 0;
   box-shadow: none !important;
   .modal-header,
@@ -67,116 +69,41 @@ export const Modal = styled.div`
     border: none !important;
   }
   .modal-header {
+    padding-bottom: 1rem !important;
     .close {
-      color: #8d99ae !important;
-      :active {
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
-      :focus {
-        outline: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
+      color: var(--color-light-gray) !important;
+      :active,
+      :focus,
       :hover {
-        color: #8d99ae !important;
+        color: var(--color-light-gray) !important;
         outline: none !important;
         box-shadow: none !important;
       }
     }
+  }
+  .modal-body {
+    padding-top: 0;
   }
 `;
 
 export const Title = styled.h5`
-  color: #2b2d42;
-  font-family: Nunito;
-  font-weight: 600;
+  font: 600 1.5rem Lora;
+  color: var(--color-blue);
 `;
 
-export const Select = styled.select`
-  background-color: #edf2f4 !important;
-  font-size: 16px !important;
+export const Button = styled.button`
+  font: 600 1rem "Lato";
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  align-self: center;
+  color: var(--color-white);
+  background-color: var(--color-red) !important;
   border: 0 !important;
-  outline: 0 !important;
-  color: #8d99ae !important;
-  border-top-right-radius: 6px !important;
-  border-bottom-right-radius: 6px !important;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
-  padding: 7px 12px !important;
-  width: 100% !important;
   :focus {
-    box-shadow: none !important;
+    color: var(--color-white);
   }
-  ::placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-  }
-  :-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-  }
-  ::-ms-input-placeholder {
-    color: #8d99ae !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-  }
-  .btn.dropdown-toggle.btn-light:focus,
-  .bootstrap-select > select.mobile-device:focus + .dropdown-toggle,
-  .bootstrap-select .dropdown-toggle:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
-    border: 0px !important;
-  }
-  button {
-    color: #8d99ae !important;
-    font-size: 16px !important;
-    font-family: Nunito;
-    background-color: #edf2f4 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    div:focus,
-    :focus,
-    .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
-    .bootstrap-select .dropdown-toggle:focus,
-    .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
-      border: 0 !important;
-      outline: none !important;
-      box-shadow: none !important;
-      outline: none !important;
-    }
-  }
-  .dropdown-menu {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: #8d99ae !important;
-    color: #edf2f4 !important;
-    border: none !important;
-    width: auto;
-    box-shadow: none !important;
-    border-radius: 6px !important;
-    :focus,
-    :active {
-      border: none !important;
-      outline: none !important;
-      box-shadow: none !important;
-    }
-    a,
-    a:hover,
-    a:focus,
-    a:active {
-      font-size: 16px !important;
-      font-family: Nunito !important;
-      font-weight: normal !important;
-      background-color: #8d99ae !important;
-      color: #edf2f4 !important;
-      border: none !important;
-      outline: none !important;
-      box-shadow: none !important;
-      margin: 8px 0;
-    }
+  :hover {
+    color: var(--color-white);
+    background-color: rgba(239, 35, 60, 0.9) !important;
   }
 `;

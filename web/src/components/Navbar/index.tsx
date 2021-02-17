@@ -30,6 +30,19 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
           <NavbarLink className="nav-link" to="/perfil">
             Perfil
           </NavbarLink>
+          <NavbarLink
+            className="nav-link d-flex d-lg-none"
+            data-toggle="modal"
+            data-target="#criarReceita1"
+            type="button"
+            to=""
+          >
+            Enviar Receita
+          </NavbarLink>
+          <NavbarLink className="d-flex d-lg-none nav-link" to="/entrar">
+            Sair
+          </NavbarLink>
+          <RecipeForm />
         </li>
       );
     }

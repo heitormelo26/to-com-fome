@@ -52,7 +52,7 @@ export const NavbarLink = styled(Link)`
   ::after {
     display: block;
     content: "";
-    border-bottom: solid 2px var(--color-blue) !important;
+    border-bottom: solid 2px var(--color-red) !important;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
   }
