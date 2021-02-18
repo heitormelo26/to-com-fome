@@ -73,9 +73,8 @@ export default class RecipesController {
       return response.json(recipes);
     }
 
-    return response.status(400).json({
-      error: "Missing filters to search recipes",
-    });
+    const recipes = await db("recipes").select("*").from("recipes");
+    return response.json(recipes);
   }
 
   async getById(request: Request, response: Response) {

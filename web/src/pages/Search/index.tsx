@@ -42,6 +42,22 @@ export default function Search() {
     });
   }, [location]);
 
+  function search() {
+    const input = document.getElementById("input") as HTMLInputElement;
+    const category = document.getElementById("category") as HTMLSelectElement;
+    const country = document.getElementById("country") as HTMLSelectElement;
+    const meal = document.getElementById("meal") as HTMLSelectElement;
+
+    api
+      .get(
+        `r?input=${input.value}&categories=${category.value}&countries=${country.value}&meals=${meal.value}`
+      )
+      .then((response) => {
+        console.log(response.data);
+        setRecipes(response.data);
+      });
+  }
+
   return (
     <>
       <Navbar isLogged={true} />
@@ -57,6 +73,7 @@ export default function Search() {
                   className="form-control"
                   placeholder="Buscar..."
                   aria-label="Buscar..."
+                  id="input"
                 />
                 <div className="input-group-append">
                   <IconGroup className="input-group-text">
@@ -76,6 +93,7 @@ export default function Search() {
                 data-live-search="true"
                 title="Categoria"
                 data-size="4"
+                id="category"
               >
                 {categories.map((category: string) => {
                   return <option>{category}</option>;
@@ -90,6 +108,7 @@ export default function Search() {
                 data-live-search="true"
                 title="Refeição"
                 data-size="4"
+                id="meal"
               >
                 {meals.map((meal: string) => {
                   return <option>{meal}</option>;
@@ -104,6 +123,7 @@ export default function Search() {
                 data-live-search="true"
                 title="Nacionalidade"
                 data-size="4"
+                id="country"
               >
                 {countries.map((country: string) => {
                   return <option>{country}</option>;
@@ -113,7 +133,11 @@ export default function Search() {
 
             {/* Botão */}
             <div className="col-12 col-md-3 d-flex align-items-center justify-content-end">
-              <SearchButton type="button" className="btn">
+              <SearchButton
+                type="button"
+                className="btn"
+                onClick={() => search()}
+              >
                 Buscar
               </SearchButton>
             </div>
