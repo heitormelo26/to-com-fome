@@ -35,8 +35,6 @@ export default class RecipesController {
       filtersArray.push({ campo: "title", valor: input });
     }
 
-    console.log("VETOR:" + filtersArray.length);
-
     if (filtersArray.length === 1) {
       const recipes = await db("recipes")
         .select("*")
