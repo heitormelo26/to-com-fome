@@ -5,7 +5,7 @@ import ProfileForm from "../ProfileForm";
 import Pagination from "../../components/Pagination";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-//import Recipe, { RecipeProps } from "../../components/Recipe";
+import Recipe, { RecipeProps } from "../../components/Recipe";
 
 import Icon from "@mdi/react";
 import { mdiPencil } from "@mdi/js";
@@ -17,7 +17,7 @@ import api from "../../services/api";
 import profile from "../../assets/images/profile.svg";
 
 function Profile() {
-  //const [recipes, setRecipes] = useState<RecipeProps[]>([]);
+  const [recipes, setRecipes] = useState<RecipeProps[]>([]);
   const [selected, setSelected] = useState("Salvas");
 
   function setActiveButton(meal: any) {
@@ -36,8 +36,8 @@ function Profile() {
   }
 
   useEffect(() => {
-    api.get("r-m").then((response) => {
-      //setRecipes(response.data);
+    api.get("r-u?user_id=1").then((response) => {
+      setRecipes(response.data);
       setActiveButton("Salvas");
       setSelected("Salvas");
     });
@@ -45,14 +45,14 @@ function Profile() {
 
   function selectMeal(meal: any) {
     if (meal === "Salvas") {
-      api.get(`r-m`).then((response) => {
-        //setRecipes(response.data);
+      api.get(`r-u?user_id=1`).then((response) => {
+        setRecipes(response.data);
         setActiveButton(meal);
         setSelected(meal);
       });
     } else {
-      api.get(`r-m?meals=${meal}`).then((response) => {
-        //setRecipes(response.data);
+      api.get(`r-u?user_id=1`).then((response) => {
+        setRecipes(response.data);
         setActiveButton(meal);
         setSelected(meal);
       });
@@ -139,7 +139,11 @@ function Profile() {
             </div>
           </div>
         </div> */}
-        <div className="row">{/* Receitas */}</div>
+        <div className="row">
+          {recipes.map((recipe: RecipeProps) => {
+            return <Recipe key={recipe.id} recipe={recipe} />;
+          })}
+        </div>
       </div>
       <div className="mb-5 d-flex justify-content-center">
         <Pagination activePage={1} totalOfRecipes={16} recipesPerPage={3} />

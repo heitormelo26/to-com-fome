@@ -18,6 +18,7 @@ routes.get("/r", recipesControllers.index);
 routes.get("/r-i", recipesControllers.searchByInput);
 routes.get("/r-m", recipesControllers.searchByMeal);
 routes.get("/receita", recipesControllers.getById);
+routes.get("/r-u", recipesControllers.getUserRecipes);
 routes.delete("/r", recipesControllers.delete);
 
 routes.post("/i", ingredientsController.create);
@@ -35,6 +36,6 @@ routes.get("/l", usersControllers.login);
 routes.get("/ir", ingredientsRecipeController.index);
 routes.get("/ir-i", ingredientsRecipeController.getIngredients);
 
-routes.post("/ur",user_RecipesController.create);
+routes.post("/ur", user_RecipesController.create);
 
 export default routes;
