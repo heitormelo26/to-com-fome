@@ -37,5 +37,6 @@ routes.get("/ir", ingredientsRecipeController.index);
 routes.get("/ir-i", ingredientsRecipeController.getIngredients);
 
 routes.post("/ur", user_RecipesController.create);
+routes.get("/ur", user_RecipesController.getUserRecipe);
 
 export default routes;

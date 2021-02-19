@@ -88,7 +88,7 @@ export default class RecipesController {
       const recipes = await db("recipes")
         .select("*")
         .from("recipes")
-        .where("id", "=", id)
+        .where("id", id)
         .limit(1);
       return response.json(recipes);
     }
@@ -286,5 +286,30 @@ export default class RecipesController {
       .select("*")
       .where("user_id", Number(user_id));
     return response.json(recipes);
+  }
+
+  async likeUpdate(request: Request, response: Response) {
+    const filters = request.query;
+    const likes = filters.likes as string;
+    const id = filters.id;
+
+    if (!filters.likes) {
+      return response.status(400).json({
+        error: "Missing filters to update recipes",
+      });
+    }
+    const trx = await db.transaction();
+    try {
+      const recipes = await db("recipes")
+        .where("id", Number(id))
+        .update("likes", Number(likes));
+      await trx.commit();
+      return response.status(201).send();
+    } catch (err) {
+      await trx.rollback();
+      return response.status(400).json({
+        error: "Unexpected error while updating recipe likes",
+      });
+    }
   }
 }

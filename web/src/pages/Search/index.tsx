@@ -58,6 +58,13 @@ export default function Search() {
       });
   }
 
+  const handleKeypress = (e: any) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      search();
+    }
+  };
+
   return (
     <>
       <Navbar isLogged={true} />
@@ -74,6 +81,7 @@ export default function Search() {
                   placeholder="Buscar..."
                   aria-label="Buscar..."
                   id="input"
+                  onKeyPress={handleKeypress}
                 />
                 <div className="input-group-append">
                   <IconGroup className="input-group-text">
@@ -134,7 +142,7 @@ export default function Search() {
             {/* Botão */}
             <div className="col-12 col-md-3 d-flex align-items-center justify-content-end">
               <SearchButton
-                type="button"
+                type="submit"
                 className="btn"
                 onClick={() => search()}
               >

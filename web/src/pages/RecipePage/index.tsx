@@ -51,6 +51,13 @@ function RecipePage() {
   const [user, setUser] = useState<string>();
   const [tags, setTags] = useState<string[]>();
   const [prepareMode, setPrepareMode] = useState<string[]>();
+  const [userRecipe, setUserRecipe] = useState({
+    id: 0,
+    user_id: 0,
+    recipe_id: 0,
+    isLiked: 0,
+    isSaved: 0,
+  });
   const [recipe, setRecipe] = useState({
     id: 0,
     title: "",
@@ -114,6 +121,35 @@ function RecipePage() {
   }, [recipe]);
 
   useEffect(() => {}, [ingredients]);
+
+  useEffect(() => {
+    const getUserRecipe = async () => {
+      try {
+        console.log("Problemas");
+        const { data } = await api.get(
+          `/ur?recipe_id=${recipe.id}&user_id=${recipe.user_id}`
+        );
+        if (data.length === 0) {
+          try {
+            await api
+              .post(
+                `/ur?recipe_id=${recipe.id}&user_id=${recipe.user_id}&isLiked=0&isSaved=0`
+              )
+              .then((response) => {
+                console.log(response);
+              });
+            //setUserRecipe(data);
+          } catch (err) {
+            console.log(err);
+          }
+        } else {
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUserRecipe();
+  }, [recipe]);
 
   return (
     <>
