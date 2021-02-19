@@ -51,6 +51,7 @@ function RecipePage() {
   const [user, setUser] = useState<string>();
   const [tags, setTags] = useState<string[]>();
   const [prepareMode, setPrepareMode] = useState<string[]>();
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [userRecipe, setUserRecipe] = useState({
     id: 0,
     user_id: 0,

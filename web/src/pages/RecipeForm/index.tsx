@@ -19,7 +19,7 @@ import "../../App.css";
 import api from "../../services/api";
 import Icon from "@mdi/react";
 import { useFormik } from "formik";
-import { Link, useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { mdiClose, mdiMagnify, mdiTrashCan } from "@mdi/js";
 
 import $ from "jquery";
@@ -104,7 +104,7 @@ function RecipeForm() {
 
     return errors;
   };
-  let history = useHistory();
+  //let history = useHistory();
   const formik = useFormik({
     initialValues: {
       title: "",

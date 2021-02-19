@@ -42,7 +42,6 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
           <NavbarLink className="d-flex d-lg-none nav-link" to="/entrar">
             Sair
           </NavbarLink>
-          <RecipeForm />
         </li>
       );
     }
@@ -56,7 +55,6 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
           <NavbarRightLink className="nav-link" to="/entrar">
             Sair
           </NavbarRightLink>
-
           <NavButton
             className="btn btn-navbar"
             data-toggle="modal"
@@ -65,8 +63,6 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
           >
             Enviar Receita
           </NavButton>
-
-          <RecipeForm />
         </>
       );
     } else {
@@ -79,8 +75,6 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
           <NavButton className="btn btn-navbar">
             <Link to="/cadastrar">Cadastrar</Link>
           </NavButton>
-
-          <RecipeForm />
         </>
       );
     }
@@ -125,6 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
       <div className="d-none d-lg-flex align-items-center">
         {navRightLinks()}
       </div>
+      <RecipeForm />
     </Nav>
   );
 };

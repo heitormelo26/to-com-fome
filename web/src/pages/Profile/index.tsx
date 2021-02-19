@@ -18,6 +18,7 @@ import profile from "../../assets/images/profile.svg";
 
 function Profile() {
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [selected, setSelected] = useState("Salvas");
 
   function setActiveButton(meal: any) {

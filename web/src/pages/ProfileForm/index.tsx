@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import Input from "../../components/Input";
-
 import {
   IconGroup,
   IconGroupRight,
@@ -11,7 +9,6 @@ import {
   Title,
   Button,
 } from "./styles";
-import "../../App.css";
 
 import Icon from "@mdi/react";
 import {
