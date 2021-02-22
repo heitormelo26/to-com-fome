@@ -9,7 +9,9 @@ import {
   mdiAccount,
   mdiBookmark,
   mdiClockOutline,
+  mdiDelete,
   mdiHeart,
+  mdiPencil,
   mdiShareVariant,
   mdiSilverware,
 } from "@mdi/js";
@@ -73,6 +75,44 @@ function RecipePage() {
   });
   const [ingredients, setIngredients] = useState<any[]>([]);
 
+  const options = () => {
+    if (user) {
+      // user.isLogged
+      return (
+        <>
+          <button
+            type="button"
+            className="btn"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Edite sua receita"
+          >
+            <Icon
+              path={mdiPencil}
+              title="Compartilhar"
+              size="1rem"
+              color="#2b2d42"
+            />
+          </button>
+          <button
+            type="button"
+            className="btn"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Exclua sua receita"
+          >
+            <Icon
+              path={mdiDelete}
+              title="Compartilhar"
+              size="1.5rem"
+              color="#2b2d42"
+            />
+          </button>
+        </>
+      );
+    }
+  };
+
   const location = useLocation();
   useEffect(() => {
     const getRecipe = async () => {
@@ -126,20 +166,21 @@ function RecipePage() {
   useEffect(() => {
     const getUserRecipe = async () => {
       try {
-        console.log("Problemas");
         const { data } = await api.get(
           `/ur?recipe_id=${recipe.id}&user_id=${recipe.user_id}`
         );
         if (data.length === 0) {
           try {
-            await api
-              .post(
-                `/ur?recipe_id=${recipe.id}&user_id=${recipe.user_id}&isLiked=0&isSaved=0`
-              )
-              .then((response) => {
-                console.log(response);
-              });
-            //setUserRecipe(data);
+            if (recipe.id !== 0) {
+              await api
+                .post(
+                  `/ur?recipe_id=${recipe.id}&user_id=${recipe.user_id}&isLiked=0&isSaved=0`
+                )
+                .then((response) => {
+                  console.log(response);
+                });
+              //setUserRecipe(data);
+            }
           } catch (err) {
             console.log(err);
           }
@@ -193,7 +234,7 @@ function RecipePage() {
                 type="button"
                 className="btn"
                 data-toggle="tooltip"
-                data-placement="right"
+                data-placement="bottom"
                 title="Compartilhe essa receita com outras pessoas!"
               >
                 <Icon
@@ -203,6 +244,7 @@ function RecipePage() {
                   color="#2b2d42"
                 />
               </button>
+              {options()}
             </Buttons>
           </Container>
           <Border>

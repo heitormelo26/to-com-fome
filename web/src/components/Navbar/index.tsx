@@ -26,23 +26,30 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
     if (isLogged) {
       return (
         /* Ordem de aparição: Início - Buscar - Perfil */
-        <li className="nav-item">
-          <NavbarLink className="nav-link" to="/perfil">
-            Perfil
-          </NavbarLink>
-          <NavbarLink
-            className="nav-link d-flex d-lg-none"
-            data-toggle="modal"
-            data-target="#criarReceita1"
-            type="button"
-            to=""
-          >
-            Enviar Receita
-          </NavbarLink>
-          <NavbarLink className="d-flex d-lg-none nav-link" to="/entrar">
-            Sair
-          </NavbarLink>
-        </li>
+        <>
+          <li className="nav-item">
+            <NavbarLink className="nav-link" to="/perfil">
+              Perfil
+            </NavbarLink>
+          </li>
+          <li className="nav-item">
+            <NavbarLink
+              className="nav-link d-flex d-lg-none"
+              data-toggle="modal"
+              data-target="#criarReceita1"
+              type="button"
+              to=""
+            >
+              Enviar receita
+            </NavbarLink>
+          </li>
+
+          <li className="nav-item">
+            <NavbarLink className="d-flex d-lg-none nav-link" to="/entrar">
+              Sair
+            </NavbarLink>
+          </li>
+        </>
       );
     }
   }
@@ -61,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
             data-target="#criarReceita1"
             type="button"
           >
-            Enviar Receita
+            Enviar receita
           </NavButton>
         </>
       );

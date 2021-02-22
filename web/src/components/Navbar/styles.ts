@@ -47,17 +47,24 @@ export const NavbarTitle = styled(Link)`
 
 export const NavbarLink = styled(Link)`
   font: 600 1rem "Lato";
-  padding: 0.5rem;
+  padding: 0.5rem 1rem !important;
   color: var(--color-blue) !important;
-  ::after {
-    display: block;
-    content: "";
-    border-bottom: solid 2px var(--color-red) !important;
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
+  @media (min-width: 769px) {
+    ::after {
+      display: block;
+      content: "";
+      border-bottom: solid 2px var(--color-red) !important;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+    }
+    :hover:after {
+      transform: scaleX(1);
+    }
   }
-  :hover:after {
-    transform: scaleX(1);
+  @media (max-width: 769px) {
+    :hover {
+      color: var(--color-red) !important;
+    }
   }
 `;
 

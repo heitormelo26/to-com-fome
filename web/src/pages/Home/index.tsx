@@ -16,7 +16,7 @@ import api from "../../services/api";
 
 import { flags } from "../../assets/settings/slider/flags";
 import { settings } from "../../assets/settings/slider/slider";
-import { homeMeals } from "../../assets/settings/selects/data";
+import { homeMeals, meals } from "../../assets/settings/selects/data";
 
 import Icon from "@mdi/react";
 import { mdiArrowRight } from "@mdi/js";
@@ -126,7 +126,13 @@ function Home() {
             return <Recipe key={recipe.id} recipe={recipe} />;
           })}
           <div className="col-12 center-center">
-            <More to="/buscar" className="text-decoration-none">
+            <More
+              to={{
+                pathname: "/buscar",
+                search: `?meal=${meals}`,
+              }}
+              className="text-decoration-none"
+            >
               <span>Mostrar mais</span>
               <Icon path={mdiArrowRight} size={0.8} color="#ef233c" />
             </More>
