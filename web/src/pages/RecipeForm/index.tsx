@@ -21,7 +21,12 @@ import Icon from "@mdi/react";
 import { useFormik } from "formik";
 //import { useHistory } from "react-router-dom";
 import { mdiClose, mdiMagnify, mdiTrashCan } from "@mdi/js";
-
+import {
+  meals,
+  categories as dataCategories,
+  countries,
+  ingredients as dataIngredients,
+} from "../../assets/settings/selects/data";
 import $ from "jquery";
 //import swal from "sweetalert";
 
@@ -56,11 +61,39 @@ export interface IngredientsRecipeProps {
 function RecipeForm() {
   const [nomeArquivo, setNomeArquivo] = useState("Selecionar...");
   //const [ingredients, setIngredients] = useState<IngredientProps[]>([]);
-  //const [categorys, setCategorys] = useState("");
+  const [categories, setCategories] = useState("");
   const [arquivo, setArquivo] = useState("");
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [invalidInput, setInvalidInput] = useState(true);
   //const [alertFlag, setAlertFlag] = useState(<> </>);
+
+  $(".selectpicker").selectpicker({
+    maxOptionsText: function (numAll: any, numGroup: any) {
+      return [
+        numAll == 1
+          ? "Selecione no máximo 3 categorias."
+          : "Selecione no máximo 3 categorias.",
+        numGroup == 1
+          ? "Selecione no máximo 3 categorias."
+          : "Selecione no máximo 3 categorias.",
+      ];
+    },
+  });
+
+  function displayResult() {
+    var x = document.getElementById("category") as HTMLSelectElement;
+    var txt = "";
+    var i;
+    var categoriesArray: String[] = [];
+    for (i = 0; i < x.options.length; i++) {
+      if (x.options[i].selected) {
+        categoriesArray.push(x.options[i].text);
+      }
+    }
+
+    txt = categoriesArray.join(",");
+    setCategories(txt);
+  }
 
   const validate = (values: any) => {
     const errors: any = {};
@@ -313,21 +346,25 @@ function RecipeForm() {
                       ) : null}
                     </Label>
                     <div className="input-group">
-                      <InputText
-                        type="text"
-                        id="categories"
-                        name="categories"
-                        placeholder="Buscar..."
-                        className="form-control"
-                        onChange={formik.handleChange}
-                        value={formik.values.categories}
-                        onBlur={formik.handleBlur}
-                      />
-                      <div className="input-group-append">
-                        <IconGroup className="input-group-text">
-                          <Icon path={mdiMagnify} size="1rem" color="#8D99AE" />
-                        </IconGroup>
-                      </div>
+                      <Select
+                        className="selectpicker w-100"
+                        data-live-search="true"
+                        title="Categoria"
+                        data-max-options="3"
+                        multiple
+                        data-size="3"
+                        id="category"
+                      >
+                        {dataCategories.map((category: string) => {
+                          return <option>{category}</option>;
+                        })}
+                        {meals.map((category: string) => {
+                          return <option>{category}</option>;
+                        })}
+                        {countries.map((category: string) => {
+                          return <option>{category}</option>;
+                        })}
+                      </Select>
                     </div>
                     {/* <div className="mt-3">
                       <Category className="btn mb-2 mr-2">
@@ -393,6 +430,7 @@ function RecipeForm() {
                 data-target="#criarReceita2"
                 type="button"
                 className="btn"
+                onClick={() => displayResult()}
               >
                 Próximo
               </Button>
@@ -437,21 +475,18 @@ function RecipeForm() {
                       ) : null}
                     </Label>
                     <div className="input-group">
-                      <InputText
-                        type="text"
-                        id="ingredients"
-                        name="ingredients"
-                        placeholder="Buscar..."
-                        className="form-control"
-                        onChange={formik.handleChange}
-                        value={formik.values.ingredients}
-                        onBlur={formik.handleBlur}
-                      />
-                      <div className="input-group-append">
-                        <IconGroup className="input-group-text">
-                          <Icon path={mdiMagnify} size="1rem" color="#8D99AE" />
-                        </IconGroup>
-                      </div>
+                      <Select
+                        className="selectpicker w-100"
+                        data-live-search="true"
+                        title="Ingredientes"
+                        multiple
+                        data-size="3"
+                        id="ingredient"
+                      >
+                        {dataIngredients.sort().map((category: string) => {
+                          return <option>{category}</option>;
+                        })}
+                      </Select>
                     </div>
                   </div>
                 </Form>

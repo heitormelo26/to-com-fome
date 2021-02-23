@@ -9,7 +9,6 @@ interface ProductItem {
 }
 
 export default class IngredientsController {
-  
   async index(request: Request, response: Response) {
     const filters = request.query;
     const name = filters.name as string;
@@ -56,14 +55,14 @@ export default class IngredientsController {
     const category = filters.category as string;
     if (!filters.category) {
       const ingredients = await db("ingredients")
-      .select("*")
-      .orderByRaw("RANDOM()");
+        .select("*")
+        .orderByRaw("RANDOM()");
       return response.json(ingredients);
-    }else{
+    } else {
       const ingredients = await db("ingredients")
-      .select("*")
-      .where("category", "like", `${category}`);
-    return response.json(ingredients);
+        .select("*")
+        .where("category", "like", `${category}`);
+      return response.json(ingredients);
     }
   }
 
@@ -72,8 +71,7 @@ export default class IngredientsController {
     const name = filters.name as string;
     const ingredients = await db("ingredients")
       .select("*")
-      .where("name", "like", `%${name}%`)
+      .where("name", "like", `%${name}%`);
     return response.json(ingredients);
   }
-
 }
