@@ -62,4 +62,62 @@ export default class UserRecipesController {
       });
     }
   }
+
+  async updateLike(request: Request, response: Response) {
+    const filters = request.query;
+    const recipe_id = filters.recipe_id;
+    const user_id = filters.user_id;
+
+    if (!filters.recipe_id && !filters.user_id) {
+      return response.status(400).json({
+        error: "Missing filters to save/like the recipe",
+      });
+    }
+    try {
+      let isLiked = await db("user_recipes")
+        .select("isLiked")
+        .where({ user_id: Number(user_id), recipe_id: Number(recipe_id) });
+      const recipes = await db("user_recipes")
+        .where({
+          user_id: Number(user_id),
+          recipe_id: Number(recipe_id),
+        })
+        .update({ isLiked: isLiked[0].isLiked === 0 ? 1 : 0 });
+
+      return response.json(recipes);
+    } catch (err) {
+      return response.status(400).json({
+        error: "Unexpected error while creating new recipe",
+      });
+    }
+  }
+
+  async updateSaved(request: Request, response: Response) {
+    const filters = request.query;
+    const recipe_id = filters.recipe_id;
+    const user_id = filters.user_id;
+
+    if (!filters.recipe_id && !filters.user_id) {
+      return response.status(400).json({
+        error: "Missing filters to save/like the recipe",
+      });
+    }
+    try {
+      let isSaved = await db("user_recipes")
+        .select("isSaved")
+        .where({ user_id: Number(user_id), recipe_id: Number(recipe_id) });
+      const recipes = await db("user_recipes")
+        .where({
+          user_id: Number(user_id),
+          recipe_id: Number(recipe_id),
+        })
+        .update({ isSaved: isSaved[0].isSaved === 0 ? 1 : 0 });
+
+      return response.json(recipes);
+    } catch (err) {
+      return response.status(400).json({
+        error: "Unexpected error while creating new recipe",
+      });
+    }
+  }
 }

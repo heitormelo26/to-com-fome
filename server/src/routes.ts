@@ -27,7 +27,7 @@ routes.get("/i-c", ingredientsController.searchByCategory);
 routes.get("/i-n", ingredientsController.searchByName);
 
 routes.post("/u", usersControllers.create);
-routes.post("/u-changePassword", usersControllers.changePassword);
+routes.post("/u-c", usersControllers.changePassword);
 routes.get("/u", usersControllers.index);
 routes.get("/u-i", usersControllers.getUserById);
 routes.get("/u-e", usersControllers.getUserByEmail);
@@ -38,5 +38,7 @@ routes.get("/ir-i", ingredientsRecipeController.getIngredients);
 
 routes.post("/ur", user_RecipesController.create);
 routes.get("/ur", user_RecipesController.getUserRecipe);
+routes.put("/ur-l", user_RecipesController.updateLike);
+routes.get("/ur-s", user_RecipesController.updateSaved);
 
 export default routes;

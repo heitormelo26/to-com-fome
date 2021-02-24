@@ -49,6 +49,7 @@ function RecipePage() {
     $('[data-toggle="tooltip"]').tooltip();
   });
 
+  const [heartColor, setHeartColor] = useState("#2b2d42");
   const [amount, setAmount] = useState<string>();
   const [user, setUser] = useState<string>();
   const [tags, setTags] = useState<string[]>();
@@ -112,6 +113,26 @@ function RecipePage() {
       );
     }
   };
+
+  function curtir() {
+    try {
+      if (recipe.id !== 0) {
+        api
+          .put(`/ur-l?recipe_id=${recipe.id}&user_id=${recipe.user_id}`)
+          .then((response) => {
+            console.log(response);
+          });
+
+        setUserRecipe({
+          ...userRecipe,
+          isLiked: userRecipe.isLiked === 0 ? 1 : 0,
+        });
+        setHeartColor(userRecipe.isLiked === 0 ? "#ef233c" : "#2b2d42");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   const location = useLocation();
   useEffect(() => {
@@ -179,12 +200,15 @@ function RecipePage() {
                 .then((response) => {
                   console.log(response);
                 });
-              //setUserRecipe(data);
+              setUserRecipe(data);
             }
           } catch (err) {
             console.log(err);
           }
         } else {
+          console.log(data[0]);
+          setUserRecipe(data[0]);
+          setHeartColor(data[0].isLiked === 0 ? "#2b2d42" : "#ef233c");
         }
       } catch (error) {
         console.log(error);
@@ -203,6 +227,7 @@ function RecipePage() {
             <Description>{recipe.description}</Description>
             <Buttons>
               <button
+                onClick={curtir}
                 type="button"
                 className="btn"
                 data-toggle="tooltip"
@@ -213,7 +238,7 @@ function RecipePage() {
                   path={mdiHeart}
                   title="Curtir"
                   size="1rem"
-                  color="#2b2d42"
+                  color={heartColor}
                 />
               </button>
               <button
