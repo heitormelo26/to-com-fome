@@ -35,7 +35,7 @@ function SignUp() {
       errors.name = "Por favor, preencha o campo acima.";
     } else if (values.name.length < 2) {
       errors.name = "Por favor, preencha seu nome.";
-    } else if (!/^[a-zA-Z\s]*$/i.test(values.name)) {
+    } else if (!/^[a-z A-Z\u00C0-\u00FF]+$/i.test(values.name)) {
       errors.name = "Por favor, utilize somente letras.";
     }
 
@@ -49,7 +49,9 @@ function SignUp() {
     if (!values.email) {
       errors.email = "Por favor, preencha o campo acima.";
     } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+      !/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(
+        values.email
+      )
     ) {
       errors.email = "Por favor, informe um email válido.";
     }
@@ -173,7 +175,7 @@ function SignUp() {
               google={"Cadastrar com o Google"}
               text={[
                 "Já possui uma conta? ",
-                <Link to={"/entrar"}>Entre agora!</Link>,
+                <Link to={"/signin"}>Entre agora!</Link>,
               ]}
             />
           </SubContainer>

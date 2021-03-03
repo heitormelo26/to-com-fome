@@ -67,7 +67,7 @@ export default function Search() {
 
   return (
     <>
-      <Navbar isLogged={true} />
+      <Navbar />
 
       <div className="container-fluid">
         <Container className="jumbotron">
@@ -164,7 +164,7 @@ export default function Search() {
         </div>
 
         {/* Contato */}
-        <Contact isLogged={false} />
+        <Contact />
       </div>
 
       {/* Footer */}

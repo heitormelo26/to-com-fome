@@ -28,7 +28,7 @@ const Recipe: React.FC<Props> = ({ recipe }) => {
   return (
     <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 d-flex justify-content-center mb-3">
       <Card className="card">
-        <Link to={`/receita?id=${recipe.id}`}>
+        <Link to={`/recipe?id=${recipe.id}`}>
           <Image
             src={recipe.image}
             alt={recipe.title}
@@ -37,7 +37,9 @@ const Recipe: React.FC<Props> = ({ recipe }) => {
         </Link>
         <div className="card-body">
           <Title className="card-title text-decoration-none">
-            <Link to="/receita">{recipe.title.toLowerCase()}</Link>
+            <Link to={`/recipe?id=${recipe.id}`}>
+              {recipe.title.toLowerCase()}
+            </Link>
           </Title>
           <Subtitle className="card-subtitle">Enviada por {name}</Subtitle>
         </div>

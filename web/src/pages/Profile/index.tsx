@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import ProfileForm from "../ProfileForm";
 
@@ -15,8 +15,11 @@ import { EditButton, Category, Name, Data, Number, Header } from "./styles";
 import api from "../../services/api";
 
 import profile from "../../assets/images/profile.svg";
+import { UserContext } from "../../contexts/UserContext";
 
 function Profile() {
+  const { user } = useContext(UserContext);
+
   const [recipes, setRecipes] = useState<RecipeProps[]>([]);
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [selected, setSelected] = useState("Salvas");
@@ -37,7 +40,7 @@ function Profile() {
   }
 
   useEffect(() => {
-    api.get("r-u?user_id=1").then((response) => {
+    api.get(`r-u?user_id=${user?.id}`).then((response) => {
       setRecipes(response.data);
       setActiveButton("Salvas");
       setSelected("Salvas");
@@ -46,13 +49,13 @@ function Profile() {
 
   function selectMeal(meal: any) {
     if (meal === "Salvas") {
-      api.get(`r-u?user_id=1`).then((response) => {
+      api.get(`r-u?user_id=${user?.id}`).then((response) => {
         setRecipes(response.data);
         setActiveButton(meal);
         setSelected(meal);
       });
     } else {
-      api.get(`r-u?user_id=1`).then((response) => {
+      api.get(`r-u?user_id=${user?.id}`).then((response) => {
         setRecipes(response.data);
         setActiveButton(meal);
         setSelected(meal);
@@ -62,7 +65,7 @@ function Profile() {
 
   return (
     <div>
-      <Navbar isLogged={true} />
+      <Navbar />
       <div className="container-fluid">
         <Header>
           <div className="image d-none d-md-flex">
@@ -75,7 +78,7 @@ function Profile() {
           </div>
           <div className="center-center flex-column">
             <Name className="d-flex flex-row align-self-center align-self-md-start">
-              Usuário
+              {user?.name}
               <EditButton
                 type="button"
                 data-toggle="modal"

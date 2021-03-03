@@ -4,7 +4,7 @@ import db from "../database/connection";
 
 export default class UsersController {
   async create(request: Request, response: Response) {
-    const filters = request.query;
+    const filters = request.body;
     const name = filters.name;
     const email = filters.email as string;
     const password = filters.password;
@@ -100,7 +100,7 @@ export default class UsersController {
         email: email,
         password: password,
       })
-      .select("*")
+      .select("id", "email", "name")
       .limit(1);
     return response.json(user);
   }

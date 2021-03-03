@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 import { Container, Title, Subtitle, ContactButton } from "./styles";
 
-interface ContactProps {
-  isLogged: boolean;
-}
+const Contact: React.FC = () => {
+  const { isLogged } = useContext(UserContext);
 
-const Contact: React.FC<ContactProps> = ({ isLogged }) => {
   if (!isLogged) {
     return (
       <Container className="jumbotron">
@@ -21,7 +20,7 @@ const Contact: React.FC<ContactProps> = ({ isLogged }) => {
         <div className="d-flex flex-grow-1 align-items-center justify-content-center ml-0 ml-md-5 pl-0 pl-md-5">
           <ContactButton
             className="btn btn-contact btn-lg btn-block"
-            to="/cadastrar"
+            to="/signup"
           >
             Cadastre-se agora
           </ContactButton>

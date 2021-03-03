@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -15,12 +15,11 @@ import {
 } from "./styles";
 import "./styles.css";
 import "../../App.css";
+import { UserContext } from "../../contexts/UserContext";
 
-interface NavbarProps {
-  isLogged: boolean;
-}
+const Navbar: React.FC = () => {
+  const { signOut, isLogged } = useContext(UserContext);
 
-const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
   function navLeftLinks() {
     /* Adiciona o link do Perfil */
     if (isLogged) {
@@ -28,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
         /* Ordem de aparição: Início - Buscar - Perfil */
         <>
           <li className="nav-item">
-            <NavbarLink className="nav-link" to="/perfil">
+            <NavbarLink className="nav-link" to="/profile">
               Perfil
             </NavbarLink>
           </li>
@@ -45,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
           </li>
 
           <li className="nav-item">
-            <NavbarLink className="d-flex d-lg-none nav-link" to="/entrar">
+            <NavbarLink className="d-flex d-lg-none nav-link" to="/signin">
               Sair
             </NavbarLink>
           </li>
@@ -59,8 +58,10 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
     if (isLogged) {
       return (
         <>
-          <NavbarRightLink className="nav-link" to="/entrar">
-            Sair
+          <NavbarRightLink className="nav-link" to="">
+            <button type="button" onClick={signOut}>
+              Sair
+            </button>
           </NavbarRightLink>
           <NavButton
             className="btn btn-navbar"
@@ -75,12 +76,12 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
     } else {
       return (
         <>
-          <NavbarRightLink className="nav-link" to="/entrar">
+          <NavbarRightLink className="nav-link" to="/signin">
             Entrar
           </NavbarRightLink>
 
           <NavButton className="btn btn-navbar">
-            <Link to="/cadastrar">Cadastrar</Link>
+            <Link to="/signup">Cadastrar</Link>
           </NavButton>
         </>
       );
@@ -115,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ isLogged }) => {
           </li>
 
           <li className="nav-item">
-            <NavbarLink className="nav-link" to="/buscar">
+            <NavbarLink className="nav-link" to="/search">
               Buscar
             </NavbarLink>
           </li>

@@ -25,10 +25,11 @@ export const Header = styled.div`
 `;
 
 export const Name = styled.h1`
-  font: 500 1.25rem Lora;
+  font: 600 1.5rem Lora;
   color: var(--color-light-gray);
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 export const Data = styled.p`
@@ -54,6 +55,7 @@ export const EditButton = styled.button`
   border: 0 !important;
   padding: 0 !important;
   margin-left: 0.5rem;
+  font-size: 0px !important;
   :focus,
   :hover {
     color: var(--color-light-gray);

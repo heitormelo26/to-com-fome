@@ -66,7 +66,7 @@ function Home() {
 
   return (
     <>
-      <Navbar isLogged={true} />
+      <Navbar />
       <div className="container-fluid">
         <Header />
         <div className="row mb-4">
@@ -128,7 +128,7 @@ function Home() {
           <div className="col-12 center-center">
             <More
               to={{
-                pathname: "/buscar",
+                pathname: "/search",
                 search: `?meal=${meals}`,
               }}
               className="text-decoration-none"
@@ -169,7 +169,7 @@ function Home() {
         </div>
 
         {/* Contato */}
-        <Contact isLogged={false} />
+        <Contact />
       </div>
 
       {/* Footer*/}

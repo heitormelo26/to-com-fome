@@ -70,6 +70,14 @@ export const NavbarLink = styled(Link)`
 
 export const NavbarRightLink = styled(NavbarLink)`
   margin-right: 1.5rem;
+  button {
+    font: 600 1rem "Lato";
+    color: var(--color-blue) !important;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: 0;
+  }
 `;
 
 export const IconBar = styled.span`

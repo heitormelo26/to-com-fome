@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Navbar from "../../components/Navbar";
 import Contact from "../../components/Contact";
@@ -37,6 +37,8 @@ import $ from "jquery";
 import { useLocation } from "react-router-dom";
 
 import api from "../../services/api";
+import { UserContext } from "../../contexts/UserContext";
+import user from "../../store/modules/user/reducer";
 
 interface Ingrediente {
   name: string;
@@ -45,17 +47,20 @@ interface Ingrediente {
 }
 
 function RecipePage() {
+  const { user } = useContext(UserContext);
+
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
 
   const [heartColor, setHeartColor] = useState("#2b2d42");
   const [amount, setAmount] = useState<string>();
-  const [user, setUser] = useState<string>();
+  const [recipeUser, setRecipeUser] = useState<string>(); // Usuário "dono" da receita
   const [tags, setTags] = useState<string[]>();
   const [prepareMode, setPrepareMode] = useState<string[]>();
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [userRecipe, setUserRecipe] = useState({
+    // Usuário que está na receita
     id: 0,
     user_id: 0,
     recipe_id: 0,
@@ -77,8 +82,7 @@ function RecipePage() {
   const [ingredients, setIngredients] = useState<any[]>([]);
 
   const options = () => {
-    if (user) {
-      // user.isLogged
+    if (user?.id === recipe.user_id) {
       return (
         <>
           <button
@@ -118,11 +122,10 @@ function RecipePage() {
     try {
       if (recipe.id !== 0) {
         api
-          .put(`/ur-l?recipe_id=${recipe.id}&user_id=${recipe.user_id}`)
+          .put(`/ur-l?recipe_id=${recipe.id}&user_id=${user?.id}`)
           .then((response) => {
             console.log(response);
           });
-
         setUserRecipe({
           ...userRecipe,
           isLiked: userRecipe.isLiked === 0 ? 1 : 0,
@@ -162,7 +165,7 @@ function RecipePage() {
     const getUser = async () => {
       try {
         const { data } = await api.get(`/u-i?id=${recipe.user_id}`);
-        setUser(data[0].name);
+        setRecipeUser(data[0].name);
       } catch (error) {
         //console.log("Ocorreu um erro ao carregar o usuário: " + error);
       }
@@ -188,14 +191,14 @@ function RecipePage() {
     const getUserRecipe = async () => {
       try {
         const { data } = await api.get(
-          `/ur?recipe_id=${recipe.id}&user_id=${recipe.user_id}`
+          `/ur?recipe_id=${recipe.id}&user_id=${user?.id}`
         );
         if (data.length === 0) {
           try {
             if (recipe.id !== 0) {
               await api
                 .post(
-                  `/ur?recipe_id=${recipe.id}&user_id=${recipe.user_id}&isLiked=0&isSaved=0`
+                  `/ur?recipe_id=${recipe.id}&user_id=${user?.id}&isLiked=0&isSaved=0`
                 )
                 .then((response) => {
                   console.log(response);
@@ -219,7 +222,7 @@ function RecipePage() {
 
   return (
     <>
-      <Navbar isLogged={true} />
+      <Navbar />
       <div className="container-fluid">
         <Header>
           <Container className="jumbotron">
@@ -315,13 +318,13 @@ function RecipePage() {
                     color="#8D99AE"
                     className="mr-2 tag-icon"
                   />
-                  {user}
+                  {recipeUser}
                 </span>
               </li>
               {tags?.map(function (tag: string) {
                 return (
                   <li key={tag}>
-                    <a href={`/buscar?categories=${tag}`} className="tag">
+                    <a href={`/search?categories=${tag}`} className="tag">
                       {tag}
                     </a>
                   </li>
@@ -350,7 +353,7 @@ function RecipePage() {
         </div>
       </div>
       <div className="container-fluid">
-        <Contact isLogged={false} />
+        <Contact />
       </div>
       <Footer />
     </>
