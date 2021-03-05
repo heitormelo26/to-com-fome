@@ -39,6 +39,7 @@ routes.get("/ir-i", ingredientsRecipeController.getIngredients);
 routes.post("/ur", user_RecipesController.create);
 routes.get("/ur", user_RecipesController.getUserRecipe);
 routes.put("/ur-l", user_RecipesController.updateLike);
-routes.get("/ur-s", user_RecipesController.updateSaved);
+routes.put("/ur-s", user_RecipesController.updateSaved);
+routes.delete("/ur-d", user_RecipesController.delete);
 
 export default routes;

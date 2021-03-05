@@ -120,4 +120,20 @@ export default class UserRecipesController {
       });
     }
   }
+
+  async delete(request: Request, response: Response) {
+    const filters = request.query;
+    const id = filters.id as string;
+    const trx = await db.transaction();
+    try {
+      await trx("user_recipes").where("id", id).del();
+      await trx.commit();
+      return response.status(201).send();
+    } catch (err) {
+      await trx.rollback();
+      return response.status(400).json({
+        error: "Unexpected error while deleting recipe",
+      });
+    }
+  }
 }

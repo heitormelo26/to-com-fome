@@ -47,12 +47,13 @@ interface Ingrediente {
 }
 
 function RecipePage() {
-  const { user } = useContext(UserContext);
+  const { user, isLogged } = useContext(UserContext);
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
 
+  const [bookmarkColor, setBookmarkColor] = useState("#2b2d42");
   const [heartColor, setHeartColor] = useState("#2b2d42");
   const [amount, setAmount] = useState<string>();
   const [recipeUser, setRecipeUser] = useState<string>(); // Usuário "dono" da receita
@@ -137,6 +138,25 @@ function RecipePage() {
     }
   }
 
+  function salvar() {
+    try {
+      if (recipe.id !== 0) {
+        api
+          .put(`/ur-s?recipe_id=${recipe.id}&user_id=${user?.id}`)
+          .then((response) => {
+            console.log(response);
+          });
+        setUserRecipe({
+          ...userRecipe,
+          isSaved: userRecipe.isSaved === 0 ? 1 : 0,
+        });
+        setBookmarkColor(userRecipe.isSaved === 0 ? "#ef233c" : "#2b2d42");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   const location = useLocation();
   useEffect(() => {
     const getRecipe = async () => {
@@ -195,7 +215,7 @@ function RecipePage() {
         );
         if (data.length === 0) {
           try {
-            if (recipe.id !== 0) {
+            if (recipe.id !== 0 && isLogged) {
               await api
                 .post(
                   `/ur?recipe_id=${recipe.id}&user_id=${user?.id}&isLiked=0&isSaved=0`
@@ -212,6 +232,7 @@ function RecipePage() {
           console.log(data[0]);
           setUserRecipe(data[0]);
           setHeartColor(data[0].isLiked === 0 ? "#2b2d42" : "#ef233c");
+          setBookmarkColor(data[0].isSaved === 0 ? "#2b2d42" : "#ef233c");
         }
       } catch (error) {
         console.log(error);
@@ -230,6 +251,7 @@ function RecipePage() {
             <Description>{recipe.description}</Description>
             <Buttons>
               <button
+                disabled={!isLogged}
                 onClick={curtir}
                 type="button"
                 className="btn"
@@ -245,6 +267,8 @@ function RecipePage() {
                 />
               </button>
               <button
+                disabled={!isLogged}
+                onClick={salvar}
                 type="button"
                 className="btn"
                 data-toggle="tooltip"
@@ -255,7 +279,7 @@ function RecipePage() {
                   path={mdiBookmark}
                   title="Salvar"
                   size="1rem"
-                  color="#2b2d42"
+                  color={bookmarkColor}
                 />
               </button>
               <button
